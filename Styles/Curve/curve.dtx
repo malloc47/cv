@@ -1,0 +1,1547 @@
+% \iffalse                                                 -*- mode: LaTeX -*-
+%
+% curve.dtx --- Doc file for the CurVe package (code and documentation)
+%
+% Copyright (C) 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007 Didier Verna.
+% Copyright (C) 2008 Didier Verna
+%
+% Author:        Didier Verna <didier@lrde.epita.fr>
+% Maintainer:    Didier Verna <didier@lrde.epita.fr>
+% Created:       Thu Dec 10 16:04:01 1998
+% Last Revision: Mon Feb 25 17:55:12 2008
+%
+% This file is part of CurVe.
+%
+% CurVe may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.1
+% of this license or (at your option) any later version.
+% The latest version of this license is in
+% http://www.latex-project.org/lppl.txt
+% and version 1.1 or later is part of all distributions of LaTeX
+% version 1999/06/01 or later.
+%
+% CurVe consists of the files listed in the file `README'.
+%
+%
+% Commentary:
+%
+% Contents management by FCM version 0.1.
+%
+%
+% Code:
+%
+%<*driver>
+\documentclass[a4paper]{ltxdoc}
+\newcommand{\curve}{%
+  \mbox{\fontfamily{ptm}\fontseries{b}\fontshape{it}\selectfont%
+    C%
+    \hspace{-.3ex}\protect\raisebox{-.3ex}{\textmd{u}}%
+    \hspace{-.1ex}\textmd{r}%
+    \hspace{-.2ex}V%
+    \hspace{-.6ex}\protect\raisebox{-.3ex}{\textmd{e}}}%
+  }
+% \OnlyDescription
+% \CodelineIndex
+% \RecordChanges
+\begin{document}
+\DocInput{curve.dtx}
+\end{document}
+%</driver>
+%
+% \fi
+%
+% \catcode`\¡=14
+% \CheckSum{1202}
+%% \CharacterTable
+%%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
+%%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
+%%   Digits        \0\1\2\3\4\5\6\7\8\9
+%%   Exclamation   \!     Double quote  \"     Hash (number) \#
+%%   Dollar        \$     Percent       \%     Ampersand     \&
+%%   Acute accent  \'     Left paren    \(     Right paren   \)
+%%   Asterisk      \*     Plus          \+     Comma         \,
+%%   Minus         \-     Point         \.     Solidus       \/
+%%   Colon         \:     Semicolon     \;     Less than     \<
+%%   Equals        \=     Greater than  \>     Question mark \?
+%%   Commercial at \@     Left bracket  \[     Backslash     \\
+%%   Right bracket \]     Circumflex    \^     Underscore    \_
+%%   Grave accent  \`     Left brace    \{     Vertical bar  \|
+%%   Right brace   \}     Tilde         \~}
+%
+% \newcommand\version{1.15}
+% \newcommand\releasedate{2008/02/25}
+% \newcommand\packagecopyright{Copyright \copyright{} 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008 Didier Verna}
+% \newcommand\auctex{AUC-\TeX}
+% \newcommand\cv{\textsc{CV}}
+% \MakeShortVerb{\|}
+% \date{\today}
+% \title{\curve{} -- a \LaTeXe{} class package for making \textbf{Cur}ricula
+%   \textbf{V}ita\textbf{e}.\thanks{This document describes \curve{} \version,
+%     release date \releasedate.}}
+% \author{Didier Verna\\
+%   \texttt{mailto:didier@lrde.epita.fr}\\
+%   \texttt{http://www.lrde.epita.fr/\~{}didier}}
+% \maketitle
+%
+%
+% \begin{abstract}
+%   \curve{} provides a \LaTeXe{} class that hopefully will make your life
+%   easier when you want to write your \cv. It provides you with a set of
+%   commands to create rubrics, entries in these rubrics etc. \curve{} will
+%   then properly format your \cv{} for you (possibly splitting it onto
+%   multiple pages), which is usually the most painful part of \cv{} writing.
+%   Another nice feature of \curve{} is its ability to manage different \cv{}
+%   ``flavors'' simultaneously. It is in fact often the case that you want to
+%   maintain slightly divergent versions of your \cv{} at the same time, in
+%   order to emphasize on different aspects of your background.\par
+%   The \curve{} package is \packagecopyright{}, and distributed under the
+%   terms of the LPPL license.
+% \end{abstract}
+%
+% \section{Getting \curve}
+% \curve{} can be obtained from any \textsc{ctan} archive, in the
+% \texttt{macros/latex/contrib} subdirectory. You can also download it
+% directly from my website (online documentation available there), at the
+% \textsc{url} above. Please follow the links on the left menu.
+%
+% If you are a Debian unstable user (unstable referring to Debian, not you),
+% unofficial source and i386 packages are available (thanks to Geoffroy
+% Fouquier for providing this facility). The package name is \texttt{curve}.
+% Here's the \texttt{source.list} entry to use:
+% \begin{verbatim}
+% deb http://www.lrde.epita.fr/debian/ unstable/i386/
+% deb-src http://www.lrde.epita.fr/debian/ sid/source/
+% \end{verbatim}
+%
+% For installation instructions, please read the \texttt{README} file included
+% in the distribution.
+%
+% \section{Frequently Asked Questions}
+% If this is your first time with \curve, you might want to skip this section.
+% Otherwise, please read on, especially before asking me by email\ldots
+%
+% \begin{enumerate}
+% \item
+%   \textbf{Is there a way to align entries across several (all) rubrics?}\\
+%   Not automatically because rubrics are typeset as individual tables. There
+%   are many ways to manually ``trick'' too narrow keys in order to enlarge
+%   them however. As of version 1.11, \curve{} provides a new convenience
+%   macro to do something similar: see section \ref{sec:noentry}.
+% \item
+%   \textbf{How can I change the interline spacing?}\\
+%   Internally, \curve{} uses \LaTeX{} tabular-based environments. As such,
+%   you can play with |\arraystretch| to modify the space between rows.
+% \item
+%   \textbf{When a page break occurs in the middle of a rubric, the same
+%     alignment is kept on both pages, which might result in suboptimal
+%     layout.}\\
+%   This is a technical limitation of the automatic alignment computation
+%   process in longtables and I don't think there will be a solution anytime
+%   soon (page breaking is orthogonal to column width calculation). What you
+%   can do, once your CV is finalized, is manually split the concerned rubric
+%   into different ones, starting at the appropriate entries to avoid page
+%   breaking in the middle.
+% \item
+%   \textbf{How can I make multi-line subrubrics?}\\
+%   Here are two ideas:
+%   \begin{itemize}
+%   \item Put your text in several consecutive subrubrics (one per line).
+%     However, this might not give you the desired vertical spacing.
+%   \item Probably better, put your material in a parbox:\\
+%     |\subrubric{\parbox{width}{first blah blah\\next blah blah}}|\\
+%     This is a bit dirty because you have to figure out a suitable width for
+%     your parbox, but this will work.
+%   \end{itemize}
+% \item
+%   \textbf{How can I make multi-line keys?}\\
+%   The trick is to temporarily change the key cell type to a paragraph one
+%   (remember that we're in a tabular environment).
+%   \begin{enumerate}
+%   \item Recover the key formatting by doing something like this near
+%     the beginning of your document:\\
+%     |\makeatletter\let\mykeyfont\@keyfont\makeatother|
+%   \item Use something like this where you need a multi-line key (you will
+%   have to adjust the paragraph width manually):
+% \begin{verbatim}
+% \entry*[\multicolumn{1}{@{}>{\mykeyfont}p{2cm}}{%
+%   long key\newline long key}]
+%   Entry text. Entry text. Entry ...
+% \end{verbatim}
+%   \end{enumerate}
+% \item
+%   \textbf{How to deal with long keys?}\\
+%   The best thing to do is to make them multi-line manually. Please refer to
+%   the previous question.
+% \item
+%   \textbf{Can I change the prefix locally?}\\
+%   Yes and no. The |\prefix| command can only be used in the preamble or
+%   between rubrics. Otherwise, there is currently no way to change the prefix
+%   for a single entry. This limitation will disappear in a future release.
+% \end{enumerate}
+%
+% \section{Overview}
+% The \curve{} package provides you with a document class for writing
+% curricula vitae. The primary purpose of this package is to offer a set of
+% predefined commands to specify the contents of your \cv, while removing from
+% you the burden of formatting it. This has two important consequence however:
+% \curve{} will impose that you conform to its document structuring scheme,
+% and will expect that you like the way it formats things :-). If you prefer
+% another structure for your \cv{}, or if you don't like the formatting
+% (although it is highly configurable), then \curve{} is probably not for
+% you.\par
+% Once you have installed \curve{}, you might want to start with processing
+% the example file \texttt{cv.tex}. This will give you an idea of what a non
+% customized \cv{} looks like with \curve. You can also throw an eye to my
+% own \cv, which is written with \curve{} and has some more fancy hackery on
+% top of it. It's in French, but only the appearance is important for
+% you\ldots My \cv{} can be found at
+% \texttt{http://www.lrde.epita.fr/\~{}didier/perso/cv.php}.
+%
+% \subsection{Document Layout}
+% A \curve{} \cv{} begins with two optional headers (upper left and upper
+% right) in which you usually put your name, address, email, whether you're
+% married and so on. These headers will respectively be left and right aligned.
+% As of version 1.4, \curve{} lets you insert a small identity photo in the
+% headers, either on the left, on the right, or between them. After these
+% headers come an optional title and/or subtitle, which can be centered on
+% the page, or flushed either left or right.
+% \subsubsection{Rubrics}
+% The remaining of the document is composed of sections called ``rubrics'' in
+% the \curve{} terminology. A rubric represents a major topic that you want
+% to detail in your \cv. Typical rubrics are ``Education'', ``Professional
+% Experience'' and the like. Rubrics have a title (centered by default) and
+% appear under the form of properly aligned ``entries'' (see below). If a
+% rubric has to be split across different pages, its title will be repeated
+% automatically.
+% \subsubsection{Entries}
+% An entry is
+% an item of information related to the rubric under which it appears. An
+% entry has a ``contents'', and an optional ``key'' under which it is
+% classified. For instance, under the ``Education'' rubric, you could state
+% that you got a Ph.D. in computer science in the year 2000. In that case, the
+% year would be the entry's key, and the ``Ph.D. in computer science'' part
+% would be the entry's contents. \curve{} aligns both keys and contents
+% together. Keys are optional in order for you to classify several entries
+% together (without repeating the same key over and over again).
+% \subsubsection{Subrubrics}
+% Additionally, you might want to further split your rubrics into
+% ``subrubrics''. For instance, in my own \cv, I have a ``Professional
+% Experience'' rubric, with three subrubrics: ``Teaching'', ``Research'' and
+% ``Development''. This can be accomplished with a special command.
+% Subrubrics are displayed in alignment with the entries' contents by default,
+% but are formatted differently so that they remain distinguishable.
+%
+% \subsection{Document Structure}
+% \subsubsection{Source File Splitting}
+% \curve{} is based on the \texttt{LTXtable} package by David Carlisle. I
+% won't go into gory details, but this has an important implication:
+% \textbf{each rubric must be in its own separate file}. In other words, your
+% \cv's main source file is really a skeleton whose major task is to include
+% the different rubrics from their respective source files.\par
+% This is not much of a hassle, really, and it actually made my life easier
+% when I implemented the ``flavor'' mechanism described below.
+% \subsubsection{The ``flavor'' Mechanism}
+% It is often desirable to maintain several slightly divergent versions of
+% one's \cv{} at the same time. For instance, when I was looking for a job some
+% time ago, I had a version of my \cv{} emphasizing on Artificial Intelligence,
+% and another emphasizing on Distributed Virtual Reality. Only the title and
+% some entries in the ``Professional Experience'' rubric were a bit
+% different; the main skeleton basically remained the same.\par
+% \curve{} provides an easy-to-use mechanism for maintaining different
+% ``flavors'' of your \cv{} at the same time. You basically write different
+% versions of (some of) your rubrics in different files, tell \curve{} which
+% flavor you want to format (\curve{} can even ask you which one to use
+% directly) and that's it. \curve{} will use the global skeleton, and whenever
+% it finds a rubric file specialized for that particular flavor, it will use
+% it. Otherwise, it will simply fall back to the default one (no particular
+% flavor).
+%
+%
+% \section{Using \curve{}}
+% First of all, please note that the \texttt{ltxtable} and \texttt{calc}
+% packages are required. If you're using the identity photo feature, the
+% \texttt{graphicx} package is also needed. You don't have to load them
+% explicitly though. As long as \LaTeXe{} can locate them, they will be used
+% automatically.
+%
+% \subsection{Writing the Skeleton File}
+% Say |\documentclass[|\meta{options}|]{curve}| at the beginning of your
+% skeleton file in order to use \curve. The available options are described
+% along the text, where appropriate.
+%
+% \subsubsection{Making Headers}
+% \DescribeMacro{\leftheader}\DescribeMacro{\rightheader}
+% The |\leftheader| and |\rightheader| macros take one mandatory argument
+% which defines respectively the contents of the upper left and upper right
+% headers. They can be used in the document's preamble only. The headers will
+% respectively be flushed to the left and to the right.
+% \par
+% \DescribeMacro{\photo}
+% If you want to insert a small identity photo into the header part, you can
+% use the |\photo| macro (available since version 1.4). It takes a mandatory
+% argument in which you pass the image file name, as you would to
+% |\includegraphics|. This macro also takes an optional argument which lets
+% you specify the horizontal position of the photo: the values can be
+% \texttt{l} (the default), \texttt{c} or \texttt{r} meaning that the photo
+% will appear on the left, center, or right.
+% \par
+% \DescribeMacro{\photoscale}\DescribeMacro{\photosep}
+% \DescribeMacro{\headerscale}
+% The headers' horizontal layout is further controled by three additional
+% macros. The |\photoscale| macro specifies the amount of text width that the
+% photo should occupy. This should be a number between 0 and 1. By default,
+% 0.1 is used (meaning 10\% of |\textwidth|). The |\photosep| macro is a
+% \LaTeX{} length that specifies the space to leave between the side of the
+% photo and the next headers's text. This is used only when the photo is on
+% the left or right. By default, |10pt| is used. Finally, |\headerscale|
+% specifies the proportion of the \emph{remaining} space that the \emph{left}
+% textual header should occupy. It works like |\photoscale| and amounts to 0.5
+% by default.
+% \par
+% Let me take an example to make this clearer. Suppose you have a |\photoscale|
+% of 0.1 and a |\photosep| of \texttt{10pt}. The \emph{remaining} space, that
+% is, the space occupied by the textual headers, amounts to 90\% of the text
+% width, minus 10 points. If you then specify a |\headerscale| of 0.6, then
+% the left header will take 60\% of that remaining space, and the right one the
+% other 40\%.
+% \par
+% \DescribeMacro{\headerspace}
+% |\headerspace| is the amount of extra vertical space to put after the
+% headers. This is a \LaTeX{} length that defaults to \texttt{10pt}.\par
+% \DescribeMacro{\makeheaders}
+% If you have defined headers, make them appear by calling |\makeheaders| just
+% after the beginning of your document. Note that calling this macro assumes
+% that you have previously defined both headers (possibly empty, though).
+% Otherwise, an error will be signaled. As of version 1.4, the |\makeheaders|
+% command accepts an optional argument that controls the vertical alignment.
+% When given, this argument must be either |t| (for top), |b| (for bottom) or
+% |c| (for center; the default).
+%
+% \subsubsection{Making Titles}
+% \DescribeMacro{\title}\DescribeMacro{\subtitle}
+% The |\title| and |\subtitle| macros take one mandatory argument which
+% define respectively your \cv's title and subtitle. They can be used in
+% the document's preamble only.\par
+% \DescribeMacro{\titlealignment}
+% By default, titles are centered on the page. However, you can also have them
+% aligned to the left or right side of the page. To specify your preferred
+% title alignment, call |\titlealignment| with an argument of either
+% \texttt{l}, \texttt{c} or \texttt{r}, the meaning of which should be
+% obvious. You can also achieve the same effect by passing an optional
+% argument to |\maketitle| (see below).\par
+% \DescribeMacro{\titlespace}
+% |\titlespace| is the amount of extra vertical space to put after the
+% title(s). This is a \LaTeX{} length that defaults to \texttt{0pt}.\par
+% \DescribeMacro{\titlefont}\DescribeMacro{\subtitlefont}
+% The |\titlefont| and |\subtitlefont| macros take one mandatory argument
+% which redefine the fonts to use for the title and the subtitle. They can be
+% used in the document's preamble only. By default, |\Huge\bfseries| and
+% |\Huge\itshape| are used respectively.\par
+% \DescribeMacro{\maketitle}
+% If you have defined a title (and possibly a subtitle), make it (them) appear
+% by calling |\maketitle| after the beginning of your document, and just after
+% |\makeheaders| if you happen use it. It is possible to omit the subtitle,
+% but if you call |\maketitle| without having defined at least a title, an
+% error will be signaled. |\maketitle| accepts an optional argument for
+% specifying the title alignment scheme. This argument is the same as in
+% |\titlealignment|, and takes precedence over it.
+%
+% \subsubsection{Choosing a Flavor}
+% As you already know, each rubric must reside in its own separate file. For
+% instance, if you have a ``Professional Experience'' rubric, you would write
+% its contents into a file named \texttt{experience.tex}. The flavor mechanism
+% works by assigning a pre-extension to rubric file names. For instance,
+% suppose you want to make a special flavor of your \cv{} emphasizing on
+% ``distributed virtual reality''. You would call this flavor ``dvr'', and
+% write the modified ``Professional Experience'' rubric into a file named
+% \texttt{experience.dvr.tex}.\par
+% \DescribeMacro{\flavor}
+% The |\flavor| macro takes one mandatory argument which specifies the flavor
+% to use (in our example, \texttt{dvr}). Although this might be of little use,
+% it is possible to change the flavor anywhere, even right in the middle of
+% your \cv's skeleton.\par
+% \DescribeEnv{ask}
+% Instead of using the |\flavor| macro, you can make \curve{} ask you at
+% run-time which flavor to use by passing the \texttt{ask} option to it.
+%
+% \subsubsection{Including Rubrics}
+% Apart from making headers and titles, the body of your skeleton file will
+% usually contain nothing but directives to include the different rubrics of
+% your \cv.\par
+% \DescribeMacro{\makerubric}
+% To include a rubric in your document, use |\makerubric|. This macro takes
+% one mandatory argument which specifies the rubric to include at that point.
+% The argument actually corresponds to the rubric file name \textbf{without
+% any extension}. Continuing our previous example, you would say
+% |\makerubric{experience}|. First, \curve{} will try to find such a rubric
+% file specific for the current flavor in use, (e.g.
+% \texttt{experience.dvr.tex}). If that fails, it will fall back to a
+% non-flavored file (here, \texttt{experience.tex}). This allows you to
+% specialize only the required rubrics and use the default ones otherwise.\par
+% \DescribeMacro{\rubricafterspace}
+% As of version 1.12, \curve{} provides a new \LaTeX{} length,
+% |\rubricafterspace| controlling the amount of extra vertical space to put
+% after a rubric (hence, before the next one). The default is \texttt{0pt}.
+%
+% \subsection{Writing a Rubric File}
+% \subsubsection{The \texttt{rubric} Environment}
+% \DescribeEnv{rubric}
+% The whole contents of a rubric file must be enclosed in a \texttt{rubric}
+% environment. This environment takes one mandatory argument which specifies
+% the rubric's title. When a rubric crosses several pages, its title is
+% restated with a ``continuation'' text appended.\par
+% \DescribeMacro{\rubricalignment}
+% As of version 1.6, the rubric titles horizontal alignment can be changed
+% thanks to the |\rubricalignment| macro. Possible values for its mandatory
+% argument are |l|, |c| and |r| (meaning left, centered, or right relative to
+% the whole text width), and |cl| and |cc| (meaning left or centered relative
+% to the entries'contents). By default, rubric titles are centered (|c|).\par
+% \DescribeMacro{\rubricfont}
+% The |\rubricfont| macro takes one mandatory argument which redefines the
+% font to use for rubric titles. By default, |\Large\bfseries| is used.\par
+% \DescribeMacro{\rubricspace}
+% |\rubricspace| is the amount of extra vertical space to put after the rubric
+% title. This is a \LaTeX{} length that defaults to \texttt{10pt}.
+%
+% \subsubsection{Making Rubric Entries}
+% \DescribeMacro{\entry}
+% You create entries in your rubrics by calling the |\entry| macro. The first
+% (optional) argument specifies the key, and the second (mandatory) one
+% specifies the contents. Both keys and contents are aligned within each
+% rubric.\par
+% \DescribeMacro{\entry*}
+% Actually, the |\entry| macro was somewhat ill-designed at the first place.
+% The |rubric| environment pretty much behaves as an |itemize| one, hence the
+% idea of using an |\item|-like syntax. As of version 1.2, \curve{} provides
+% an |\entry*| macro which behaves like |\item| in lists: it takes the same
+% first optional argument as the non starred version, but has no other
+% argument. The entry's contents simply consists of the text following the
+% macro call, up to the next |\entry|, |\entry*| or |\subrubric| (see
+% below) call.\par
+% \DescribeMacro{\keyalignment}
+% As of version 1.7, entries'keys horizontal alignment can be changed thanks
+% to the |\keyalignment| macro. Possible values for its mandatory argument are
+% |l|, |c| and |r| (meaning left, centered, or right). By default, keys are
+% left aligned (|l|).\par
+% \DescribeMacro{\keyfont}
+% The |\keyfont| macro takes one mandatory argument which redefines the font
+% to use for the entries' keys. By default, the standard document font is
+% used.\par
+% \DescribeMacro{\prefix}
+% Each entry's contents can be prefixed with a visual clue (a symbol for
+% instance). This comes in handy to make a clear distinction between
+% different entries sharing the same key (which is not repeated). The
+% |\prefix| macro takes one mandatory argument which redefines the prefix to
+% use. By default, |\textbullet| is used. Note that as of version 1.11,
+% \curve{} forces the prefix to be empty in bibliographic entries (see section
+% \ref{sec:biblio}).\par
+% \DescribeEnv{skipsamekey}
+% While maintaining your CV, you might end up reorganizing your entries and
+% even get entries with the same key. Normally, \curve{} blindly prints the
+% keys regardless of their values. If you don't want repetition, you would
+% have to remove keys by hand which can be cumbersome. As of version 1.10,
+% \curve{} can skip all but the first of a series of identical keys
+% automatically, provided that you use the |skipsamekey| option. Note that as
+% of version 1.11, \curve{} disables this mechanism in bibliography rubrics
+% (see section \ref{sec:biblio}).\par
+%
+% \subsubsection{Making ``invisible'' entries\label{sec:noentry}}
+% The most frequently asked question about \curve{} is probably whether it is
+% possible to align entries across several rubrics. This is (currently) not
+% possible automatically because rubrics are typeset as independant tables.
+% However, a manual solution boils down to enlarging too narrow entries (keys,
+% actually).\par
+% \DescribeMacro{\noentry}
+% As of version 1.11, \curve{} provides a convenience macro to ease
+% this process: |\noentry|. This macro takes one mandatory argument; a key
+% that will be used in the entries alignment calculation. However, this
+% command will not produce any text.\par
+% So if you want all your rubrics to share the same alignment, you typically
+% spot the longest key in your CV, and issue a |\noentry{this long key}| in all
+% other rubrics.
+%
+% \subsubsection{Making Subrubrics}
+% \DescribeMacro{\subrubric}
+% Within a single rubric, you can further separate entries into subrubrics.
+% In order to do this, the |\subrubric| macro is provided. Its mandatory
+% argument specifies the subrubric's title.\par
+% \DescribeMacro{\subrubricalignment}
+% As of version 1.6, the subrubrics horizontal alignment can be changed thanks
+% to the |\subrubricalignment| macro. Possible values for its mandatory
+% argument are |l|, |c| and |r| (meaning left, centered, or right relative to
+% the whole text width), and |cl| and |cc| (meaning left or centered relative
+% to the entries'contents). By default, subrubrics are left-aligned with the
+% entries' contents (|cl|).\par
+% \DescribeMacro{\subrubricfont}
+% The |\subrubricfont| macro takes one mandatory argument which redefines the
+% font to use for the subrubrics. By default, |\Large\itshape| is used.\par
+% \DescribeMacro{\subrubricspace}
+% \DescribeMacro{\subrubricbeforespace}
+% |\subrubricspace| controls the amount of extra vertical space to put after
+% subrubrics. This is a \LaTeX{} length that defaults to \texttt{5pt}.
+% |\subrubricbeforespace| controls the amount of extra vertical space to put
+% \textit{before} a subrubric when there are entries above. This is a \LaTeX{}
+% length that defaults to \texttt{20pt}.
+%
+% \subsection{Bibliography\label{sec:biblio}}
+% Most scientists include their own list of publications in their \cv, so
+% \curve{} has support for different forms of bibliography.
+% \subsubsection{Manual bibliography}
+% The first thing you can do is create your own bibliography manually (I mean,
+% just like an ordinary rubric), and although this may appear boring, I
+% actually encourage people to do so for at least three reasons (only my
+% opinion of course):
+% \begin{itemize}
+% \item A \cv{} should be strictly formatted and coherent in layout.
+% Bibliography is no exception to this rule. In other words, it is prettier to
+% have your publications formatted like the rest of your \cv.
+% \item Automatic bibliography generation tools produce references, which is
+% silly in a \cv{} because you don't actually reference your papers anywhere
+% (or do you?). So better to sort them another way, like, by year of
+% publication as I do in my own \cv.
+% \item Manually adding, like, what? Half a dozen papers a year in your
+% \cv{} is not that much of a burden after all.
+% \end{itemize}
+% \subsubsection{The \texttt{bibliography} environment}
+% Some people however have expressed the wish of having standard bibliography
+% support in \curve. Version 1.2 provides that.
+% \DescribeEnv{thebibliography}
+% \DescribeMacro{\bibitem}
+% The standard |thebibliography| environment is now supported along with its
+% |\bibitem| companion. The behavior is actually that of a |rubric|
+% environment with its |\entry*| companion (with an empty prefix however).
+% This fact has two implications: firstly, the argument to the environment is
+% unused in \curve{} (but remains for compatibility with the rest of \LaTeX)
+% because \curve{} itself formats the keys and contents properly aligned.
+% Secondly, the bibliographic environment \textbf{must} reside in its own
+% file, as any other rubric. Don't forget that if you happen to write the
+% environment manually.\par
+% \DescribeEnv{revbib}
+% As of version 1.14, it is possible to count bibliographic items in a reverse
+% order, which comes in handy when you display your publications from the most
+% recent to the oldest one. The \texttt{revbib} option triggers this behavior.
+% Note that this also works when you use \BibTeX{} (see below).
+% \subsubsection{\BibTeX}
+% \DescribeMacro{\nocite}
+% \DescribeMacro{\bibliographystyle}
+% \DescribeMacro{\bibliography}
+% If you want to use \BibTeX, that's also possible of course. Do it as you
+% would do in a random paper. You will probably issue a |\nocite{*}| command
+% followed by a call to |\bibliography|. In \curve, this uses the |bbl| file
+% as a rubric one.\par
+% \subsubsection{Compatibility concerns}
+% As of version 1.9, \curve{} is compatible with the |bibentry| package. Note
+% however that there is an incompatibility between |bibentry| and |hyperref|,
+% and a workaround described in the |hyperref| README file.
+%
+% As of version 1.12, \curve{} is compatible with the |multibbl| package.
+%
+% \subsection{Standard Class Features}
+%
+% \subsubsection{Page Size and layout}
+% \DescribeEnv{a4paper}
+% \DescribeEnv{a5paper}
+% \DescribeEnv{b4paper}
+% \DescribeEnv{letterpaper}
+% \DescribeEnv{legalpaper}
+% \DescribeEnv{executivepaper}
+% \DescribeEnv{landscape}
+% The \texttt{a4}, \texttt{a5}, \texttt{b4}, \texttt{letter}, \texttt{legal}
+% and \texttt{executive}  ``paper'' options allow you to select the type of
+% page format you want. By default, \texttt{letterpaper} is used. The
+% \texttt{landscape} options switches the horizontal and vertical settings.
+% I'm not sure why I propose this option. Nobody wants to write a \cv{} in
+% landscape mode, right?\par
+%
+% \DescribeEnv{oneside}
+% \DescribeEnv{twoside}
+% As of version 1.6, \curve{} also supports the standard \texttt{oneside} and
+% \texttt{twoside} class options. By default, \texttt{oneside} is used. In
+% \texttt{twoside} mode, odd and even pages have a different geometry and
+% headings layout.
+%
+% \subsubsection{Font Size}
+% \DescribeEnv{10pt}
+% \DescribeEnv{11pt}
+% \DescribeEnv{12pt}
+% The \texttt{10pt}, \texttt{11pt} and \texttt{12pt} options let you choose
+% the size of the default font you want to use. By default, \texttt{10pt} is
+% used.
+%
+% \subsubsection{Output Mode}
+% \DescribeEnv{final}
+% \DescribeEnv{draft}
+% In \texttt{draft} mode, a black rule will be drawn at the end of overfull
+% lines (as done by standard classes). Due to \curve{} using the
+% \texttt{LTXtable} package (and in case \texttt{longtable} prior to version 4
+% is used by it), a call to |\setlongtables| is performed in \texttt{final}
+% mode. Please refer to the next section for more information on this. By
+% default, \texttt{final} is used.
+%
+% \subsubsection{Page styles}
+% As of version 1.6, \curve{} supports the standard \LaTeX{} page style
+% mechanism. Available styles are \texttt{empty}, \texttt{plain},
+% \texttt{headings} and \texttt{myheadings}. These styles have their usual
+% meaning, given that rubric and subrubric names are used for marking purpose
+% (the equivalent of chapters and sections in books for instance).
+% By default, the page style is \texttt{empty}.
+%
+% \subsubsection{Internationalization}
+% \curve{} currently supports 12 languages via the following options:
+% \texttt{english}, \texttt{french} (or \texttt{francais}), \texttt{spanish},
+% \texttt{portuguese} (or \texttt{portuges}), \texttt{brazilian} (or
+% \texttt{brazil}), \texttt{italian}, \texttt{german}, \texttt{ngerman},
+% \texttt{dutch}, \texttt{danish}, \texttt{swedish} and \texttt{polish}. The
+% \texttt{german} and \texttt{ngerman} options are currently equivalent; so
+% are the \texttt{portuguese} and \texttt{brazilian} ones.\par
+% If you want a finer grain on the language-dependent parts of \curve, the
+% following macros are provided.\par
+% \DescribeMacro{\continuedname}
+% The |\continuedname| macro takes one mandatory argument which redefines the
+% continuation text output when rubrics extend across several pages. By
+% default, ``\meta{space}(continued)'' is used in English. Although this might
+% be of little use, it is possible to change the continuation text in the
+% middle of your document, provided that you do so outside the |rubric|
+% environment.\par
+% \DescribeMacro{\listpubname}
+% The |\listpubname| macro takes one mandatory argument which redefines the
+% title of the bibliographic section (when you use the provided bibliography
+% support). By default, ``List of Publications'' is used in English. Note that
+% for compatibility with the |multibbl| and |multibib| packages, \curve{}
+% honors the existence of |\bibname| or |\refname| macros prior to
+% |\listpubname| for deciding which title to give to the bibliographic rubric.
+%
+%
+% \section{Hints, Tricks, Tips}
+% Here are some tips that I use for my own \cv. You might find them of some
+% interest.\par
+%
+% \subsection{Page Geometry}
+% First of all, it is common to have very thin margins in curricula vitae.
+% \curve{} does not do anything special about this because I don't think that
+% belongs to its duty. The \texttt{geometry} package comes in handy if you
+% want to reduce your margins.
+%
+% \subsection{Vertical spacing}
+% Although they might look a bit like itemize environments, \curve{} rubrics
+% are implemented with tables. This has an important consequence: empty lines
+% in rubrics do affect the vertical spacing of your document (at least for the
+% time being).
+%
+% You might be tempted to leave such empty lines here and there for
+% readability, or for this precise effect it has on vertical spacing, but I
+% advise you against this. Better to stick entries and subrubrics together,
+% and play with the spacing commands to achieve the desired layout. This will
+% ensure a more consistent layout with future versions of \curve.
+%
+% If you are using \BibTeX{}, you should also be aware of the fact that some
+% \BibTeX{} styles output empty lines between |\bibitem|'s, and this has an
+% unfortunate influence on vertical spacing for the same technical reason. If
+% this vertical space annoys you, what you can do is modify the \BibTeX{}
+% style in order to avoid the production of these empty lines. For instance,
+% in |plain.bst|, this simply boils down to removing the call to |newline$| at
+% the beginning of the |output.bibitem| function.
+%
+% \subsection{The \texttt{ltx} Extension}
+% Personally, I prefer to keep \texttt{.tex} for \TeX{} files, and use the
+% \texttt{ltx} extension for \LaTeX. This is supported by \curve{} which will
+% actually prefer \texttt{ltx} files over \texttt{tex} ones, especially when
+% including rubrics. To be more precise, suppose you are building a flavor
+% \texttt{flv} of your \cv. A call to |\makerubric{foo}| will try to use the
+% following files in that order:\\
+% \texttt{foo.flv.ltx}\\
+% \texttt{foo.flv.tex}\\
+% \texttt{foo.ltx}\\
+% \texttt{foo.tex}\par
+%
+% \subsection{Longtable}
+% \curve{} users should be aware of the fact that the layout implementation is
+% based on the \texttt{LTXtable} package, which in turn is a mix of
+% \texttt{tabularx} and \texttt{longtable}. This has several implications,
+% most notably that when writing a rubric, you are actually inside a tabular
+% environment. Here are some things to keep in mind:
+% \begin{itemize}
+% \item You are not allowed to use the |\\| command to start a new line.
+%   However, you're free to use |\par| in your entries'contents instead. Note
+%   that \curve{} sets |\parskip| to |0pt| so that starting a new paragraph
+%   looks like just starting a new line.
+% \item You can use |\raggedright| and |\raggedleft| in your entries.
+% \item You can use |\pagebreak|, |\nopagebreak| and |\newpage| at the
+%   beginning of a line, just before starting a new entry.
+% \item Prior to version 4, \texttt{longtable} used an alignment mechanism
+%   involving calls to |\setlongtables| (see its documentation). \curve{}
+%   retains this for backward compatibility and still calls |\setlongtables|
+%   in final (not draft) mode. If your version of \texttt{longtable} is recent
+%   enough, you shouldn't be concerned by this. If it is older, you might need
+%   to process your document a few times in draft mode, and then one last time
+%   in final mode. However, keep in mind that in both cases, you might still
+%   need up to 3 or 4 passes of \LaTeX{} on your document.
+% \end{itemize}
+%
+% \subsection{Managing Different Flavors}
+% If you maintain different flavors of your \cv{} at the same time, you
+% probably want to rebuild all of them after any modification. Since you have
+% a single skeleton file for all of them (say, \texttt{cv.tex}), the output
+% file will have the same name for all flavors (say, \texttt{cv.dvi}). This
+% can bother you if you want all flavors of your formatted \cv{} available at
+% the same time.\par
+% To remedy this problem, I usually use the \texttt{ask} option and a
+% makefile to build the different flavors and move the output file to
+% flavor-specific name. Here is a typical makefile target that should clarify
+% (or maybe darken?) what I am saying:
+% \begin{verbatim}
+%cv.$(FLAVOR).dvi: cv.ltx $(RUBRICS)
+%       echo $(FLAVOR) | latex cv.ltx
+%       mv cv.dvi $@
+% \end{verbatim}
+% As you can see, the shell is responsible for answering the question.
+%
+% \subsection{More On Flavors}
+% In order to implement the flavor mechanism, the \LaTeX{} macro |\input| has
+% been redefined to look for ``flavored'' files first. This is actually very
+% nice because you can use it if you want to make different flavors of text
+% that does not belong in rubrics.\par
+% For instance, suppose you want a special version of the subtitle of your
+% \cv{} for the flavor \texttt{flv}. Create a file called
+% \texttt{subtitle.flv.ltx} and put something like
+% ``|\subtitle{special subtitle}|'' in it. Do something similar for the
+% default subtitle. Now go to the skeleton of your \cv, and write
+% |\input{subtitle}| in the preamble. That's it. You'll have different
+% subtitles in your different \cv{} flavors.
+%
+%
+% \section{\auctex{} support}
+% \auctex{} is a powerful major mode for editing \TeX{} documents in
+% \textsf{Emacs} or \textsf{XEmacs}. In particular, it provides automatic
+% completion of macro names once they are known. \curve{} supports \auctex{}
+% by providing a style file named \texttt{curve.el} which contains \auctex{}
+% definitions for the relevant macros. This file should be installed to a
+% location where \auctex{} can find it (usually in a subdirectory of your
+% \LaTeX{} styles directory). Please refer to the \auctex{} documentation for
+% more information on this.\par
+% As of version 1.2, \curve{} has an improved \auctex{} support. Most notably,
+% the command |M-Ret| will insert an |\entry*| macro within a |rubric|
+% environment. Also, the |\makerubric| macro handling now removes both the
+% file extension and the file flavor extension.
+%
+%
+% \section{Changes}
+% \begin{itemize}
+% \item[v1.15] Support for itemize environments, suggested by Mirko Hessel-von
+%   Molo\\
+%   Added some documentation about vertical spacing problems in |bbl| files,
+%   suggested by Seweryn Habdank-Wojew\'odzki
+% \item[v1.14] Support for reverse counting bibliographic entries, suggested
+%   by Joseph Wright\\
+%   Support for Polish thanks to Radek Dominiak\\
+%   |<radoslaw.dominiak@gmail.com>|
+% \item[v1.13] Support for title alignment, suggested by Lars Kasper\\
+%   Support for footnotes, suggested by Alain Coletta\\
+%   Let rubrics honor the current |\linewidth|\\
+%   Changed default value of |\subrubricbeforespace| to \texttt{20pt}\\
+%   Fix some overfull boxes, reported by Nico Schl\"olmer\\
+%   FAQ and documentation update
+% \item[v1.12] Support for Swedish thanks to Konrad Skeri Persson\\
+%   |<konrad@skeri.com>|\\
+%   New customizable length |\rubricafterspace| defining the space between
+%   each rubric\\
+%   Fix incompatibilities with the |multibbl| package.\\
+%   Honor bibliography titles (if) provided by |multibib| or |multibbl|\\
+%   New command |\today|\\
+%   FAQ update\\
+%   Fix implementation of \texttt{skipsamekey} option
+% \item[v1.11] New FAQ section in the documentation\\
+%   New command |\noentry| to manually enlarge too narrow rubrics\\
+%   Make |\pagebreak|, |\nopagebreak| and |\newpage| work in rubrics,
+%   suggested by Alexandre Duret-Lutz\\
+%   Fix spurious right margin spaces\\
+%   Fix usage of the bib counter, disable |skipsamekey| and the prefix in
+%   bibliographic entries
+% \item[v1.10] Support automatic skipping of identical keys, suggested by Akim
+%   Demaille\\
+%   Fix alignment problem with empty prefix, reported by Jonas Haulin
+% \item[v1.9] Fix incompatibilities with the |bibentry| package, reported by
+%   Joris Desmet\\
+%   Fix standard bibliography support (broken in v1.8)
+% \item[v1.8] Prevent page breaks after subrubric headings
+% \item[v1.7] Support for key horizontal alignment\\
+%   |\raggedleft| and |\raggedright| can now be used within individual
+%   entries\\
+%   Fix typo in Danish version of |\continuedname|
+% \item[v1.6] Support for rubric and subrubric titles horizontal alignment\\
+%   Support for standard \LaTeX{} page style mechanism\\
+%   Support for \texttt{oneside} and \texttt{twoside} options\\
+%   Support for Portuguese thanks to Adiel Mittmann |<adiel@inf.ufsc.br>|\\
+%   Fix bug in |\bibliography|: protect against non existant files, reported
+%   by Andrew Comport\\
+%   Fix conflict with \texttt{hyperref} in some bibliography definitions
+% \item[v1.5] Support for Dutch thanks to Thomas Delaet\\
+%   |<Thomas.Delaet@student.kuleuven.ac.be>|\\
+%   Fix typo in rubric environment, reported by Torsten Liesk
+% \item[v1.4] Support for photo inclusion\\
+%   Support for headers horizontal scaling\\
+%   Optional argument to |\makeheaders| for vertical alignment,
+%   suggested by Dan Luecking
+% \item[v1.3] Support for Danish thanks to Kim Rud Bille
+%   |<krbi01@control.auc.dk>|
+% \item[v1.2] Support for standard bibliography mechanism(s)\\
+%   New macro |\entry*|\\
+%   Improvements in \auctex{} support\\
+%   Support for German thanks to Harald Harders |<h.harders@tu-bs.de>|\\
+%   Support for Spanish thanks to Agust\'in Mart\'in |<agusmba@terra.es>|
+% \item[v1.1] Support for Italian thanks to Riccardo Murri
+%   |<murri@phc.unipi.it>|
+% \end{itemize}
+%
+%
+% \StopEventually{\par Well, I think that's it. Enjoy using \curve{}!
+%   \vfill\hfill\small\packagecopyright{}.}
+%
+%
+% \section{The Code}
+% First, the class announcement and the initial requirements:
+%    \begin{macrocode}
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesClass{curve}[2008/02/25 v1.15
+                      Curriculum Vitae class for LaTeX2e]
+
+\RequirePackage{ltxtable}
+\RequirePackage{ifthen}
+\RequirePackage{calc}
+
+%    \end{macrocode}
+%
+% \subsection{The Rubric File}
+% We don't want to output an extra |subrubricbeforespace| if no entry is
+% present before the subrubric. This is done by using an |\@beforespace|
+% command which is set to |0pt| at the beginning of each rubric, and switched
+% to the proper value when an entry is added.\par
+% The |@nextentry| command is used to implement |\entry*| while maintaining
+% backward compatibility with |\entry| and |\subrubric|. A new entry or
+% a subrubric might have to close the preceding entry if it was opened using
+% the starred form.
+%    \begin{macrocode}
+\gdef\@nextentry{}
+
+%    \end{macrocode}
+% \subsubsection{Entries}
+% \DescribeMacro{\keyfont}
+%    \begin{macrocode}
+\def\@keyfont{}
+\newcommand\keyfont[1]{\gdef\@keyfont{#1}}
+
+%    \end{macrocode}
+% \DescribeMacro{\keyalignment}
+%    \begin{macrocode}
+\newcolumntype{k}{>{\@keyfont}l}
+\newcommand\keyalignment[1]{%
+  \ifthenelse{\equal{#1}{l}}{}{%
+    \ifthenelse{\equal{#1}{r}}{}{%
+      \ifthenelse{\equal{#1}{c}}{}{%
+        \ClassError{curve}{Invalid key alignment}{%
+          You have called \protect\keyalignment\space with an invalid value.%
+          \MessageBreak
+          Valid options include l, c, and r.\MessageBreak
+          Type X <return> to quit, fix the typo, and rerun LaTeX.}}}}%
+  \newcolumntype{k}{>{\@keyfont}#1}}
+
+%    \end{macrocode}
+% \DescribeMacro{\prefix}
+%    \begin{macrocode}
+\def\@prefix{\textbullet}
+\newcommand\prefix[1]{\gdef\@prefix{#1}}
+
+%    \end{macrocode}
+% \DescribeMacro{\entry}
+% As of version 1.10, \curve{} can skip keys identical to the previous one, if
+% the option |skipsamekey| is used.
+%    \begin{macrocode}
+\def\@maybekey#1{%
+  \def\@newkey{#1}%
+  \ifx\@previouskey\@newkey\gdef\@@key{}\else%
+    \gdef\@@key{#1}\gdef\@previouskey{#1}%
+  \fi}
+
+\def\@alwayskey#1{%
+  \gdef\@@key{#1}}
+
+\let\@key\@alwayskey
+\DeclareOption{skipsamekey}{\let\@key\@maybekey}
+
+\newcommand\@entry[2][]{%
+  \gdef\@nextentry{}\@key{#1}%
+  \egroup% end of \noalign opened in \entry.
+  \@@key&\@prefix&#2\\\par}
+
+\newcommand\@sentry[1][]{%
+  \gdef\@nextentry{\\\par}\@key{#1}%
+  \egroup% end of \noalign opened in \entry.
+  \@@key&\@prefix&}
+
+\newcommand\entry{%
+  \@nextentry
+  \noalign\bgroup\gdef\@beforespace{\subrubricbeforespace}%
+  \@ifstar{\@sentry}{\@entry}}
+
+%    \end{macrocode}
+% \DescribeMacro{\noentry}
+% This macro is a wrapper around |\kill| to manually adjust too narrow rubrics.
+%    \begin{macrocode}
+\newcommand\noentry[1]{\@nextentry
+  \noalign{\gdef\@nextentry{}}#1&&\kill}
+
+%    \end{macrocode}
+%
+% \subsubsection{Subrubrics}
+% \DescribeMacro{\subrubricfont}
+% \DescribeMacro{\subrubricbeforespace}
+% \DescribeMacro{\subrubricspace}
+%    \begin{macrocode}
+\def\@subrubricfont{\Large\itshape}
+\newcommand\subrubricfont[1]{\gdef\@subrubricfont{#1}}
+
+\newlength\subrubricbeforespace
+\setlength\subrubricbeforespace{20pt}
+
+\newlength\subrubricspace
+\setlength\subrubricspace{5pt}
+
+%    \end{macrocode}
+% \DescribeMacro{\subrubricalignment}
+% \DescribeMacro{\subrubric}
+% Note that |\@subrubricmark| is called outside the raisebox. That's because
+% otherwise, the mark would not go to the toplevel page vertical box, and
+% \TeX{} would not notice it.
+%    \begin{macrocode}
+\let\@subrubricmark\@gobble
+
+\def\@@subrubric#1{%
+  \rule{0bp}{\@beforespace}
+  {\@subrubricfont#1}
+  \@subrubricmark{#1}}
+
+%    \end{macrocode}
+% The normal intercolumn space between the prefix and the entry's content is
+% replaced with an unbreakable space. This causes a problem (fixed in version
+% 1.10) with the [sub]rubric alignments cl and cc when the prefix is empty,
+% because the unbreakable space in question slightly shifts the entry's
+% content to the right. If we want a proper alignment, we then have to take
+% this offset into account in the cl and cc multicolumns, for both rubrics and
+% subrubrics. The following macro implements this:
+%    \begin{macrocode}
+
+\def\@clcccolsep{\hspace{\tabcolsep}\ifx\@prefix\@empty~\fi}
+
+\def\@subrubric@l#1{\multicolumn{3}{@{}l@{}}{\@@subrubric{#1}}}
+\def\@subrubric@c#1{\multicolumn{3}{@{}c@{}}{\@@subrubric{#1}}}
+\def\@subrubric@r#1{\multicolumn{3}{@{}r@{}}{\@@subrubric{#1}}}
+\def\@subrubric@cl#1{&\multicolumn{2}{@{\@clcccolsep}l@{}}{\@@subrubric{#1}}}
+\def\@subrubric@cc#1{&\multicolumn{2}{@{\@clcccolsep}c@{}}{\@@subrubric{#1}}}
+
+\let\@subrubric\@subrubric@cl
+
+\newcommand\subrubricalignment[1]{%
+  \def\@curve@temp@a{\let\@subrubric}
+  \expandafter\@curve@temp@a\csname @subrubric@#1\endcsname
+  \@ifundefined{@subrubric}{%
+    \ClassError{curve}{Invalid subrubric alignment}{%
+      You have called \protect\subrubricalignment\space with an invalid value.%
+      \MessageBreak
+      Valid options include l, c, r, cl and cc.\MessageBreak
+      Type X <return> to quit, fix the typo, and rerun LaTeX.}}
+}
+
+\newcommand\subrubric[1]{%
+  \@nextentry
+  \noalign{\gdef\@nextentry{}}%
+  \@subrubric{#1}\\*[\subrubricspace]\par}
+
+%    \end{macrocode}
+% \subsubsection{Rubrics}
+% The |\@almosttextwidth| length remains only for backward compatibility. It
+% is not used anymore.
+% \DescribeMacro{\rubricfont}
+% \DescribeMacro{\rubricspace}
+%    \begin{macrocode}
+\newlength{\@almosttextwidth}
+\AtBeginDocument{\setlength\@almosttextwidth{\textwidth-\hfuzz}}
+
+\def\@rubricfont{\Large\bfseries}
+\newcommand\rubricfont[1]{\gdef\@rubricfont{#1}}
+
+\newlength\rubricspace
+\setlength\rubricspace{10pt}
+
+%    \end{macrocode}
+% \DescribeMacro{\rubricalignment}
+%    \begin{macrocode}
+\def\@@rubrichead#1{\@rubricfont#1}
+
+\def\@rubrichead@l#1{\multicolumn{3}{@{}l@{}}{\@@rubrichead{#1}}}
+\def\@rubrichead@c#1{\multicolumn{3}{@{}c@{}}{\@@rubrichead{#1}}}
+\def\@rubrichead@r#1{\multicolumn{3}{@{}r@{}}{\@@rubrichead{#1}}}
+\def\@rubrichead@cl#1{&\multicolumn{2}{@{\@clcccolsep}l@{}}{\@@rubrichead{#1}}}
+\def\@rubrichead@cc#1{&\multicolumn{2}{@{\@clcccolsep}c@{}}{\@@rubrichead{#1}}}
+
+\let\@rubrichead\@rubrichead@c
+
+\newcommand\rubricalignment[1]{%
+  \def\@curve@temp@a{\let\@rubrichead}
+  \expandafter\@curve@temp@a\csname @rubrichead@#1\endcsname
+  \@ifundefined{@rubrichead}{%
+    \ClassError{curve}{Invalid rubric alignment}{%
+      You have called \protect\rubricalignment\space with an invalid value.%
+      \MessageBreak
+      Valid options include l, c, r, cl and cc.\MessageBreak
+      Type X <return> to quit, fix the typo, and rerun LaTeX.}}
+}
+
+%    \end{macrocode}
+% \DescribeMacro{\rubricafterspace}
+%    \begin{macrocode}
+\newlength\rubricafterspace
+\setlength\rubricafterspace{0pt}
+
+%    \end{macrocode}
+% \DescribeEnv{rubric}
+% Marking commands don't seem to work in longtable headings. So the rubric
+% mark is issued just after it.\par
+% As of version 1.7, |\raggedleft| and |\raggedright| are redefined in order
+% to work within individual entries. This redefinition simply consists in
+% removing the |\\| definition since it's not available anyway, and also to
+% remove the |\parskip| setting since it's |Opt| in the whole class.
+%    \begin{macrocode}
+\let\@rubricmark\@gobble
+
+\newenvironment{rubric}[1]{%
+  %% \begin{rubric}
+  \def\raggedright{%
+    \@rightskip\@flushglue\rightskip\@rightskip\leftskip\z@skip}%
+  \def\raggedleft{%
+    \rightskip\z@skip\leftskip\@flushglue\parfillskip\z@skip}%
+  \gdef\@beforespace{0pt}%
+  \gdef\@nextentry{}%
+  \gdef\@previouskey{}%
+  \global\let\old@newpage\newpage%
+  \global\let\old@pagebreak\pagebreak%
+  \global\let\old@nopagebreak\nopagebreak
+  \begin{longtable}{@{}kl@{~}X@{}}
+    \@rubrichead{#1}\\*[\rubricspace]
+    \endfirsthead
+    \@rubrichead{#1\@continuedname}\\*[\rubricspace]
+    \endhead
+    \noalign{\@rubricmark{#1}%
+      \global\let\in@newpage\newpage%
+      \global\let\in@pagebreak\pagebreak%
+      \global\let\in@nopagebreak\nopagebreak%
+      \gdef\newpage{\@nextentry\noalign{\gdef\@nextentry{}}\in@newpage}
+      \gdef\pagebreak{\@nextentry\noalign{\gdef\@nextentry{}}\in@pagebreak}
+      \gdef\nopagebreak{\@nextentry\noalign{\gdef\@nextentry{}}\in@nopagebreak}}}{%
+    %% \end{rubric}
+    \@nextentry
+  \end{longtable}\par\vspace\rubricafterspace
+  \global\let\newpage\old@newpage%
+  \global\let\pagebreak\old@pagebreak%
+  \global\let\nopagebreak\old@nopagebreak}
+
+%    \end{macrocode}
+% \DescribeMacro{\continuedname}
+%    \begin{macrocode}
+\newcommand\continuedname[1]{\gdef\@continuedname{#1}}
+
+%    \end{macrocode}
+%
+% \subsection{The Skeleton File}
+%
+% \subsubsection{Utilities}
+% \DescribeMacro{\today}
+%    \begin{macrocode}
+\def\today{\ifcase\month\or
+  January\or February\or March\or April\or May\or June\or
+  July\or August\or September\or October\or November\or December\fi
+  \space\number\day, \number\year}
+
+%    \end{macrocode}
+% \subsubsection{Headers}
+% \DescribeMacro{\headerscale}
+% \DescribeMacro{\headerspace}
+%    \begin{macrocode}
+\def\header@scale{.5}
+\newcommand\headerscale[1]{\gdef\header@scale{#1}}
+\@onlypreamble\headerscale
+
+\newlength\headerspace
+\setlength\headerspace{10pt}
+
+%    \end{macrocode}
+% \DescribeMacro{\leftheader}
+% \DescribeMacro{\rightheader}
+% If the user calls |\makeheaders| without specifying headers first, an error
+% will be generated. The same applies for the title (not the subtitle), but
+% this is already managed by \LaTeX{} itself.
+%    \begin{macrocode}
+\def\@leftheader{%
+  \ClassError{curve}{No \protect\leftheader\space given}{%
+    You have called \protect\makeheaders, %
+    but you didn't provide a left header.\MessageBreak
+    Type X <return> to quit, add a call to \protect\lefheader\space %
+    in the preamble of your CV,\MessageBreak
+    and rerun LaTeX.}}
+\newcommand\leftheader[1]{\gdef\@leftheader{#1}}
+\@onlypreamble\leftheader
+
+\def\@rightheader{%
+  \ClassError{curve}{No \protect\rightheader\space given}{%
+    You have called \protect\makeheaders, %
+    but you didn't provide a right header.\MessageBreak
+    Type X <return> to quit, add a call to \protect\rightheader\space %
+    in the preamble of your CV,\MessageBreak
+    and rerun LaTeX.}}
+\newcommand\rightheader[1]{\gdef\@rightheader{#1}}
+\@onlypreamble\rightheader
+
+%    \end{macrocode}
+% \DescribeMacro{\photoscale}
+% \DescribeMacro{\photosep}
+% \DescribeMacro{\photo}
+%    \begin{macrocode}
+\def\photo@scale{.1}
+\newcommand\photoscale[1]{\gdef\photo@scale{#1}}
+\@onlypreamble\photoscale
+
+\newlength\photosep
+\setlength\photosep{10pt}
+
+\newcommand\photo[2][l]{%
+  \RequirePackage{graphicx}
+  \ifthenelse{\equal{#1}{l}}{}{%
+    \ifthenelse{\equal{#1}{r}}{}{%
+      \ifthenelse{\equal{#1}{c}}{}{%
+        \ClassError{curve}{Invalid argument to \protect\photo}{%
+          Argument 2 of \protect\photo must be `l', `r' or `c'.}}}}%
+  \def\tmp@cmd{\global\let\makeheaders@}
+  \expandafter\tmp@cmd\csname makeheaders@#1\endcsname
+  \gdef\photo@file{#2}}
+\@onlypreamble\photo
+
+%    \end{macrocode}
+% \DescribeMacro{\makeheaders}
+% These different versions of the photo inclusion command exist for proper
+% alignment of the picture itself with the left and right headers.
+%    \begin{macrocode}
+\newlength\photo@width
+
+\def\includephoto@t{%
+  \raisebox{.7\baselineskip-\height}{%
+    \includegraphics[width=\photo@width]{\photo@file}}}
+
+\def\includephoto@c{%
+  \raisebox{-.5\height}{%
+    \includegraphics[width=\photo@width]{\photo@file}}}
+
+\def\includephoto@b{\includegraphics[width=\photo@width]{\photo@file}}
+
+%    \end{macrocode}
+% And here are the different versions of the |\makeheaders| command:
+%    \begin{macrocode}
+\newlength\leftheader@width
+\newlength\rightheader@width
+
+\def\makeheaders@l#1{%
+  \setlength\photo@width{\photo@scale\textwidth}
+  \setlength\leftheader@width{%
+    (\textwidth - \photo@width - \photosep) * \real{\header@scale}}
+  \setlength\rightheader@width{%
+    \textwidth - \photo@width - \photosep - \leftheader@width}
+  \parbox[#1]{\photo@width + \photosep}{\includephoto@\hspace\photosep}%
+  \parbox[#1]{\leftheader@width}{\@leftheader}%
+  \parbox[#1]{\rightheader@width}{\raggedleft\@rightheader}}
+
+\def\makeheaders@c#1{%
+  \setlength\photo@width{\photo@scale\textwidth}
+  \setlength\leftheader@width{(\textwidth - \photo@width) * \real{.5}}
+  \setlength\rightheader@width{\leftheader@width}
+  \parbox[#1]{\leftheader@width}{\@leftheader}%
+  \parbox[#1]{\photo@width}{\includephoto@}%
+  \parbox[#1]{\rightheader@width}{\raggedleft\@rightheader}}
+
+\def\makeheaders@r#1{%
+  \setlength\photo@width{\photo@scale\textwidth}
+  \setlength\leftheader@width{%
+    (\textwidth - \photo@width - \photosep) * \real{\header@scale}}
+  \setlength\rightheader@width{%
+    \textwidth - \photo@width - \photosep - \leftheader@width}
+  \parbox[#1]{\leftheader@width}{\@leftheader}%
+  \parbox[#1]{\rightheader@width}{\raggedleft\@rightheader}%
+  \parbox[#1]{\photo@width + \photosep}{\hspace\photosep\includephoto@}}
+
+\def\makeheaders@#1{%
+  \setlength\leftheader@width{\header@scale\textwidth}%
+  \setlength\rightheader@width{\textwidth - \leftheader@width}%
+  \parbox[#1]{\leftheader@width}{\@leftheader}%
+  \parbox[#1]{\rightheader@width}{\raggedleft\@rightheader}}
+
+\newcommand\makeheaders[1][c]{%
+  \ifthenelse{\equal{#1}{t}}{}{%
+    \ifthenelse{\equal{#1}{b}}{}{%
+      \ifthenelse{\equal{#1}{c}}{}{%
+        \ClassError{curve}{Invalid argument to \protect\makeheaders}{%
+          Argument of \protect\makeheaders must be `t', `b' or `c'.}}}}%
+  \def\tmp@cmd{\global\let\includephoto@}
+  \expandafter\tmp@cmd\csname includephoto@#1\endcsname
+  \makeheaders@{#1}%
+  \par\vspace\headerspace}
+
+%    \end{macrocode}
+% \subsubsection{Titles}
+% \DescribeMacro{\titlefont}
+% \DescribeMacro{\titlespace}
+%    \begin{macrocode}
+\@onlypreamble\title
+
+\def\@titlefont{\Huge\bfseries}
+\newcommand\titlefont[1]{\gdef\@titlefont{#1}}
+\@onlypreamble\titlefont
+
+\newlength\titlespace
+\setlength\titlespace{0pt}
+
+%    \end{macrocode}
+% \DescribeMacro{\subtitle}
+% \DescribeMacro{\subtitlefont}
+%    \begin{macrocode}
+\let\@subtitle\@undefined
+\newcommand\subtitle[1]{\gdef\@subtitle{#1}}
+\@onlypreamble\subtitle
+
+\def\@subtitlefont{\huge\itshape}
+\newcommand\subtitlefont[1]{\gdef\@subtitlefont{#1}}
+\@onlypreamble\subtitlefont
+
+%    \end{macrocode}
+% \DescribeMacro{\titlealignment}
+%    \begin{macrocode}
+\def\@titlealignment@l{\raggedright}
+\def\@titlealignment@c{\centering}
+\def\@titlealignment@r{\raggedleft}
+
+\let\@title@lignment\@titlealignment@c
+
+\def\@titlealignment#1#2{%
+  \def\@curve@temp@a{\let\@title@lignment}
+  \expandafter\@curve@temp@a\csname @titlealignment@#2\endcsname
+  \@ifundefined{@title@lignment}{%
+    \ClassError{curve}{Invalid title alignment}{%
+      You have called \expandafter\string\csname#1\endcsname\space%
+      with an invalid value.%
+      \MessageBreak
+      Valid options include l, c and r.\MessageBreak
+      Type X <return> to quit, fix the typo, and rerun LaTeX.}}
+}
+
+\newcommand\titlealignment[1]{\@titlealignment{titlealignment}{#1}}
+
+%    \end{macrocode}
+% \DescribeMacro{\maketitle}
+%    \begin{macrocode}
+\def\@@maketitle{%
+  \bgroup\trivlist\@title@lignment\item\relax
+    {\@titlefont\@title}
+    \ifx\@subtitle\@undefined\else\\\@subtitlefont\@subtitle\fi
+  \endtrivlist\egroup
+  \vspace\titlespace}
+
+\def\@maketitle[#1]{\@titlealignment{maketitle}{#1}\@@maketitle}
+
+\newcommand\maketitle{\@ifnextchar[%]
+  \@maketitle\@@maketitle}
+
+%    \end{macrocode}
+% \subsubsection{Rubric Inclusion}
+% \DescribeMacro{\flavor}
+%    \begin{macrocode}
+\let\@flavor\empty
+\newcommand\flavor[1]{\gdef\@flavor{#1}
+  \ifx\@flavor\empty\else\edef\@flavor{.\@flavor}\fi}
+
+\DeclareOption{ask}{%
+  \typein[\@flavor]{Please specify a CV flavor (none by default):}
+  \ifx\@flavor\empty\else\edef\@flavor{.\@flavor}\fi}
+
+%    \end{macrocode}
+% |\input| is redefined in order to deal with flavors and the |ltx| extension.
+%    \begin{macrocode}
+\def\@curveinput#1{%
+  \IfFileExists{#1\@flavor.ltx}{\@iinput{#1\@flavor.ltx}}{%
+    \IfFileExists{#1\@flavor.tex}{\@iinput{#1\@flavor.tex}}{%
+      \IfFileExists{#1.ltx}{\@iinput{#1.ltx}}{%
+	\IfFileExists{#1.tex}{\@iinput{#1.tex}}{%
+	  \@iinput{#1}}}}}}
+
+\renewcommand\input{\@ifnextchar\bgroup\@curveinput\@@input}
+
+%    \end{macrocode}
+% \DescribeMacro{\makerubric}
+%    \begin{macrocode}
+\newcommand\makerubric[1]{\LTXtable{\linewidth}{#1}}
+
+%    \end{macrocode}
+% \subsubsection{Bibliography}
+%    \begin{macrocode}
+\let\newblock\par
+\newcounter{bibcount}
+\newcounter{bibtotal}
+
+\newif\ifcurve@revbib\curve@revbibfalse
+\DeclareOption{revbib}{\curve@revbibtrue}
+
+%    \end{macrocode}
+% \DescribeMacro{\bibliography}
+% Define |\bibliography| to issue a |\makerubric| call on the |bbl| file. As
+% of version 1.12, handle |multibbl| syntax if the package is loaded.
+%    \begin{macrocode}
+\AtBeginDocument{
+  \@ifpackageloaded{multibbl}{
+    %% multibbl version
+    \def\bibliography#1#2#3{%
+      \@ifundefined{#1@auxfile}{}{\expandafter\immediate%
+	\write\csname #1@auxfile\endcsname{\string\bibdata{#2}}}%
+      \def\bibname{#3}%
+      \def\refname{#3}%
+      \IfFileExists{#1.bbl}{\makerubric{#1.bbl}}{%
+	\typeout{No file #1.bbl.}}}
+  }{ %% standard version
+    \def\bibliography#1{%
+      \if@filesw
+	\immediate\write\@auxout{\string\bibdata{#1}}%
+      \fi
+      \IfFileExists{\jobname.bbl}{\makerubric{\jobname.bbl}}{%
+	\typeout{No file \jobname.bbl.}}}
+  }
+}
+
+%    \end{macrocode}
+% \DescribeMacro{\bibitem}
+% Redefine |\bibitem| and its internal implementation to behave like |\entry|.
+%
+% Do this late to overwrite a possible |hyperref| redefinition back again (it
+% is arguable whether we should preserve |hyperref| functionality or not, but
+% the current answer is no).
+%
+% One exception: if |bibentry| is used, don't get in the way. It redefines its
+% own bibliographic environment and stuff.
+%    \begin{macrocode}
+\AtBeginDocument{
+  \@ifpackageloaded{bibentry}{}{
+    \def\@lbibitem[#1]#2{\@sentry[\@biblabel{#1}]%
+      \if@filesw{%
+	\let\protect\noexpand%
+	\immediate\write\@auxout{\string\bibcite{#2}{#1}}}
+      \fi%
+      \ignorespaces}
+    \def\@bibitem#1{\stepcounter{bibcount}%
+      \@sentry[\@biblabel{\ifcurve@revbib\thebibtotal\else\thebibcount\fi}]%
+      \ifcurve@revbib\addtocounter{bibtotal}{-1}\fi%
+      \if@filesw%
+	\immediate\write\@auxout{\string\bibcite{#1}{\thebibcount}}%
+      \fi%
+      \ignorespaces}
+    \renewcommand\bibitem{%
+      %% #### FIXME: Dirty code duplication from \entry
+      \@nextentry
+      \noalign\bgroup\gdef\@beforespace{\subrubricbeforespace}%
+      \@ifnextchar[%]
+      \@lbibitem\@bibitem}
+  }
+}
+
+\AtEndDocument{%
+  \if@filesw%
+    \immediate\write\@auxout{\string\setcounter{bibtotal}{\thebibcount}}%
+  \fi}
+
+%    \end{macrocode}
+% \DescribeMacro{\listpubname}
+%    \begin{macrocode}
+\newcommand\listpubname[1]{\gdef\@listpubname{#1}}
+
+%    \end{macrocode}
+% \DescribeEnv{thebibliography}
+% Note that |bibentry| overrides this definition.
+%    \begin{macrocode}
+\newenvironment{thebibliography}[1]{%
+%    \end{macrocode}
+% Disable the |skipsamekey| mechanism and the prefix which would get in the
+% way.
+%    \begin{macrocode}
+  \let\@key\@alwayskey
+  \def\@prefix{}
+%    \end{macrocode}
+% For compatibility with bibliographic packages such as |multibib|, the
+% bibliography title is set (by order of priority) to either |\bibname|,
+% |\refname| or |\@listpubname|.
+%    \begin{macrocode}
+  \begin{rubric}{\@ifundefined{bibname}{%
+	\@ifundefined{refname}{\@listpubname}{\refname}}{%
+	\bibname}}
+  }{%
+  \end{rubric}
+}
+
+%    \end{macrocode}
+% \subsection{Language Processing}
+%    \begin{macrocode}
+\DeclareOption{english}{%
+  \continuedname{~(continued)}
+  \listpubname{List of Publications}}
+\DeclareOption{french}{%
+  \continuedname{~(suite)}
+  \listpubname{Liste des Publications}}
+\DeclareOption{francais}{%
+  \ExecuteOptions{french}}
+\DeclareOption{spanish}{%
+  \continuedname{~(contin\'ua)}
+  \listpubname{Lista de Publicaciones}}
+\DeclareOption{portuges}{%
+  \continuedname{~(continua\c c\~ao)}
+  \listpubname{Publica\c c\~oes}}
+\DeclareOption{portuguese}{%
+  \ExecuteOptions{portuges}}
+\DeclareOption{brazil}{%
+  \ExecuteOptions{portuges}}
+\DeclareOption{brazilian}{%
+  \ExecuteOptions{portuges}}
+\DeclareOption{italian}{%
+  \continuedname{~(continua)}
+  \listpubname{Pubblicazioni}}
+\DeclareOption{german}{%
+  \continuedname{~(fortgesetzt)}
+  \listpubname{Verzeichnis der Ver\"offentlichungen}}
+\DeclareOption{ngerman}{%
+  \ExecuteOptions{german}}
+\DeclareOption{dutch}{%
+  \continuedname{~(vervolg)}
+  \listpubname{Publicaties}}
+\DeclareOption{danish}{%
+  \continuedname{~(fortsat)}
+  \listpubname{Udgivelser}}
+\DeclareOption{swedish}{%
+ \continuedname{~(forts.)}
+ \listpubname{Publikationer}}
+\DeclareOption{polish}{
+  \continuedname{~(kontynuacja)}
+  \listpubname{Publikacje}}
+
+%    \end{macrocode}
+% \subsection{Standard Class Processing}
+%    \begin{macrocode}
+\DeclareOption{a4paper}{
+  \setlength\paperheight{297mm}
+  \setlength\paperwidth{210mm}}
+\DeclareOption{a5paper}{
+  \setlength\paperheight{210mm}
+  \setlength\paperwidth{148mm}}
+\DeclareOption{b5paper}{
+  \setlength\paperheight{250mm}
+  \setlength\paperwidth{176mm}}
+\DeclareOption{letterpaper}{
+  \setlength\paperheight{11in}
+  \setlength\paperwidth{8.5in}}
+\DeclareOption{legalpaper}{
+  \setlength\paperheight{14in}
+  \setlength\paperwidth{8.5in}}
+\DeclareOption{executivepaper}{
+  \setlength\paperheight{10.5in}
+  \setlength\paperwidth{7.25in}}
+\DeclareOption{landscape}{
+  \setlength\@tempdima{\paperheight}
+  \setlength\paperheight{\paperwidth}
+  \setlength\paperwidth{\@tempdima}}
+
+\DeclareOption{10pt}{\def\@ptsize{0}}
+\DeclareOption{11pt}{\def\@ptsize{1}}
+\DeclareOption{12pt}{\def\@ptsize{2}}
+
+\DeclareOption{oneside}{\@twosidefalse\@mparswitchfalse}
+\DeclareOption{twoside}{\@twosidetrue\@mparswitchtrue}
+
+\DeclareOption{draft}{\setlength\overfullrule{5pt}}
+\DeclareOption{final}{%
+  \setlength\overfullrule{0pt}
+  \setlongtables}
+
+\ExecuteOptions{english,letterpaper,10pt,oneside,final}
+\ProcessOptions
+
+\input{size1\@ptsize.clo}
+\setlength\parindent{0pt}
+\setlength\parskip{0pt}
+\setlength\tabcolsep{10pt}
+\setlength\arrayrulewidth{.4\p@}
+\setlength\leftmargini{2.5em}
+\leftmargin\leftmargini
+\setlength\leftmarginii{2.2em}
+\setlength\leftmarginiii{1.87em}
+\setlength\leftmarginiv{1.7em}
+\setlength\leftmarginv{1em}
+\setlength\leftmarginvi{1em}
+\setlength\labelsep{.5em}
+\setlength\labelwidth{\leftmargini}
+\addtolength\labelwidth{-\labelsep}
+\@beginparpenalty -\@lowpenalty
+\@endparpenalty   -\@lowpenalty
+\@itempenalty     -\@lowpenalty
+\renewcommand\theenumi{\@arabic\c@enumi}
+\renewcommand\theenumii{\@alph\c@enumii}
+\renewcommand\theenumiii{\@roman\c@enumiii}
+\renewcommand\theenumiv{\@Alph\c@enumiv}
+\newcommand\labelenumi{\theenumi.}
+\newcommand\labelenumii{(\theenumii)}
+\newcommand\labelenumiii{\theenumiii.}
+\newcommand\labelenumiv{\theenumiv.}
+\renewcommand\p@enumii{\theenumi}
+\renewcommand\p@enumiii{\theenumi(\theenumii)}
+\renewcommand\p@enumiv{\p@enumiii\theenumiii}
+\newcommand\labelitemi{\textbullet}
+\newcommand\labelitemii{\normalfont\bfseries \textendash}
+\newcommand\labelitemiii{\textasteriskcentered}
+\newcommand\labelitemiv{\textperiodcentered}
+\raggedbottom
+\onecolumn
+\pagestyle{empty}
+\pagenumbering{arabic}
+
+\newcommand\@makefntext[1]{\noindent\hb@xt@1em{\hss\@makefnmark}#1}
+
+\if@twoside
+  \def\ps@headings{%
+    \let\@oddfoot\@empty\let\@evenfoot\@empty
+    \def\@evenhead{\thepage\hfil\slshape\leftmark}%
+    \def\@oddhead{{\slshape\rightmark}\hfil\thepage}%
+    \let\@mkboth\markboth
+    \def\@rubricmark##1{\markboth{\MakeUppercase{##1}}{}}%
+    \def\@subrubricmark##1{\markright{##1}}%
+  }
+\else
+  \def\ps@headings{%
+    \let\@oddfoot\@empty
+    \def\@oddhead{{\slshape\rightmark}\hfil\thepage}%
+    \let\@mkboth\markboth
+    \def\@rubricmark##1{\markright{\MakeUppercase{##1}}}%
+  }
+\fi
+\def\ps@myheadings{%
+  \let\@oddfoot\@empty\let\@evenfoot\@empty
+  \def\@evenhead{\thepage\hfil\slshape\leftmark}%
+  \def\@oddhead{{\slshape\rightmark}\hfil\thepage}%
+  \let\@mkboth\@gobbletwo
+  \let\@rubricmark\@gobble
+  \let\@subrubricmark\@gobble
+}
+
+%    \end{macrocode}
+% ^^A \PrintChanges
+% ^^A \PrintIndex
+% \Finale
+%
+% ^^A curve.dtx ends here.

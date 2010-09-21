@@ -1,0 +1,146 @@
+
+			     WHAT'S NEW IN CURVE
+
+
+Copyright (C) 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007 Didier Verna
+Copyright (C) 2008 Didier Verna
+
+This file is part of CurVe.
+
+CurVe may be distributed and/or modified under the
+conditions of the LaTeX Project Public License, either version 1.1
+of this license or (at your option) any later version.
+The latest version of this license is in
+http://www.latex-project.org/lppl.txt
+and version 1.1 or later is part of all distributions of LaTeX
+version 1999/06/01 or later.
+
+CurVe consists of the files listed in the file `README'.
+
+
+* Version 1.15
+==============
+** Support for itemize environments
+suggested by Mirko Hessel-von Molo
+** Added some documentation about vertical spacing problems in |bbl| files
+suggested by Seweryn Habdank-Wojewódzki
+
+* Version 1.14
+==============
+** Support for reverse counting of bibliographic entries
+suggested by Joseph Wright
+** Support for Polish
+thanks to Radek Dominiak <radoslaw.dominiak@gmail.com>
+
+* Version 1.13
+==============
+** Support for title alignment
+suggested by Lars Kasper
+** Support for footnotes
+suggested by Alain Coletta
+** Let rubrics honor the current \linewidth
+so that they can be used inside minipage environments for instance
+** Changed default value of \subrubricbeforespace
+to 20pt
+** Fix some overfull boxes
+reported by Nico Schlömer
+** FAQ and documentation update
+
+* Version 1.12
+==============
+** Support for Swedish
+thanks to Konrad Skeri Persson <konrad@skeri.com>
+** New customizable length \rubricafterspace
+defining the space between each rubric
+** Fix incompatibilities with the Multibbl package
+** Honor bibliography titles (if) provided by multibib or multibbl
+** New command \today
+** FAQ update
+** Fix implementation of skipsamekey option
+
+* Version 1.11
+==============
+** New FAQ section in the doc
+** New command \noentry
+to manually enlarge too narrow rubrics
+** Make \pagebreak, \nopagebreak and \newpage work in rubrics
+suggested by Alexandre Duret-Lutz
+** Fix spurious right margin spaces
+** Fix usage of the bib counter, disable skipsamekey and the prefix
+in bibliographic entries
+
+* Version 1.10
+==============
+** Support for automatic skipping of identical keys
+with the "skipsamekey" option, suggested by Akim Demaille
+** Fix alignment problem with empty prefix
+reported by Jonas Haulin
+
+* Version 1.9
+=============
+** Fix incompatibilities with the Bibentry package
+reported by Joris Desmet
+** Fix support for standard bibliography
+broken in version 1.8
+
+* Version 1.8
+=============
+** Prevent page breaks after subrubric headings
+
+* Version 1.7
+=============
+** Support for key horizontal alignment
+** \raggedleft and \raggedright can now be used within individual entries
+** Fix typo in Danish version of \continuedname
+
+* Version 1.6
+=============
+** Support for rubric and subrubric titles horizontal alignment
+** Support for standard LaTeX page style mechanism
+** Support for oneside and twoside options
+** Support for Portuguese
+thanks to Adiel Mittmann <adiel@inf.ufsc.br>
+** Bug fix in \bibliography
+protect against non existent files, reported by Andrew Comport
+** Fix conflict with Hyperref
+in some bibliograhy definitions
+
+* Version 1.5
+=============
+** Support for Dutch
+thanks to Thomas Delaet <Thomas.Delaet@student.kuleuven.ac.be>
+** Bug fix (typo) in the rubric environment
+reported by Torsten Liesk
+
+* Version 1.4
+=============
+** Support for photo inclusion
+** Support for headers horizontal scaling
+** Optional argument to \makeheaders for vertical alignment,
+suggested by Dan Luecking
+
+* Version 1.3
+=============
+** Support for Danish
+thanks to Kim Rud Bille <krbi01@control.auc.dk>
+
+* Version 1.2
+=============
+** Support for standard bibliography mechanism(s)
+** New macro \entry*
+** Support for Spanish
+thanks to Agustín Martín <agusmba@terra.es>
+** Support for German
+thanks to Harald Harders <h.harders@tu-bs.de>
+
+* Version 1.1
+=============
+** Support for Italian
+thanks to Riccardo Murri <murri@phc.unipi.it>
+
+
+
+
+Local Variables:
+mode: outline
+End:

@@ -1,0 +1,110 @@
+%%
+%% This is file `layaureo.sty',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% layaureo.dtx  (with options: `style')
+%% 
+%%  Copyright 2003 Gruppo Utilizzatori Italiani di TeX
+%% 
+%%  This program is provided under the terms of the
+%%  LaTeX Project Public License distributed from CTAN
+%%  archives in directory macros/latex/base/lppl.txt.
+%% 
+%%  Author: Fabiano Busdraghi
+%%          at fabusdr@yahoo.it
+%% 
+%%  This work has the LPPL maintenance status "author-maintained".
+%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ProvidesPackage{layaureo}[2004/09/16 v0.2]
+\RequirePackage{geometry}
+\RequirePackage{calc}
+\RequirePackage{keyval}
+\newlength{\LA@MargineRilegatura}
+\newlength{\LA@LarghezzaTesto}
+\newlength{\LA@AltezzaTesto}
+\newlength{\LA@MargineSinistro}
+\newlength{\LA@MargineSuperiore}
+\setlength{\LA@LarghezzaTesto}{0pt}
+\def\LayAureo@ErrPagina{
+    \PackageError{LayAureo}%
+        {The paper dimension is not A4}%
+        {You must choose the "a4paper" class option}}
+\ifdim\paperwidth=210mm
+    \ifdim\paperheight=297mm
+        \relax
+    \else
+        \LayAureo@ErrPagina
+    \fi
+\else
+    \LayAureo@ErrPagina
+\fi
+\if@twocolumn
+    \PackageError{LayAureo}%
+        {LayAureo doesn't work with the twocolumn option}%
+        {You must choose the "onecolumn" class option}
+\fi
+\define@key{LayAureo}{binding}[0pt]%
+    {\setlength{\LA@MargineRilegatura}{#1}}
+\newif\if@LA@big
+\define@key{LayAureo}{big}[true]{\@nameuse{@LA@big#1}}
+\define@key{LayAureo}{rilegatura}[0pt]%
+     {\PackageWarningNoLine{LayAureo}%
+         {Option "rilegatura" is obsolete, use binding instead}%
+     \setlength{\LA@MargineRilegatura}{#1}}
+\def\ProcessOptionsWithKV#1{%
+    \let\@tempa\@empty
+    \@for\CurrentOption:=\@classoptionslist\do{%
+        \@ifundefined{KV@#1@\CurrentOption}%
+            {}{\edef\@tempa{\@tempa,\CurrentOption,}}}%
+    \edef\@tempa{%
+        \noexpand\setkeys{#1}%
+            {\@tempa\@ptionlist{\@currname.\@currext}}}%
+    \@tempa
+    \AtEndOfPackage{\let\@unprocessedoptions\relax}}
+\ProcessOptionsWithKV{LayAureo}
+\if@LA@big
+  \addtolength{\LA@LarghezzaTesto}{3pc}%
+\fi
+\long\def\temp@a{0}%
+\ifx\@ptsize\temp@a
+    \addtolength{\LA@LarghezzaTesto}{31pc}%
+\else
+    \long\def\temp@a{1}%
+    \ifx\@ptsize\temp@a
+        \addtolength{\LA@LarghezzaTesto}{33pc}%
+    \else
+        \long\def\temp@a{2}%
+        \if\@ptsize\temp@a
+            \addtolength{\LA@LarghezzaTesto}{35pc}%
+        \else
+            \addtolength{\LA@LarghezzaTesto}{33pc}%
+            \PackageWarningNoLine{LayAureo}%
+                {Textwidth as whith the "11pt" class option}%
+        \fi
+    \fi
+\fi
+\setlength{\LA@AltezzaTesto}
+    {1.61803\LA@LarghezzaTesto}
+\setlength{\LA@MargineSuperiore}
+    {.41421\paperheight-.41421\LA@AltezzaTesto}
+\if@twoside
+    \setlength{\LA@MargineSinistro}
+        {0.38197 \paperwidth-0.38197\LA@LarghezzaTesto}
+\else
+    \setlength{\LA@MargineSinistro}
+        {(\paperwidth-\LA@LarghezzaTesto)/2}
+\fi
+\geometry{
+        a4paper,
+        ignoremp,
+        bindingoffset=\LA@MargineRilegatura,
+        textwidth=\LA@LarghezzaTesto,
+        textheight=\LA@AltezzaTesto,
+        lmargin=\LA@MargineSinistro,
+        tmargin=\LA@MargineSuperiore}
+\endinput
+%%
+%% End of file `layaureo.sty'.

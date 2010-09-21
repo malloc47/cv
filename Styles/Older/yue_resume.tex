@@ -1,0 +1,239 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 
+%% Yisong Yue's resume
+%%   - based off work by Michael DeCorte 
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%
+%% The following code sets up the document formatting
+%%
+
+%this assumes that res_yy.sty is in some path
+\documentstyle[hyperref, margin, line]{res_yy}
+
+\hypersetup{backref,pdfpagemode=Full,colorlinks=true,backref}
+
+\addtolength{\oddsidemargin}{-0.45in}
+\addtolength{\voffset}{-0.30in}
+\addtolength{\textwidth}{1.00in} \addtolength{\textheight}{1.50in}
+
+\renewcommand{\namefont}{\LARGE\emph}
+
+
+
+%%
+%% The following code defines some macros for terms which have raised font
+%% (ie 4\fourth would result 4th with the 'th' raised (superscripted)
+%%
+
+\def\Cplusplus{{\rm C\raise.5ex\hbox{\small ++}}}
+\def\CSharp{{\rm C\raise.5ex\hbox{\small \#}}}
+% 'st' 'nd' 'rd' 'th' superscripts for numbers
+\def\first{{\raise.5ex\hbox{\small st}}}
+\def\second{{\raise.5ex\hbox{\small nd}}}
+\def\third{{\raise.5ex\hbox{\small rd}}}
+\def\fourth{{\raise.5ex\hbox{\small th}}}
+
+
+
+%%
+%% starting the actual document
+%%
+
+\begin{document}
+
+%the name in big fonts at the top of resume
+%this is left aligned
+\name{Yisong Yue}
+
+%this is right aligned
+\address{
+website: www.yisongyue.com \ \ \ \ \ email: yisongyue@gmail.com  
+}
+
+\begin{resume}
+
+
+
+%%
+%% This section of code is inelegant, but I'm too lazy to fix it
+%%
+
+\section{\textsc{Research Interest}}
+My research interests lie primarily in machine learning and its applications.
+
+\section{\textsc{Education}}
+
+\textbf{Cornell University} \hfill 2005 - Present \\
+PhD Student in Computer Science \hfill Advisor: Thorsten Joachims \\
+\newline
+\textbf{University of Illinois at Urbana-Champaign} \hfill 2001 - 2005 \\ 
+Bachelor of Science in Computer Science \hfill Graduated with Highest Honors
+
+
+
+%%
+%% the meat of the resume starts now
+%%
+
+\begin{formatb}
+  \employer{l}\title{r}\\
+  \location{l}\dates{r}\\
+  \body\\
+\end{formatb}
+
+\section{\textsc{Work Experience}}
+
+\employer{\textbf{NVIDIA Corporation}}
+\title{Architecture Engineer Intern}
+\location{Santa Clara, CA}
+\dates{Summer 2005}
+\begin{position}
+Developed internal tools to assist GPU simulation and data mining.
+\end{position}
+
+\employer{\textbf{Microsoft Corporation}}
+\title{Software Design Engineer Intern}
+\location{Redmond, WA}
+\dates{Summer 2004}
+\begin{position}
+Designed and wrote a customized certificate API for authentication and data encryption.
+\end{position}
+
+\employer{\textbf{Microsoft Corporation}}
+\title{Software Design Engineer Intern}
+\location{Redmond, WA}
+\dates{Summer 2003}
+\begin{position}
+Used DirectX with HLSL to prototype imaging effects that are
+processed on the GPU.
+\end{position}
+
+
+%%
+%% We use the same formatting for projects as for work experience
+%% Shown below is the formatting used previously
+%%
+%%  \begin{formatb}
+%%    \employer{l}\title{r}\\
+%%    \location{l}\dates{r}\\
+%%    \body\\
+%%  \end{formatb}
+%%
+%% 
+%%  Note that \location is now being used for non-location information
+%%
+
+
+\begin{formatb}
+  \employer{l}\dates{r}\\
+  \body\\
+\end{formatb}
+
+\section{\textsc{Publications}}
+
+\employer{\textbf{A Support Vector Method for Optimizing Average Precision}}
+\dates{SIGIR 2007}
+\begin{position}
+Authors: Yisong Yue, Thomas Finley, Filip Radlinski, Thorsten Joachims
+\end{position}
+
+\section{\textsc{Other Projects}}
+
+\employer{\textbf{Finding Influential Blogs via Link Prediction}}
+\dates{Spring 2006}
+\begin{position}
+Used machine learning and link analysis techniques to determine the amount of influence blogs exert on each other.
+\end{position}
+
+\employer{\textbf{Loss-Minimizing Voting for Machine Learning Ensembles}}
+\dates{Spring 2006}
+\begin{position}
+Explored voting schemes which minimizes a loss function for an ensemble of learning models. 
+\end{position}
+
+\employer{\textbf{Parameter Estimation for MRF-Stereo with Occlusions}}
+\dates{Fall 2005}
+\begin{position}
+Used an EM-method to iteratively compute superior parameters for the baseline MRF-stereo algorithm with occlusions.
+\end{position}
+
+\employer{\textbf{Illini Book Exchange}}
+\dates{2002-2005}
+\begin{position}
+http://www.illinibookexchange.com\\
+Worked on development, management and marketing of Illini Book Exchange for the Technology and Management Club at UIUC. 
+\end{position}
+
+\employer{\textbf{Reflections Projections}}
+\dates{Fall 2004}
+\begin{position}
+http://www.acm.uiuc.edu/conference/\\
+Helped plan and manage Reflections Projections 2004 as Treasurer of ACM @ UIUC.
+\end{position}
+
+
+%%
+%% This section could also use more formatting, but looks ok, as is
+%%
+
+%\section{\textsc{Qualifications}}
+
+%\emph{Programming Languages}: \Cplusplus, \CSharp, Cg, HLSL, ARB assembly, SML, OCaML, PHP, MySQL, Java, Python, Perl, MIPS assembly
+
+%\emph{Libraries and Tools}: Vim, STL, DirectX, OpenGL, \LaTeX, GIMP, Adobe Suite, Macromedia Suite, MatLab, Mathematica, Microsoft Visual Studio, GCC, GDB
+
+
+%%
+%% Note that we're redefining the formatting
+%% We only have one row of information now, instead of two
+%%
+
+\section{\textsc{Activities}}
+
+\begin{formatb}
+  \employer{l}\dates{r}\\
+  \body\\
+\end{formatb}
+
+\employer{\textbf{Cornell Teaching Assistant (TA Excellence Award)}}
+\dates{Fall 2005 - Spring 2006}
+\begin{position}
+Taught two sections of CS 100M during the Fall and Spring semesters of the 2005-6 academic year.  Received award in recognition of performance.
+\end{position}
+
+\employer{\textbf{UIUC ACM Treasurer}}
+\dates{Fall 2004 - Spring 2005}
+\begin{position}
+Managed all financial responsibilities of local chapter of ACM.  Assisted the Chair in general management of ACM.
+\end{position}
+
+\employer{\textbf{UIUC ACM SIGGRAPH Chair}}
+\dates{Spring 2004}
+\begin{position}
+Managed the local chapter of SIGGRAPH, organized projects and workshops/tutorials
+\end{position}
+
+
+
+%%
+%% Nothing special here, just a normal table
+%%
+
+%\section{\textsc{Course Work}}
+%  \begin{tabular}{lllll}
+%  Information Networks   & \ \ & Machine Learning    & \ \ & Theory of Computation \\ 
+%  Computer Graphics      & \ \ & Machine Vision      & \ \ & Programming Languages \\
+%  Software Engineering   & \ \ & Algorithms          & \ \ & Artificial Intelligence     \\
+%  Operating Systems      & \ \ & Databases           & \ \ & Computer Architecture \\
+%  Numerical Methods      & \ \ & Graph Theory        & \ \ & Differential Equations      \\
+%  Probability Theory     & \ \ & Number Theory       & \ \ & Differential Geometry       \\
+%  Advanced Calculus      & \ \ & Abstract Algebra    & \ \ & Advanced Combinatorics   \\
+%  \end{tabular}
+
+
+\end{resume}
+\end{document}

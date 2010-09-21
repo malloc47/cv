@@ -1,0 +1,547 @@
+% \iffalse
+% 
+% file: layaureo.dtx
+% Copyright 2003 Gruppo Utilizzatori Italiani di TeX
+% GuIT: http://www.guit.sssup.it
+% 
+% This program is provided under the terms of the
+% LaTeX Project Public License distributed from CTAN
+% archives in directory macros/latex/base/lppl.txt.
+% 
+% Author: Fabiano Busdraghi
+%         at fabusdr@yahoo.it
+%
+% Version: 0.2
+% 
+% This work has the LPPL maintenance status "author-maintained".
+% 
+%<*driver>
+\documentclass[11pt, a4paper]{ltxdoc}
+\usepackage[english,italian]{babel}
+\usepackage[latin1]{inputenc}
+\EnableCrossrefs
+\CodelineIndex
+\RecordChanges
+\begin{document}
+  \DocInput{layaureo.dtx}
+\end{document}
+%</driver>
+% 
+% \fi
+% 
+% \CheckSum{337}
+% 
+% \CharacterTable
+%   {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
+%    Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
+%    Digits        \0\1\2\3\4\5\6\7\8\9
+%    Exclamation   \!     Double quote  \"     Hash (number) \#
+%    Dollar        \$     Percent       \%     Ampersand     \&
+%    Acute accent  \'     Left paren    \(     Right paren   \)
+%    Asterisk      \*     Plus          \+     Comma         \,
+%    Minus         \-     Point         \.     Solidus       \/
+%    Colon         \:     Semicolon     \;     Less than     \<
+%    Equals        \=     Greater than  \>     Question mark \?
+%    Commercial at \@     Left bracket  \[     Backslash     \\
+%    Right bracket \]     Circumflex    \^     Underscore    \_
+%    Grave accent  \`     Left brace    \{     Vertical bar  \|
+%    Right brace   \}     Tilde         \~}
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% 
+% \def\fileversion{0.2}
+% \def\filedate{2004/09/16}
+%
+% \newcommand*{\pacchetto}[1]{\textsf{#1}}%
+% \newcommand*{\codice}[1]{\texttt{#1}}
+% \newcommand{\layaureo}{\pacchetto{LayAureo}}
+% \newcommand{\riga}{\vspace{\baselineskip}}
+%
+% \title{Documentazione del pacchetto \pacchetto{LayAureo}\thanks{Il 
+% numero di versione di questo file è \fileversion; l'ultima revisione è avvenuta
+% in data \filedate. Questo pacchetto è stato scritto per il Gruppo Utilizzatori
+% italiani di \TeX\ il cui sito è raggiungibile all'indirizzo 
+% \texttt{http://www.guit.sssup.it}}}
+% \author{Fabiano Busdraghi\\(\texttt{fabusdr@yahoo.it})}
+% \date{\filedate}
+% 
+% \maketitle
+%
+% \begin{abstract}\footnotesize
+% Pacchetto che modifica il layout di pagina di \LaTeX\ al fine di ottenere
+% una maggiore copertura della pagina in formato A4. \layaureo\ fornisce un
+% metodo semplice per aggiungere lo spazio richiesto per la rilegatura e un
+% opzione per forzare al massimo il riempimento della pagina.
+% \end{abstract}
+%
+% \begin{otherlanguage}{english}
+% \begin{abstract}\footnotesize
+% This package produces a wide page layout for documents that use A4 paper
+% size. Moreover, \layaureo\ provides both a simple hook for leaving an
+% empty space which is required if pages are bundled by a press binding (use
+% option |binding=length|), and an option called |big| which it forces
+% typearea to become maximum. There's no full English documentation yet.
+% \end{abstract}
+% \end{otherlanguage}
+%
+% \tableofcontents
+%
+% \section{Introduzione}
+% In questo documento si illustra l'uso del pacchetto \layaureo\ nato
+% dall'esigenza di avere il corpo del testo che meglio si adatta alle pagine
+% in formato A4 e un metodo semplice per inserire lo spazio necessario alla
+% rilegatura.
+%
+% L'uso del pacchetto è spiegato nella prima sezione, mentre in seguito si
+% discute in dettaglio il problema del layout in \LaTeX\ e secondo quali
+% criteri è stato costruito il pacchetto.
+%
+% Dal momento che \layaureo\ modifica un'impostazione così importante com'è
+% il layout e che il pacchetto non è configurabile, si consiglia all'utente
+% di leggere le discussioni suddette almeno per sapere se concorda o meno
+% con quanto detto e quindi se desidera o meno usare il pacchetto.
+%
+% \subsection{Ringraziamenti}
+% L'autore desidera ringraziare infinitamente Emanuele Vicentini, per
+% l'impagabile aiuto fornito, le spiegazioni dettagliate, la pazienza e la
+% precisione nei suggerimenti, le soluzioni fornite, la competenza e la
+% simpatia. Grazie mille Emanuele.
+%
+% Grazie mille anche a tutti quelli che mi hanno consigliato e che hanno
+% discusso con me la questione del layout sul forum del Gruppo Utilizzatori 
+% italiani di \TeX\, in modo particolare Lapo F. Mori.
+%
+% \section{Uso del pacchetto}
+%
+% \subsection{Installazione}
+% L'installazione di \layaureo\ non presenta particolari
+% difficoltà. Lanciando \LaTeX\ sul file |layaureo.ins| si ottiene il
+% file |layaureo.sty| che va spostato in una directory cercata da
+% \LaTeX. In seguito al \emph{refresh} del database l'installazione è
+% completata. 
+%
+% Per ottenere la presente documentazione è sufficiente compilare due
+% volte il file |layaureo.dtx| con \LaTeX\ o pdf\LaTeX.
+% 
+% \subsection{Utilizzo}
+% Il pacchetto si carica semplicemente con |\usepackage{layaureo}| che
+% imposta automaticamente il layout allargando il corpo del testo e
+% adattando i margini in base alle impostazioni\footnote{Ovvero le opzioni
+% impostate esplicitamente dall'utente oppure quelle utilizzate di default
+% dalla classe in uso.} ereditate dalla classe correntemente in uso.
+%
+% In particolare il documento sarà |oneside| o |twoside| e la larghezza
+% della riga sarà ottimizzata per la dimensione del carattere usato. Nel
+% caso la carta non sia A4 viene restituito un errore, così come se è stata
+% impostata l'opzione |landscape| o |twocolumn|, dal momento che tali
+% opzioni sono incompatibili con l'esigenza che ha dato vita al pacchetto.
+% Analogamente non sono permesse le note a margine.
+%
+% Il pacchetto ha anche due possibili opzioni:
+% \begin{description}
+%     \item[big] Aumenta ulteriormente la dimensione del corpo del testo e
+%     riduce al minimo i margini laterali e verticali;
+%     \item[binding=dim] Lascia una spazio uguale a |dim| (dove |dim| è
+%     una lunghezza\footnote{Sono permesse tutte le unità di misura di \LaTeX.}) per la
+%     rilegatura del documento\footnote{Esiste una terza opzione
+%     |rilegatura| che si comporta esattamente come |binding| e che è
+%     conservata solo per retrocompatibilità. Il suo uso è pertanto
+%     deprecato, e l'opzione non sarà più disponibile nelle versioni
+%     future del pacchetto.}.
+% \end{description}
+%
+% \subsection{Esempi}
+% Per esempio:
+% \begin{verbatim}
+%     \documentclass[a4paper]{article}
+%     \usepackage{layaureo}
+% \end{verbatim}
+% produce un layout espanso con i margini destro e sinistro uguali, mentre:
+% \begin{verbatim}
+%     \documentclass[a4paper,12pt,twoside]{article}
+%     \usepackage[big,binding=.6cm]{layaureo}
+% \end{verbatim}
+% produce un layout che riempe totalmente la pagina di testo, lascia un
+% bordo di 6mm che verra utilizzato per la rilegatura e, una volta che il
+% documento sarà rilegato\footnote{Ovvero una volta che i 6mm per la
+% rilegatura saranno stati visivamente eliminati.}, i margini laterali
+% risulteranno in rapporto aureo.
+%
+% \section{Il tormentone del layout}
+% Utilizzando una delle classi standard di \LaTeX\ --- senza pacchetti
+% particolari che modificano il layout o ridefinizioni dell'autore delle
+% impostazioni di pagina --- la maggior parte degli utilizzatori europei che
+% stampano su carta in formato A4, trovano che i margini utilizzati da
+% \LaTeX\ sono ``troppo stretti'' e che in generale il foglio non è
+% ``sufficientemente ben riempito''.
+%
+% \LaTeX\ inoltre non prevede un modo semplice per lasciare dello spazio
+% riservato alla rilegatura del documento stampato. Il risultato è che,
+% utilizzando per esempio la classe la classe \pacchetto{book}, con
+% l'opzione |twoside|, questa lasci in bianco un grande margine a destra
+% delle pagine dispari mentre il già piccolo margine sinistro venga quasi
+% interamente consumato dalla rilegatura.
+%
+% Dal momento che la stragrande maggioranza degli utilizzatori del vecchio
+% continente stampa in A4 e ha a disposizione solo metodi casalinghi di
+% stampa e rilegatura, molto spesso gli utilizzatori di \LaTeX\ restano
+% insoddisfatti del layout standard e lo modificano a mano, ottenendo
+% pessimi risultati tipografici.
+%
+% Sono nati quindi svariati pacchetti per ovviare al problema, alcuni, come
+% \pacchetto{a4wide}, il cui uso è sempre più spesso deprecato vista
+% l'incompatibilità delle varie versioni disponibili e il discutibile
+% risultato grafico. Altri invece sono ottimi pacchetti che mettono a
+% disposizione dell'utente numerosi e flessibili comandi per modificare a
+% proprio piacimento il layout del documento. Si ricorda a tal fine
+% soprattutto \pacchetto{geometry}, ma anche \pacchetto{vmargin} o le classi
+% della collezione \pacchetto{KOMA-script} e la bellissima e versatile
+% classe \pacchetto{memoir}.
+%
+% Tutti questi pacchetti e classi svolgono egregiamente il loro lavoro, e
+% l'utente che desidera creare autonomamente e originalmente il proprio
+% layout dovrebbe indirizzarsi al loro utilizzo piuttosto che modificare a
+% mano le lunghezze usate da \LaTeX\ per la costruzione del layout, come
+% |\oddsidemargin|, |\textwidth|, \textit{etc}.
+%
+% L'unico lato negativo dell'utilizzo di tali pacchetti è che definire in
+% maniera corretta e funzionale il layout di una pubblicazione non è
+% semplice e molto facilmente si incorre in errori e imperfezioni.
+%
+% Uno dei più grandi vantaggi di \LaTeX\ è che consente di disinteressarsi
+% completamente alle questioni puramente tipografiche, per dar modo
+% all'autore di concentrarsi \emph{unicamente} sulla struttura e sui
+% contenuti del proprio documento.
+%
+% Questo punto dovrebbe sempre essere tenuto presente: utilizzando una
+% classe scritta da altri l'utente accetta per buone tutte le impostazioni
+% tipografiche scelte per lui dall'autore della classe, non è più tenuto a
+% studiare tipografia per mettere a punto lo stile delle proprie
+% pubblicazioni, può concentrarsi su altro. Questo è quello che succede
+% quando si usano le classi standard, modificarne il layout significa andare
+% contro a questa filosofia e, accidentalmente, essere obbligati a studiare
+% un po' di tipografia per non ottenere risultati vergognosi.
+%
+% Tutti i pacchetti citati precedentemente funzionano ottimamente, ma
+% costringono l'utente ad interessarsi della forma oltre che della
+% struttura.
+%
+% Il pacchetto \layaureo\ è nato per mettere a disposizione dell'utente un
+% layout pronto all'uso, che soddisfi un certo numero di esigenze:
+% \begin{itemize}
+%     \item Avere una maggior copertura della pagina in formato A4 a differenza di quanto
+%     accade con le classi standard;
+%     \item Fornire un modo semplice per impostare lo spazio destinato alla
+%     rilegatura.
+% \end{itemize}
+%
+% Il layout ottenuto con \layaureo\ non è quindi configurabile o
+% personalizzabile\footnote{L'unica eccezione è lo spazio riservato alla
+% rilegatura.}. Il layout è qualcosa di molto personale e relativo, quindi
+% se l'utente è soddisfatto da quello messo a disposizione dal pacchetto e
+% trova allettante l'idea di disinteressarsi al problema della definizione
+% del layout, allora potrà utilizzare con soddisfazione \layaureo;
+% altrimenti, se un autore ha esigenze diverse o non è soddisfatto dalla
+% resa grafica del pacchetto allora può provare a rivolgersi agli altri
+% pacchetti o classi precedentemente citati e costruirsi da solo il layout
+% che corrisponde alle proprie aspettative.
+%
+% \section{Il layout di LayAureo}
+% In questa sezione viene descritto come è stato costruito il layout del
+% pacchetto, con l'intento di giustificare le scelte fatte.
+%
+% Si parte dall'assunzione che l'utente usi un foglio A4 e dalla
+% constatazione che il corpo del testo, usando le classi standard, riempe a
+% mala pena la pagina. Il punto di partenza sarà quindi scegliere le
+% dimensioni del corpo del testo, in maniera che ricopra sufficientemente la
+% pagina.
+%
+% \subsection{Bringhurst e la lunghezza della riga}
+% Le impostazioni di \LaTeX\ non sono dovute al caso, anzi cercano sempre di
+% mettere a disposizione dell'utente il risultato migliore dal punto di
+% vista tipografico.
+%
+% Per quanto riguarda la larghezza della riga questa è impostata in maniera
+% che la leggibilità sia massima, che il lettore non abbia difficoltà a
+% seguirla con lo sguardo e a trovare la successiva quando ne è arrivato al
+% termine.
+%
+% La lunghezza della riga è stata decisa utilizzando un metodo empirico
+% inventato da Bringhurst. Per quanto riguarda le dimensioni del testo nelle
+% classi standard si trova che le dimensioni ottimali sono quelle riportate
+% in tabella \ref{dimriga}, dove sono stati anche riportati i valori
+% utilizzati dalle classi standard di \LaTeX:
+%
+% \begin{table}[!ht]\centering
+% \begin{tabular}{l c c c}
+%     \hline
+%     Dimensione carattere: & 10pt & 11pt & 12pt\\
+%     Larghezza ottimale: & 22--26pc & 24--28pc & 26--30pc\\
+%     Larghezza \LaTeX\ standard: & $\sim$28,7pc & 30pc & $\sim$32,5pc\\
+%     \hline
+% \end{tabular}
+%     \caption[Lunghezza riga]{\small In funzione della dimensione del carattere
+%     utilizzato sono riportati i valori ottimali della larghezza della riga
+%     determinati secondo il metodo di Bringhurst e i valori utilizzati
+%     dalle classi standard di \LaTeX\ per impostare la larghezza del corpo del testo.}
+%     \label{dimriga}
+% \end{table}
+%
+% Come si vede \LaTeX\ già utilizza delle righe un po' troppo lunghe
+% rispetto a quanto determinato da Bringhurst. Si può quindi dedurre a
+% ragione che il layout di \LaTeX\ già fornisce delle righe molto lunghe e
+% che è sconsigliabile allungarle ulteriormente.
+%
+% Questo ragionamento è corretto, e va tenuto presente. Se con le pagine A4
+% il testo sembra troppo stretto e i margini esagerati, allora sarebbe
+% meglio stampare su fogli più piccoli, in maniera da avere dei margini più
+% ridotti, lasciando però la lunghezza della riga invariata. Solo in questo
+% modo si può conciliare l'esigenza di avere una pagina ``piena'' con quella
+% di avere una riga dalla lunghezza ottimale per la lettura.
+%
+% Se si parte dall'assunto che si stampa in formato A4 e si aumenta la
+% larghezza della riga rispetto a quanto fatto da \LaTeX\ standard, bisogna
+% tenere presente che si diminuisce la leggibilità del documento. Perché
+% allora creare un pacchetto che diminuisce la leggibilità di un documento?
+% Il pacchetto \layaureo\ infrange la regola di Bringhurst perché in
+% ambiente universitario o casalingo la norma (o a volte l'obbligo) è
+% stampare su fogli A4 e spesso sorge l'esigenza concreta di avere un
+% riempimento maggiore della pagina (numero massimo di pagine della tesi,
+% relatore dai pessimi gusti\ldots)
+%
+% Nonostante questo bisogna sempre tenere presente che \layaureo\
+% \textbf{aumenta l'ampiezza della riga portandola al di sopra del valore
+% ottimale} e il risultato può essere meno leggibile dell'originale.\riga
+%
+% Detto ciò vediamo come \layaureo\ modifica la dimensione della riga: dal
+% momento che le battute per riga devono essere comprese fra 60 e 70 si
+% ottiene con la regola di Bringhurst che la larghezza della riga ottimale è
+% definita a meno di 4pc.
+%
+% Si può interpretare questo valore come l'incertezza della lunghezza della
+% riga ottimale. \layaureo\ aumenta la larghezza della riga di questo
+% valore\footnote{Nel caso venga specificata l'opzione |big| la riga viene
+% incrementata di ancora 3pc.} di incertezza, ma la scelta è puramente
+% arbitraria.
+%
+% \subsection{Proporzioni: la sezione aurea}
+%
+% Come si è visto nella sezione precedente il punto di partenza di
+% \layaureo\ è la larghezza della riga. Una volta stabilita questa restano
+% da costruire tutti gli elementi che compongono il layout. Il criterio
+% adottato è quello di ottenere un layout dove i vari oggetti hanno fra di
+% loro proporzioni armoniose.
+%
+% Gia i greci scoprirono che se si divide una linea retta di lunghezza $l$
+% in due parti di lunghezza rispettiva $a$ e $b$, il massimo risultato
+% estetico in termini di armonia e bellezza si ottiene quando il rapporto
+% fra $a$ e $b$ è dato dalla sezione aurea $\phi$, armonia che si ottiene
+% quando il rapporto della lunghezza maggiore sulla minore è uguale al
+% rapporto fra l'intera linea e la lunghezza maggiore. In formule, se $b>a$:
+% \[\phi= \frac{b}{a}=\frac{a+b}{b}= (1+\sqrt{5})/2\]
+%
+% La sezione aurea ricorre frequentemente in matematica, in fisica, in arte,
+% in tipografia e in natura ed è sempre associata a proprietà di equilibrio
+% ed armonia. Per questo motivo \layaureo\ imposta l'altezza del testo in
+% maniera che sia in rapporto aureo con la larghezza, da cui il nome del
+% pacchetto.
+%
+% Nel caso di formato A4 la proporzione fra i lati della pagina non è $\phi$
+% ma $\sqrt{2}$. La scelta di una proporzione diversa riduce l'effetto di un
+% rettangolo (il corpo del testo) infilato in un altro rettangolo uguale (la
+% pagina). Inoltre in questo modo il layout assomiglia di più a quello di
+% \LaTeX\ standard (che usa un rapporto fra l'altezza e la larghezza del
+% testo addirittura maggiore di $\phi$).
+%
+% Infine si ricorda che, rilegando il documento stampato, la pagina risulta
+% visivamente più piccola, vedendo il lato minore diminuito della quantità
+% necessaria alla rilegatura.
+%
+% \subsection{Margini e note a margine}
+%
+% I margini sono costruiti di conseguenza, per quanto riguarda quelli
+% laterali sono uguali in caso di documento |oneside| e in proporzione aurea
+% per |twoside| con il margine minore a sinistra delle pagine dispari.
+%
+% I margini verticali invece non sono in rapporto aureo ma piuttosto
+% $\sqrt{2}$, perché altrimenti l'inferiore appare troppo grande,
+% soprattutto considerando che le intestazioni si trovano più frequentemente
+% nella parte alta della pagina che in quella bassa, riducendo visivamente
+% il bordo superiore.
+%
+% Infine non è stato lasciato lo spazio per le note a margine, dato che
+% diminuendo i bordi stessi rispetto a quelli di \LaTeX\ standard non rimane
+% più spazio per le note. Se l'utente ha necessità di utilizzare le note a
+% margine allora è meglio che si indirizzi sulle classi standard che
+% prevedono lo spazio adeguato.
+% 
+% \StopEventually{}
+% 
+% \section{Il Codice}
+% 
+% Annuncio del pacchetto e richiesta dei package necessari a \layaureo.
+%   \begin{macrocode}
+%<*style>
+\ProvidesPackage{layaureo}[2004/09/16 v0.2]
+\RequirePackage{geometry}   
+\RequirePackage{calc}
+\RequirePackage{keyval}
+%    \end{macrocode}
+%
+% Dichiarazione delle lunghezze interne e inizializzazione
+% a 0 della larghezza del corpo del testo.
+%    \begin{macrocode}
+\newlength{\LA@MargineRilegatura}
+\newlength{\LA@LarghezzaTesto}
+\newlength{\LA@AltezzaTesto}
+\newlength{\LA@MargineSinistro}
+\newlength{\LA@MargineSuperiore}
+\setlength{\LA@LarghezzaTesto}{0pt}
+%    \end{macrocode}
+%
+% \begin{macro}{\LayAureo@ErrPagina}
+% Semplice macro che restituisce un messaggio d'errore nel caso 
+% l'utente cerchi di usare \layaureo\
+% con una dimensione del foglio diversa da A4.
+%    \begin{macrocode}
+\def\LayAureo@ErrPagina{
+    \PackageError{LayAureo}%
+        {The paper dimension is not A4}%
+        {You must choose the "a4paper" class option}}
+%    \end{macrocode}
+% \end{macro}
+%
+% Se il foglio non è A4 è inutile continuare.
+%    \begin{macrocode}
+\ifdim\paperwidth=210mm
+    \ifdim\paperheight=297mm
+        \relax
+    \else
+        \LayAureo@ErrPagina
+    \fi
+\else
+    \LayAureo@ErrPagina
+\fi
+%    \end{macrocode}
+%
+% Analogamente non si può usare \layaureo\ quando si vuole un documento |twocolumn|.
+%    \begin{macrocode}
+\if@twocolumn
+    \PackageError{LayAureo}%
+        {LayAureo doesn't work with the twocolumn option}%
+        {You must choose the "onecolumn" class option}
+\fi
+%    \end{macrocode}
+%
+% Definizione delle opzioni |binding| e |big|.
+%    \begin{macrocode}
+\define@key{LayAureo}{binding}[0pt]%
+    {\setlength{\LA@MargineRilegatura}{#1}}
+\newif\if@LA@big
+\define@key{LayAureo}{big}[true]{\@nameuse{@LA@big#1}}
+%    \end{macrocode}
+%
+% Definizione dell'opzione |rilegatura| utilizzata solo per
+% retrocompatibilità il cui uso è deprecato.
+%    \begin{macrocode}
+\define@key{LayAureo}{rilegatura}[0pt]%
+     {\PackageWarningNoLine{LayAureo}%
+         {Option "rilegatura" is obsolete, use binding instead}%
+     \setlength{\LA@MargineRilegatura}{#1}}
+%    \end{macrocode}
+%
+% \begin{macro}{\ProcessOptionsWithKV}
+% Definizione della macro che permette di processare le opzioni con  il 
+% pacchetto \pacchetto{keyval}. Questa macro è
+% necessaria per poter specificare come opzione di \layaureo\ un valore da assegnare
+% al margine lasciato per la rilegatura, utilizzando la sintassi 
+% |\usepackage[binding=dim]{layaureo}| dove |dim| è una lunghezza.
+%    \begin{macrocode}
+\def\ProcessOptionsWithKV#1{%
+    \let\@tempa\@empty
+    \@for\CurrentOption:=\@classoptionslist\do{%
+        \@ifundefined{KV@#1@\CurrentOption}%
+            {}{\edef\@tempa{\@tempa,\CurrentOption,}}}%
+    \edef\@tempa{%
+        \noexpand\setkeys{#1}%
+            {\@tempa\@ptionlist{\@currname.\@currext}}}%
+    \@tempa
+    \AtEndOfPackage{\let\@unprocessedoptions\relax}}
+%    \end{macrocode}
+% \end{macro}
+%
+% Qui si processano le opzioni e, nel
+% caso sia stata specificata l'opzione |big| si aumenta la larghezza
+% del testo di ancora 3pc.
+%   \begin{macrocode}
+\ProcessOptionsWithKV{LayAureo}
+\if@LA@big
+  \addtolength{\LA@LarghezzaTesto}{3pc}%
+\fi
+%    \end{macrocode}
+%
+% Si effettua il controllo sul contenuto di |\@ptsize| in modo da sapere se il documento 
+% sta usando una dimensione del font di 10, 11 o 12pt. A seconda dei casi si imposta
+% la larghezza del testo in modo che superi di 4-5pc la larghezza ottimale della riga
+% determinata con la legge empirica di Bringhurst. Se per caso il contenuto di |\@ptsize| 
+% è diverso da 0, 1 o 2 si usa un'impostazione uguale al caso 11pt, ma il pacchetto 
+% restituisce un warning.
+%    \begin{macrocode}
+\long\def\temp@a{0}%
+\ifx\@ptsize\temp@a
+    \addtolength{\LA@LarghezzaTesto}{31pc}%
+\else
+    \long\def\temp@a{1}%
+    \ifx\@ptsize\temp@a
+        \addtolength{\LA@LarghezzaTesto}{33pc}%
+    \else
+        \long\def\temp@a{2}%
+        \if\@ptsize\temp@a
+            \addtolength{\LA@LarghezzaTesto}{35pc}%
+        \else
+            \addtolength{\LA@LarghezzaTesto}{33pc}%
+            \PackageWarningNoLine{LayAureo}%
+                {Textwidth as whith the "11pt" class option}%
+        \fi
+    \fi
+\fi
+%    \end{macrocode}
+%
+% L'altezza del testo viene assegnata in maniera che sia in rapporto aureo 
+% con la larghezza. Il margine superiore viene assegnato in maniera che
+% quello inferiore sia $\sqrt{2}$ volte il margine superiore.
+%    \begin{macrocode}
+\setlength{\LA@AltezzaTesto}
+    {1.61803\LA@LarghezzaTesto}
+\setlength{\LA@MargineSuperiore}
+    {.41421\paperheight-.41421\LA@AltezzaTesto}
+%    \end{macrocode}
+%
+% Se il documento è in |twoside| i margini laterali vengono messi in rapporto
+% aureo, altrimenti sono uguali.
+%    \begin{macrocode}
+\if@twoside
+    \setlength{\LA@MargineSinistro}
+        {0.38197 \paperwidth-0.38197\LA@LarghezzaTesto}
+\else
+    \setlength{\LA@MargineSinistro}
+        {(\paperwidth-\LA@LarghezzaTesto)/2}
+\fi
+%    \end{macrocode}
+%
+% Finalmente si passano tutte le impostazioni a \pacchetto{geometry}
+% e si lascia che questo pacchetto faccia il suo lavoro al posto nostro.
+%    \begin{macrocode}
+\geometry{
+        a4paper,
+        ignoremp,
+        bindingoffset=\LA@MargineRilegatura,
+        textwidth=\LA@LarghezzaTesto,
+        textheight=\LA@AltezzaTesto,
+        lmargin=\LA@MargineSinistro,
+        tmargin=\LA@MargineSuperiore}
+%</style>
+%    \end{macrocode}
+%
+% 
+\endinput

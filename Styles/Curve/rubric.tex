@@ -1,0 +1,65 @@
+%% rubric.tex --- Example of using CurVe.
+
+%% Copyright (C) 2000, 2001, 2002, 2003, 2004, 2005 Didier Verna.
+
+%% Author:        Didier Verna <didier@lrde.epita.fr>
+%% Maintainer:    Didier Verna <didier@lrde.epita.fr>
+%% Created:       Thu Dec 10 16:04:01 2000
+%% Last Revision: Fri Feb  6 17:38:00 2004
+
+%% This file is part of CurVe.
+
+%% CurVe may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.1
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%% http://www.latex-project.org/lppl.txt
+%% and version 1.1 or later is part of all distributions of LaTeX
+%% version 1999/06/01 or later.
+
+%% CurVe consists of the files listed in the file `README'.
+
+\begin{rubric}{The Rubric's Title}
+\subrubric{A Second Subrubric}
+\entry*[A Key]
+  This is an entry with a key. The key is displayed on the left, and you're
+  reading the entry's contents. As you can see, this entry does not belong to
+  a subrubric.
+\subrubric{A First Subrubric}
+\entry*[A Key]
+  This entry belongs to the first subrubric. Before the subrubric,
+  some space is added to separate it from the previous entry.
+\entry*
+  After the subrubric, some space is also added to separate it from the
+  first entry. Note that this entry has no key. The entries contents are
+  aligned together.
+\entry*[Another Key]
+  This is another entry with a new key.
+\entry*
+  This is another entry, but this one has no key. Note the text bullet
+  which serves as a visual clue, especially when several entries share the
+  same key.
+\subrubric{A Second Subrubric}
+\entry*[A Key]
+  This entry belongs to the second subrubric.
+\entry*
+  This one also belongs to the second subrubric.
+\entry*[Another Key]
+  This is another entry with a new key.
+\entry*
+  This is another entry, but this one has no key.
+  \subrubric{}
+\entry*[A Key]
+  If you want to separate some entries from the subrubric above,
+  you can for instance make an empty subrubric.
+\entry*
+  You can include other rubrics below. Rubrics can even be split across
+  pages. The titles will then be repeated.
+\end{rubric}
+
+%% rubric.tex ends here.
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "cv"
+%%% End:

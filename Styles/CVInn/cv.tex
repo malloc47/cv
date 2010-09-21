@@ -1,0 +1,263 @@
+\documentclass[a4paper,10pt]{article}
+
+%A Few Useful Packages
+\usepackage{marvosym}
+\usepackage{fontspec} 					%for loading fonts
+\usepackage{xunicode,xltxtra,url,parskip} 	%other packages for formatting
+\RequirePackage{color,graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[big]{layaureo} 				%better formatting of the A4 page
+% an alternative to Layaureo can be ** \usepackage{fullpage} **
+\usepackage{supertabular} 				%for Grades
+\usepackage{titlesec}					%custom \section
+
+%Setup hyperref package, and colours for links
+\usepackage{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour, linkcolor=linkcolour}
+
+%FONTS
+\defaultfontfeatures{Mapping=tex-text}
+\setmainfont[SmallCapsFont = Fontin SmallCaps]{Fontin}
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{3pt}{3pt}
+%Tweak a bit the top margin
+%\addtolength{\voffset}{-1.3cm}
+
+%Italian hyphenation for the word: ''corporations''
+\hyphenation{im-pre-se}
+
+%-------------WATERMARK TEST [**not part of a CV**]---------------
+\usepackage[absolute]{textpos}
+
+\setlength{\TPHorizModule}{30mm}
+\setlength{\TPVertModule}{\TPHorizModule}
+\textblockorigin{2mm}{0.65\paperheight}
+\setlength{\parindent}{0pt}
+
+%--------------------BEGIN DOCUMENT----------------------
+\begin{document}
+
+%WATERMARK TEST [**not part of a CV**]---------------
+\font\wm=''Baskerville:color=787878'' at 8pt
+\font\wmweb=''Baskerville:color=FF1493'' at 8pt
+{\wm 
+	\begin{textblock}{1}(0,0)
+		\rotatebox{-90}{\parbox{500mm}{
+			Typeset by Alessandro Plasmati with \XeTeX\  \today\ for 
+			{\wmweb \href{http://www.aleplasmati.comuv.com}{aleplasmati.comuv.com}}
+		}
+	}
+	\end{textblock}
+}
+
+\pagestyle{empty} % non-numbered pages
+
+\font\fb=''[cmr10]'' %for use with \LaTeX command
+
+%--------------------TITLE-------------
+\par{\centering
+		{\Huge Alessandro \textsc{Plasmati}
+	}\bigskip\par}
+
+%--------------------SECTIONS-----------------------------------
+%Section: Personal Data
+\section{Personal Data}
+
+\begin{tabular}{rl}
+    \textsc{Place and Date of Birth:} & Someplace, Italy  | dd Month 1912 \\
+    \textsc{Address:}   & CV Inn 19, 20301, Milano, Italy \\
+    \textsc{Phone:}     & +39 123 456789\\
+    \textsc{email:}     & \href{mailto:alessandro.plasmati@gmail.com}{alessandro.plasmati@gmail.com}
+\end{tabular}
+
+%Section: Work Experience at the top
+\section{Work Experience}
+\begin{tabular}{r|p{11cm}}
+ \emph{Current} & Trader at \textsc{Enoi} s.p.a., Milan \\\textsc{Jan 2009}&\emph{Physical Natural Gas Trading}\\&\footnotesize{Provided analysis of spreads, in particular time and location spreads, with emphasis on trading opportunities on the curve, also taking into account the availability of storage facilities. Became familiar with logistic implications of physical gas trading and developed knowledge of continental virtual hubs for gas exchange.}\\\multicolumn{2}{c}{} \\
+ \textsc{Jul-Oct 2008} & 1\textsuperscript{st} year Analyst at \textsc{Lehman Brothers}, London \\&\emph{Commodities Structured Trading}\\&\footnotesize{Developed spreadsheets for risk analysis on exotic derivatives on a wide array of commodities (\textit{ags, oils, precious} and \textit{base metals}), managed blotter and secondary trades on structured notes, liaised with Middle Office, Sales and Structuring for bookkeeping.}\\\multicolumn{2}{c}{} \\
+\textsc{Summer 2007} & Summer Intern at \textsc{Lehman Brothers}, \emph{Capital Markets}\\&\footnotesize{Received pre-placed offer from the Exotics Trading Desk as a result of very positive review. Rated ``\emph{truly distinctive}'' for Analytical Skills and Teamwork.}
+\end{tabular}
+
+%Section: Education
+\section{Education}
+\begin{tabular}{rl}	
+ \textsc{July} 2008 & Master of Science in \textsc{Finance}, \textbf{Bocconi University}, Milan\\
+& 110/110 \small\emph{summa cum laude} | Major: Quantitative Finance\\
+& Thesis: ``Sublinear and Locally Sublinear Prices'' | \small Advisor: Prof. Erio \textsc{Castagnoli}\\
+&\normalsize \textsc{Gpa}: 28.61/30\hyperlink{grds}{\hfill | \footnotesize Detailed List of Exams}\\&\\
+\textsc{July} 2006& Undergraduate Degree in \textsc{Law} and \textsc{Business Administration} \\&110/110 \small\emph{summa cum laude}, \normalsize\textbf{Bocconi University}, Milan\\
+& Thesis: ``Portfolio Strategies with Target Prices'' | \small Advisor: Stefano \textsc{Bonini}\\
+&\normalsize \textsc{Gpa}: 29.85/30\hyperlink{grds_cleli}{\hfill| \footnotesize Detailed List of Exams}\\&\\
+\textsc{Fall} 2005& Exchange Semester at \textbf{University of Southern California}, Los Angeles\\
+&\textsc{Gpa}: 3.875/4 \hyperlink{grds_usc}{\hfill| \footnotesize Detailed List of Exams}\\&\\
+\textsc{July} 2003& \textbf{Liceo Classico ``E. Duni''}, Matera | Final Grade: 100/100
+\end{tabular}
+
+%Section: Scholarships and additional info
+\section{Scholarships and Certificates}
+\begin{tabular}{rl}
+ \textsc{Sept.} 2006 & Scholarship for graduate students with an outstanding curriculum \footnotesize(\EURcr 30,000)\normalsize\\
+\textsc{June} 2006 & {\textsc{Gmat}\textregistered}\setmainfont[SmallCapsFont=Fontin SmallCaps]{Fontin-Regular}: 730 (\textsc{q:50;v:39}) 96\textsuperscript{th} percentile; \textsc{awa}: 6.0/6.0 (89\textsuperscript{th} percentile)
+\end{tabular}
+
+%Section: Languages
+\section{Languages}
+\begin{tabular}{rl}
+ \textsc{Italian:}&Mothertongue\\
+\textsc{English:}&Fluent\\
+\textsc{French:}&Basic Knowledge\\
+\end{tabular}
+
+\section{Computer Skills}
+\begin{tabular}{rl}
+ Basic Knowledge:& \textsc{php}, my\textsc{sql}, \textsc{html}, Access, \textsc{Linux}, ubuntu, {\fb \LaTeX}\setmainfont[SmallCapsFont=Fontin SmallCaps]{Fontin-Regular}\\
+Intermediate Knowledge:& \textsc{vba}, Excel, Word, PowerPoint\\
+\end{tabular}
+
+\section{Interests and Activities}
+Technology, Open-Source, Programming\\
+Paradoxes in Decision Making, Psychoanalysis, Behavioural Finance\\
+Football, Travelling
+
+\newpage
+\par{\centering\Large \hypertarget{grds}{Master of Science in \textsc{Finance}}\par}\large{\centering Grades\par}\normalsize
+\begin{center}
+\begin{tabular}{lcc}
+\multicolumn{1}{c}{\textsc{Exam}}&\textsc{Grade}&\textsc{Credit Hrs}\\ \hline
+Corporate Finance (Valuation)	&25&	6\\
+Financial Statement Analysis	&28&	6\\
+Statistics	&27&	6\\
+Theory of Finance	&26&	6\\
+Quantitative Methods for Finance	&30&	6\\
+Econometrics	&24	&6\\
+Derivatives	&31&	6\\
+Management of Financial and Insurance Companies	&30&	6\\
+Business Law	&31&	6\\
+Investment Banking	&28&	6\\ \\
+		
+Behavioral Models for Economics and Finance	&29&	6\\
+Numerical Methods for Finance	&29&	6\\
+Advanced Derivatives	&30&	6\\
+Fixed Income (Advanced Methods)	&30&	6\\ \\
+		
+English Language	&30&	4\\
+French Language	&31&	4\\
+		
+Internship	&	&8\\
+		
+Final Thesis	&	&20\\
+		
+		& Total&120\\\cline{2-3}
+&\textsc{Gpa}&\textbf{28.61}
+\end{tabular}
+\end{center}
+\bigskip
+\hrule
+\bigskip
+\par{\centering\Large \hypertarget{grds_cleli}{Undergraduate Degree in \textsc{Law and Business Administration}}\par}\large{\centering Grades\par}\normalsize
+
+\begin{center}
+
+\tablefirsthead{%
+  \multicolumn{1}{c}{\textsc{Esame (\textsc{ita})}}&\multicolumn{1}{c}{\textsc{Exam (\textsc{eng})}}&\textsc{Grade}&\textsc{Credit Hrs}\\ \hline}
+\tablehead{%
+\multicolumn{1}{c}{\textsc{Esame (\textsc{ita})}}&\multicolumn{1}{c}{\textsc{Exam (\textsc{eng})}}&\textsc{Grade}&\textsc{Credit Hrs}\\ \hline
+}
+\tabletail{%
+}
+\tablelasttail{}	
+
+ \begin{supertabular}{p{4.9cm} p{4.9cm} c c}
+Economia aziendale&Theory and principles of management& 28 & 8\\
+Istituzioni di diritto privato&Principles of private law&30&8\\
+ Istituzioni di diritto pubblico 
+&
+ Principles of public law 
+& 30&
+ 6 
+\\
+Matematica generale 
+& Mathematics 
+&31&8\\
+ Contabilit\`a e Bilancio 
+& Accounting and Financial statements 
+& 31 & 8\\
+ Diritto del lavoro 
+&
+ Labour law 
+& 30&
+4 
+\\
+ Informatica & Computer skills &29& 4 
+\\
+ Economia e gestione delle imprese & Corporate management &31&6 
+\\
+ Microeconomia & Microeconomics &30&8 
+\\
+ Contabilit\`a e bilancio 2 & Accounting and financial statements 2 
+&29&8 \\
+ Diritto commerciale & Company and business law &30&8 
+\\
+ Macroeconomia & Macroeconomics &29&8 
+\\
+ Statistica & Statistics &30&6\\
+ Diritto delle procedure concorsuali & Insolvency law &31&4 
+\\
+ Finanza aziendale 
+& Corporate finance 
+&31 &8 \\
+ Matematica finanziaria & Financial mathematics &31&4 
+\\
+ Programmazione e controllo 
+& Management accounting &31&8 
+\\
+Lingua Inglese \textsc{c1}& English Language \textsc{c1}& 25&6\\ 
+Diritto tributario & Tax law &30&6 
+\\
+Organizzazione e sistemi informativi aziendali &Management information systems &28&6 
+\\
+ Strategia e politica aziendale* 
+& Business strategy* & 29& 6 
+\\
+Derivati*&Derivatives*&30&6\\
+Opzionale all'estero* & Corporate Financial Strategy* &30&6\\
+Lingua Francese \textsc{b1} & French Language \textsc{b1}&31&6\\
+Economia dei mercati e degli intermediari finanziari* 
+&Financial markets and institutions* &30&6 
+\\
+Revisione aziendale 
+&Financial auditing &31&6 
+\\
+Scienza delle finanze &Public economics &30&6 
+\\
+ Lavoro finale& Final report&&6\\
+& & Total&180\\\cline{3-4}
+& &\textsc{Gpa}&\textbf{29.85}\\ \\ \multicolumn{4}{l}{\footnotesize A star (*) indicates that the course was taken at the \textbf{University of Southern California}, Los Angeles, \textsc{usa}}
+ \end{supertabular}
+\end{center}
+\bigskip
+\hrule
+\bigskip
+\par{\centering\Large \hypertarget{grds_usc}{Exchange Program at \textsc{usc}, Los Angeles}\par}\large{\centering Grades\par}\normalsize
+
+\begin{center}
+\begin{tabular}{lcc}
+\multicolumn{1}{c}{\textsc{Exam}}&\textsc{Grade}&\textsc{Grade Points}\\ \hline
+Corporate Financial Strategy	&A&	4\\
+Derivatives	&A&	4\\
+Money, Credit, and Banking	&A&	4\\
+Business Strategy & A-& 3.5\\
+& &\\\cline{2-3}
+ &\textsc{Gpa}&\textbf{3.875}
+\end{tabular}
+\end{center}
+%\newpage
+%\hypertarget{gmat}{\textsc{Gmat}\setmainfont{LMRoman10 Regular}\textregistered\setmainfont[SmallCapsFont=Fontin-SmallCaps]{Fontin-Regular}}
+
+%\XeTeXpdffile ''GMAT.pdf'' page 1 scaled 800
+
+\end{document}

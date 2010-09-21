@@ -1,0 +1,72 @@
+
+				 ABOUT CURVE
+
+
+Copyright (C) 2000, 2001, 2002, 2003, 2004, 2005, 2007 Didier Verna
+
+This file is part of CurVe.
+
+CurVe may be distributed and/or modified under the
+conditions of the LaTeX Project Public License, either version 1.1
+of this license or (at your option) any later version.
+The latest version of this license is in
+http://www.latex-project.org/lppl.txt
+and version 1.1 or later is part of all distributions of LaTeX
+version 1999/06/01 or later.
+
+CurVe consists of the following files:
+
+- README (this file)
+- NEWS
+- curve.ins
+- curve.dtx
+- curve.el
+- cv.tex
+- rubric.tex
+- THANKS
+
+
+* Description
+=============
+
+CurVe is a class package that hopefully will make your life easier when you
+want to write your CV. It provides you with a set of commands to create
+rubrics, entries in these rubrics etc. CurVe will then properly format your CV
+for you (possibly splitting it onto multiple pages, repeating the titles etc),
+which is usually the most painful part of CV writing. Another nice feature of
+CurVe is its ability to manage different CV "flavors" simultaneously. It is in
+fact often the case that you want to maintain slightly divergent versions of
+your CV at the same time, in order to emphasize on different aspects of your
+background. CurVe also comes with support for AUC-TeX.
+
+
+* Installation
+==============
+
+	To install the package, please follow these steps:
+
+- Run LaTeX on the file `curve.ins' to create the class file `curve.cls'.
+- Run LaTeX on the file `curve.dtx' to create the doc   file `curve.dvi'.
+- Install these files anywhere you see fit.
+
+	If you're an AUC-TeX user, you can also install the file `curve.el' in
+a suitable AUC-TeX style directory.
+
+	Once you have installed the package, you might also want to process
+the example file cv.tex. This will give you an idea of what a CV looks like
+with CurVe by default.
+
+	Have fun!
+
+--
+Didier Verna, didier@lrde.epita.fr, http://www.lrde.epita.fr/~didier
+
+EPITA / LRDE, 14-16 rue Voltaire   Tel.+33 (0)1 44 08 01 85
+94276 Le Kremlin-Bicêtre, France   Fax.+33 (0)1 53 14 59 22
+
+
+
+
+Local Variables:
+mode: outline
+End:
