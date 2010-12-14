@@ -11,6 +11,7 @@
 \usepackage{supertabular} 				%for Grades
 \usepackage{titlesec}					%custom \section
 \usepackage{multicol}
+\usepackage{longtable}
 
 %Setup hyperref package, and colours for links
 \usepackage{hyperref}
@@ -26,7 +27,7 @@
 %\renewcommand{\labelitemi}{\textcolor{lightg}{\symbol{"00BB}}}
 
 \makeatletter
-\renewcommand*{\@biblabel}[1]{\hfill[P#1]}
+\renewcommand*{\@biblabel}[1]{\hfill[C#1]}
 \makeatother
 
 % Bullets
@@ -124,7 +125,7 @@
 \section{Biographical Data}
 
 \begin{tabular}{r p{3.5in}}
-	\textsc{Place and Date of Birth:} & Lynchburg, VA \hspace{0.5em} | \hspace{0.5em} 24 September 1984 \\
+	\textsc{Birth:} & Lynchburg, VA \hspace{0.5em} | \hspace{0.5em} 24 September 1984 \\
 	%\textsc{Address:}   & 241 S. Bull St. Columbia, SC 29205 \\
 	\textsc{Address:}	& Department of Computer Science and Engineering, University of South Carolina, Columbia, SC 29208 \\
     \textsc{Phone:}     & 847-261-4747\\
@@ -133,7 +134,9 @@
 	\textsc{Website:}	& \href{http://www.malloc47.com}{www.malloc47.com}
 \end{tabular}
 
-%\section{Research Interests}
+\section{Research Interests}
+
+Computer vision, segmentation, grouping, document image analysis, event recognition, image processing, signal processing, tomographic image analysis.
 
 \section{Education}
 \begin{tabular}{r p{12cm}}	
@@ -158,7 +161,7 @@
 \end{tabular}
 
 \section{Teaching Experience}
-\begin{tabular}{r|p{11cm}}
+\begin{longtable}{r|p{11cm}}
 %\emph{Current} 
 \textsc{2008---2009}
 & GK-12 Fellow at \textsc{Crayton Middle School} \\
@@ -178,7 +181,7 @@
 \textsc{2003---2007} & Professional Tutor at \textsc{USCL Academic Success Center} \\
 &\emph{Tutoring High School and College Students}\\
 &\footnotesize{Student and graduate tutor for college-level Mathematics, Computer Science, Physics, and English classes.}\\\multicolumn{2}{c}{} \\
-\end{tabular}
+\end{longtable}
 
 
 \section{Research Experience}
@@ -196,6 +199,32 @@
 \\\multicolumn{2}{c}{} \\
 \end{tabular}
 
+
+%\section{Publications}
+\nocite{temlyakov2010}
+\nocite{zhang2010}
+\renewcommand\refname{Publications}
+\bibliography{cv}
+\bibliographystyle{plainyr-rev}
+
+
+\section{Presentations}
+\begin{enumerate}
+\renewcommand{\labelenumi}{[P\arabic{enumi}] }
+\item \emph{Aspect-Oriented Programming}. In CSCE 531. Guest lecture for Dr. Marco Valtorta. March 19, 2008.
+\item \emph{Math 241}. Vector Calculus. Guest lecture for Dr. Dwayne Brown. April~23---26, 2007. 
+\item \emph{Math 242}. Differential Equations. Guest lecture for Dr. Dwayne Brown. April~23---26, 2007. 
+\end{enumerate}
+
+\section{Travel}
+\begin{enumerate}
+\renewcommand{\labelenumi}{[T\arabic{enumi}] }
+\item \emph{Tomography and its Applications to Materials Science and Non-Destructive Evaluation}. Organizd by M. De Graef, L. Drummy, J. Simmons, M. Comer, C. Bouman, and J. Knopp. At Tech\^{}Edge, Dayton, Ohio. December 13---15, 2010.
+\item Visiting scholar. In collaboration with J. M. Siskind. At Purdue University. December 6---22, 2010.
+\item \emph{Mind's Eye Kickoff Meeting}. DARPA Project P.I.~meeting. September 23---24, 2010. 
+\end{enumerate}
+
+
 \section{Honors/Awards}
 \begin{tabular}{rl @{\hspace{0.5em}(} l}
 2010 & Graduate Student Day Presentation,  Honorable Mention & \textsc{USC})\\
@@ -205,25 +234,22 @@
 & Highest Academic Average Award & \textsc{USCL})\\
 \end{tabular}
 
-\section{Invited Talks}
-
-\section{Travel}
-\begin{enumerate}
-\renewcommand{\labelenumi}{[T\arabic{enumi}] }
-\item Tomography and its Applications to Materials Science and Non-Destructive Evaluation. Organizd by M. De Graef, L. Drummy, J. Simmons, M. Comer, C. Bouman, and J. Knopp. At Tech\^{}Edge, Dayton, Ohio. December 13---15, 2010.
-\item Visiting scholar. In collaboration with J. M. Siskind. At Purdue University. December 6---22, 2010.
-\end{enumerate}
-
-\section{Professional Societies}
+%\section{Professional Societies}
 
 \section{Teaching}
-%  @{\hspace{0.5em}|\hspace{0.5em}} 
-\begin{tabular}{r|l|l }
-Summer II 2008 & CSCE 102 & \textsc{University of South Carolina} \\
-Spring 2008 & CSCE 145 Lab &  \\
-Fall 2007 & CSCE 145 Lab & \\
-Spring 2007 & CSCE 204 & \textsc{University of South Carolina at Lancaster}\\
-\end{tabular}
+\begin{center}
+\begin{tabular*}{0.75\textwidth}{r @{\hspace{0.5em}\textcolor{lightg}{\symbol{"00BB}}\hspace{0.5em}} l @{\extracolsep{\fill}} l }
+\multicolumn{3}{r}{University of South Carolina}\\ \hline
+Summer II 2008 & CSCE 102 & HTML/CSS/Javasript \\
+Spring 2008 & CSCE 145 Lab & Java \\
+Fall 2007 & CSCE 145 Lab & Java \\
+&&\\
+\multicolumn{3}{r}{University of South Carolina at Lancaster}\\ \hline
+Spring 2007 & CSCE 204 & Visual Basic \\
+Spring 2007 & Math 241 Guest Lecture & Maple \\
+Spring 2007 & Math 242 Guest Lecture  & Maple \\
+\end{tabular*}
+\end{center}
 
 \section{Skills \& Languages}
 \begin{multicols}{3}
@@ -238,31 +264,35 @@ Spring 2007 & CSCE 204 & \textsc{University of South Carolina at Lancaster}\\
 \setlength{\parsep}{0pt}
 \item Assembly \hfill \twonotes
 \item Bash \hfill \fournotes
+\item Blender \hfill \twonotes
 \item C/C++ \hfill \fournotes 
 \item GNU/Linux \hfill \fournotes
 \item HTML/CSS \hfill \fivenotes
 \item Java \hfill \fivenotes
 \item Javacript \hfill \threenotes
+\item \LaTeX \hfill \threenotes
+\item Linux \hfill \fournotes
 \item LISP \hfill \onenote
 \item Maple \hfill \threenotes
 \item MATLAB \hfill \fivenotes
+\item MS Office \hfill \fivenotes
+\item Networking \hfill \threenotes
 \item OpenCV \hfill \fivenotes
 \item PHP \hfill \fournotes
 \item Python \hfill \twonotes
 \item Scheme \hfill \twonotes
 \item SQL \hfill \threenotes
-%\item SysAdmin (Linux) \hfill \fournotes
+\item Sys. Admin. \hfill \fournotes
 \item Visual Basic \hfill \fivenotes
 %\end{enumerate}
 \end{itemize}
 %}
 \end{multicols}
-%\section{Publications}
-\nocite{temlyakov2010}
-\nocite{zhang2010}
-\renewcommand\refname{Publications}
-\bibliography{cv}
-\bibliographystyle{plainyr-rev}
+
+\section{Interests and Activities}
+Programming, Teaching, Mathematics\\
+Open-source Software, System Administration, Linux\\
+Typography, Music Composition
 
 %Section: Languages
 %\section{Languages}
