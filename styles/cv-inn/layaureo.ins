@@ -1,0 +1,58 @@
+%%
+%% layaureo.ins
+%% Copyright 2003 GuIT: Gruppo Utilizzatori Italiani di TeX
+%%
+%% This program is provided under the terms of the
+%% LaTeX Project Public License distributed from CTAN
+%% archives in directory macros/latex/base/lppl.txt.
+%%
+%% Author: Fabiano Busdraghi
+%%         at fabusdr@yahoo.it
+%%
+%% This work has the LPPL maintenance status "author-maintained".
+%%
+%% This file will generate fast loadable files and documentation
+%% driver files from the doc files in this package when run through
+%% LaTeX or TeX.
+%%
+%% --------------- start of docstrip commands ------------------
+%%
+\input docstrip
+\preamble
+
+ Copyright 2003 Gruppo Utilizzatori Italiani di TeX
+
+ This program is provided under the terms of the
+ LaTeX Project Public License distributed from CTAN
+ archives in directory macros/latex/base/lppl.txt.
+
+ Author: Fabiano Busdraghi
+         at fabusdr@yahoo.it
+
+ This work has the LPPL maintenance status "author-maintained".
+
+\endpreamble
+
+\keepsilent
+\askforoverwritefalse
+
+\Msg{*** Generating the package files ***}
+\generate{\file{layaureo.sty}{\from{layaureo.dtx}{style}}%
+          \nopostamble
+          }
+
+\Msg{***********************************************************}
+\Msg{*}
+\Msg{* To finish the installation you have to move the following}
+\Msg{* files into a directory searched by TeX:}
+\Msg{*}
+\Msg{* \space\space layaureo.sty}
+\Msg{*}
+\Msg{*}
+\Msg{* To produce the documentation on layaureo's code run the}
+\Msg{* file ending with `.dtx' through (pdf)LaTeX.}
+\Msg{*}
+\Msg{* Happy TeXing}
+\Msg{***********************************************************}
+
+\endbatchfile

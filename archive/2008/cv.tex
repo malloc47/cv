@@ -1,0 +1,284 @@
+% cv.tex
+% $Id: cv-us.tex,v 1.28 2006/12/12 22:53:52 jrblevin Exp $
+%
+% LaTeX Curriculum Vitae Template
+%
+% Copyright (C) 2004-2006 Jason Blevins
+%
+% You may use use this document as a template to create your own CV
+% and you may redistribute the source code freely. No attribution is
+% required in any resulting documents, however, I do ask that you
+% please leave this notice and the above URL in the source code if you
+% choose to redistribute this file.
+%
+% Jason R. Blevins <jrblevin@sdf.lonestar.org>
+% http://jrblevin.freeshell.org
+% Durham, December 12, 2006
+%
+%%---------------------------------------------------------------------------%
+%
+% Notes:
+%
+% * Don't forget to change `pdfauthor' and `keywords' in the \hypersetup
+%   section below.
+%
+% * To create a new page use: \newpage \opening
+%
+% * res.cls includes an \address{} command which can be used up to twice,
+%   but my address is too long for the format it uses.
+%
+% * Alternate documentclass statement to put headings in margin:
+%   \documentclass[margin,line,11pt,final]{res}
+%
+% * Can divide publication/presentation list into subsections by year:
+%   \section{\bf\small\hspace{8mm}2006}
+%
+%%----------------------------------------------------------------------------%
+
+\documentclass[overlapped,line,letterpaper]{res}
+
+\usepackage{ifpdf}
+
+\ifpdf
+  \usepackage[pdftex]{hyperref}
+\else
+  \usepackage[hypertex]{hyperref}
+\fi
+
+\hypersetup{
+  letterpaper,
+  colorlinks,
+  urlcolor=black,
+  pdfpagemode=none,
+  pdftitle={Curriculum Vitae},
+  pdfauthor={Jarrell W. Waggoner},
+  pdfcreator={$ $Id: cv.tex,v 1.28 2008/04/05 waggonej Exp $ $},
+  pdfsubject={Curriculum Vitae},
+  pdfkeywords={47}
+}
+
+%%===========================================================================%%
+
+\begin{document}
+
+%---------------------------------------------------------------------------
+% Document Specific Customizations
+
+% Make lists without bullets and with no indentation
+\setlength{\leftmargini}{0em}
+\renewcommand{\labelitemi}{}
+
+% Use large bold font for printed name at top of pages
+\renewcommand{\namefont}{\large\textbf}
+
+%---------------------------------------------------------------------------
+
+\name{Jarrell W. Waggoner}
+
+\begin{resume}
+
+\begin{ncolumn}{2}
+  College of Engineering and Computing       & Phone: (704) 689-4159 \\
+  University of South Carolina & {\tt waggonej@engr.sc.edu} \\
+  Columbia, SC & {\tt \verb+http://cse.sc.edu/~waggonej/+} \\
+\end{ncolumn}
+
+%---------------------------------------------------------------------------
+
+\section{\bf Education}
+Currently pursuing: Ph.D. Computer Science, University of South Carolina, 2012 (Expected)
+
+B.S. Computer Science, William Jennings Bryan College, 2006,
+{\it Summa Cum Laude}
+
+A.S. Computer Science, University of South Carolina at Lancaster, 2004,
+{\it Summa Cum Laude}
+
+%---------------------------------------------------------------------------
+
+\section{\bf Teaching Experience}
+
+\begin{format}
+\title{l}\dates{r}\\
+\employer{l}\location{r}\\
+\body\\
+\end{format}
+
+\title{Teaching Assistant}
+\employer{College of Engineering and Computing}
+\location{University of South Carolina}
+\dates{2007--Present}
+\begin{position}
+Lab teaching assistant for introductory programming (CSCE 145).
+\end{position}
+
+\title{Instructor}
+\employer{Dr. Noni M. Bohonak}
+\location{University of South Carolina at Lancaster}
+\dates{Spring 2007}
+\begin{position}
+Instructor for the university's Visual Basic programming class (CSCE 204).  Development of course material.
+\end{position}
+
+\title{Camp Instructor}
+\employer{Dr. Dwayne Brown}
+\location{University of South Carolina at Lancaster}
+\dates{Fall 2006}
+\begin{position}
+One of two instructors for USCL's Arts and Sciences Adventure Camp, a computer science and mathematics camp for grade school children.
+\end{position}
+
+\title{Professional Tutor}
+\employer{Academic Success Center}
+\location{University of South Carolina at Lancaster}
+\dates{2003--2007}
+\begin{position}
+First student, then professional tutor for college-level Mathematics, Computer Science, Physics, and English classes
+\end{position}
+
+%---------------------------------------------------------------------------
+
+\section{\bf Informal Teaching Activities}
+
+\begin{format}
+\title{l}\dates{r}\\
+\employer{l}\location{r}\\
+\body\\
+\end{format}
+
+\title{Technical Writer}
+\employer{JAARS (Software Development Center)}
+\location{Waxhaw, N.C.}
+\dates{Summer 2005}
+\begin{position}
+Intern with the Training Department writing technical manuals for software and training manuals for classroom use.
+\end{position}
+
+\title{Substitute Teaching}
+\employer{Dr. Danny R. Faulkner}
+\location{Carolina Christian Academy, Lancaster, S.C.}
+\dates{2004}
+\begin{position}
+Substitute Teacher for Chemistry at local private high school for several weeks.
+\end{position}
+
+%---------------------------------------------------------------------------
+
+% Abridged version of teaching experience
+%\section{\bf Teaching Experience}
+%
+%\begin{itemize}
+%%\item Mathematics Tutor, North Carolina State University, 2001
+%\item Teaching Assistant, Microeconomic Analysis (Ph.D.), Duke
+%  University, Fall 2005
+%\item Teaching Assistant, Game Theory (Ph.D.), Duke University, Spring 2006
+%\item Instructor, Microeconomics Qualifier Camp, Summer 2006
+%\item Teaching Assistant, Econometrics II (Ph.D.), Duke University, Spring 2007
+%\end{itemize}
+
+%------------------------------------------------------------------------------
+
+%\section{\bf Employment}
+%
+% \begin{format}
+% \employer{l}\location{r}\\
+% \title{l}\dates{r}\\
+% \body\\
+% \end{format}
+%
+% \title{Computer Technician}
+% \employer{Hurley Technology Resources}
+% \location{Jefferson, NC}
+% \dates{1999--2000}
+% \begin{position}
+% Windows and UNIX networking for businesses and internet service providers,
+% in- and out-of-house PC repair, sales, technical support, and database driven
+% web site design. Supervisor: Cyrus Hurley.
+% \end{position}
+
+%------------------------------------------------------------------------------
+
+%\section{\bf Working Papers}
+%
+%``The Effects of Ties on Convergence in K-Modes Variants for Clustering
+%Categorical Data,''
+%with N.\ Orlowski, D.\ Schlorff, D.\ Ca\~{n}as, M.\ T.\ Chu,
+%and R.\ E.\ Funderlic (2004).
+%
+%``Updating the Centroid Decomposition with Applications in LSI,''
+%with M.\ T.\ Chu, D.\ Ca\~{n}as, R.\ E.\ Funderlic, N.\ Orlowski,
+%and D.\ Schlorff (2004).
+%
+%``Structural Estimation of Sequential Games of Complete Information'' (2006).
+
+%------------------------------------------------------------------------------
+
+
+%\section{\bf Scientific Software}
+%
+%Blevins, J., J. Heath, and W. Hereman (2002):
+%\href{http://www.mines.edu/fs_home/whereman/software/PDESolutionTester/}
+%{\texttt{PDESolutionTester}},
+%A Mathematica program for the symbolic verification of exact solutions of
+%nonlinear partial differential equations.
+
+%------------------------------------------------------------------------------
+
+%\section{\bf Presentations}
+%
+%``Solving Nonlinear Wave Equations with Mathematica,''
+%North Carolina State University, April 23, 2003.
+
+%---------------------------------------------------------------------------
+
+%\section{\bf Service}
+%
+%\begin{itemize}
+%\item Vice President, Society of Undergraduate Mathematics, North
+%  Carolina State University, 2001--2003
+%\item Vice President, Economics Graduate Student Council, Duke
+%  University, 2006--2007
+%\end{itemize}
+
+%%---------------------------------------------------------------------------%%
+
+\section{\bf Honors and Awards}
+\begin{itemize}
+\item Senior Computer Science Award, Bryan College, 2006 
+\item Clara P. Hammond Award, University of South Carolina at Lancaster, 2004
+\item Science and Mathematics Award, University of South Carolina at Lancaster, 2004
+\item Highest Academic Average Award, University of South Carolina at Lancaster, 2004
+\end{itemize}
+
+%%---------------------------------------------------------------------------%%
+
+%%===========================================================================%%
+\newpage
+\opening
+
+\section{\bf References}
+
+\begin{ncolumn}{2}
+  Dr. Noni M. Bohona & Dr. Danny R. Faulkner \\
+  {\tt nbohonak@gwm.sc.edu} & {\tt drfaulkn@gwm.sc.edu} \\
+  Phone: 803.313.7136 & Phone: 803.313.7029 \\
+  & \\
+  Dr. Dwayne Brown & Mr. Earl T. Reed \\
+  {\tt dwayneb@gwm.sc.edu} & {\tt reedea@bryan.edu}\\
+\end{ncolumn}
+
+
+%%---------------------------------------------------------------------------%%
+
+%\begin{center}
+%\vspace{\fill}\ \newline
+%{\tiny \rm $ $RCSfile: cv-us.tex,v $ $ }
+%{\tiny \rm $ $Date: 2006/12/12 22:53:52 $ $ }
+%{\tiny \rm $ $Revision: 1.28 $ $ }
+%\end{center}
+
+\end{resume}
+
+\end{document}
+
+%%===========================================================================%%
