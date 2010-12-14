@@ -10,11 +10,67 @@
 % an alternative to Layaureo can be ** \usepackage{fullpage} **
 \usepackage{supertabular} 				%for Grades
 \usepackage{titlesec}					%custom \section
+\usepackage{multicol}
 
 %Setup hyperref package, and colours for links
 \usepackage{hyperref}
 \definecolor{linkcolour}{rgb}{0,0.2,0.6}
 \hypersetup{colorlinks,breaklinks,urlcolor=linkcolour, linkcolor=linkcolour}
+
+%Color
+\definecolor{lightg}{HTML}{999999}
+\definecolor{medg}{HTML}{666666}
+\definecolor{darkg}{HTML}{333333}
+
+\usepackage{enumitem}
+%\renewcommand{\labelitemi}{\textcolor{lightg}{\symbol{"00BB}}}
+
+\makeatletter
+\renewcommand*{\@biblabel}[1]{\hfill[P#1]}
+\makeatother
+
+% Bullets
+\definecolor{noteone}{HTML}{999999}
+\definecolor{notetwo}{HTML}{848484}
+\definecolor{notethree}{HTML}{424242}
+\definecolor{notefour}{HTML}{212121}
+\definecolor{notefive}{HTML}{000000}
+
+\newcommand{\fivenotes}{%
+	\textcolor{noteone}{\symbol{"2022}}
+	\textcolor{notetwo}{\symbol{"2022}}
+	\textcolor{notethree}{\symbol{"2022}}
+	\textcolor{notefour}{\symbol{"2022}}
+	\textcolor{notefive}{\symbol{"2022}}
+}
+\newcommand{\fournotes}{%
+	\textcolor{noteone}{\symbol{"2022}}
+	\textcolor{notetwo}{\symbol{"2022}}
+	\textcolor{notethree}{\symbol{"2022}}
+	\textcolor{notefour}{\symbol{"2022}}
+	\textcolor{white}{\symbol{"2022}}
+}
+\newcommand{\threenotes}{%
+	\textcolor{noteone}{\symbol{"2022}}
+	\textcolor{notetwo}{\symbol{"2022}}
+	\textcolor{notethree}{\symbol{"2022}}
+	\textcolor{white}{\symbol{"2022}}
+	\textcolor{white}{\symbol{"2022}}
+}
+\newcommand{\twonotes}{%
+	\textcolor{noteone}{\symbol{"2022}}
+	\textcolor{notetwo}{\symbol{"2022}}
+	\textcolor{white}{\symbol{"2022}}
+	\textcolor{white}{\symbol{"2022}}
+	\textcolor{white}{\symbol{"2022}}
+}
+\newcommand{\onenote}{%
+	\textcolor{noteone}{\symbol{"2022}}
+	\textcolor{white}{\symbol{"2022}}
+	\textcolor{white}{\symbol{"2022}}
+	\textcolor{white}{\symbol{"2022}}
+	\textcolor{white}{\symbol{"2022}}
+}
 
 %FONTS
 \defaultfontfeatures{Mapping=tex-text}
@@ -77,11 +133,11 @@
 	\textsc{Website:}	& \href{http://www.malloc47.com}{www.malloc47.com}
 \end{tabular}
 
-\section{Research Interests}
+%\section{Research Interests}
 
 \section{Education}
 \begin{tabular}{r p{12cm}}	
- \textsc{Current} & Ph.D. in \textsc{Computer Science}, \textbf{University of South Carolina}\\
+ \textsc{Present} & Ph.D. Candidate in \textsc{Computer Science}, \textbf{University of South Carolina}\\
 &% Dissertation: ``Sublinear and Locally Sublinear Prices'' |
 \small Advisor: Dr. Song \textsc{Wang} % | \normalsize \textsc{Gpa}: 3.85/4.0
 %\hyperlink{grds}{\hfill | \footnotesize Detailed List of Exams}
@@ -151,12 +207,56 @@
 
 \section{Invited Talks}
 
-\section{Conferences/Workshops/Meetings Attended}
+\section{Travel}
+\begin{enumerate}
+\renewcommand{\labelenumi}{[T\arabic{enumi}] }
+\item Tomography and its Applications to Materials Science and Non-Destructive Evaluation. Organizd by M. De Graef, L. Drummy, J. Simmons, M. Comer, C. Bouman, and J. Knopp. At Tech\^{}Edge, Dayton, Ohio. December 13---15, 2010.
+\item Visiting scholar. In collaboration with J. M. Siskind. At Purdue University. December 6---22, 2010.
+\end{enumerate}
 
 \section{Professional Societies}
 
 \section{Teaching}
+%  @{\hspace{0.5em}|\hspace{0.5em}} 
+\begin{tabular}{r|l|l }
+Summer II 2008 & CSCE 102 & \textsc{University of South Carolina} \\
+Spring 2008 & CSCE 145 Lab &  \\
+Fall 2007 & CSCE 145 Lab & \\
+Spring 2007 & CSCE 204 & \textsc{University of South Carolina at Lancaster}\\
+\end{tabular}
 
+\section{Skills \& Languages}
+\begin{multicols}{3}
+\raggedcolumns
+%\parbox{5cm}{
+%\begin{enumerate}
+\begin{itemize}
+%\renewcommand{\labelenumi}{\textcolor{lightg}{[S\arabic{enumi}]}}
+\renewcommand{\labelitemi}{\textcolor{lightg}{\symbol{"00BB}}}
+\setlength{\itemsep}{1pt}
+\setlength{\parskip}{0pt}
+\setlength{\parsep}{0pt}
+\item Assembly \hfill \twonotes
+\item Bash \hfill \fournotes
+\item C/C++ \hfill \fournotes 
+\item GNU/Linux \hfill \fournotes
+\item HTML/CSS \hfill \fivenotes
+\item Java \hfill \fivenotes
+\item Javacript \hfill \threenotes
+\item LISP \hfill \onenote
+\item Maple \hfill \threenotes
+\item MATLAB \hfill \fivenotes
+\item OpenCV \hfill \fivenotes
+\item PHP \hfill \fournotes
+\item Python \hfill \twonotes
+\item Scheme \hfill \twonotes
+\item SQL \hfill \threenotes
+%\item SysAdmin (Linux) \hfill \fournotes
+\item Visual Basic \hfill \fivenotes
+%\end{enumerate}
+\end{itemize}
+%}
+\end{multicols}
 %\section{Publications}
 \nocite{temlyakov2010}
 \nocite{zhang2010}
