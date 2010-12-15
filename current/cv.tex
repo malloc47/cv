@@ -1,4 +1,5 @@
 \documentclass[a4paper,10pt]{article}
+%\documentclass[10pt]{article}
 
 %A Few Useful Packages
 \usepackage{marvosym}
@@ -7,11 +8,14 @@
 \RequirePackage{color,graphicx}
 \usepackage[usenames,dvipsnames]{xcolor}
 \usepackage[big]{layaureo} 				%better formatting of the A4 page
+%\usepackage{fullpage}
 % an alternative to Layaureo can be ** \usepackage{fullpage} **
 \usepackage{supertabular} 				%for Grades
 \usepackage{titlesec}					%custom \section
 \usepackage{multicol}
+\usepackage{multirow}
 \usepackage{longtable}
+\usepackage{rotating}
 
 %Setup hyperref package, and colours for links
 \usepackage{hyperref}
@@ -90,9 +94,10 @@
 %-------------WATERMARK TEST [**not part of a CV**]---------------
 \usepackage[absolute]{textpos}
 
-\setlength{\TPHorizModule}{30mm}
-\setlength{\TPVertModule}{\TPHorizModule}
-\textblockorigin{2mm}{0.65\paperheight}
+\TPGrid[30mm,30mm]{30}{60}
+%\setlength{\TPHorizModule}{30mm}
+%\setlength{\TPVertModule}{\TPHorizModule}
+%\textblockorigin{2mm}{0.65\paperheight}
 \setlength{\parindent}{0pt}
 
 %--------------------BEGIN DOCUMENT----------------------
@@ -239,18 +244,33 @@ Computer vision, segmentation, grouping, document image analysis, event recognit
 
 \section{Teaching}
 \begin{center}
-\begin{tabular*}{0.75\textwidth}{r @{\hspace{0.5em}\textcolor{lightg}{\symbol{"00BB}}\hspace{0.5em}} l @{\extracolsep{\fill}} l }
-\multicolumn{3}{r}{University of South Carolina}\\ \hline
-Summer II 2008 & CSCE 102 & HTML/CSS/Javasript \\
+%\begin{tabular*}{0.75\textwidth}{r @{\hspace{0.5em}\textcolor{lightg}{\symbol{"00BB}}\hspace{0.5em}} l @{\extracolsep{\fill}} l }
+\begin{tabular*}{0.75\textwidth}{r @{\hspace{0.5em}\textcolor{lightg}{\symbol{"00BB}}\hspace{0.5em}} l l c }
+%\multicolumn{3}{r}{University of South Carolina}\\
+Summer II 2008 & CSCE 102 & HTML/CSS/Javasript & \multirow{3}{*}{\begin{turn}{-90}USC\end{turn}} \\
 Spring 2008 & CSCE 145 Lab & Java \\
 Fall 2007 & CSCE 145 Lab & Java \\
-&&\\
-\multicolumn{3}{r}{University of South Carolina at Lancaster}\\ \hline
-Spring 2007 & CSCE 204 & Visual Basic \\
+\multicolumn{3}{r}{}\\
+%\multicolumn{3}{r}{University of South Carolina at Lancaster}\\ \hline
+Spring 2007 & CSCE 204 & Visual Basic & \multirow{3}{*}{\begin{turn}{-90}USCL\end{turn}} \\
 Spring 2007 & Math 241 Guest Lecture & Maple \\
 Spring 2007 & Math 242 Guest Lecture  & Maple \\
 \end{tabular*}
 \end{center}
+
+%\font\wm=''Baskerville-Normal:color=787878'' at 10pt
+%\font\wmweb=''Baskerville-Normal:color=FF1493'' at 10pt
+%{\wm 
+	%\begin{textblock}{1}(27,11)
+		%\rotatebox{-90}{\parbox{500mm}{ USC } }
+	%\end{textblock}}
+
+%\font\wm=''Baskerville-Normal:color=787878'' at 10pt
+%\font\wmweb=''Baskerville-Normal:color=FF1493'' at 10pt
+%{\wm 
+	%\begin{textblock}{1}(27,15)
+		%\rotatebox{-90}{\parbox{500mm}{ USCL } }
+	%\end{textblock}}
 
 \section{Skills \& Languages}
 \begin{multicols}{3}
