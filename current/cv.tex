@@ -81,6 +81,9 @@
 \defaultfontfeatures{Mapping=tex-text}
 \setmainfont[SmallCapsFont = Fontin SmallCaps]{Fontin}
 
+\font\lighttext=''Baskerville-Normal:color=787878'' at 10pt
+\font\lighttextweb=''Baskerville-Normal:color=FF1493'' at 10pt
+
 %CV Sections inspired by: 
 %http://stefano.italians.nl/archives/26
 \titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
@@ -232,12 +235,12 @@ Computer vision, segmentation, grouping, document image analysis, event recognit
 
 
 \section{Honors/Awards}
-\begin{tabular}{rl @{\hspace{0.5em}(} l}
-2010 & Graduate Student Day Presentation,  Honorable Mention & \textsc{USC})\\
-2006 & Senior Computer Science Award & \textsc{Bryan College})\\
-2004 & Clara P. Hammond Award & \textsc{USCL})\\
-& Science and Mathematics Award & \textsc{USCL})\\
-& Highest Academic Average Award & \textsc{USCL})\\
+\begin{tabular}{rll}
+2010 & Graduate Student Day Presentation,  Honorable Mention & {\lighttext \textcolor{lightg}{USC}}\\
+2006 & Senior Computer Science Award & {\lighttext \textcolor{lightg}{Bryan College}}\\
+2004 & Clara P. Hammond Award & \multirow{3}{*}{{\lighttext \textcolor{lightg}{\begin{turn}{-90}USCL\end{turn}}}} \\
+& Science and Mathematics Award \\
+& Highest Academic Average Award \\
 \end{tabular}
 
 %\section{Professional Societies}
@@ -247,14 +250,14 @@ Computer vision, segmentation, grouping, document image analysis, event recognit
 %\begin{tabular*}{0.75\textwidth}{r @{\hspace{0.5em}\textcolor{lightg}{\symbol{"00BB}}\hspace{0.5em}} l @{\extracolsep{\fill}} l }
 \begin{tabular*}{0.75\textwidth}{r @{\hspace{0.5em}\textcolor{lightg}{\symbol{"00BB}}\hspace{0.5em}} l l c }
 %\multicolumn{3}{r}{University of South Carolina}\\
-Summer II 2008 & CSCE 102 & HTML/CSS/Javasript & \multirow{3}{*}{\begin{turn}{-90}USC\end{turn}} \\
+Summer II 2008 & CSCE 102 & HTML/CSS/Javasript & \multirow{3}{*}{{\lighttext \textcolor{lightg}{\begin{turn}{-90}USC\end{turn}}}} \\
 Spring 2008 & CSCE 145 Lab & Java \\
 Fall 2007 & CSCE 145 Lab & Java \\
 \multicolumn{3}{r}{}\\
 %\multicolumn{3}{r}{University of South Carolina at Lancaster}\\ \hline
-Spring 2007 & CSCE 204 & Visual Basic & \multirow{3}{*}{\begin{turn}{-90}USCL\end{turn}} \\
-Spring 2007 & Math 241 Guest Lecture & Maple \\
-Spring 2007 & Math 242 Guest Lecture  & Maple \\
+Spring 2007 & CSCE 204 & Visual Basic & \multirow{3}{*}{{\lighttext \textcolor{lightg}{\begin{turn}{-90}USCL\end{turn}}}} \\
+Spring 2007 & Math 241 \& Math 242 & Maple \\
+\multicolumn{1}{c}{}& (Guest Lecture) & \\
 \end{tabular*}
 \end{center}
 
@@ -287,6 +290,7 @@ Spring 2007 & Math 242 Guest Lecture  & Maple \\
 \item Bash \hfill \fournotes
 \item Blender \hfill \twonotes
 \item C/C++ \hfill \fournotes 
+\item English \hfill \fivenotes
 \item GNU/Linux \hfill \fournotes
 \item HTML/CSS \hfill \fivenotes
 \item Java \hfill \fivenotes
