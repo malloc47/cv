@@ -9,7 +9,7 @@ $(proj).pdf: $(proj).tex
 	xelatex $(proj)
 
 clean:
-	-rm *.pdf
+	#-rm *.pdf
 	-rm *.aux
 	-rm *.log
 	-rm *.out
