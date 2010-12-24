@@ -16,92 +16,21 @@
 \usepackage{multirow}
 \usepackage{longtable}
 \usepackage{rotating}
+\usepackage{ifthen}
 
-%Setup hyperref package, and colours for links
 \usepackage{hyperref}
-\definecolor{linkcolour}{rgb}{0,0.2,0.6}
-\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour, linkcolor=linkcolour}
 
-%Color
-\definecolor{lightg}{HTML}{999999}
-\definecolor{medg}{HTML}{666666}
-\definecolor{darkg}{HTML}{333333}
+\usepackage[absolute]{textpos}
 
 \usepackage{enumitem}
 %\renewcommand{\labelitemi}{\textcolor{lightg}{\symbol{"00BB}}}
 
+% Prefixes bibtex output with "C" (for conference)
 \makeatletter
 \renewcommand*{\@biblabel}[1]{\hfill[C#1]}
 \makeatother
 
-% Bullets
-\definecolor{noteone}{HTML}{999999}
-\definecolor{notetwo}{HTML}{848484}
-\definecolor{notethree}{HTML}{424242}
-\definecolor{notefour}{HTML}{212121}
-\definecolor{notefive}{HTML}{000000}
-
-\newcommand{\fivenotes}{%
-	\textcolor{noteone}{\symbol{"2022}}
-	\textcolor{notetwo}{\symbol{"2022}}
-	\textcolor{notethree}{\symbol{"2022}}
-	\textcolor{notefour}{\symbol{"2022}}
-	\textcolor{notefive}{\symbol{"2022}}
-}
-\newcommand{\fournotes}{%
-	\textcolor{noteone}{\symbol{"2022}}
-	\textcolor{notetwo}{\symbol{"2022}}
-	\textcolor{notethree}{\symbol{"2022}}
-	\textcolor{notefour}{\symbol{"2022}}
-	\textcolor{white}{\symbol{"2022}}
-}
-\newcommand{\threenotes}{%
-	\textcolor{noteone}{\symbol{"2022}}
-	\textcolor{notetwo}{\symbol{"2022}}
-	\textcolor{notethree}{\symbol{"2022}}
-	\textcolor{white}{\symbol{"2022}}
-	\textcolor{white}{\symbol{"2022}}
-}
-\newcommand{\twonotes}{%
-	\textcolor{noteone}{\symbol{"2022}}
-	\textcolor{notetwo}{\symbol{"2022}}
-	\textcolor{white}{\symbol{"2022}}
-	\textcolor{white}{\symbol{"2022}}
-	\textcolor{white}{\symbol{"2022}}
-}
-\newcommand{\onenote}{%
-	\textcolor{noteone}{\symbol{"2022}}
-	\textcolor{white}{\symbol{"2022}}
-	\textcolor{white}{\symbol{"2022}}
-	\textcolor{white}{\symbol{"2022}}
-	\textcolor{white}{\symbol{"2022}}
-}
-
-%FONTS
-\defaultfontfeatures{Mapping=tex-text}
-\setmainfont[SmallCapsFont = Fontin SmallCaps]{Fontin}
-
-\font\lighttext=''Baskerville-Normal:color=787878'' at 10pt
-\font\lighttextweb=''Baskerville-Normal:color=FF1493'' at 10pt
-
-%CV Sections inspired by: 
-%http://stefano.italians.nl/archives/26
-\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
-\titlespacing{\section}{0pt}{3pt}{3pt}
-%Tweak a bit the top margin
-%\addtolength{\voffset}{-1.3cm}
-
-%Italian hyphenation for the word: ''corporations''
-\hyphenation{im-pre-se}
-
-%-------------WATERMARK TEST [**not part of a CV**]---------------
-\usepackage[absolute]{textpos}
-
-\TPGrid[30mm,30mm]{30}{60}
-%\setlength{\TPHorizModule}{30mm}
-%\setlength{\TPVertModule}{\TPHorizModule}
-%\textblockorigin{2mm}{0.65\paperheight}
-\setlength{\parindent}{0pt}
+\include{functions}
 
 %--------------------BEGIN DOCUMENT----------------------
 \begin{document}
@@ -145,7 +74,7 @@
 
 \section{Research Interests}
 
-Computer vision, segmentation, grouping, document image analysis, event recognition, image processing, signal processing, tomographic image analysis.
+Computer vision, segmentation, contour completion, perceptural grouping, document image analysis, event recognition, image processing, signal processing, tomographic image analysis.
 
 \section{Education}
 \begin{tabular}{r p{12cm}}	
@@ -155,12 +84,14 @@ Computer vision, segmentation, grouping, document image analysis, event recognit
 %\hyperlink{grds}{\hfill | \footnotesize Detailed List of Exams}
 \\&\\
  \textsc{May} 2009 & Master of Engineering in \textsc{Computer Science}, \textbf{University of South Carolina}\\
-&\normalsize \textsc{GPA}: 3.8/4.0
+&\normalsize \textsc{GPA}: 3.8/4.0 | \small\emph{magna cum laude}
 %\hyperlink{grds}{\hfill | \footnotesize Detailed List of Exams}
 \\&\\
 \textsc{May} 2006& Bachelor of Science in \textsc{Computer Science}, \textbf{Bryan College} \\
 %& Thesis: ``Aspect-Oriented Programming in an Extreme Programming Environment''\\
-&\normalsize \textsc{GPA}: ?.?/4.0 | \small\emph{summa cum laude}
+&\normalsize 
+%\textsc{GPA}: ?.?/4.0 | 
+\small\emph{summa cum laude}
 %\hyperlink{grds_cleli}{\hfill| \footnotesize Detailed List of Exams}
 \\&\\
 \textsc{May} 2004& Associate of Science in \textsc{Computer Science}\\
@@ -292,24 +223,21 @@ Spring 2007 & Math 241 \& Math 242 & Maple \\
 \item Blender \hfill \twonotes
 \item C/C++ \hfill \fournotes 
 \item English \hfill \fivenotes
-\item GDB \hfill \threenotes
 \item GIT/SVN/CVS \hfill \fournotes
 \item GNU/Linux \hfill \fournotes
 \item HTML/CSS \hfill \fivenotes
 %\item Image Processing \hfill \fivenotes
 \item Java \hfill \fivenotes
 \item Javacript \hfill \threenotes
-\item LAMP Stack \hfill \fournotes
+%\item LAMP Stack \hfill \fournotes
 \item \LaTeX \hfill \threenotes
-\item Linux \hfill \fournotes
 \item LISP \hfill \onenote
 %\item Machine Learning \hfill \fournotes
-\item make \hfill \threenotes
 \item Maple \hfill \threenotes
 \item MATLAB \hfill \fivenotes
-\item MS Office \hfill \fivenotes
-\item Networking \hfill \threenotes
-\item OpenCV \hfill \fivenotes
+%\item MS Office \hfill \fivenotes
+%\item Networking \hfill \threenotes
+\item OpenCV \hfill \fournotes
 \item PHP \hfill \fournotes
 \item Python \hfill \twonotes
 \item Scheme \hfill \twonotes
@@ -327,25 +255,6 @@ Spring 2007 & Math 241 \& Math 242 & Maple \\
 Programming, Teaching, Mathematics\\
 Open-source Software, System Administration, Linux\\
 Typography, Music Composition
-
-%Section: Languages
-%\section{Languages}
-%\begin{tabular}{rl}
- %\textsc{Italian:}&Mothertongue\\
-%\textsc{English:}&Fluent\\
-%\textsc{French:}&Basic Knowledge\\
-%\end{tabular}
-
-%\section{Computer Skills}
-%\begin{tabular}{rl}
- %Basic Knowledge:& \textsc{php}, my\textsc{sql}, \textsc{html}, Access, \textsc{Linux}, ubuntu, {\fb \LaTeX}\setmainfont[SmallCapsFont=Fontin SmallCaps]{Fontin-Regular}\\
-%Intermediate Knowledge:& \textsc{vba}, Excel, Word, PowerPoint\\
-%\end{tabular}
-
-%\section{Interests and Activities}
-%Technology, Open-Source, Programming\\
-%Paradoxes in Decision Making, Psychoanalysis, Behavioural Finance\\
-%Football, Travelling
 
 %\newpage
 %\par{\centering\Large \hypertarget{grds}{Master of Science in \textsc{Finance}}\par}\large{\centering Grades\par}\normalsize
