@@ -2,7 +2,7 @@ proj=cv
 
 all: $(proj).pdf
 
-$(proj).pdf: $(proj).tex
+$(proj).pdf: $(proj).tex $(proj).bib
 	xelatex $(proj)
 	bibtex $(proj)
 	xelatex $(proj)
