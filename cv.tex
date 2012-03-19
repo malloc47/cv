@@ -1,17 +1,14 @@
 \documentclass[a4paper,10pt]{article}
-%\documentclass[10pt]{article}
 
-%A Few Useful Packages
 \usepackage{marvosym}
-\usepackage{fontspec} %for loading fonts
-\usepackage{xunicode,xltxtra,url,parskip} %other packages for formatting
+\usepackage{fontspec}
+\usepackage{xunicode,xltxtra,url,parskip}
 \RequirePackage{color,graphicx}
 \usepackage[usenames,dvipsnames]{xcolor}
-\usepackage[big]{layaureo} %better formatting of the A4 page
+\usepackage[big]{layaureo}
 %\usepackage{fullpage}
-% an alternative to Layaureo can be ** \usepackage{fullpage} **
-\usepackage{supertabular} %for Grades
-\usepackage{titlesec} %custom \section
+\usepackage{supertabular}
+\usepackage{titlesec}
 \usepackage{multicol}
 \usepackage{multirow}
 \usepackage{longtable}
@@ -32,17 +29,14 @@
 
 \include{functions}
 
-%--------------------BEGIN DOCUMENT----------------------
 \begin{document}
 
-\pagestyle{empty} % non-numbered pages
+\pagestyle{empty}
 
-\font\fb=''[cmr10]'' %for use with \LaTeX command
+\font\fb=''[cmr10]''
 
-%--------------------TITLE-------------
 \par{\centering {\Huge Jarrell \textsc{Waggoner} }\bigskip\par}
 
-%--------------------SECTIONS-----------------------------------
 %Section: Personal Data
 \section{Biographical Data}
 
@@ -51,20 +45,19 @@
 	%\textsc{Address:}   & 241 S. Bull St. Columbia, SC 29205 \\
 	\textsc{Address:}	& Department of Computer Science and Engineering, University of South Carolina, Columbia, SC 29208 \\
     \textsc{Phone:}     & 847-261-4747\\
-    %\textsc{email:}     & \href{mailto:jarrell.waggoner@gmail.com}{jarrell.waggoner@gmail.com}
-    \textsc{email:}     & \href{mailto:waggonej@email.sc.edu}{waggonej@email.sc.edu} \\
+    \textsc{email:}     & \href{mailto:malloc47@gmail.com}{malloc47@gmail.com} \\
 	\textsc{Website:}	& \href{http://www.malloc47.com}{www.malloc47.com} \\
 	\textsc{Citizenship:} & United States Citizen \\
 \end{tabular}
 
 \section{Research Interests}
 
-Computer vision, segmentation, contour completion, perceptural grouping, document image analysis, event recognition, image processing, signal processing, tomographic image analysis.
+Computer vision, segmentation, contour completion, perceptural grouping, document image analysis, event recognition, image processing.
 
 \section{Education}
 \begin{tabular}{r p{12cm}}	
  \textsc{Present} & Ph.D. Candidate in \textsc{Computer Science}, \textbf{University of South Carolina}\\
-&% Dissertation: ``Sublinear and Locally Sublinear Prices'' |
+&% Dissertation: ``Combining Global Labeling and Local Relabeling for Metallic Image Segmentation'' |
 \small Advisor: Dr. Song \textsc{Wang} % | \normalsize \textsc{Gpa}: 3.85/4.0
 %\hyperlink{grds}{\hfill | \footnotesize Detailed List of Exams}
 \\&\\
@@ -84,6 +77,28 @@ Computer vision, segmentation, contour completion, perceptural grouping, documen
 &\normalsize \textsc{GPA}: 4.0/4.0 | \small\emph{summa cum laude}\\
 %\hyperlink{grds_cleli}{\hfill| \footnotesize Detailed List of Exams}
 \end{tabular}
+
+\section{Research Experience}
+\begin{tabular}{r|p{11cm}}
+%\emph{Current} 
+\textsc{2011---Present}
+& Research Assistant funded by \textsc{AFOSR} \\
+&\emph{Materials Volume Segmentation}\\
+&\footnotesize{Developed segmentation methods for materials image volumes.  Created GUI interface for assisted segmentation, and conducted large-scale evaluations on multiple datasets for metallic and biological materials.}
+\\\multicolumn{2}{c}{} \\
+\textsc{2010---2011}
+& Research Assistant funded by \textsc{DARPA} \\
+&\emph{Video Event Recognition}\\
+&\footnotesize{Explored segmentation methods for video event recognition while working at the \textsc{Computer Vision Lab} at \textsc{USC}. Managed lab computer network and organize weekly lab meetings.  Attended P.I. meetings in San Diego (2010) and Colorado (2011). Visited \textsc{Purdue University} working with Dr.~Jeffrey Mark Siskind (Dec~2010---Jan~2011).}
+\\\multicolumn{2}{c}{} \\
+\textsc{2009---2010}
+& NSF Fellow at the \textsc{Center for Digital Humanities} \\
+&\emph{Digital Collation}\\
+&\footnotesize{Created a \textsc{digital collation} application to handle automatic differencing of sub-textual inconsistencies among multiple copies of \emph{The Faerie Queene} by \textsc{Edmund Spenser}.}
+p\\\multicolumn{2}{c}{} \\
+\end{tabular}
+
+\pagebreak
 
 \section{Teaching Experience}
 \begin{longtable}{r|p{11cm}}
@@ -108,31 +123,14 @@ Computer vision, segmentation, contour completion, perceptural grouping, documen
 &\footnotesize{Student and graduate tutor for college-level Mathematics, Computer Science, Physics, and English classes.}\\\multicolumn{2}{c}{} \\
 \end{longtable}
 
-
-\section{Research Experience}
-\begin{tabular}{r|p{11cm}}
-%\emph{Current} 
-\textsc{2010---Present}
-& Research Assistant funded by \textsc{DARPA} \\
-&\emph{Video Event Recognition}\\
-&\footnotesize{Explored segmentation methods for video event recognition while working at the \textsc{Computer Vision Lab} at \textsc{USC}. Managed lab computer network and organize weekly lab meetings.  Attended P.I. meetings in San Diego (2010) and Colorado (2011). Visited \textsc{Purdue University} working with Dr.~Jeffrey Mark Siskind (Dec~2010---Jan~2011).}
-\\\multicolumn{2}{c}{} \\
-\textsc{2009---2010}
-& NSF Fellow at the \textsc{Center for Digital Humanities} \\
-&\emph{Digital Collation}\\
-&\footnotesize{Created a \textsc{digital collation} application to handle automatic differencing of sub-textual inconsistencies among multiple copies of \emph{The Faerie Queene} by \textsc{Edmund Spenser}.}
-p\\\multicolumn{2}{c}{} \\
-\end{tabular}
-
-
 %\section{Publications}
+\nocite{waggoner:11}
 \nocite{wang2011}
 \nocite{temlyakov2010}
 \nocite{zhang2010}
 \renewcommand\refname{Publications}
 \bibliography{cv}
 \bibliographystyle{plainyr-rev}
-
 
 \section{Presentations}
 \begin{enumerate}
@@ -144,14 +142,14 @@ p\\\multicolumn{2}{c}{} \\
 \item \emph{Math 242}. Differential Equations. Guest lecture for Dr. Dwayne Brown. April~23---26, 2007. 
 \end{enumerate}
 
-\section{Travel}
-\begin{enumerate}
-\renewcommand{\labelenumi}{[T\arabic{enumi}] }
-\item \emph{Mind's Eye PI Meeting}. DARPA Project P.I.~meeting. Denver, CO. January 20---21, 2011. 
-\item \emph{Tomography and its Applications to Materials Science and Non-Destructive Evaluation}. Organizd by M. De Graef, L. Drummy, J. Simmons, M. Comer, C. Bouman, and J. Knopp. Tech\^{}Edge, Dayton, Ohio. December 13---15, 2010.
-\item Visiting scholar. In collaboration with J. M. Siskind. Purdue University, West Lafayette, IN. December 6---22, 2010 \& January 5---16, 2011.
-\item \emph{Mind's Eye Kickoff Meeting}. DARPA Project P.I.~meeting. San Diego, CA. September 23---24, 2010. 
-\end{enumerate}
+%\section{Travel}
+%\begin{enumerate}
+%\renewcommand{\labelenumi}{[T\arabic{enumi}] }
+%\item \emph{Mind's Eye PI Meeting}. DARPA Project P.I.~meeting. Denver, CO. January 20---21, 2011. 
+%\item \emph{Tomography and its Applications to Materials Science and Non-Destructive Evaluation}. Organizd by M. De Graef, L. Drummy, J. Simmons, M. Comer, C. Bouman, and J. Knopp. Tech\^{}Edge, Dayton, Ohio. December 13---15, 2010.
+%\item Visiting scholar. In collaboration with J. M. Siskind. Purdue University, West Lafayette, IN. December 6---22, 2010 \& January 5---16, 2011.
+%\item \emph{Mind's Eye Kickoff Meeting}. DARPA Project P.I.~meeting. San Diego, CA. September 23---24, 2010. 
+%\end{enumerate}
 
 
 \section{Honors/Awards}
