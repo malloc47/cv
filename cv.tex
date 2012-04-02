@@ -18,6 +18,14 @@
 \usepackage[absolute]{textpos}
 \usepackage{enumitem}
 
+% % \usefonttheme{professionalfonts}
+% \setmainfont{Calluna}
+% \setmonofont[Scale=0.86]{DejaVu Sans Mono}
+% % \setmonofont{Silkscreen}
+% %\setromanfont{Silkscreen}
+% %\setsansfont{DejaVu Sans}
+% \setsansfont{GeosansLight}
+
 \makeatletter
 \renewcommand*{\@biblabel}[1]{\hfill[C#1]}
 \makeatother
@@ -49,44 +57,51 @@
 \end{tabular}
 
 \section{Education}
-\begin{tabular}{r p{12cm}}	
+\begin{tabular}{r p{13.5cm}}	
   \textsc{Present} & Ph.D. Candidate in \textsc{Computer Science}, \textbf{University of South Carolina}\\
   \textsc{May} 2009 & Master of Engineering in \textsc{Computer Science}, \textbf{University of South Carolina}\\
   \textsc{May} 2006& Bachelor of Science in \textsc{Computer Science}, \textbf{Bryan College} \\
-\textsc{May} 2004& Associate of Science in \textsc{Computer Science} \begin{footnotesize} \textbf{University of South Carolina at Lancaster} \end{footnotesize}
-\\
+\textsc{May} 2004& Associate of Science in \textsc{Computer Science} \textbf{University of South Carolina at Lancaster} \\
 \end{tabular}
 
 \section{Experience}
 \begin{longtable}{r|p{12cm}}
 %\emph{Current} 
-  \textsc{2011---Present}
-  & Project Manager at \emph{Palmetto Computer Labs}\\
-  &\footnotesize{Assisted in planning the POSSCON conference. Managed
-    the Open IT Lab and associated projects (Android
-    Development). Software support for websites and managed projects.}
-  \\\multicolumn{2}{c}{} \\
-  \textsc{2011---Present}
-  & Research Assistant funded by \textsc{AFOSR} \\
+  \textsc{2011\textemdash{}Present}
+  & \textbf{Research Assistant} funded by \textsc{AFOSR} \\
   &\emph{Materials Volume Segmentation}\\
   &\footnotesize{Developed segmentation methods for materials image
-    volumes in \emph{Python} at the \textsc{Computer Vision Lab} at
-    \textsc{USC}. Managed lab computer network and organize weekly lab
-    meetings.  Created GUI interface for assisted segmentation, and
-    conducted large-scale evaluations on multiple datasets using
-    \emph{MATLAB} for metallic and biological materials.}
+    volumes in \emph{Python+NumPy/SciPy} and \emph{MATLAB} at the
+    \textsc{Computer Vision Lab} at \textsc{USC}. Managed the lab
+    computer network and organized weekly lab meetings.  Created GUI
+    interface using wxWidgets for assisted segmentation, and conducted
+    large-scale evaluations on multiple datasets for metallic and
+    biological materials.}
   \\\multicolumn{2}{c}{} \\
-  \textsc{2010---2011}
-  & Research Assistant funded by \textsc{DARPA} \\
+  \textsc{2011\textemdash{}Present}
+  & \textbf{Project Manager} at \textsc{Palmetto Computer Labs}\\
+  &\footnotesize{Assisted in planning the POSSCON conference. Managed
+    the Open IT Lab and associated projects (Android
+    Development). Provided software support for websites and managed
+    projects.}
+  \\\multicolumn{2}{c}{} \\
+  \textsc{2011}
+  & \textbf{Contractor} for \textsc{Elastic Vision Consulting} \\
+  &\footnotesize{Created a parser and generator for XML medical
+    records formats (CCR and CCD) in Java using JDOM, JAXB, SAX,
+    Xerces, and Hibernate (HSQLDB), on an Axis2+Jetty6 driven server.}
+  \\\multicolumn{2}{c}{} \\
+  \textsc{2010\textemdash{}2011}
+  & \textbf{Research Assistant} funded by \textsc{DARPA} \\
   &\emph{Video Event Recognition}\\
   &\footnotesize{Explored segmentation methods for video event
     recognition. Attended P.I. meetings in San Diego (2010) and
     Colorado (2011). Developed algorithms in \emph{Scheme} to process
     a corpus of thousands of videos extracted into over 3 million
-    frames.}
+    frames using a high-performance computing cluster.}
   \\\multicolumn{2}{c}{} \\
-  \textsc{2009---2010}
-  & NSF Fellow at the \textsc{USC Center for Digital Humanities} \\
+  \textsc{2009\textemdash{}2010}
+  & \textbf{NSF Fellow} at the \textsc{USC Center for Digital Humanities} \\
   &\emph{Digital Collation}\\
   &\footnotesize{Created a \textsc{digital collation} application to
     handle automatic differencing of sub-textual inconsistencies among
@@ -94,20 +109,19 @@
       Spenser} in \emph{MATLAB} to process tens of thousands of book
     page images.}
   \\\multicolumn{2}{c}{} \\
-  \textsc{2008---2009}
-  & GK-12 Fellow at \textsc{Crayton Middle School} \\
-%in conjunction with the \textsc{Center for Teaching Excellence} \\
-  &\emph{Teaching 8\textsuperscript{th} Grade Science}\\
-  &\footnotesize{Served in Crayton Middle School, coordinating with
-    the classroom instructor to enhance the science curriculum and
-    activities in an 8\textsuperscript{th} grade science
-    classroom. Subsequently coordinated and taught at the
-    \textsc{GK-12 Institute for Teachers}, presenting the activities
-    developed and delivered in the classroom.}
-  \\\multicolumn{2}{c}{} \\
-  \textsc{2007---2011} & Graduate Teaching Assistant at \textsc{USC} \\
-  &\emph{Teaching Software Development and Web Scripting}\\
-  &\footnotesize{Supervised CSCE~145 labs, covering software development with \textsc{Java}, and taught CSCE~102, covering \textsc{Javascript}, \textsc{HTML}, and \textsc{CSS}. Taught~CSCE~211 covering digital logic design and~CSCE~204 covering Visual Basic programming.}\\\multicolumn{2}{c}{} \\
+\end{longtable}
+
+\section{Personal and Open Source Projects}
+\begin{longtable}{r|p{13.5cm}}
+  \textsc{term-do} & \footnotesize{A completion engine that is a hybrid of gnome-do and Emacs's ido-mode. Works on many tested VT100 terminal types and is built in C++. Includes full client/server architecture implemented with boost.interprocess and complete plugin system with bindings for multiple languages.}\\
+  &\href{http://www.github.com/malloc47/term-do}{http://www.github.com/malloc47/term-do}\\
+  \multicolumn{2}{c}{} \\
+  \textsc{git-hq} & \footnotesize{A remote management system for git, coded in Python.}\\
+  &\href{http://www.github.com/malloc47/git-hq}{http://www.github.com/malloc47/git-hq}\\
+  \multicolumn{2}{c}{} \\
+  \textsc{matscicut} & \footnotesize{An energy minimization framework for segmenting 3D materials volumes. Prototype of dissertation work, created in C++ using OpenCV libraries, with assorted MATLAB helper utilities.}\\
+  &\href{http://www.github.com/malloc47/matscicut}{http://www.github.com/malloc47/matscicut}\\
+  \multicolumn{2}{c}{} \\
 \end{longtable}
 
 %\section{Publications}
@@ -119,15 +133,15 @@
 \bibliography{cv}
 \bibliographystyle{plainyr-rev}
 
-\section{Honors/Awards}
-\begin{tabular}{rll}
-2011 & Graduate Student Day Presentation,  Second Place & \multirow{2}{*}{{\lighttext \textcolor{lightg}{USC}}}\\
-2010 & Graduate Student Day Presentation,  Honorable Mention \\
-2006 & Senior Computer Science Award & {\lighttext \textcolor{lightg}{Bryan College}}\\
-2004 & Clara P. Hammond Award & \multirow{3}{*}{{\lighttext \textcolor{lightg}{\begin{turn}{-90}USCL\end{turn}}}} \\
-& Science and Mathematics Award \\
-& Highest Academic Average Award \\
-\end{tabular}
+% \section{Honors/Awards}
+% \begin{tabular}{rll}
+% 2011 & Graduate Student Day Presentation,  Second Place & \multirow{2}{*}{{\lighttext \textcolor{lightg}{USC}}}\\
+% 2010 & Graduate Student Day Presentation,  Honorable Mention \\
+% 2006 & Senior Computer Science Award & {\lighttext \textcolor{lightg}{Bryan College}}\\
+% 2004 & Clara P. Hammond Award & \multirow{3}{*}{{\lighttext \textcolor{lightg}{\begin{turn}{-90}USCL\end{turn}}}} \\
+% & Science and Mathematics Award \\
+% & Highest Academic Average Award \\
+% \end{tabular}
 
 \section{Skills \& Languages}
 \begin{multicols}{3}
@@ -153,7 +167,7 @@
 %\item LAMP Stack \hfill \fournotes
 \item \LaTeX \hfill \fournotes
 % \item Machine Learning \hfill \threenotes
-\item Maple \hfill \threenotes
+% \item Maple \hfill \threenotes
 \item MATLAB \hfill \fivenotes
 %\item MS Office \hfill \fivenotes
 %\item Networking \hfill \threenotes
@@ -162,9 +176,9 @@
 \item Python \hfill \threenotes
 \item Ruby \hfill \onenote
 \item Scheme \hfill \fivenotes
-\item SQL \hfill \threenotes
-\item Sys. Admin. \hfill \threenotes
-\item Visual Basic \hfill \fivenotes
+% \item SQL \hfill \threenotes
+% \item Sys. Admin. \hfill \threenotes
+% \item Visual Basic \hfill \fivenotes
 %\item Windows \hfill \fivenotes
 \item Wordpress \hfill \fournotes
 %\end{enumerate}
@@ -175,7 +189,7 @@
 \vspace{1em}
 
 \begin{center}
-  \parbox{12cm}{
+  \parbox{10cm}{
     \onenote Small-scale projects and/or assignments \\
     \twonotes Implementation-specific experience \\
     \threenotes Quite familiar, used in larger projects \\
@@ -187,7 +201,7 @@
 
 \section{Interests and Activities}
 Programming, Teaching, Mathematics\\
-Open-source Software, System Administration, Linux\\
+Open-source Software, Systems Administration, Linux\\
 Typography, Music Composition
 
 %%\XeTeXpdffile ''cv.pdf'' page 1 scaled 800

@@ -53,15 +53,23 @@
 }
 
 %FONTS
-\defaultfontfeatures{Mapping=tex-text}
-\setmainfont[SmallCapsFont = Fontin SmallCaps]{Fontin}
+% \defaultfontfeatures{Mapping=tex-text}
+% \setmainfont[SmallCapsFont = Fontin SmallCaps]{Fontin}
+
+% \setromanfont [Ligatures={Common}, BoldFont={Fontin Bold}, ItalicFont={Fontin Italic}]{Fontin}
+% \setsansfont [Ligatures={Common}, BoldFont={Fontin Sans Bold}, ItalicFont={Fontin Sans Italic}]{Fontin Sans}
+% \setmonofont[Scale=0.8]{Monaco} 
+
+\setromanfont [Ligatures={Common}, BoldFont={Linux Libertine Bold}, ItalicFont={Linux Libertine Italic}]{Linux Libertine}
+\setsansfont [Ligatures={Common}, BoldFont={GeosansLight}, ItalicFont={GeosansLight}]{GeosansLight}
+\setmonofont{GeosansLight} 
 
 \font\lighttext=''Baskerville-Normal:color=787878'' at 10pt
 \font\lighttextweb=''Baskerville-Normal:color=FF1493'' at 10pt
 
 %CV Sections inspired by: 
 %http://stefano.italians.nl/archives/26
-\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titleformat{\section}{\Large\scshape\raggedright\sffamily}{}{0em}{}[\titlerule]
 \titlespacing{\section}{0pt}{3pt}{3pt}
 %Tweak a bit the top margin
 
