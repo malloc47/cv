@@ -53,8 +53,12 @@
 }
 
 %FONTS
-\defaultfontfeatures{Mapping=tex-text}
-\setmainfont[SmallCapsFont = Fontin SmallCaps]{Fontin}
+% \defaultfontfeatures{Mapping=tex-text}
+% \setmainfont[SmallCapsFont = Fontin SmallCaps]{Fontin}
+
+\setromanfont [Ligatures={Common}, BoldFont={Linux Libertine Bold}, ItalicFont={Linux Libertine Italic}]{Linux Libertine}
+\setsansfont [Ligatures={Common}, BoldFont={GeosansLight}, ItalicFont={GeosansLight}]{GeosansLight}
+\setmonofont{GeosansLight} 
 
 \font\lighttext=''Baskerville-Normal:color=787878'' at 10pt
 \font\lighttextweb=''Baskerville-Normal:color=FF1493'' at 10pt
