@@ -57,7 +57,8 @@
 % \setmainfont[SmallCapsFont = Fontin SmallCaps]{Fontin}
 
 \setromanfont [Ligatures={Common}, BoldFont={Linux Libertine Bold}, ItalicFont={Linux Libertine Italic}]{Linux Libertine}
-\setsansfont [Ligatures={Common}, BoldFont={GeosansLight}, ItalicFont={GeosansLight}]{GeosansLight}
+%% \setromanfont [Ligatures={Common}, BoldFont={GeosansLight}, ItalicFont={GeosansLight}]{GeosansLight}
+\setsansfont{GeosansLight}
 \setmonofont{GeosansLight} 
 
 \font\lighttext=''Baskerville-Normal:color=787878'' at 10pt
@@ -65,8 +66,9 @@
 
 %CV Sections inspired by: 
 %http://stefano.italians.nl/archives/26
-\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titleformat{\section}{\Large\sffamily\scshape\raggedright}{}{0em}{}[\titlerule]
 \titlespacing{\section}{0pt}{3pt}{3pt}
+
 %Tweak a bit the top margin
 
 %\addtolength{\voffset}{-1.3cm}

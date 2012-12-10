@@ -3,10 +3,11 @@
 \usepackage{marvosym}
 \usepackage{fontspec}
 \usepackage{xunicode,xltxtra,url,parskip}
+\defaultfontfeatures{Scale=MatchLowercase,Mapping=tex-text}
 \RequirePackage{color,graphicx}
 \usepackage[usenames,dvipsnames]{xcolor}
 \usepackage[big]{layaureo}
-%\usepackage{fullpage}
+\usepackage{fullpage}
 \usepackage{supertabular}
 \usepackage{titlesec}
 \usepackage{multicol}
@@ -31,19 +32,51 @@
 
 \par{\centering {\Huge Jarrell \textsc{Waggoner} }\bigskip\par}
 
-\section{Biographical Data}
+%% \section{Biographical Data}
+%%
+%% \begin{tabular}{r p{3.5in}}
+%%   \textsc{Address:}	& Department of Computer Science and Engineering, University of South Carolina, Columbia, SC 29208 \\
+%%   \textsc{Phone:}     & 847-261-4747\\
+%%   \textsc{email:}     & \href{mailto:malloc47@gmail.com}{malloc47@gmail.com} \\
+%%   \textsc{Website:}	& \href{http://www.malloc47.com}{www.malloc47.com} \\
+%%   \textsc{Citizenship:} & United States Citizen \\
+%% \end{tabular}
 
-\begin{tabular}{r p{3.5in}}
-  \textsc{Address:}	& Department of Computer Science and Engineering, University of South Carolina, Columbia, SC 29208 \\
-  \textsc{Phone:}     & 847-261-4747\\
-  \textsc{email:}     & \href{mailto:malloc47@gmail.com}{malloc47@gmail.com} \\
-  \textsc{Website:}	& \href{http://www.malloc47.com}{www.malloc47.com} \\
+
+\begin{multicols}{2}
+\setlength{\parskip}{0pt}
+  \section{Biographical Data}
+
+\begin{tabular}{r p{5.2cm}}
+  \textsc{Address:}	& \begin{footnotesize} Department of Computer Science and Engineering, University of South Carolina, Columbia, SC 29208 \end{footnotesize} \\
+  \textsc{Phone:}       & 847-261-4747\\
+  \textsc{email:}       & \href{mailto:malloc47@gmail.com}{malloc47@gmail.com} \\
+  % \textsc{Website:} &
+  % \href{http://www.malloc47.com}{www.malloc47.com} \\
   \textsc{Citizenship:} & United States Citizen \\
 \end{tabular}
+
+\vfill
+\columnbreak
+
+\section{Web}
+\begin{tabular}{r p{5cm}}
+  \textsc{Website:}	& \href{http://www.malloc47.com}{www.malloc47.com} \\
+  \textsc{Twitter:}     & @malloc47 \\
+  \textsc{github:}      & \href{http://www.github.com/malloc47}{www.github.com/malloc47}\\
+  \textsc{Facebook:}    & \href{http://www.facebook.com/malloc47}{www.facebook.com/malloc47} \\
+  \textsc{LinkedIn:}       & \href{http://www.linkedin.com/in/malloc47}{www.linkedin.com/in/malloc47} \\
+\end{tabular}
+
+\end{multicols}
+
+\vspace{2em}
 
 \section{Research Interests}
 
 Computer vision, segmentation, contour completion, perceptural grouping, document image analysis, event recognition, image processing.
+
+\vspace{2em}
 
 \section{Education}
 \begin{tabular}{r p{12cm}}
@@ -69,52 +102,127 @@ Computer vision, segmentation, contour completion, perceptural grouping, documen
 %\hyperlink{grds_cleli}{\hfill| \footnotesize Detailed List of Exams}
 \end{tabular}
 
+\vspace{2em}
+
+\newcommand{\experience}[4]{
+\textsc{#1}
+& #2 \\
+&\emph{#3}\\
+&\footnotesize{#4}
+\\\multicolumn{2}{c}{} \\
+}
+
 \section{Research Experience}
 \begin{tabular}{r|p{11cm}}
-%\emph{Current} 
-\textsc{2011---Present}
-& Research Assistant funded by \textsc{AFOSR} \\
-&\emph{Materials Volume Segmentation}\\
-&\footnotesize{Developed segmentation methods for materials image volumes.  Created GUI interface for assisted segmentation, and conducted large-scale evaluations on multiple datasets for metallic and biological materials.}
-\\\multicolumn{2}{c}{} \\
-\textsc{2010---2011}
-& Research Assistant funded by \textsc{DARPA} \\
-&\emph{Video Event Recognition}\\
-&\footnotesize{Explored segmentation methods for video event recognition while working at the \textsc{Computer Vision Lab} at \textsc{USC}. Managed lab computer network and organize weekly lab meetings.  Attended P.I. meetings in San Diego (2010) and Colorado (2011). Visited \textsc{Purdue University} working with Dr.~Jeffrey Mark Siskind (Dec~2010---Jan~2011).}
-\\\multicolumn{2}{c}{} \\
-\textsc{2009---2010}
-& NSF Fellow at the \textsc{Center for Digital Humanities} \\
-&\emph{Digital Collation}\\
-&\footnotesize{Created a \textsc{digital collation} application to handle automatic differencing of sub-textual inconsistencies among multiple copies of \emph{The Faerie Queene} by \textsc{Edmund Spenser}.}
-\\\multicolumn{2}{c}{} \\
+
+\experience{2011---Present}%
+{Research Assistant funded by \textsc{AFOSR}}%
+{Materials Volume Segmentation}%
+{Developed segmentation methods for materials image
+  volumes in \emph{Python+NumPy/SciPy} and \emph{MATLAB} at the
+  \textsc{Computer Vision Lab} at \textsc{USC}. Managed the lab
+  computer network and organized weekly lab meetings.  Created GUI
+  interface using wxWidgets for assisted segmentation, and conducted
+  large-scale evaluations on multiple datasets for metallic and
+  biological materials.}
+%% {Developed segmentation methods for materials image volumes.  Created GUI interface for assisted segmentation, and conducted large-scale evaluations on multiple datasets for metallic and biological materials.}
+
+\experience{2010---2011}%
+{Research Assistant funded by \textsc{DARPA}}%
+{Video Event Recognition}%
+{Explored segmentation methods for video event
+  recognition. Attended P.I. meetings in San Diego (2010) and
+  Colorado (2011). Developed algorithms in \emph{Scheme} to process
+  a corpus of thousands of videos extracted into over 3 million
+  frames using a high-performance computing cluster.}
+
+%% {Explored segmentation methods for video event recognition while working at the \textsc{Computer Vision Lab} at \textsc{USC}. Managed lab computer network and organize weekly lab meetings.  Attended P.I. meetings in San Diego (2010) and Colorado (2011). Visited \textsc{Purdue University} working with Dr.~Jeffrey Mark Siskind (Dec~2010---Jan~2011).}
+
+\experience{2009---2010}%
+{NSF Fellow at the \textsc{Center for Digital Humanities}}%
+{Digital Collation}%
+{Created a \textsc{digital collation} application to
+  handle automatic differencing of sub-textual inconsistencies among
+  multiple copies of \emph{The Faerie Queene} by \textsc{Edmund
+    Spenser} in \emph{MATLAB} to process tens of thousands of book
+  page images.}
+%% {Created a \textsc{digital collation} application to handle automatic differencing of sub-textual inconsistencies among multiple copies of \emph{The Faerie Queene} by \textsc{Edmund Spenser}.}
+
 \end{tabular}
 
 \pagebreak
 
 \section{Teaching Experience}
 \begin{longtable}{r|p{11cm}}
-%\emph{Current} 
-\textsc{2008--2009}
-& GK-12 Fellow at \textsc{Crayton Middle School} \\
-%in conjunction with the \textsc{Center for Teaching Excellence} \\
-&\emph{Teaching 8\textsuperscript{th} Grade Science}\\
-&\footnotesize{Served in Crayton Middle School, coordinating with the classroom instructor to enhance the science curriculum and activities in an 8\textsuperscript{th} grade science classroom. Subsequently coordinated and taught at the \textsc{GK-12 Institute for Teachers}, presenting the activities developed and delivered in the classroom.}
-\\\multicolumn{2}{c}{} \\
-\textsc{2007--2008, 2011} & Graduate Teaching Assistant at \textsc{USC} \\
-&\emph{Teaching Software Development and Web Scripting}\\
-&\footnotesize{Supervised CSCE~145 labs, covering software development with \textsc{Java}, and taught CSCE~102, covering \textsc{Javascript}, \textsc{HTML}, and \textsc{CSS}. Taught~CSCE~211 covering digital logic design.}\\\multicolumn{2}{c}{} \\
-% \textsc{Spring 2007} &  Instructor for \textsc{CSCE 204} at \textsc{USCL} \\
-% &\emph{Teaching Introductory Programming}\\
-% &\footnotesize{Hired as special faculty. Taught introductory Visual Basic for majors and non-majors. Selected textbooks, developed all course material, graded all assignments. Worked with Dr. Noni M. Bohonak}\\\multicolumn{2}{c}{} \\
-\textsc{Fall 2006} & Camp Instructor for \textsc{USCL Arts and Sciences Adventure Camp} \\
-&\emph{Teaching 5\textsuperscript{th}-8\textsuperscript{th} Grade Students}\\
-&\footnotesize{Worked in collaboration with Dr. Dwayne Brown. One of two instructors teaching Math and Computer Science to grade school students.}\\\multicolumn{2}{c}{} \\
-% \textsc{2003--2007} & Professional Tutor at \textsc{USCL Academic Success Center} \\
-% &\emph{Tutoring High School and College Students}\\
-% &\footnotesize{Student and graduate tutor for college-level Mathematics, Computer Science, Physics, and English classes.}\\\multicolumn{2}{c}{} \\
+
+\experience{2008--2009}%
+{GK-12 Fellow at \textsc{Crayton Middle School}}%
+{8\textsuperscript{th} Grade Science}%
+{Served in Crayton Middle School, coordinating with the classroom instructor to enhance the science curriculum and activities in an 8\textsuperscript{th} grade science classroom. Subsequently coordinated and taught at the \textsc{GK-12 Institute for Teachers}, presenting the activities developed and delivered in the classroom.}
+
+\experience{2007--2008, 2011}%
+{Graduate Teaching Assistant at \textsc{USC}}%
+{Web Development}%
+{Supervised CSCE~145 labs, covering software development with \textsc{Java}, and taught CSCE~102, covering \textsc{Javascript}, \textsc{HTML}, and \textsc{CSS}. Taught~CSCE~211 covering digital logic design.}
+
+\experience{Spring 2007}%
+{Instructor for \textsc{CSCE 204} at \textsc{USCL}}%
+{Introductory Programming}%
+{Hired as special faculty. Taught introductory Visual Basic for majors and non-majors. Selected textbooks, developed all course material, graded all assignments. Worked with Dr. Noni M. Bohonak}
+
+\experience{Fall 2006}%
+{Camp Instructor for \textsc{USCL Arts and Sciences Adventure Camp}}%
+{5\textsuperscript{th}-8\textsuperscript{th} Grade Students}%
+{Worked in collaboration with Dr. Dwayne Brown. One of two instructors teaching Math and Computer Science to grade school students.}
+
+\experience{2003--2007}%
+{Professional Tutor at \textsc{USCL Academic Success Center}}%
+{High School and College Students}%
+{Student and graduate tutor for college-level Mathematics, Computer Science, Physics, and English classes.}
+
+\end{longtable}
+
+\section{Industry Experience}
+
+\newcommand{\industry}[4]{
+\textsc{#1} & #2 &\emph{#3}\\
+&\multicolumn{2}{p{11cm}}{\footnotesize{#4}}\\
+\multicolumn{3}{c}{} \\
+}
+
+\begin{longtable}{r|p{7cm} r}
+
+\industry{2012\textemdash{}Present}%
+{Technical Lead}%
+{Huntstand, Inc.}%
+{Developed the \href{http://www.huntstand.com}{www.huntstand.com} web application using Python+Django with a PJAX frontend which was deployed to AWS;  responsible for curating full technology stack and coordinating with multiple developers.}
+
+\industry{2011\textemdash{}Present}%
+{Project Manager}%
+{Palmetto Computer Labs}%
+{Assisted in planning the POSSCON conference. Managed the Open IT Lab and associated projects (Android Development). Provided software support for websites and managed projects.}
+
+\industry{2011}%
+{Contractor}%
+{Elastic Vision Consulting}%
+{Created a parser and generator for XML medical records formats (CCR and CCD) in Java using JDOM, JAXB, SAX, Xerces, and Hibernate (HSQLDB), on an Axis2+Jetty6 driven server.}
+
+\industry{2005}%
+{Intern --- Technical Writer}%
+{JAARS, Inc.}%
+{Created documentation and integrated context-sensitive online help system for speech and linguistic software written in C++ and Visual Basic.}
+
+\industry{2001\textemdash{}2002}%
+{Volunteer Software Developer}%
+{JAARS, Inc.}%
+{Spearheaded the conversion from VB4 to VB6 for the linguistic reference tool \href{http://www.sil.org/computing/ipahelp/ipaprvw2.htm}{IPA Help}.}
+
 \end{longtable}
 
 %\section{Publications}
+\nocite{waggoner:13a}
+\nocite{waggoner:13b}
+\nocite{waggoner:13c}
 \nocite{waggoner:11}
 \nocite{wang:11}
 \nocite{temlyakov:10}
@@ -130,11 +238,38 @@ Computer vision, segmentation, contour completion, perceptural grouping, documen
 \bibliography{cv}
 \bibliographystyle{plainyr-rev}
 
-\section{Presentations}
+\section{Posters/Presentations}
 \begin{enumerate}
 \renewcommand{\labelenumi}{[P\arabic{enumi}] }
-\item \emph{Combining Global Labeling and Local Relabeling for Metallic Image Segmentation}. Graduate Student Day Competition, Second Place. April 8, 2011.
-\item \emph{Image Registration for Digital Collation}. Graduate Student Day Competition, Honorable Mention. April 2, 2010.
+\item \emph{Homeomorphic Multi-Structure Propagation for Metallic
+  Image Segmentation}.  Gamecock Computing Research Symposium.
+  Columbia, SC.  October 5, 2012.
+\item \emph{Android Application Development Workshop}.  Appathon
+  Contest.  Columbia, SC.  November 17, 2012.
+\item \emph{Open Source and Education}. SC Municipal Technology
+  Association (SCMTA) Conference. Charleston, SC.  September 6, 2012.
+\item \emph{Open Source and Higher Education}.  SC Technical College
+  System (SCTCS) Conference.  Columbia, SC.  September 25, 2012.
+\item \emph{Introduction to Android Development}.  Digital Humanities
+  High Performance Computing (DHHPC) Workshop.  Columbia, SC.  August
+  8, 2012.
+\item \emph{Combining Global Labeling and Local Relabeling for
+  Metallic Image Segmentation}.  SPIE (Computational Image X).
+  Burlingame, CA.  January 23, 2012.
+\item \emph{Open Source and Government}.  SC Government Management
+  Information Systems (SCGMIS) Software Developers Workshop.
+  Columbia, SC.  January 19, 2012.
+\item \emph{Superpixel Contour Completion}.  DARPA Mind's Eye PI
+  Meeting.  Denver, CO.  January 20, 2011.
+\end{enumerate}
+
+\section{Guest Lectures}
+\begin{enumerate}
+\renewcommand{\labelenumi}{[G\arabic{enumi}] }
+%% \item \emph{Combining Global Labeling and Local Relabeling for Metallic Image Segmentation}. Graduate Student Day Competition, Second Place. April 8, 2011.
+%% \item \emph{Image Registration for Digital Collation}. Graduate Student Day Competition, Honorable Mention. April 2, 2010.
+\item \emph{Building Chrome Extensions}.  In CSCE 242.  Guest lecture for Dr. José M. Vidal.  November~30, 2012.
+\item \emph{Modeling in Blender}.  In CSCE 552.  Guest lecture for Dr. Jijun Tang.  February~28, 2011.
 \item \emph{Aspect-Oriented Programming}. In CSCE 531. Guest lecture for Dr. Marco Valtorta. March 19, 2008.
 \item \emph{Math 241}. Vector Calculus. Guest lecture for Dr. Dwayne Brown. April~23---26, 2007. 
 \item \emph{Math 242}. Differential Equations. Guest lecture for Dr. Dwayne Brown. April~23---26, 2007. 
@@ -149,12 +284,16 @@ Computer vision, segmentation, contour completion, perceptural grouping, documen
 %\item \emph{Mind's Eye Kickoff Meeting}. DARPA Project P.I.~meeting. San Diego, CA. September 23---24, 2010. 
 %\end{enumerate}
 
-
 \section{Honors/Awards}
 \begin{tabular}{rll}
-2011 & Graduate Student Day Presentation,  Second Place & \multirow{2}{*}{{\lighttext \textcolor{lightg}{USC}}}\\
+2012 & Gamecock Computing Research Symposium Poster Session,  First Place & \multirow{5}{*}{{\lighttext \textcolor{lightg}{\begin{turn}{-90}USC\end{turn}}}}\\
+     & Graduate Student Day Presentation,  First Place \\
+2011 & Graduate Student Day Presentation,  Second Place \\
 2010 & Graduate Student Day Presentation,  Honorable Mention \\
+2009 & Upsilon Pi Epsilon \\
+\multicolumn{3}{r}{}\\
 2006 & Senior Computer Science Award & {\lighttext \textcolor{lightg}{Bryan College}}\\
+\multicolumn{3}{r}{}\\
 2004 & Clara P. Hammond Award & \multirow{3}{*}{{\lighttext \textcolor{lightg}{\begin{turn}{-90}USCL\end{turn}}}} \\
 & Science and Mathematics Award \\
 & Highest Academic Average Award \\
@@ -167,17 +306,61 @@ Computer vision, segmentation, contour completion, perceptural grouping, documen
 %\begin{tabular*}{0.75\textwidth}{r @{\hspace{0.5em}\textcolor{lightg}{\symbol{"00BB}}\hspace{0.5em}} l @{\extracolsep{\fill}} l }
 \begin{tabular*}{0.75\textwidth}{r @{\hspace{0.5em}\textcolor{lightg}{\symbol{"00BB}}\hspace{0.5em}} l l c }
 %\multicolumn{3}{r}{University of South Carolina}\\
+Ongoing & Open Source 101 & Open Source Software & \multirow{3}{*}{{\lighttext \textcolor{lightg}{\begin{turn}{-90}IT-oLogy\end{turn}}}}  \\
+Ongoing & Version Control 101 & git, github \\
+Ongoing & Command Line 101 & Linux, BASH \\
+\multicolumn{3}{r}{}\\
 Fall 2011 & CSCE 211 & Digital Logic Design & \multirow{4}{*}{{\lighttext \textcolor{lightg}{\begin{turn}{-90}USC\end{turn}}}} \\
 Summer II 2008 & CSCE 102 & HTML/CSS/Javasript \\
 Spring 2008 & CSCE 145 Lab & Java \\
 Fall 2007 & CSCE 145 Lab & Java \\
 \multicolumn{3}{r}{}\\
 %\multicolumn{3}{r}{University of South Carolina at Lancaster}\\ \hline
-Spring 2007 & CSCE 204 & Visual Basic & \multirow{3}{*}{{\lighttext \textcolor{lightg}{\begin{turn}{-90}USCL\end{turn}}}} \\
+Spring 2007 & CSCE 204 & Visual Basic & \multirow{2}{*}{{\lighttext \textcolor{lightg}{\begin{turn}{-90}USCL\end{turn}}}} \\
 Spring 2007 & Math 241 \& Math 242 & Maple \\
-\multicolumn{1}{c}{}& (Guest Lecture) & \\
 \end{tabular*}
 \end{center}
+
+\newcommand{\proj}[3]{
+  \textsc{#1} & \footnotesize{#2}\\
+  &\href{#3}{#3}\\
+  \multicolumn{2}{c}{} \\
+}
+
+\section{Service}
+
+\newcommand{\service}[2]{
+  \textsc{#1} & #2\\
+  %% \multicolumn{2}{c}{} \\
+}
+
+\begin{longtable}{r|p{13.5cm}}
+  \service{Webmaster}{\href{http://cvl.cse.sc.edu/wvm2013/}{Winter Vision Meetings, 2013}}
+  \service{Webmaster}{\href{http://cvl.cse.sc.edu/wacv2013/}{Workshop on the Applications of Computer Vision, 2013}}
+  \service{Judge}{Discovery Day --- Undergraduate Research Presentations}
+  \service{Reviewer}{Pattern Recognition Letters}
+  \service{Reviewer}{IEEE Transactions on Pattern Analysis and Machine Intelligence}
+  %% \service{Fellow}{NSF GK-12 Program}
+  \service{Member}{Institute of Electrical and Electronics Engineers (IEEE)}
+  \service{SysAdmin}{Computer Vision Lab}
+\end{longtable}
+
+\section{Personal and Open Source Projects}
+\begin{longtable}{r|p{13.5cm}}
+
+  \proj{\href{http://nonpartisan.me}{nonpartisan.me}}{Google Chrome extension that filters social media websites for political keywords.  Available on the \href{https://chrome.google.com/webstore/detail/nonpartisanme/ninebcppidndhampaggnjbijpacoadgg}{Chrome Web Store}.}{http://www.github.com/malloc47/nonpartisan.me}
+
+  \proj{term-do}{A completion engine that is a hybrid of gnome-do and Emacs's ido-mode. Works on many tested VT100 terminal types and is built in C++. Includes full client/server architecture implemented with boost.interprocess and complete plugin system with bindings for multiple languages.  Available in the \href{https://aur.archlinux.org/packages/term-do-git/}{Arch Linux AUR}.}{http://www.github.com/malloc47/term-do}
+
+  \proj{git-hq}{A remote management system for git, created in Python.}{http://www.github.com/malloc47/git-hq}
+
+  \proj{matscicut}{An energy minimization framework for segmenting 3D materials volumes. Prototype of dissertation work, created in C++ using OpenCV libraries, with assorted MATLAB helper utilities.}{http://www.github.com/malloc47/matscicut}
+
+  \proj{Ratio Contour}{Maintainer of the Ratio Contour contour grouping project, created in C and MATLAB.}{http://www.github.com/malloc47/ratio-contour}
+
+  \proj{Digital Collation}{Research project to ``collate'' high-resolution documents by using image registration, accomplished using the SIFT feature detector and a thin plate spline warping technique, written in MATLAB.}{https://github.com/malloc47/digital-collation}
+
+\end{longtable}
 
 \section{Skills \& Languages}
 \begin{multicols}{3}
@@ -190,12 +373,12 @@ Spring 2007 & Math 241 \& Math 242 & Maple \\
 \setlength{\itemsep}{1pt}
 \setlength{\parskip}{0pt}
 \setlength{\parsep}{0pt}
-\item Assembly \hfill \twonotes
+%% \item Assembly \hfill \twonotes
 \item Bash \hfill \fournotes
 \item Blender \hfill \threenotes
 \item C/C++ \hfill \fournotes 
 \item English \hfill \fivenotes
-\item GIT/SVN/CVS \hfill \fournotes
+\item git \hfill \fournotes
 \item GNU/Linux \hfill \fournotes
 \item HTML/CSS \hfill \fournotes
 %\item Image Processing \hfinll \fivenotes
@@ -203,7 +386,7 @@ Spring 2007 & Math 241 \& Math 242 & Maple \\
 \item Javacript \hfill \threenotes
 %\item LAMP Stack \hfill \fournotes
 \item \LaTeX \hfill \threenotes
-\item LISP \hfill \onenote
+%% \item LISP \hfill \onenote
 %\item Machine Learning \hfill \fournotes
 \item Maple \hfill \threenotes
 \item MATLAB \hfill \fivenotes
@@ -211,13 +394,14 @@ Spring 2007 & Math 241 \& Math 242 & Maple \\
 %\item Networking \hfill \threenotes
 \item OpenCV \hfill \fournotes
 \item PHP \hfill \fournotes
-\item Python \hfill \threenotes
+\item Python \hfill \fournotes
+\item Django \hfill \fournotes
 \item Scheme \hfill \fivenotes
 \item SQL \hfill \threenotes
-\item Sys. Admin. \hfill \threenotes
-\item Visual Basic \hfill \fivenotes
+%% \item Sys. Admin. \hfill \threenotes
+%% \item Visual Basic \hfill \fivenotes
 %\item Windows \hfill \fivenotes
-\item Wordpress \hfill \fournotes
+%% \item Wordpress \hfill \fournotes
 %\end{enumerate}
 \end{itemize}
 %}
@@ -225,21 +409,31 @@ Spring 2007 & Math 241 \& Math 242 & Maple \\
 
 \vspace{1em}
 
+%% \begin{center}
+%% \parbox{12cm}{
+%% \onenote Some familiarity, small-scale projects and assignments \\
+%% \twonotes Implementation-specific experience \\
+%% \threenotes Quite familiar, used in limited settings as part of larger projects \\
+%% \fournotes Extensive knowledge or experience teaching \\
+%% \fivenotes Used in context of large scale, multi-group projects}
+%% \end{center}
+
 \begin{center}
-\parbox{12cm}{
-\onenote Some familiarity, small-scale projects and assignments \\
-\twonotes Implementation-specific experience \\
-\threenotes Quite familiar, used in limited settings as part of larger projects \\
-\fournotes Extensive knowledge or experience teaching \\
-\fivenotes Used in context of large scale, multi-group projects}
+  \begin{footnotesize}
+    \begin{tabular}{ll}
+      \onenote Small-scale projects and/or assignments & \fournotes Extensive knowledge or experience teaching \\
+      \twonotes Implementation-specific experience & \fivenotes Used in context of large-scale and/or multi-group projects \\
+      \threenotes Quite familiar, used in larger projects &
+    \end{tabular}
+    \end{footnotesize}
 \end{center}
 
-% \vspace{1em}
-% 
-% \section{Interests and Activities}
-% Programming, Teaching, Mathematics\\
-% Open-source Software, System Administration, Linux\\
-% Typography, Music Composition
+\vspace{2em}
+
+\section{Interests and Activities}
+Programming, Teaching, Mathematics\\
+Open-source Software, System Administration, Linux\\
+Typography, Music Composition
 
 %%\XeTeXpdffile ''cv.pdf'' page 1 scaled 800
 
