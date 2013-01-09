@@ -33,8 +33,7 @@
 
 \begin{multicols}{2}
 \setlength{\parskip}{0pt}
-\section{Biographical Data}
-
+\section{Biographical}
 \begin{tabular}{l p{5.2cm}}
   \textsc{Address}	& \begin{footnotesize} Department of Computer Science and Engineering, University of South Carolina, Columbia, SC 29208 \end{footnotesize} \\
   \textsc{Phone}       & 847-261-4747\\
@@ -90,19 +89,20 @@
 
 \newcommand{\experience}[5]{
 \textsc{#1} & \textbf{#2} #3 \textsc{#4}\\
-\nopagebreak &\multicolumn{2}{p{5.5in}}{\footnotesize{#5}}\\
+\nopagebreak &\multicolumn{2}{p{5.5in}}{\small{#5}}\\
 \nopagebreak \multicolumn{3}{c}{} \\ [-1ex]
 }
 
 \newcommand{\experiencel}[5]{
 \textsc{#1} & \textbf{#2} #3 \textsc{#4}\\
-\nopagebreak &\multicolumn{2}{p{5.5in}}{\footnotesize{#5}}\\
+\nopagebreak &\multicolumn{2}{p{5.5in}}{\small{#5}}\\
 }
 
 \section{Experience}
 
 \setlength\LTleft{0pt}
 \setlength\LTright{0pt}
+\vspace{-0.5em}
 \begin{longtable}{@{\extracolsep{\fill}} l | l r}
 
   \experience{2012---Present}%
@@ -202,8 +202,9 @@
 \newcommand{\skills}[2]{
   \item #2 #1
 }
-
+\vspace{-0.5em}
 \section{Skills \& Languages}
+\vspace{-1em}
 \begin{multicols}{4}
 \raggedcolumns
 %\parbox{5cm}{
@@ -253,16 +254,17 @@
 \end{itemize}
 %}
 \end{multicols}
-
-\begin{center}
+\vspace{-1em}
   \begin{footnotesize}
-    \begin{tabular}{ll}
-      \oneskill & Small-scale projects and/or assignments \\
-      \twoskill & Multiple projects and/or experience teaching \\
-      \threeskill & Large-scale and/or multi-group projects
-    \end{tabular}
+    \oneskill Small-scale projects and/or assignments \hfill 
+    \twoskill Multiple projects and/or experience teaching \hfill
+    \threeskill Large-scale and/or multi-group projects
+    % \begin{tabular}{ll}
+    %   \oneskill & Small-scale projects and/or assignments \\
+    %   \twoskill & Multiple projects and/or experience teaching \\
+    %   \threeskill & Large-scale and/or multi-group projects
+    % \end{tabular}
   \end{footnotesize}
-\end{center}
 
 \newcommand{\proj}[3]{
   \textsc{#1} & \small{#2}\\
