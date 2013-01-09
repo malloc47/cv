@@ -1,24 +1,23 @@
-\documentclass[a4paper,10pt]{article}
+\documentclass[10pt]{article}
 
 \usepackage{marvosym}
 \usepackage{fontspec}
 \usepackage{xunicode,xltxtra,url,parskip}
 \defaultfontfeatures{Scale=MatchLowercase,Mapping=tex-text}
-\RequirePackage{color,graphicx}
+\RequirePackage{color,graphics}
 \usepackage[usenames,dvipsnames]{xcolor}
-\usepackage[big]{layaureo}
-\usepackage{fullpage}
+\usepackage[left=1in, right=1in, top=0.5in, bottom=0.5in]{geometry}
 \usepackage{supertabular}
 \usepackage{titlesec}
 \usepackage{multicol}
 \usepackage{multirow}
 \usepackage{longtable}
-% \usepackage{rotating}
 \usepackage{xstring}
 \usepackage{ifthen}
 \usepackage{hyperref}
 \usepackage[absolute]{textpos}
 \usepackage{enumitem}
+\usepackage{tabularx}
 
 \makeatletter
 \renewcommand*{\@biblabel}[1]{\hfill[C#1]}
@@ -32,16 +31,14 @@
 
 \par{\centering {\Huge Jarrell \textsc{Waggoner} }\bigskip\par}
 
-
-
 \begin{multicols}{2}
 \setlength{\parskip}{0pt}
-  \section{Biographical Data}
+\section{Biographical Data}
 
-\begin{tabular}{r p{5.2cm}}
-  \textsc{Address:}	& \begin{footnotesize} Department of Computer Science and Engineering, University of South Carolina, Columbia, SC 29208 \end{footnotesize} \\
-  \textsc{Phone:}       & 847-261-4747\\
-  \textsc{email:}       & \href{mailto:jarrell.waggoner@gmail.com}{jarrell.waggoner@gmail.com} \\
+\begin{tabular}{l p{5.2cm}}
+  \textsc{Address}	& \begin{footnotesize} Department of Computer Science and Engineering, University of South Carolina, Columbia, SC 29208 \end{footnotesize} \\
+  \textsc{Phone}       & 847-261-4747\\
+  \textsc{email}       & \href{mailto:jarrell.waggoner@gmail.com}{jarrell.waggoner@gmail.com} \\
   % \textsc{Citizenship:} & United States Citizen \\
 \end{tabular}
 
@@ -49,100 +46,139 @@
 \columnbreak
 
 \section{Online}
-\begin{tabular}{r p{5cm}}
-  \textsc{Website:}	& \href{http://www.malloc47.com}{www.malloc47.com} \\
-  \textsc{Twitter:}     & @malloc47 \\
-  \textsc{github:}      & \href{http://www.github.com/malloc47}{github.com/malloc47}\\
-  \textsc{LinkedIn:}    & \href{http://www.linkedin.com/in/malloc47}{linkedin.com/in/malloc47} \\
+\begin{tabular}{l p{5cm}}
+  \textsc{Website}	& \href{http://www.malloc47.com}{www.malloc47.com} \\
+  \textsc{Twitter}     & @malloc47 \\
+  \textsc{github}      & \href{http://www.github.com/malloc47}{github.com/malloc47}\\
+  \textsc{LinkedIn}    & \href{http://www.linkedin.com/in/malloc47}{linkedin.com/in/malloc47} \\
 \end{tabular}
 
 \end{multicols}
 
+\begin{tabularx}{\textwidth}{l X}
+  \textsc{Interests} & computer vision, image processing, pattern
+  recognition \& machine learning, distributed data processing \&
+  analysis, functional programming, back end web development
+\end{tabularx}
+
+\newcommand{\degree}[4]{\textsc{#1} & \textbf{#2} & \textsc{#3} & \textbf{#4}\\}
+
 \section{Education}
-\begin{tabular*}{\textwidth}{r l p{5.5cm} r}	
-  \textsc{Expected Aug. 2013} & \textbf{Ph.D.} & \textsc{Computer Science \& Engineering} & \textbf{University of South Carolina}\\
-  \textsc{May} 2009 & \textbf{M.E.} & \textsc{Computer Science \& Engineering} & \textbf{University of South Carolina}\\
-%   \textsc{May} 2006& Bachelor of Science in \textsc{Computer Science} & \textbf{Bryan College} \\
-% \textsc{May} 2004& Associate of Science in \textsc{Computer Science} & \textbf{University of South Carolina at Lancaster} \\
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}r l p{5.5cm} r}
+
+  \degree{Expected Aug. 2013}%
+  {Ph.D.}%
+  {Computer Science \& Engineering}%
+  {University of South Carolina}
+
+  \degree{May 2009}%
+  {M.E.}%
+  {Computer Science \& Engineering}%
+  {University of South Carolina}
+
+  % \degree{May 2006}%
+  % {B.S.}%
+  % {Computer Science}%
+  % {Bryan College}
+
+  % \degree{May 2004}%
+  % {A.S.}%
+  % {Computer Science}%
+  % {University of South Carolina at Lancaster}
+
 \end{tabular*}
 
 \newcommand{\experience}[5]{
 \textsc{#1} & \textbf{#2} #3 \textsc{#4}\\
-&\multicolumn{2}{p{13cm}}{\footnotesize{#5}}\\
-\multicolumn{3}{c}{} \\ [-1ex]
+\nopagebreak &\multicolumn{2}{p{5.5in}}{\footnotesize{#5}}\\
+\nopagebreak \multicolumn{3}{c}{} \\ [-1ex]
 }
+
+\newcommand{\experiencel}[5]{
+\textsc{#1} & \textbf{#2} #3 \textsc{#4}\\
+\nopagebreak &\multicolumn{2}{p{5.5in}}{\footnotesize{#5}}\\
+}
+
 \section{Experience}
+
 \setlength\LTleft{0pt}
 \setlength\LTright{0pt}
-\begin{longtable}{@{\extracolsep{\fill}} r| l r}
+\begin{longtable}{@{\extracolsep{\fill}} l | l r}
 
   \experience{2012---Present}%
   {Technical Lead}%
   {at}%
   {Huntstand, Inc.}%
-  {Developed the \href{http://www.huntstand.com}{huntstand.com} web
-    application using Python+Django with a PJAX frontend deployed to
-    AWS; responsible for curating full technology stack and
-    coordinating with five developers.}
+  {Software developer in an agile startup environment creating the
+    \href{http://www.huntstand.com}{huntstand.com} web application.
+    Written using \skill{Python} + \skill{Django} using \skill{PJAX}
+    as a \skill{pushState} framework and deployed to \skill{AWS}.
+    Responsible for curating full technology stack and coordinating
+    with $4$ developers.}
 
   \experience{2011---Present}%
   {Research Assistant}%
   {funded by}%
   {AFOSR}%
-  {Developed segmentation methods for materials image volumes in
-    \skill{Python+NumPy/SciPy} and \skill{MATLAB} at the
-    \institution{Computer Vision Lab} at \institution{USC}. Managed
-    the lab computer network and organized weekly lab meetings.
-    Created GUI interface using \skill{wxWidgets} for interactive
-    segmentation, and conducted large-scale evaluations on multiple
-    datasets for metallic and biological materials.}
+  {Developed computer vision algorithms for materials science datasets
+    in \skill{Python}+\skill{NumPy/SciPy}, \skill{OpenCV}, and
+    \skill{MATLAB} at the \institution{Computer Vision Lab} at
+    \institution{USC}.  Created a desktop GUI interface using
+    \skill{wxWidgets} and a web-based interface in \skill{Django}.
+    Conducted large-scale evaluations on dozens of datasets using
+    multiple high-performance computing resources.}
 
   \experience{2011---Present}%
   {Project Manager}%
   {at}%
   {\href{http://palmettocomputerlabs.com/}{Palmetto Computer Labs}}%
-  {Assisted in planning the \institution{POSSCON} conference. Managed
-    the \href{http://open-it-lab.com/}{Open IT Lab} and associated
-    projects (Android Development). Provided software support for
-    websites and managed projects.}
+  {Conducted Open Source advocacy by assembling workshops on
+    technology topics for \href{http://it-ology.org/}{IT-oLogy}.
+    Managed the \href{http://open-it-lab.com/}{Open IT Lab} and
+    associated projects (\skill{Android} development). Assisted in
+    planning \institution{\href{http://posscon.org/}{POSSCON}}.}
 
   \experience{2011}%
   {Contractor}%
   {for}%
   {Elastic Vision Consulting}%
   {Created a parser and generator for \skill{XML} medical records
-    formats (CCR and CCD) in \skill{Java} using \skill{JDOM},
-    \skill{JAXB}, \skill{SAX}, \skill{Xerces}, and \skill{Hibernate},
-    on an \skill{Axis2+Jetty6} driven server.}
+    formats (CCR and CCD) in \skill{Java} web application.  Used
+    \skill{JDOM}, \skill{Xerces}, and \skill{Hibernate}, on an
+    \skill{Axis2+Jetty6} driven server.}
 
   \experience{2010---2011}%
   {Research Assistant}%
-  {funded by}%
+  {funded by the}%
   {DARPA \href{http://www.darpa.mil/Our_Work/I2O/Programs/Minds_Eye.aspx}{Mind's Eye Program} }%
-  {Explored segmentation methods for video event
-    recognition. Attended P.I. meetings in San Diego (2010) and
-    Colorado (2011). Developed algorithms in \skill{Scheme} to process
-    a corpus of thousands of videos extracted into over 3 million
-    frames using a high-performance computing cluster.}
+  {Researched computer vision segmentation for video event recognition
+    in the Mind's Eye DARPA competition.  Collaborated with $10$
+    students and faculty across three institutions.  Developed
+    algorithms in \skill{Scheme}, \skill{BASH}, \skill{MATLAB}, and
+    \skill{C} to process a corpus of thousands of videos extracted
+    into over 3 million frames. Distributed processing over $7$ HPC
+    machines.  
+    \href{http://0xab.com/research/video-in-sentences-out.html}{http://0xab.com/research/video-in-sentences-out.html}}
 
   \experience{2009---2010}%
   {NSF Fellow}%
   {at the}%
   {\href{http://cdh.sc.edu/}{USC Center for Digital Humanities}}%
-  {Created a \textsc{digital collation} application to handle
-    automatic differencing of sub-textual inconsistencies among
+  {Developed the prototype for a \textsc{digital collation}
+    application.  Used to identify sub-textual inconsistencies among
     multiple copies of \emph{The Faerie Queene} by \textsc{Edmund
-      Spenser} in \skill{MATLAB} to process tens of thousands of book
-    page images.}
+      Spenser}.  Created in \skill{MATLAB} using multiple computer
+    vision techniques to process tens of thousands of book page
+    images.}
 
-  \experience{2007---2011}%
+  \experiencel{2007---2011}%
   {Teaching Assistant}%
   {for}%
   {USC Department of Computer Science and Engineering}%
   {Taught classes in software development, web development, and
     computer engineering, utilizing \skill{Java}, \skill{Javascript},
-    \skill{HTML/CSS}, and \skill{Visual Basic}.  Supervised labs,
-    developed and graded assessments, tutored students.}
+    \skill{HTML/CSS}, and \skill{Visual Basic}.  Developed and graded
+    assessments, supervised labs, and tutored students.}
 
   % \experience{2005}%
   % {Intern---Technical Writer}%
@@ -162,80 +198,6 @@
   %     Help}.}
 
 \end{longtable}
-
-\newcommand{\proj}[3]{
-  \textsc{#1} & \small{#2}\\
-  &\href{http://#3}{#3}\\
-  \multicolumn{2}{c}{} \\ [-1ex]
-}
-
-\section{Personal and Open Source Projects}
-\begin{longtable}{r|p{12.3cm}}
-
-  \proj{\href{http://nonpartisan.me}{nonpartisan.me}}%
-{Google Chrome extension that filters social media websites for political keywords.  Available on the \href{https://chrome.google.com/webstore/detail/nonpartisanme/ninebcppidndhampaggnjbijpacoadgg}{Chrome Web Store}.  Featured in the \href{http://www.charlestoncitypaper.com/charleston/sick-of-politics-on-facebook-try-this-browser-tool/Content?oid=4153447}{Charleston City Paper}.}%
-{www.github.com/malloc47/nonpartisan.me}
-
-  \proj{term-do}{A completion engine that is a hybrid of gnome-do and Emacs's ido-mode. Works on many tested VT100 terminal types and is built in C++. Includes full client/server architecture implemented with boost.interprocess and complete plugin system with bindings for multiple languages.  Available in the \href{https://aur.archlinux.org/packages/term-do-git/}{Arch Linux AUR}.}{www.github.com/malloc47/term-do}
-
-  \proj{Ratio Contour}{Maintainer of the Ratio Contour contour grouping project, created in C and MATLAB.}{www.github.com/malloc47/ratio-contour}
-
-  \proj{Digital Collation}{Research project to ``collate'' high-resolution documents by using image registration, accomplished using the SIFT feature detector and a thin plate spline warping technique, written in MATLAB.}{www.github.com/malloc47/digital-collation}
-
-  % \proj{matscicut}{An energy minimization framework for segmenting 3D materials volumes. Prototype of dissertation work, created in C++ using OpenCV libraries, with assorted MATLAB helper utilities.}{www.github.com/malloc47/matscicut}
-
-  % \proj{git-hq}{A remote management system for git, coded in Python.}{www.github.com/malloc47/git-hq}
-
-\end{longtable}
-
-%\section{Publications}
-
-\let\originalbibitem\bibitem
-\def\bibitem#1#2\par{%
-  \noexpandarg
-  \originalbibitem{#1}
-  \StrSubstitute{#2}{Jarrell Waggoner}{\textbf{Jarrell Waggoner}}\par}
-
-% \nocite{waggoner:13a}
-% \nocite{waggoner:13b}
-\nocite{waggoner:13c}
-\nocite{waggoner:11}
-\nocite{wang:11}
-\nocite{temlyakov:10}
-\nocite{zhang:10}
-\nocite{waggoner:12}
-\nocite{barbu:12}
-\nocite{zhang:12}
-% \nocite{temlyakov:13}
-% \nocite{salvi:13a}
-% \nocite{salvi:13b}
-
-\renewcommand\refname{Selected Publications}
-{\footnotesize \bibliography{cv}}
-\bibliographystyle{plainyr-rev}
-
-% \section{Honors/Awards}
-% \begin{tabular}{rll}
-% 2012 & Graduate Student Day Presentation,  First Place & {\lighttext \textcolor{lightg}{USC}}\\
-% 2011 & Graduate Student Day Presentation,  Second Place\\
-% % 2010 & Graduate Student Day Presentation,  Honorable Mention\\
-% 2009 & Upsilon Pi Epsilon \\
-% 2006 & Senior Computer Science Award & {\lighttext \textcolor{lightg}{Bryan College}}\\
-% 2004 & Clara P. Hammond Award & {\lighttext \textcolor{lightg}{USCL}} \\
-% & Science and Mathematics Award \\
-% & Highest Academic Average Award \\
-% \end{tabular}
-\section{Honors/Awards at USC}
-\begin{tabular}{r|p{8cm} l|p{5cm}}
-2012 & \footnotesize{Gamecock Computing Research Symposium Poster Session,  First Place} &
-2004 & Clara P. Hammond Award  \\
-
-2012 & Graduate Student Day Presentation,  First Place &
-2004 & Science and Mathematics Award \\
-
-2009 & Upsilon Pi Epsilon &
-2004 & Highest Academic Average Award \\
-\end{tabular}
 
 \newcommand{\skills}[2]{
   \item #2 #1
@@ -292,8 +254,6 @@
 %}
 \end{multicols}
 
-% \vspace{1em}
-
 \begin{center}
   \begin{footnotesize}
     \begin{tabular}{ll}
@@ -304,20 +264,106 @@
   \end{footnotesize}
 \end{center}
 
-% \begin{center}
-%   \begin{footnotesize}
-%     \begin{tabular}{ll}
-%       \onenote Small-scale projects and/or assignments & \fournotes Extensive knowledge or experience teaching \\
-%       \twonotes Implementation-specific experience & \fivenotes Used in context of large-scale and/or multi-group projects \\
-%       \threenotes Quite familiar, used in larger projects &
-%     \end{tabular}
-%     \end{footnotesize}
-% \end{center}
+\newcommand{\proj}[3]{
+  \textsc{#1} & \small{#2}\\
+  \nopagebreak &\href{http://#3}{#3}\\
+  \nopagebreak \multicolumn{2}{c}{} \\ [-1ex]
+}
+\section{Personal and Open Source Projects}
+\begin{longtable}{l|p{12.3cm}}
+  \proj{\href{http://nonpartisan.me}{nonpartisan.me}}%
+{Google Chrome extension that filters social media websites for political keywords.  Available on the \href{https://chrome.google.com/webstore/detail/nonpartisanme/ninebcppidndhampaggnjbijpacoadgg}{Chrome Web Store}.  Featured in the \href{http://www.charlestoncitypaper.com/charleston/sick-of-politics-on-facebook-try-this-browser-tool/Content?oid=4153447}{Charleston City Paper}.}%
+{www.github.com/malloc47/nonpartisan.me}
+
+\proj{term-do}{A CLI prompt that completes commands as you type.  A hybrid of gnome-do and Emacs's ido-mode. Works on many tested VT100 terminal types and is built in \skill{C++}. Includes full client/server architecture implemented with boost.interprocess and complete plugin system with bindings for multiple languages. Available in the \href{https://aur.archlinux.org/packages/term-do-git/}{Arch Linux AUR}.}{www.github.com/malloc47/term-do}
+
+  \proj{Ratio Contour}{Maintainer of the Ratio Contour project for contour grouping, created in \skill{C} and \skill{MATLAB}.}{www.github.com/malloc47/ratio-contour}
+
+  \proj{Digital Collation}{Research prototype to ``collate'' high-resolution document scans using image registration.  Written in \skill{MATLAB} utilizing various computer vision libraries.}{www.github.com/malloc47/digital-collation}
+
+  % \proj{matscicut}{An energy minimization framework for segmenting 3D materials volumes. Prototype of dissertation work, created in C++ using OpenCV libraries, with assorted MATLAB helper utilities.}{www.github.com/malloc47/matscicut}
+
+  % \proj{git-hq}{A remote management system for git, coded in Python.}{www.github.com/malloc47/git-hq}
+
+\end{longtable}
+
+%\section{Publications}
+\let\originalbibitem\bibitem
+\def\bibitem#1#2\par{%
+  \noexpandarg
+  \originalbibitem{#1}
+  \StrSubstitute{#2}{Jarrell Waggoner}{\textbf{Jarrell Waggoner}}\par}
+
+% \nocite{waggoner:13a}
+% \nocite{waggoner:13b}
+\nocite{waggoner:13c}
+\nocite{waggoner:11}
+\nocite{wang:11}
+\nocite{temlyakov:10}
+\nocite{zhang:10}
+\nocite{waggoner:12}
+\nocite{barbu:12}
+\nocite{zhang:12}
+% \nocite{temlyakov:13}
+% \nocite{salvi:13a}
+% \nocite{salvi:13b}
+
+\renewcommand\refname{Selected Publications}
+{\footnotesize \bibliography{cv}}
+\bibliographystyle{plainyr-rev}
+
+\section{Talks}
+{\small
+\begin{enumerate}
+\renewcommand{\labelenumi}{[P\arabic{enumi}] }
+\item \emph{Android Application Development Workshop}.  Appathon
+  Contest.  Columbia, SC.  Nov. 17, 2012.
+\item \emph{Open Source and Education}. SC Municipal Technology
+  Association (SCMTA) Conference. Charleston, SC.  Sep. 6, 2012.
+\item \emph{Open Source and Higher Education}.  SC Technical College
+  System (SCTCS) Conference.  Columbia, SC.  Sep. 25, 2012.
+\item \emph{Introduction to Android Development}.  Digital Humanities
+  High Performance Computing (DHHPC) Workshop.  Columbia, SC.  Aug.
+  8, 2012.
+\item \emph{Combining Global Labeling and Local Relabeling for
+  Metallic Image Segmentation}.  SPIE (Computational Image X).
+  Burlingame, CA.  Jan. 23, 2012.
+\item \emph{Open Source and Government}.  SC Government Management
+  Information Systems (SCGMIS) Software Developers Workshop.
+  Columbia, SC.  Jan. 19, 2012.
+\end{enumerate} }
+
+% \section{Honors/Awards}
+% \begin{tabular}{rll}
+% 2012 & Graduate Student Day Presentation,  First Place & {\lighttext \textcolor{lightg}{USC}}\\
+% 2011 & Graduate Student Day Presentation,  Second Place\\
+% % 2010 & Graduate Student Day Presentation,  Honorable Mention\\
+% 2009 & Upsilon Pi Epsilon \\
+% 2006 & Senior Computer Science Award & {\lighttext \textcolor{lightg}{Bryan College}}\\
+% 2004 & Clara P. Hammond Award & {\lighttext \textcolor{lightg}{USCL}} \\
+% & Science and Mathematics Award \\
+% & Highest Academic Average Award \\
+% \end{tabular}
+
+\section{Honors/Awards at USC}
+\begin{tabular}{r|p{8cm} l|p{5cm}}
+2012 & \footnotesize{Gamecock Computing Research Symposium Poster Session,  First Place} &
+2004 & Clara P. Hammond Award  \\
+
+2012 & Graduate Student Day Presentation,  First Place &
+2004 & Science and Mathematics Award \\
+
+2009 & Upsilon Pi Epsilon &
+2004 & Highest Academic Average Award \\
+\end{tabular}
 
 \section{Interests and Activities}
 Programming, Teaching, Mathematics\\
 Open-source Software, Systems Administration, Linux\\
 Typography, \href{https://soundcloud.com/malloc47}{Music Composition}
+
+\pagestyle{myheadings}
+\markright{Jarrell Waggoner}
 
 %%\XeTeXpdffile ''cv.pdf'' page 1 scaled 800
 
