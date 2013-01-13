@@ -14,7 +14,13 @@
 \usepackage{longtable}
 \usepackage{xstring}
 \usepackage{ifthen}
-\usepackage{hyperref}
+\usepackage[xetex,
+            pdfauthor={Jarrell Waggoner},
+            pdftitle={malloc47/resume},
+            pdfsubject={Jarrell Waggoner Résumé},
+            pdfkeywords={computer vision, image processing, artificial intelligence, pattern recognition, machine learning, data science, functional programming, web development},
+            pdfproducer={xelatex},
+            pdfcreator={xelatex}]{hyperref}
 \usepackage[absolute]{textpos}
 \usepackage{enumitem}
 \usepackage{tabularx}
@@ -34,30 +40,30 @@
 \begin{multicols}{2}
 \setlength{\parskip}{0pt}
 \section{Biographical}
-\begin{tabular}{l p{5.2cm}}
-  \textsc{Address}	& \begin{footnotesize} Department of Computer Science and Engineering, University of South Carolina, Columbia, SC 29208 \end{footnotesize} \\
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+  \textsc{Address}	& \footnotesize{Department of Computer Science and Engineering,} \\
+  & \footnotesize{University of South Carolina, Columbia, SC 29208} \\
   \textsc{Phone}       & 847-261-4747\\
   \textsc{email}       & \href{mailto:jarrell.waggoner@gmail.com}{jarrell.waggoner@gmail.com} \\
-  % \textsc{Citizenship:} & United States Citizen \\
-\end{tabular}
+\end{tabularx}
 
 \vfill
 \columnbreak
 
 \section{Online}
-\begin{tabular}{l p{5cm}}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
   \textsc{Website}	& \href{http://www.malloc47.com}{www.malloc47.com} \\
-  \textsc{Twitter}     & @malloc47 \\
+  \textsc{Twitter}     & \href{https://twitter.com/malloc47}{@malloc47} \\
   \textsc{github}      & \href{http://www.github.com/malloc47}{github.com/malloc47}\\
   \textsc{LinkedIn}    & \href{http://www.linkedin.com/in/malloc47}{linkedin.com/in/malloc47} \\
-\end{tabular}
+\end{tabularx}
 
 \end{multicols}
 
-\begin{tabularx}{\textwidth}{l X}
-  \textsc{Interests} & computer vision, image processing, pattern
-  recognition \& machine learning, distributed data processing \&
-  analysis, functional programming, back end web development
+\begin{tabularx}{\textwidth}{@{}l X}
+  \textsc{Interests} & computer vision, image processing, artificial
+  intelligence, pattern recognition \& machine learning, data science,
+  functional programming, web development
 \end{tabularx}
 
 \newcommand{\degree}[4]{\textsc{#1} & \textbf{#2} & \textsc{#3} & \textbf{#4}\\}
@@ -108,77 +114,87 @@
   \experience{2012---Present}%
   {Technical Lead}%
   {at}%
-  {Huntstand, Inc.}%
+  {\href{http://www.huntstand.com}{Huntstand, Inc.}}%
   {Software developer in an agile startup environment creating the
     \href{http://www.huntstand.com}{huntstand.com} web application.
-    Written using \skill{Python} + \skill{Django} using \skill{PJAX}
-    as a \skill{pushState} framework and deployed to \skill{AWS}.
+    Written using \skill{Python}, \skill{Django}, and \skill{PJAX} as
+    a \skill{pushState} framework; deployed to \skill{AWS}.
     Responsible for curating full technology stack and coordinating
-    with $4$ developers.}
+    with $3$ developers.}
 
   \experience{2011---Present}%
   {Research Assistant}%
   {funded by}%
   {AFOSR}%
-  {Developed computer vision algorithms for materials science datasets
-    in \skill{Python}+\skill{NumPy/SciPy}, \skill{OpenCV}, and
-    \skill{MATLAB} at the \institution{Computer Vision Lab} at
-    \institution{USC}.  Created a desktop GUI interface using
-    \skill{wxWidgets} and a web-based interface in \skill{Django}.
-    Conducted large-scale evaluations on dozens of datasets using
-    multiple high-performance computing resources.}
+  {Dissertation research on computer vision models and algorithms for
+    materials science image segmentation in \skill{Python},
+    \skill{NumPy}, \skill{SciPy}, \skill{OpenCV}, and \skill{MATLAB}
+    at the \institution{\href{http://cvl.cse.sc.edu/}{Computer Vision
+        Lab}} at \institution{USC}.  Created a desktop GUI using
+    \skill{wxWidgets} and a web interface using \skill{Django},
+    \skill{JavaScript}, and \skill{jQuery}. Conducted large-scale
+    analysis using a 98-core high-performance computing system.}
 
   \experience{2011---Present}%
   {Project Manager}%
   {at}%
   {\href{http://palmettocomputerlabs.com/}{Palmetto Computer Labs}}%
-  {Conducted Open Source advocacy by assembling workshops on
-    technology topics for \href{http://it-ology.org/}{IT-oLogy}.
-    Managed the \href{http://open-it-lab.com/}{Open IT Lab} and
-    associated projects (\skill{Android} development). Assisted in
-    planning \institution{\href{http://posscon.org/}{POSSCON}}.}
+  {Created and taught workshops on \skill{git}, the \skill{Linux}
+    command line, \skill{Android} development, and open source
+    software for hundreds of students, developers, and government
+    officials at \institution{\href{http://it-ology.org/}{IT-oLogy}}.
+    Managed the \institution{\href{http://open-it-lab.com/}{Open IT
+        Lab}} and associated projects. Assisted in planning
+    \institution{\href{http://posscon.org/}{POSSCON}}.}
 
   \experience{2011}%
   {Contractor}%
   {for}%
   {Elastic Vision Consulting}%
-  {Created a parser and generator for \skill{XML} medical records
-    formats (CCR and CCD) in \skill{Java} web application.  Used
-    \skill{JDOM}, \skill{Xerces}, and \skill{Hibernate}, on an
-    \skill{Axis2+Jetty6} driven server.}
+  {Built a parser and generator for \skill{XML} medical records
+    formats (CCR and CCD) in a \skill{Java} web application.  Written
+    using \skill{JDOM}, \skill{Xerces}, and \skill{Hibernate}, and run
+    on an \skill{Axis2+Jetty6} driven server.}
 
   \experience{2010---2011}%
   {Research Assistant}%
-  {funded by the}%
-  {DARPA \href{http://www.darpa.mil/Our_Work/I2O/Programs/Minds_Eye.aspx}{Mind's Eye Program} }%
-  {Researched computer vision segmentation for video event recognition
-    in the Mind's Eye DARPA competition.  Collaborated with $10$
-    students and faculty across three institutions.  Developed
-    algorithms in \skill{Scheme}, \skill{BASH}, \skill{MATLAB}, and
-    \skill{C} to process a corpus of thousands of videos extracted
-    into over 3 million frames. Distributed processing over $7$ HPC
-    machines.  
-    \href{http://0xab.com/research/video-in-sentences-out.html}{http://0xab.com/research/video-in-sentences-out.html}}
+  {for the}%
+  {DARPA
+    \href{http://www.darpa.mil/Our_Work/I2O/Programs/Minds_Eye.aspx}{Mind's
+      Eye Program} }%
+  {Researched video event recognition for the DARPA Mind's Eye
+    program.  Collaborated with $10$ students and faculty members
+    across three institutions.  Developed algorithms in
+    \skill{Scheme}, \skill{Bash}, \skill{MATLAB}, and \skill{C} to
+    process a corpus of 3480 videos extracted into over 1.5 million
+    frames. Distributed processing over $7$ HPC machines.
+    \href{http://0xab.com/research/video-in-sentences-out.html}{0xab.com/research/video-in-sentences-out.html}
+    ,
+    \href{https://www.github.com/malloc47/video-in-sentences-out}{github.com/malloc47/video-in-sentences-out}}
 
   \experience{2009---2010}%
   {NSF Fellow}%
   {at the}%
-  {\href{http://cdh.sc.edu/}{USC Center for Digital Humanities}}%
-  {Developed the prototype for a \textsc{digital collation}
-    application.  Used to identify sub-textual inconsistencies among
-    multiple copies of \emph{The Faerie Queene} by \textsc{Edmund
-      Spenser}.  Created in \skill{MATLAB} using multiple computer
-    vision techniques to process tens of thousands of book page
-    images.}
+  {\href{http://cdh.sc.edu/}{USC Center for Digital Humanities}
+    (\href{http://sapheos.org/}{Sapheos}/\href{http://cdh.sc.edu/paragon}{Paragon}
+    Project)}%
+  {Developed the prototype for a \emph{digital collation} application
+    to identify sub-textual inconsistencies among multiple copies of
+    \emph{The Faerie Queene} by \textsc{Edmund Spenser}.  Created in
+    \skill{MATLAB} using \skill{VLFeat} and \skill{OpenCV} to process
+    tens of thousands of book page images.
+    \href{https://www.github.com/malloc47/digital-collation}{github.com/malloc47/digital-collation}}
 
   \experiencel{2007---2011}%
   {Teaching Assistant}%
   {for}%
-  {USC Department of Computer Science and Engineering}%
+  {\href{https://www.cse.sc.edu/}{USC Department of Computer Science
+      and Engineering}}%
   {Taught classes in software development, web development, and
-    computer engineering, utilizing \skill{Java}, \skill{Javascript},
-    \skill{HTML/CSS}, and \skill{Visual Basic}.  Developed and graded
-    assessments, supervised labs, and tutored students.}
+    computer engineering, covering \skill{Java}, \skill{Javascript},
+    \skill{HTML/CSS}, and \skill{Visual Basic}.  Created syllabi and
+    course objectives, developed and graded projects and assignments,
+    supervised labs, and tutored students.}
 
   % \experience{2005}%
   % {Intern---Technical Writer}%
@@ -207,11 +223,7 @@
 \vspace{-1em}
 \begin{multicols}{4}
 \raggedcolumns
-%\parbox{5cm}{
-%\begin{enumerate}
 \begin{itemize}
-%\renewcommand{\labelenumi}{\textcolor{lightg}{[S\arabic{enumi}]}}
-% \renewcommand{\labelitemi}{\textcolor{lightg}{\symbol{"00BB}}}
 \renewcommand{\labelitemi}{}
 \setlength{\itemsep}{1pt}
 \setlength{\parskip}{0pt}
@@ -250,44 +262,46 @@
 %% \skills{Visual Basic}{\fivenotes}
 %\skills{Windows}{\fivenotes}
 %% \skills{Wordpress}{\fournotes}
-%\end{enumerate}
+
 \end{itemize}
-%}
+
 \end{multicols}
 \vspace{-1em}
   \begin{footnotesize}
     \oneskill Small-scale projects and/or assignments \hfill 
     \twoskill Multiple projects and/or experience teaching \hfill
     \threeskill Large-scale and/or multi-group projects
-    % \begin{tabular}{ll}
-    %   \oneskill & Small-scale projects and/or assignments \\
-    %   \twoskill & Multiple projects and/or experience teaching \\
-    %   \threeskill & Large-scale and/or multi-group projects
-    % \end{tabular}
   \end{footnotesize}
 
 \newcommand{\proj}[3]{
-  \textsc{#1} & \small{#2}\\
-  \nopagebreak &\href{http://#3}{#3}\\
-  \nopagebreak \multicolumn{2}{c}{} \\ [-1ex]
+  \textsc{#1} & #2\\
+   &\href{http://www.#3}{#3}\\
+   \multicolumn{2}{c}{} \\ [-1ex]
+}
+
+\newcommand{\projl}[3]{
+  \textsc{#1} & #2\\
+   &\href{http://www.#3}{#3}\\
 }
 \section{Personal and Open Source Projects}
-\begin{longtable}{l|p{12.3cm}}
+\begin{tabularx}{\textwidth}{@{}l|X@{}}
   \proj{\href{http://nonpartisan.me}{nonpartisan.me}}%
-{Google Chrome extension that filters social media websites for political keywords.  Available on the \href{https://chrome.google.com/webstore/detail/nonpartisanme/ninebcppidndhampaggnjbijpacoadgg}{Chrome Web Store}.  Featured in the \href{http://www.charlestoncitypaper.com/charleston/sick-of-politics-on-facebook-try-this-browser-tool/Content?oid=4153447}{Charleston City Paper}.}%
-{www.github.com/malloc47/nonpartisan.me}
+{Google Chrome extension that filters social media websites for political keywords.  Available in the \href{https://chrome.google.com/webstore/detail/nonpartisanme/ninebcppidndhampaggnjbijpacoadgg}{Chrome Web Store}.  Featured in the \href{http://www.charlestoncitypaper.com/charleston/sick-of-politics-on-facebook-try-this-browser-tool/Content?oid=4153447}{Charleston City Paper}.}%
+{github.com/malloc47/nonpartisan.me}
 
-\proj{term-do}{A CLI prompt that completes commands as you type.  A hybrid of gnome-do and Emacs's ido-mode. Works on many tested VT100 terminal types and is built in \skill{C++}. Includes full client/server architecture implemented with boost.interprocess and complete plugin system with bindings for multiple languages. Available in the \href{https://aur.archlinux.org/packages/term-do-git/}{Arch Linux AUR}.}{www.github.com/malloc47/term-do}
+\proj{term-do}{An interactive terminal prompt that displays potential command completions as you type.  A hybrid of gnome-do and Emacs's ido-mode.  Works on many tested VT100 terminal types; built in~\skill{C++}.  Includes client/server architecture implemented with boost.interprocess and full-featured plugin system. Available in the \href{https://aur.archlinux.org/packages/term-do-git/}{Arch Linux AUR}.}{github.com/malloc47/term-do}
 
-  \proj{Ratio Contour}{Maintainer of the Ratio Contour project for contour grouping, created in \skill{C} and \skill{MATLAB}.}{www.github.com/malloc47/ratio-contour}
+  \proj{Ratio Contour}{Maintainer and contributor for the Ratio Contour project, a salient object detection and segmentation method used for computer vision applications.  Developed in \skill{C} and \skill{MATLAB}.}{github.com/malloc47/ratio-contour}
 
-  \proj{Digital Collation}{Research prototype to ``collate'' high-resolution document scans using image registration.  Written in \skill{MATLAB} utilizing various computer vision libraries.}{www.github.com/malloc47/digital-collation}
+  \projl{PMLDAP}{\skill{Linux} user management tool for Linux clusters.  Created as a simplified replacement for LDAP.  Capable of bootstrapping new systems, synchronizing users and configuration files, and running distributed commands.  Written in \skill{Bash}.}{github.com/malloc47/pmldap}
+
+  % \proj{Digital Collation}{Research prototype to ``collate'' high-resolution document scans using image registration.  Written in \skill{MATLAB} utilizing various computer vision libraries.}{www.github.com/malloc47/digital-collation}
 
   % \proj{matscicut}{An energy minimization framework for segmenting 3D materials volumes. Prototype of dissertation work, created in C++ using OpenCV libraries, with assorted MATLAB helper utilities.}{www.github.com/malloc47/matscicut}
 
   % \proj{git-hq}{A remote management system for git, coded in Python.}{www.github.com/malloc47/git-hq}
 
-\end{longtable}
+\end{tabularx}
 
 %\section{Publications}
 \let\originalbibitem\bibitem
@@ -319,7 +333,7 @@
 \begin{enumerate}
 \renewcommand{\labelenumi}{[P\arabic{enumi}] }
 \item \emph{Android Application Development Workshop}.  Appathon
-  Contest.  Columbia, SC.  Nov. 17, 2012.
+  Contest.  Columbia, SC.  Nov. 17, 2012. 
 \item \emph{Open Source and Education}. SC Municipal Technology
   Association (SCMTA) Conference. Charleston, SC.  Sep. 6, 2012.
 \item \emph{Open Source and Higher Education}.  SC Technical College
@@ -335,21 +349,9 @@
   Columbia, SC.  Jan. 19, 2012.
 \end{enumerate} }
 
-% \section{Honors/Awards}
-% \begin{tabular}{rll}
-% 2012 & Graduate Student Day Presentation,  First Place & {\lighttext \textcolor{lightg}{USC}}\\
-% 2011 & Graduate Student Day Presentation,  Second Place\\
-% % 2010 & Graduate Student Day Presentation,  Honorable Mention\\
-% 2009 & Upsilon Pi Epsilon \\
-% 2006 & Senior Computer Science Award & {\lighttext \textcolor{lightg}{Bryan College}}\\
-% 2004 & Clara P. Hammond Award & {\lighttext \textcolor{lightg}{USCL}} \\
-% & Science and Mathematics Award \\
-% & Highest Academic Average Award \\
-% \end{tabular}
-
 \section{Honors/Awards at USC}
-\begin{tabular}{r|p{8cm} l|p{5cm}}
-2012 & \footnotesize{Gamecock Computing Research Symposium Poster Session,  First Place} &
+\begin{tabularx}{\textwidth}{@{}r|X l|p{4.9cm}@{}}
+2012 & \small{Gamecock Computing Research Symposium Poster Session,  First Place} &
 2004 & Clara P. Hammond Award  \\
 
 2012 & Graduate Student Day Presentation,  First Place &
@@ -357,12 +359,21 @@
 
 2009 & Upsilon Pi Epsilon &
 2004 & Highest Academic Average Award \\
-\end{tabular}
+\end{tabularx}
 
-\section{Interests and Activities}
-Programming, Teaching, Mathematics\\
-Open-source Software, Systems Administration, Linux\\
-Typography, \href{https://soundcloud.com/malloc47}{Music Composition}
+\section{Activities}
+teaching, programming, open source software, system administration,
+data visualization, Linux,
+\href{https://soundcloud.com/malloc47}{music composition}
+
+\vspace{1em}
+
+\noindent \newcolumntype{R}{>{\raggedleft\arraybackslash}X}%
+\begin{tabularx}{\textwidth}{@{}XR@{}}
+\footnotesize{Online: \href{http://resume.malloc47.com}{resume.malloc47.com}} &
+\footnotesize{Source: \href{https://github.com/malloc47/cv/tree/resume}{github.com/malloc47/cv/}}
+
+\end{tabularx}
 
 \pagestyle{myheadings}
 \markright{Jarrell Waggoner}
