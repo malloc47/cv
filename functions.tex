@@ -52,13 +52,30 @@
 	\textcolor{white}{\symbol{"2022}}
 }
 
+\newcommand{\oneskill}{%
+  \textcolor{white}{\symbol{"2022}}
+  \textcolor{white}{\symbol{"2022}}
+  \textcolor{notefive}{\symbol{"2022}}
+}
+
+\newcommand{\twoskill}{%
+  \textcolor{white}{\symbol{"2022}}
+  \textcolor{notethree}{\symbol{"2022}}
+  \textcolor{notefive}{\symbol{"2022}}
+}
+
+\newcommand{\threeskill}{%
+  \textcolor{noteone}{\symbol{"2022}}
+  \textcolor{notethree}{\symbol{"2022}}
+  \textcolor{notefive}{\symbol{"2022}}
+}
+
 %FONTS
 % \defaultfontfeatures{Mapping=tex-text}
 % \setmainfont[SmallCapsFont = Fontin SmallCaps]{Fontin}
 
 \setromanfont [Ligatures={Common}, BoldFont={Linux Libertine Bold}, ItalicFont={Linux Libertine Italic}]{Linux Libertine}
-%% \setromanfont [Ligatures={Common}, BoldFont={GeosansLight}, ItalicFont={GeosansLight}]{GeosansLight}
-\setsansfont{GeosansLight}
+\setsansfont [Ligatures={Common}, BoldFont={GeosansLight}, ItalicFont={GeosansLight}]{GeosansLight}
 \setmonofont{GeosansLight} 
 
 \font\lighttext=''Baskerville-Normal:color=787878'' at 10pt
@@ -66,12 +83,8 @@
 
 %CV Sections inspired by: 
 %http://stefano.italians.nl/archives/26
-\titleformat{\section}{\Large\sffamily\scshape\raggedright}{}{0em}{}[\titlerule]
-\titlespacing{\section}{0pt}{3pt}{3pt}
-
-%Tweak a bit the top margin
-
-%\addtolength{\voffset}{-1.3cm}
+\titleformat{\section}{\Large\scshape\raggedright\sffamily}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{-2pt}{0pt}
 
 %-------------WATERMARK TEST [**not part of a CV**]---------------
 \TPGrid[30mm,30mm]{30}{60}
@@ -79,3 +92,9 @@
 %\setlength{\TPVertModule}{\TPHorizModule}
 %\textblockorigin{2mm}{0.65\paperheight}
 \setlength{\parindent}{0pt}
+
+\newcommand{\skill}{\textbf}
+\newcommand{\institution}{\textsc}
+
+% \def\bullet{\textcolor{medg}{\symbol{"00BB}}}
+\def\div{\,\textbar{}\,}

@@ -1,4 +1,4 @@
-\documentclass[a4paper,10pt]{article}
+\documentclass[10pt]{article}
 
 \usepackage{marvosym}
 \usepackage{fontspec}
@@ -6,18 +6,25 @@
 \defaultfontfeatures{Scale=MatchLowercase,Mapping=tex-text}
 \RequirePackage{color,graphicx}
 \usepackage[usenames,dvipsnames]{xcolor}
-\usepackage[big]{layaureo}
-\usepackage{fullpage}
+\usepackage[left=1in, right=1in, top=1in, bottom=1in]{geometry}
 \usepackage{supertabular}
 \usepackage{titlesec}
 \usepackage{multicol}
 \usepackage{multirow}
 \usepackage{longtable}
+\usepackage{xstring}
 \usepackage{rotating}
 \usepackage{ifthen}
-\usepackage{hyperref}
+\usepackage[xetex,
+            pdfauthor={Jarrell Waggoner},
+            pdftitle={malloc47/cv},
+            pdfsubject={Jarrell Waggoner CV},
+            pdfkeywords={computer vision, image processing, artificial intelligence, pattern recognition, machine learning, data science, functional programming, web development},
+            pdfproducer={xelatex},
+            pdfcreator={xelatex}]{hyperref}
 \usepackage[absolute]{textpos}
 \usepackage{enumitem}
+\usepackage{tabularx}
 
 \makeatletter
 \renewcommand*{\@biblabel}[1]{\hfill[C#1]}
@@ -45,7 +52,7 @@
 
 \begin{multicols}{2}
 \setlength{\parskip}{0pt}
-  \section{Biographical Data}
+  \section{Biographical}
 
 \begin{tabular}{r p{5.2cm}}
   \textsc{Address:}	& \begin{footnotesize} Department of Computer Science and Engineering, University of South Carolina, Columbia, SC 29208 \end{footnotesize} \\
@@ -53,13 +60,12 @@
   \textsc{email:}       & \href{mailto:malloc47@gmail.com}{malloc47@gmail.com} \\
   % \textsc{Website:} &
   % \href{http://www.malloc47.com}{www.malloc47.com} \\
-  \textsc{Citizenship:} & United States Citizen \\
 \end{tabular}
 
 \vfill
 \columnbreak
 
-\section{Web}
+\section{Online}
 \begin{tabular}{r p{5cm}}
   \textsc{Website:}	& \href{http://www.malloc47.com}{www.malloc47.com} \\
   \textsc{Twitter:}     & @malloc47 \\
@@ -74,7 +80,10 @@
 
 \section{Research Interests}
 
-Computer vision, segmentation, contour completion, perceptural grouping, document image analysis, event recognition, image processing.
+computer vision, segmentation, contour completion, perceptual
+grouping, document image analysis, event recognition, image
+processing, artificial intelligence, pattern recognition \& machine
+learning, data science, functional programming
 
 \vspace{2em}
 
@@ -105,15 +114,14 @@ Computer vision, segmentation, contour completion, perceptural grouping, documen
 \vspace{2em}
 
 \newcommand{\experience}[4]{
-\textsc{#1}
-& #2 \\
-&\emph{#3}\\
-&\footnotesize{#4}
-\\\multicolumn{2}{c}{} \\
+\textsc{#1} & #2 \\
+\nopagebreak &\emph{#3}\\
+\nopagebreak &\footnotesize{#4} \\
+\nopagebreak \multicolumn{2}{c}{} \\
 }
 
 \section{Research Experience}
-\begin{tabular}{r|p{11cm}}
+\begin{longtable}{r|p{11cm}}
 
 \experience{2011---Present}%
 {Research Assistant funded by \textsc{AFOSR}}%
@@ -148,9 +156,7 @@ Computer vision, segmentation, contour completion, perceptural grouping, documen
   page images.}
 %% {Created a \textsc{digital collation} application to handle automatic differencing of sub-textual inconsistencies among multiple copies of \emph{The Faerie Queene} by \textsc{Edmund Spenser}.}
 
-\end{tabular}
-
-\pagebreak
+\end{longtable}
 
 \section{Teaching Experience}
 \begin{longtable}{r|p{11cm}}
@@ -181,6 +187,9 @@ Computer vision, segmentation, contour completion, perceptural grouping, documen
 {Student and graduate tutor for college-level Mathematics, Computer Science, Physics, and English classes.}
 
 \end{longtable}
+
+\pagestyle{myheadings}
+\markright{Jarrell Waggoner}
 
 \section{Industry Experience}
 
@@ -327,21 +336,12 @@ Spring 2007 & Math 241 \& Math 242 & Maple \\
 \end{tabular*}
 \end{center}
 
-\pagebreak
-
-\newcommand{\proj}[3]{
-  \textsc{#1} & \footnotesize{#2}\\
-  &\href{#3}{#3}\\
-  \multicolumn{2}{c}{} \\
-}
 
 \section{Service}
-
 \newcommand{\service}[2]{
   \textsc{#1} & #2\\
   %% \multicolumn{2}{c}{} \\
 }
-
 \begin{longtable}{r|p{10cm}}
   \service{Webmaster}{\href{http://cvl.cse.sc.edu/wvm2013/}{Winter Vision Meetings, 2013}}
   \service{Webmaster}{\href{http://cvl.cse.sc.edu/wacv2013/}{Workshop on the Applications of Computer Vision, 2013}}
@@ -354,94 +354,103 @@ Spring 2007 & Math 241 \& Math 242 & Maple \\
 \end{longtable}
 
 \section{Personal and Open Source Projects}
-\begin{longtable}{r|p{13.5cm}}
+\newcommand{\proj}[3]{
+  \textsc{#1} & #2\\
+   &\href{http://www.#3}{#3}\\
+   \multicolumn{2}{c}{} \\ [-1ex]
+}
+\begin{longtable}{r|p{13cm}}
 
-  \proj{\href{http://nonpartisan.me}{nonpartisan.me}}{Google Chrome extension that filters social media websites for political keywords.  Available on the \href{https://chrome.google.com/webstore/detail/nonpartisanme/ninebcppidndhampaggnjbijpacoadgg}{Chrome Web Store}.}{http://www.github.com/malloc47/nonpartisan.me}
+  \proj{\href{http://nonpartisan.me}{nonpartisan.me}}%
+{Google Chrome extension that filters social media websites for political keywords.  Available in the \href{https://chrome.google.com/webstore/detail/nonpartisanme/ninebcppidndhampaggnjbijpacoadgg}{Chrome Web Store}.  Featured in the \href{http://www.charlestoncitypaper.com/charleston/sick-of-politics-on-facebook-try-this-browser-tool/Content?oid=4153447}{Charleston City Paper}.}%
+{github.com/malloc47/nonpartisan.me}
 
-  \proj{term-do}{A completion engine that is a hybrid of gnome-do and Emacs's ido-mode. Works on many tested VT100 terminal types and is built in C++. Includes full client/server architecture implemented with boost.interprocess and complete plugin system with bindings for multiple languages.  Available in the \href{https://aur.archlinux.org/packages/term-do-git/}{Arch Linux AUR}.}{http://www.github.com/malloc47/term-do}
+\proj{term-do}{An interactive terminal prompt that displays potential command completions as you type.  A hybrid of gnome-do and Emacs's ido-mode.  Works on many tested VT100 terminal types; built in~\skill{C++}.  Includes client/server architecture implemented with boost.interprocess and full-featured plugin system. Available in the \href{https://aur.archlinux.org/packages/term-do-git/}{Arch Linux AUR}.}{github.com/malloc47/term-do}
 
-  \proj{git-hq}{A remote management system for git, created in Python.}{http://www.github.com/malloc47/git-hq}
+  \proj{Ratio Contour}{Maintainer and contributor for the Ratio Contour project, a salient object detection and segmentation method used for computer vision applications.  Developed in \skill{C} and \skill{MATLAB}.}{github.com/malloc47/ratio-contour}
+
+  \proj{Digital Collation}{Research project to ``collate'' high-resolution documents by using image registration, accomplished using the SIFT feature detector and a thin plate spline warping technique, written in MATLAB.}{github.com/malloc47/digital-collation}
+
+  \proj{PMLDAP}{\skill{Linux} user management tool for Linux clusters.  Created as a simplified replacement for LDAP.  Capable of bootstrapping new systems, synchronizing users and configuration files, and running distributed commands.  Written in \skill{Bash}.}{github.com/malloc47/pmldap}
 
   \proj{matscicut}{An energy minimization framework for segmenting 3D materials volumes. Prototype of dissertation work, created in C++ using OpenCV libraries, with assorted MATLAB helper utilities.}{http://www.github.com/malloc47/matscicut}
 
-  \proj{Ratio Contour}{Maintainer of the Ratio Contour contour grouping project, created in C and MATLAB.}{http://www.github.com/malloc47/ratio-contour}
-
-  \proj{Digital Collation}{Research project to ``collate'' high-resolution documents by using image registration, accomplished using the SIFT feature detector and a thin plate spline warping technique, written in MATLAB.}{https://github.com/malloc47/digital-collation}
+  \proj{git-hq}{A remote management system for git, created in Python.}{http://www.github.com/malloc47/git-hq}
 
 \end{longtable}
 
+\newcommand{\skills}[2]{
+  \item #2 #1
+}
+\vspace{-0.5em}
 \section{Skills \& Languages}
-\begin{multicols}{3}
+\vspace{-1em}
+\begin{multicols}{4}
 \raggedcolumns
-%\parbox{5cm}{
-%\begin{enumerate}
 \begin{itemize}
-%\renewcommand{\labelenumi}{\textcolor{lightg}{[S\arabic{enumi}]}}
-\renewcommand{\labelitemi}{\textcolor{lightg}{\symbol{"00BB}}}
+\renewcommand{\labelitemi}{}
 \setlength{\itemsep}{1pt}
 \setlength{\parskip}{0pt}
 \setlength{\parsep}{0pt}
-%% \item Assembly \hfill \twonotes
-\item Bash \hfill \fournotes
-\item Blender \hfill \threenotes
-\item C/C++ \hfill \fournotes 
-\item English \hfill \fivenotes
-\item git \hfill \fournotes
-\item GNU/Linux \hfill \fournotes
-\item HTML/CSS \hfill \fournotes
-%\item Image Processing \hfinll \fivenotes
-\item Java \hfill \fivenotes
-\item Javacript \hfill \threenotes
-%\item LAMP Stack \hfill \fournotes
-\item \LaTeX \hfill \threenotes
-%% \item LISP \hfill \onenote
-%\item Machine Learning \hfill \fournotes
-\item Maple \hfill \threenotes
-\item MATLAB \hfill \fivenotes
-%\item MS Office \hfill \fivenotes
-%\item Networking \hfill \threenotes
-\item OpenCV \hfill \fournotes
-\item PHP \hfill \fournotes
-\item Python \hfill \fournotes
-\item Django \hfill \fournotes
-\item Scheme \hfill \fivenotes
-\item SQL \hfill \threenotes
-%% \item Sys. Admin. \hfill \threenotes
-%% \item Visual Basic \hfill \fivenotes
-%\item Windows \hfill \fivenotes
-%% \item Wordpress \hfill \fournotes
-%\end{enumerate}
+
+%% \skills{Assembly}{\twonotes}
+\skills{Bash}{\threeskill}
+\skills{Blender}{\twoskill}
+\skills{C/C++}{\threeskill }
+\skills{Emacs Lisp}{\oneskill}
+\skills{English}{\threeskill}
+\skills{git}{\twoskill}
+\skills{GNU/Linux}{\threeskill}
+\skills{Haskell}{\oneskill}
+\skills{HTML/CSS}{\threeskill}
+%\skills{Processing}{\fivenotes Image}
+\skills{Java}{\threeskill}
+\skills{Javacript}{\twoskill}
+\skills{jQuery}{\twoskill}
+%\skills{LAMP Stack}{\fournotes}
+\skills{\LaTeX}{\twoskill}
+%% \skills{LISP}{\onenote}
+%\skills{Learning}{\fournotes Machine}
+\skills{Maple}{\twoskill}
+\skills{MATLAB}{\threeskill}
+%\skills{MS Office}{\fivenotes}
+%\skills{Networking}{\threenotes}
+\skills{NumPy}{\threeskill}
+\skills{OpenCV}{\threeskill}
+\skills{PHP}{\oneskill}
+\skills{Python}{\threeskill}
+\skills{Django}{\twoskill}
+\skills{SciPy}{\threeskill}
+\skills{Scheme}{\threeskill}
+\skills{SQL}{\twoskill}
+\skills{Sys. Admin.}{\threeskill}
+%% \skills{Visual Basic}{\fivenotes}
+%\skills{Windows}{\fivenotes}
+%% \skills{Wordpress}{\fournotes}
+
 \end{itemize}
-%}
+
 \end{multicols}
+\vspace{-1em}
+\begin{footnotesize}
+  \oneskill Small-scale projects and/or assignments \hfill 
+  \twoskill Multiple projects and/or experience teaching \hfill
+  \threeskill Large-scale and/or multi-group projects
+\end{footnotesize}
 
 \vspace{1em}
 
-%% \begin{center}
-%% \parbox{12cm}{
-%% \onenote Some familiarity, small-scale projects and assignments \\
-%% \twonotes Implementation-specific experience \\
-%% \threenotes Quite familiar, used in limited settings as part of larger projects \\
-%% \fournotes Extensive knowledge or experience teaching \\
-%% \fivenotes Used in context of large scale, multi-group projects}
-%% \end{center}
+\section{Activities}
+teaching, programming, open source software, system administration,
+data visualization, Linux,
+\href{https://soundcloud.com/malloc47}{music composition}
 
-\begin{center}
-  \begin{footnotesize}
-    \begin{tabular}{ll}
-      \onenote Small-scale projects and/or assignments & \fournotes Extensive knowledge or experience teaching \\
-      \twonotes Implementation-specific experience & \fivenotes Used in context of large-scale and/or multi-group projects \\
-      \threenotes Quite familiar, used in larger projects &
-    \end{tabular}
-    \end{footnotesize}
-\end{center}
-
-\vspace{1em}
-
-\section{Interests and Activities}
-Programming, Teaching, Mathematics\\
-Open-source Software, System Administration, Linux\\
-Typography, Music Composition
+\null\vfill
+\footnotesize{
+  Online:  \href{http://cv.malloc47.com}{cv.malloc47.com} \hfill
+  Résumé: \href{http://cv.malloc47.com}{cv.malloc47.com} \hfill 
+  Source:  \href{https://github.com/malloc47/cv/tree/master}{github.com/malloc47/cv/}
+}
 
 %%\XeTeXpdffile ''cv.pdf'' page 1 scaled 800
 
