@@ -1,12 +1,14 @@
 proj=cv
+SRC = cv.tex resume.tex
+OUT = $(SRC:.tex=.pdf)
 
-all: $(proj).pdf
+all: $(OUT)
 
-$(proj).pdf: $(proj).tex $(proj).bib
-	xelatex $(proj)
-	bibtex $(proj)
-	xelatex $(proj)
-	xelatex $(proj)
+%.pdf: %.tex cv.bib functions.tex
+	xelatex $<
+	bibtex $*
+	xelatex $<
+	xelatex $<
 
 clean:
 	-rm *.pdf
@@ -15,3 +17,4 @@ clean:
 	-rm *.out
 	-rm *.blg
 	-rm *.bbl
+	-rm *~
