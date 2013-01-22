@@ -349,7 +349,13 @@ Spring 2007 & Math 241 \& Math 242 & Maple \\
    &\href{http://www.#3}{#3}\\
    \multicolumn{2}{c}{} \\ [-1ex]
 }
-\begin{longtable}{r|p{13cm}}
+
+\newcommand{\projlh}[4]{
+  \textsc{#1} & #2\\
+   &\href{#3}{#4}\\
+}
+
+\begin{longtable}{@{}p{3cm}|p{13cm}}
 
   \proj{\href{http://nonpartisan.me}{nonpartisan.me}}%
 {Google Chrome extension that filters social media websites for political keywords.  Available in the \href{https://chrome.google.com/webstore/detail/nonpartisanme/ninebcppidndhampaggnjbijpacoadgg}{Chrome Web Store}.  Featured in the \href{http://www.charlestoncitypaper.com/charleston/sick-of-politics-on-facebook-try-this-browser-tool/Content?oid=4153447}{Charleston City Paper}.}%
@@ -366,6 +372,8 @@ Spring 2007 & Math 241 \& Math 242 & Maple \\
   \proj{matscicut}{An energy minimization framework for segmenting 3D materials volumes. Prototype of dissertation work, created in C++ using OpenCV libraries, with assorted MATLAB helper utilities.}{github.com/malloc47/matscicut}
 
   \proj{git-hq}{A remote management system for git, created in Python.}{github.com/malloc47/git-hq}
+
+  \projlh{Sina Weibo Mobile Client}{Created a \skill{J2ME}-based prototype mobile client for the popular Chinese \institution{Sina} microblogging service, similar to \institution{Twitter}.  Targeted at limited-functionality CLDC phones and uses a custom \skill{Java} wrapper for the \institution{Sina} API.  Employs symmetric-key encryption for personal data.}{http://bd.weibo.10086.cn/2012/downloads_kjava}{bd.weibo.10086.cn/2012/downloads\_kjav}
 
 \end{longtable}
 
@@ -426,10 +434,10 @@ Spring 2007 & Math 241 \& Math 242 & Maple \\
 \end{footnotesize}
 \end{minipage}
 
-\section{Activities}
-teaching, programming, open source software, system administration,
-data visualization, Linux,
-\href{https://soundcloud.com/malloc47}{music composition}
+% \section{Activities}
+% teaching, programming, open source software, system administration,
+% data visualization, Linux,
+% \href{https://soundcloud.com/malloc47}{music composition}
 
 \null\vfill
 \footnotesize{

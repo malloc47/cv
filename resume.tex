@@ -284,8 +284,13 @@
   \textsc{#1} & #2\\
    &\href{http://www.#3}{#3}\\
 }
+
+\newcommand{\projlh}[4]{
+  \textsc{#1} & #2\\
+   &\href{#3}{#4}\\
+}
 \section{Personal and Open Source Projects}
-\begin{tabularx}{\textwidth}{@{}l|X@{}}
+\begin{tabularx}{\textwidth}{@{}p{3cm}|X@{}}
   \proj{\href{http://nonpartisan.me}{nonpartisan.me}}%
 {Google Chrome extension that filters social media websites for political keywords.  Available in the \href{https://chrome.google.com/webstore/detail/nonpartisanme/ninebcppidndhampaggnjbijpacoadgg}{Chrome Web Store}.  Featured in the \href{http://www.charlestoncitypaper.com/charleston/sick-of-politics-on-facebook-try-this-browser-tool/Content?oid=4153447}{Charleston City Paper}.}%
 {github.com/malloc47/nonpartisan.me}
@@ -294,7 +299,9 @@
 
   \proj{Ratio Contour}{Maintainer and contributor for the Ratio Contour project, a salient object detection and segmentation method used for computer vision applications.  Developed in \skill{C} and \skill{MATLAB}.}{github.com/malloc47/ratio-contour}
 
-  \projl{PMLDAP}{\skill{Linux} user management tool for Linux clusters.  Created as a simplified replacement for LDAP.  Capable of bootstrapping new systems, synchronizing users and configuration files, and running distributed commands.  Written in \skill{Bash}.}{github.com/malloc47/pmldap}
+  % \projl{PMLDAP}{\skill{Linux} user management tool for Linux clusters.  Created as a simplified replacement for LDAP.  Capable of bootstrapping new systems, synchronizing users and configuration files, and running distributed commands.  Written in \skill{Bash}.}{github.com/malloc47/pmldap}
+
+  \projlh{Sina Weibo Mobile Client}{Created a \skill{J2ME}-based prototype mobile client for the popular Chinese \institution{Sina} microblogging service, similar to \institution{Twitter}.  Targeted at limited-functionality CLDC phones and uses a custom \skill{Java} wrapper for the \institution{Sina} API.  Employs symmetric-key encryption for personal data.}{http://bd.weibo.10086.cn/2012/downloads_kjava}{bd.weibo.10086.cn/2012/downloads\_kjava}
 
   % \proj{Digital Collation}{Research prototype to ``collate'' high-resolution document scans using image registration.  Written in \skill{MATLAB} utilizing various computer vision libraries.}{www.github.com/malloc47/digital-collation}
 
