@@ -14,6 +14,7 @@
 \usepackage{longtable}
 \usepackage{xstring}
 \usepackage{ifthen}
+\usepackage{enumitem}
 \usepackage[xetex,
             pdfauthor={Jarrell Waggoner},
             pdftitle={malloc47/resume},
@@ -25,9 +26,9 @@
 \usepackage{enumitem}
 \usepackage{tabularx}
 
-\makeatletter
-\renewcommand*{\@biblabel}[1]{\hfill[C#1]}
-\makeatother
+% \makeatletter
+% \renewcommand*{\@biblabel}[1]{\hfill[#1]}
+% \makeatother
 
 \include{functions}
 \titlespacing{\section}{0pt}{-2pt}{0pt}
@@ -338,24 +339,33 @@
 \bibliographystyle{plainyr-rev}
 
 \section{Talks}
-{\small
-\begin{enumerate}
-\renewcommand{\labelenumi}{[P\arabic{enumi}] }
-\item \emph{Android Application Development Workshop}.  Appathon
-  Contest.  Columbia, SC.  Nov. 17, 2012. 
-\item \emph{Open Source and Education}. SC Municipal Technology
-  Association (SCMTA) Conference. Charleston, SC.  Sep. 6, 2012.
-\item \emph{Open Source and Higher Education}.  SC Technical College
-  System (SCTCS) Conference.  Columbia, SC.  Sep. 25, 2012.
-\item \emph{Introduction to Android Development}.  Digital Humanities
-  High Performance Computing (DHHPC) Workshop.  Columbia, SC.  Aug.
+{\footnotesize
+\begin{enumerate}[align=left,labelsep=0em]
+\renewcommand{\labelenumi}{[\arabic{enumi}] }
+\item \href{http://www.malloc47.com/posscon2013/}{Extending Django}.
+  \emph{\href{http://posscon.org/}{Palmetto Open Source Software
+      Conference}}.  Columbia, SC.  March 28, 2013.
+\item \href{http://www.malloc47.com/cs-careers/}{Computer Science:
+    Research, Industry, and Entrepreneurship}.  \emph{Careers in
+    Science Lecture Series}.  Lancaster, SC.  March 6, 2013.
+\item \href{http://www.malloc47.com/spie2013/}{Interactive Grain Image
+    Segmentation Using Graph Cut Algorithms}.  \emph{SPIE
+    (Computational Imaging XI)}.  Burlingame, CA.  February 6, 2013.
+\item Android Application Development Workshop.  \emph{Appathon
+    Contest}.  Columbia, SC.  Nov. 17, 2012.
+\item Open Source and Education. \emph{SC Municipal Technology
+    Association (SCMTA) Conference}. Charleston, SC.  Sep. 6, 2012.
+\item Open Source and Higher Education.  \emph{SC Technical College
+    System (SCTCS) Conference}.  Columbia, SC.  Sep. 25, 2012.
+\item Introduction to Android Development.  \emph{Digital Humanities
+    High Performance Computing (DHHPC) Workshop}.  Columbia, SC.  Aug.
   8, 2012.
-\item \emph{Combining Global Labeling and Local Relabeling for
-  Metallic Image Segmentation}.  SPIE (Computational Image X).
-  Burlingame, CA.  Jan. 23, 2012.
-\item \emph{Open Source and Government}.  SC Government Management
-  Information Systems (SCGMIS) Software Developers Workshop.
-  Columbia, SC.  Jan. 19, 2012.
+\item Combining Global Labeling and Local Relabeling for
+  Metallic Image Segmentation.  \emph{SPIE (Computational Imaging X)}.
+  Jan. 23, 2012.
+\item Open Source and Government.  \emph{SC Government Management
+    Information Systems (SCGMIS) Workshop.}  Columbia, SC.  Jan. 19,
+  2012.
 \end{enumerate} }
 
 \section{Honors/Awards at USC}
