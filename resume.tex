@@ -16,12 +16,17 @@
 \usepackage{ifthen}
 \usepackage{enumitem}
 \usepackage[xetex,
-            pdfauthor={Jarrell Waggoner},
-            pdftitle={malloc47/resume},
-            pdfsubject={Jarrell Waggoner Résumé},
-            pdfkeywords={computer vision, image processing, artificial intelligence, pattern recognition, machine learning, data science, functional programming, web development},
-            pdfproducer={xelatex},
-            pdfcreator={xelatex}]{hyperref}
+            unicode,
+            pdfencoding=auto,
+            pdfinfo={
+              Title={malloc47/resume},
+              Author={Jarrell Waggoner},
+              Subject={Jarrell Waggoner Résumé},
+              Keywords={computer vision, image processing, artificial intelligence, pattern recognition, machine learning, data science, functional programming, web development},
+              Producer={xelatex},
+              Creator{xelatex}
+            },
+            ]{hyperref}
 \usepackage[absolute]{textpos}
 \usepackage{enumitem}
 \usepackage{tabularx}
