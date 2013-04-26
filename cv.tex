@@ -227,6 +227,12 @@ learning, data science, functional programming
 
 \end{longtable}
 
+\let\originalbibitem\bibitem
+\def\bibitem#1#2\par{%
+  \noexpandarg
+  \originalbibitem{#1}
+  \StrSubstitute{#2}{Jarrell Waggoner}{\textbf{Jarrell Waggoner}}\par}
+
 %\section{Publications}
 \nocite{waggoner:13a}
 \nocite{waggoner:13b}
@@ -237,6 +243,7 @@ learning, data science, functional programming
 \nocite{zhang:10}
 \nocite{waggoner:12}
 \nocite{barbu:12}
+\nocite{barbu:12b}
 \nocite{zhang:12}
 \nocite{temlyakov:13}
 \nocite{salvi:13a}
