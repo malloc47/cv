@@ -1,0 +1,128 @@
+Jarrell Waggoner
+
+Biographical
+
+Address: Department of Computer Science and Engineering, University of South Carolina, Columbia, SC 29208
+Phone: 847-261-4747
+email: jarrell.waggoner@gmail.com
+
+Online
+
+Website: http://www.malloc47.com
+Twitter: https://twitter.com/malloc47
+github: http://www.github.com/malloc47
+LinkedIn: http://www.linkedin.com/in/malloc47
+
+Interests
+
+computer vision, image processing, artificial intelligence, pattern recognition & machine learning, data science, functional programming, web development
+
+Education
+
+Expected Aug. 2013: Ph.D. Computer Science & Engineering from the University of South Carolina
+May 2009: M.E. Computer Science & Engineering from the University of South Carolina
+
+Experience
+
+2012---Present
+Technical Lead at Huntstand, Inc.
+Software developer in an agile startup environment creating the huntstand.com web application.  Written using Python, Django, and Backbone.js; deployed to AWS.  Responsible for curating full technology stack and coordinating with 5 developers.
+
+2011---Present
+Research Assistant funded by AFOSR
+
+Dissertation research on computer vision models and algorithms for materials science image segmentation in Python, NumPy, SciPy, OpenCV, and MATLAB at the Computer Vision Lab at USC.  Created a desktop GUI using wxWidgets and a web interface using Django, JavaScript, and jQuery. Conducted large-scale analysis using a 98-core high-performance computing system.
+
+2011---Present
+Project Manager at Palmetto Computer Labs
+Created and taught workshops on git, the linux command line, Android development, and open source software for hundreds of students, developers, and government officials at IT-oLogy.  Managed the Open IT Lab and associated projects. Assisted in planning the Palmetto Open Source Software Conference (POSSCON).
+
+2011
+Contractor for Elastic Vision Consulting
+Built a parser and generator for XML medical records formats (CCR and CCD) in a Java web application.  Written using JDOM, Xerces, and Hibernate, and run on an Axis2+Jetty6 driven server.
+
+2010---2011
+Research Assistant for the DARPA Mind's Eye Program
+Researched video event recognition for the DARPA Mind's Eye program. Collaborated with 10 students and faculty members across three institutions.  Developed algorithms in Scheme, Bash, MATLAB, and C to process a corpus of 3480 videos extracted into over 1.5 million frames. Distributed processing over 7 HPC machines.
+http://0xab.com/research/video-in-sentences-out.html
+https://www.github.com/malloc47/video-in-sentences-out
+
+2009---2010
+NEH Fellow at the USC Center for Digital Humanities (Sapheos/Paragon Project)
+Developed the prototype for a digital collation application to identify sub-textual inconsistencies among multiple copies of The Faerie Queene by Edmund Spenser.  Created in MATLAB using VLFeat and OpenCV to process tens of thousands of book page images.
+https://www.github.com/malloc47/digital-collation
+
+2007---2011
+Teaching Assistant for USC Department of Computer Science and Engineering
+Taught classes in software development, web development, and computer engineering, covering Java, JavaScript, HTML/CSS, and Visual Basic. Created syllabi and course objectives, developed and graded projects and assignments, supervised labs, and tutored students.
+
+Personal and Open Source Projects
+
+matsciseg
+Framework for propagated 3D volume segmentation, used in my dissertation work.  Algorithms created in Python and C/C++ and exposed as a web API using Django. Includes a web application that consumes the API created in JavaScript, and jQuery.
+https://www.github.com/malloc47/matsciseg
+
+http://nonpartisan.me
+Google Chrome extension that filters social media websites for political keywords.  Available in the Chrome Web Store.  Featured in the Charleston City Paper: http://www.charlestoncitypaper.com/charleston/sick-of-politics-on-facebook-try-this-browser-tool/Content?oid=4153447 .
+https://www.github.com/malloc47/nonpartisan.me
+
+term-do
+An interactive terminal prompt that displays potential command completions as you type.  A hybrid of gnome-do and Emacs's ido-mode.  Works on many tested VT100 terminal types; built in~C++.  Includes client/server architecture implemented with boost.interprocess and full-featured plugin system. Available in the Arch Linux AUR
+https://www.github.com/malloc47/term-do.
+
+Sina Weibo Mobile Client
+Created a J2ME-based prototype mobile client for the popular Chinese Sina microblogging service, similar to Twitter.  Targeted at limited-functionality CLDC phones and uses a custom Java wrapper for the Sina API.  Employs symmetric-key encryption for personal data.
+http://bd.weibo.10086.cn/2012/downloads_kjava
+
+Selected Publications
+
+[1] Jarrell Waggoner, Youjie Zhou, Jeff Simmons, Ayman Salem, Marc De Graef, Song Wang. Interactive Grain Image Segmentation using Graph Cut Algorithms, Proceedings of SPIE Volume 8657 (Computational Imaging XI), Burlingame, CA, 2013
+
+[2] A. Barbu, A. Bridge, Z. Burchill, D. Coroian, S. Dickinson, S. Fidler, A. Michaux, S. Mussman, S. Narayanaswamy, D. Salvi, L. Schmidt, J. Shangguan, J. M. Siskind, J. Waggoner, S. Wang, Y. Yin, Z. Zhang. Video In Sentences Out, Conference on Uncertainty in Artificial Intelligence (UAI), 102-112, Catalina Island, CA, 2012
+
+[3] Jarrell Waggoner, Jeff Simmons, Marc De Graef, and Song Wang. Graph Cut Approaches for Materials Segmentation Preserving Shape, Appearance, and Topology. International Conference on 3D Materials Science (3DMS), 147-152, Seven Springs, PA, 2012.
+
+[4] Jarrell Waggoner, Jeff Simmons, and Song Wang. Combining global labeling and local relabeling for metallic image segmentation. In Proceedings of SPIE (Computational Imaging X), volume 8296, Burlingame, CA, 2012.
+
+[5] Zhiqi Zhang, Sanja Fidler, Jarrell Waggoner, Yu Cao, Sven Dickinson, Jeffrey M. Siskind, Song Wang. Superedge Grouping for Object Localization by Combining Appearance and Shape Information, IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 3266-3273, Providence, RI, 2012
+
+[6] Song Wang, Jarrell Waggoner, and Jeff Simmons. Graph-cut methods for grain boundary segmentation.  JOM Journal of the Minerals, Metals and Materials Society, 63(7):49–51, 2011.
+
+[7] Andrew Temlyakov, Brent C. Munsell, Jarrell W. Waggoner, and Song Wang. Two perceptually motivated strategies for shape classification. In IEEE Conference on Computer Vision and Pattern Recognition (CVPR), pages 2289–2296, 2010.
+
+[8] Zhiqi Zhang, Yu Cao, Dhaval Salvi, Kenton Oliver, Jarrell Waggoner, and Song Wang. Free-shape subwindow search for object localization. In IEEE Conference on Computer Vision and Pattern Recognition (CVPR), pages 1086–1093, 2010.
+
+Talks
+
+[1] Extending Django. Palmetto Open Source Software Conference. Columbia, SC.  March 28, 2013.
+
+[2] Computer Science: Research, Industry, and Entrepreneurship. Careers in Science Lecture Series. Lancaster, SC.  March 6, 2013.
+
+[3] Interactive Grain Image Segmentation Using Graph Cut Algorithms. SPIE (Computational Imaging XI). Burlingame, CA.  February 6, 2013.
+
+[4] Android Application Development Workshop. Appathon Contest. Columbia, SC.  Nov. 17, 2012.
+
+[5] Open Source and Education. SC Municipal Technology Association (SCMTA) Conference. Charleston, SC.  Sep. 6, 2012.
+
+[6] Open Source and Higher Education.  SC Technical College System (SCTCS) Conference.  Columbia, SC.  Sep. 25, 2012.
+
+[7] Introduction to Android Development.  Digital Humanities High Performance Computing (DHHPC) Workshop.  Columbia, SC.  Aug. 8, 2012.
+
+[8] Combining Global Labeling and Local Relabeling for Metallic Image Segmentation.  SPIE (Computational Imaging X). Jan. 23, 2012.
+
+[9] Open Source and Government.  SC Government Management Information Systems (SCGMIS) Workshop.  Columbia, SC.  Jan. 19, 2012.
+
+Honors/Awards at USC
+
+2012 -- Gamecock Computing Research Symposium Poster Session,  First Place
+2012 -- Graduate Student Day Presentation,  First Place
+2009 -- Upsilon Pi Epsilon
+2004 -- Clara P. Hammond Award
+2004 -- Science and Mathematics Award
+2004 -- Highest Academic Average Award
+
+Activities
+
+teaching, programming, open source software, system administration, data visualization, Linux, music composition (https://soundcloud.com/malloc47)
+
+Available online: http://resume.malloc47.com
