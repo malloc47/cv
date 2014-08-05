@@ -4,8 +4,8 @@ string{CVPR     = {Conference on Computer Vision and Pattern Recognition}}
 string{WACV     = {Workshop on Applications of Computer Vision}}
 @string{UAI     = {Conference on Uncertainty in Artificial Intelligence}}
 @string{ICCV    = {{IEEE} International Conference on Computer Vision}}
+@string{MVA     = {Machine Vision and Applications}}
 
-@Comment   address =	 {Catalina Island, CA}
 @InProceedings{barbu:12,
   author =	 {Andrei Barbu and Alexander Bridge and Zachary
                   Burchill and Dan Coroian and Sven Dickinson and
@@ -18,6 +18,23 @@ string{WACV     = {Workshop on Applications of Computer Vision}}
   booktitle =	 UAI,
   pages =	 {102-112},
   year =	 2012,
+}
+
+@TechReport{barbu:12b,
+  author = {Andrei Barbu and Alexander Bridge and Dan Coroian and Sven
+                  Dickinson and Sam Mussman and Siddharth
+                  Narayanaswamy and Dhaval Salvi and Lara Schmidt and
+                  Jiangnan Shangguan and Jeffrey Mark Siskind and
+                  Jarrell Waggoner and Song Wang and Jinlian Wei and
+                  Yifan Yin and Zhiqi Zhang},
+  title =  {Large-Scale Automatic Labeling of Video Events with Verbs
+                  Based on Event-Participant Interaction},
+  journal   = {CoRR},
+  volume    = {abs/1204.3616},
+  year      = {2012},
+  ee        = {http://arxiv.org/abs/1204.3616},
+  url       = {http://arxiv.org/abs/1204.3616},
+  bibsource = {DBLP, http://dblp.uni-trier.de}
 }
 
 @InProceedings{salvi:13a,
@@ -72,10 +89,53 @@ string{WACV     = {Workshop on Applications of Computer Vision}}
                   and Song Wang},
   title =	 {Graph Cut Approaches for Materials Segmentation
                   Preserving Shape, Appearance, and Topology},
-  booktitle =	 {International Conference on 3D Materials Science},
+  booktitle =	 {International Conference on {3D} Materials Science},
   pages =	 {147-152},
   year =	 2012,
   address =	 {Seven Springs, PA}
+}
+
+@Article{waggoner:13a,
+  author =	 {Jarrell Waggoner and Jeff Simmons and Marc De Graef
+                  and Song Wang},
+  title =	 {{3D} Materials Image Segmentation by {2D} Propagation:
+                  {A} Graph-Cut Approach Considering Homomorphism},
+  journal =	 {{IEEE} Transactions on Image Processing},
+  volume =	 22,
+  issue =	 12,
+  year =	 {2013}
+}
+
+@InProceedings{waggoner:13b,
+  author =	 {Jarrell Waggoner and Youjie Zhou and Jeff Simmons
+                  and Marc De Graef and Song Wang},
+  title =	 {Topology-Preserving Multi-Label Segmentation by
+                  Propagating Constrained Ring Structures and Its
+                  Application to Grain Image Segmentation},
+  booktitle =	 ICCV,
+  year =	 {(under review)},
+}
+
+@InProceedings{waggoner:13c,
+  author =	 {Jarrell Waggoner and Youjie Zhou and Jeff Simmons
+                  and Ayman Salem and Marc De Graef and Song Wang},
+  title =	 {Interactive Grain Image Segmentation using Graph Cut Algorithms},
+  booktitle =	 {Proceedings of SPIE (Computational Imaging XI)},
+  address =	 {Burlingame, CA},
+  year =	 {2013},
+}
+
+@Article{waggoner:14,
+  author =	 {Jarrell Waggoner and Youjie Zhou and Jeff Simmons
+                  and Marc De Graef and Song Wang},
+  title =	 {Graph-Cut Based Interactive Segmentation of {3D}
+                  Materials-Science Images},
+  journal =	 MVA,
+  keyword =	 {},
+  pages =	 {1615-1629},
+  volume =	 25,
+  issue =	 6,
+  year =	 2014
 }
 
 @Article{wang:11,
@@ -116,48 +176,13 @@ string{WACV     = {Workshop on Applications of Computer Vision}}
   address =	 {Providence, RI}
 }
 
-@Article{waggoner:13a,
-  author =	 {Jarrell Waggoner and Jeff Simmons and Marc De Graef
-                  and Song Wang},
-  title =	 {Multi-Structure Propagation Incorporating
-                  Homeomorphism for Materials Image Segmentation},
-  journal =	 {{IEEE} Transactions on Image Processing},
-  year =	 {(under review)},
-}
-
-@InProceedings{waggoner:13b,
-  author =	 {Jarrell Waggoner and Youjie Zhou and Jeff Simmons
-                  and Marc De Graef and Song Wang},
-  title =	 {Topology-Preserving Multi-Label Segmentation by
-                  Propagating Constrained Ring Structures and Its
-                  Application to Grain Image Segmentation},
-  booktitle =	 ICCV,
-  year =	 {(under review)},
-}
-
-@InProceedings{waggoner:13c,
-  author =	 {Jarrell Waggoner and Youjie Zhou and Jeff Simmons
-                  and Ayman Salem and Marc De Graef and Song Wang},
-  title =	 {Interactive Grain Image Segmentation using Graph Cut Algorithms},
-  booktitle =	 {Proceedings of SPIE (Computational Imaging XI)},
-  address =	 {Burlingame, CA},
-  year =	 {2013},
-}
-
-
-@TechReport{barbu:12b,
-  author = {Andrei Barbu and Alexander Bridge and Dan Coroian and Sven
-                  Dickinson and Sam Mussman and Siddharth
-                  Narayanaswamy and Dhaval Salvi and Lara Schmidt and
-                  Jiangnan Shangguan and Jeffrey Mark Siskind and
-                  Jarrell Waggoner and Song Wang and Jinlian Wei and
-                  Yifan Yin and Zhiqi Zhang},
-  title =  {Large-Scale Automatic Labeling of Video Events with Verbs
-                  Based on Event-Participant Interaction},
-  journal   = {CoRR},
-  volume    = {abs/1204.3616},
-  year      = {2012},
-  ee        = {http://arxiv.org/abs/1204.3616},
-  url       = {http://arxiv.org/abs/1204.3616},
-  bibsource = {DBLP, http://dblp.uni-trier.de}
+@InProceedings{zhou:14,
+  author =	 {Youjie Zhou and Lili Ju and Yu Cao and Jarrell
+                  Waggoner and Yuewei Lin and Jeff Simmons and Song
+                  Wang},
+  title =	 {Edge-Weighted Centroid Voronoi Tessellation with
+                  Propagation of Consistency Constraint for {3D} Grain
+                  Segmentation in Microscopic Superalloy Images},
+  booktitle =	 {{CVPR} Workshop on Perception Beyond the Visible Spectrum ({PBVS})},
+  year =	 2014,
 }
