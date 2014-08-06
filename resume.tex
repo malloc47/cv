@@ -75,6 +75,8 @@
 
 \newcommand{\degree}[4]{\textsc{#1} & \textbf{#2} & \textsc{#3} & \textbf{#4}\\}
 
+\vspace{1em}
+
 \section{Education}
 \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}l l p{5.5cm} r}
 
@@ -88,17 +90,9 @@
   {Computer Science \& Engineering}%
   {University of South Carolina}
 
-  % \degree{May 2006}%
-  % {B.S.}%
-  % {Computer Science}%
-  % {Bryan College}
-
-  % \degree{May 2004}%
-  % {A.S.}%
-  % {Computer Science}%
-  % {University of South Carolina at Lancaster}
-
 \end{tabular*}
+
+\vspace{1em}
 
 \newcommand{\experience}[5]{
 \textsc{#1} & \textbf{#2} #3 \textsc{#4}\\
@@ -113,9 +107,11 @@
 
 \section{Experience}
 
+%% \vspace{-0.5em}
+
 \setlength\LTleft{0pt}
 \setlength\LTright{0pt}
-\vspace{-0.5em}
+
 \begin{longtable}{@{\extracolsep{\fill}} l | l r}
 
   \experience{2013---Present}%
@@ -149,7 +145,7 @@
     and \jquery. Conducted large-scale analysis using a 98-core
     high-performance computing system.}
 
-  %% \experience{2011---Present}%
+  %% \experience{2011---2013}%
   %% {Project Manager}%
   %% {at}%
   %% {\href{http://palmettocomputerlabs.com/}{Palmetto Computer Labs}}%
@@ -232,7 +228,9 @@
 \newcommand{\skills}[2]{
   \item #2 #1
 }
-\vspace{-0.5em}
+
+%% \vspace{-0.5em}
+
 \section{Skills \& Languages}
 \vspace{-1em}
 \begin{multicols}{4}
@@ -256,7 +254,7 @@
 \skills{GNU/\linux}{\threeskill}
 \skills{\hadoop}{\twoskill}
 \skills{\haskell}{\oneskill}
-\skills{\html}{\threeskill}
+%% \skills{\html}{\threeskill}
 %\skills{Processing}{\fivenotes Image}
 \skills{\java}{\threeskill}
 \skills{\js}{\twoskill}
@@ -282,14 +280,15 @@
 %% \skills{Wordpress}{\fournotes}
 
 \end{itemize}
-
 \end{multicols}
-\vspace{-1em}
-  \begin{footnotesize}
-    \oneskill Small-scale projects and/or assignments \hfill
-    \twoskill Multiple projects and/or experience teaching \hfill
-    \threeskill Large-scale and/or production systems
-  \end{footnotesize}
+
+%% \vspace{-1em}
+
+\begin{footnotesize}
+  \oneskill Small-scale projects and/or assignments \hfill
+  \twoskill Multiple projects and/or experience teaching \hfill
+  \threeskill Large-scale and/or production systems
+\end{footnotesize}
 
 \newcommand{\proj}[3]{
   \textsc{#1} & #2\\
@@ -326,7 +325,7 @@
 
   % \projl{PMLDAP}{\linux user management tool for Linux clusters.  Created as a simplified replacement for LDAP.  Capable of bootstrapping new systems, synchronizing users and configuration files, and running distributed commands.  Written in \bash.}{github.com/malloc47/pmldap}
 
-  \projlh{Sina Weibo Mobile Client}{Created a \skill{J2ME}-based prototype mobile client for the popular Chinese \institution{Sina} microblogging service, similar to \institution{Twitter}.  Targeted at limited-functionality CLDC phones and uses a custom \java wrapper for the \institution{Sina} API.}{http://bd.weibo.10086.cn/2012/downloads_kjava}{bd.weibo.10086.cn/2012/downloads\_kjava}
+  %% \projlh{Sina Weibo Mobile Client}{Created a \skill{J2ME}-based prototype mobile client for the popular Chinese \institution{Sina} microblogging service, similar to \institution{Twitter}.  Targeted at limited-functionality CLDC phones and uses a custom \java wrapper for the \institution{Sina} API.}{http://bd.weibo.10086.cn/2012/downloads_kjava}{bd.weibo.10086.cn/2012/downloads\_kjava}
 
   % \proj{Digital Collation}{Research prototype to ``collate'' high-resolution document scans using image registration.  Written in \matlab utilizing various computer vision libraries.}{www.github.com/malloc47/digital-collation}
 
@@ -343,8 +342,9 @@
   \originalbibitem{#1}
   \StrSubstitute{#2}{Jarrell Waggoner}{\textbf{Jarrell Waggoner}}\par}
 
+\nocite{waggoner:phd}
 \nocite{waggoner:14}
-%% \nocite{zhou:14}
+\nocite{zhou:14}
 \nocite{waggoner:13a}
 % \nocite{waggoner:13b}
 \nocite{waggoner:13c}
@@ -363,34 +363,21 @@
 {\footnotesize \bibliography{cv}}
 \bibliographystyle{plainyr-rev}
 
-\section{Talks}
+\section{Recent Talks}
 {\footnotesize
 \begin{enumerate}[align=left,labelsep=0em]
-\renewcommand{\labelenumi}{[\arabic{enumi}] }
-\item \href{http://www.malloc47.com/posscon2013/}{Extending Django}.
-  \emph{\href{http://posscon.org/}{Palmetto Open Source Software
-      Conference}}.  Columbia, SC.  March 28, 2013.
-\item \href{http://www.malloc47.com/cs-careers/}{Computer Science:
-    Research, Industry, and Entrepreneurship}.  \emph{Careers in
-    Science Lecture Series}.  Lancaster, SC.  March 6, 2013.
-\item \href{http://www.malloc47.com/spie2013/}{Interactive Grain Image
-    Segmentation Using Graph Cut Algorithms}.  \emph{SPIE
-    (Computational Imaging XI)}.  Burlingame, CA.  February 6, 2013.
-\item Android Application Development Workshop.  \emph{Appathon
-    Contest}.  Columbia, SC.  Nov. 17, 2012.
-\item Open Source and Education. \emph{SC Municipal Technology
-    Association (SCMTA) Conference}. Charleston, SC.  Sep. 6, 2012.
-\item Open Source and Higher Education.  \emph{SC Technical College
-    System (SCTCS) Conference}.  Columbia, SC.  Sep. 25, 2012.
-\item Introduction to Android Development.  \emph{Digital Humanities
-    High Performance Computing (DHHPC) Workshop}.  Columbia, SC.  Aug.
-  8, 2012.
-\item Combining Global Labeling and Local Relabeling for
-  Metallic Image Segmentation.  \emph{SPIE (Computational Imaging X)}.
-  Jan. 23, 2012.
-\item Open Source and Government.  \emph{SC Government Management
-    Information Systems (SCGMIS) Workshop.}  Columbia, SC.  Jan. 19,
-  2012.
+\renewcommand{\labelenumi}{[\arabic{enumi}]}
+\item \href{http://www.malloc47.com/ato2013/}{Python for Computer Vision}. \emph{\href{http://allthingsopen.org/}{All Things Open}}. Raleigh, SC. October 24, 2013.
+%% \item \href{http://www.malloc47.com/gsd2013/}{Interactive Grain Image Segmentation Using Graph Cut Algorithms}. \emph{USC Graduate Student Day}. Columbia, SC. April 12, 2013.
+\item \href{http://www.malloc47.com/posscon2013/}{Extending Django}. \emph{\href{http://posscon.org/}{Palmetto Open Source Software Conference}}.  Columbia, SC.  March 28, 2013.
+\item \href{http://www.malloc47.com/cs-careers/}{Computer Science: Research, Industry, and Entrepreneurship}.  \emph{Careers in Science Lecture Series}.  Lancaster, SC.  March 6, 2013.
+\item \href{http://www.malloc47.com/spie2013/}{Interactive Grain Image Segmentation Using Graph Cut Algorithms}.  \emph{SPIE (Computational Imaging XI)}.  Burlingame, CA.  February 6, 2013.
+\item Android Application Development Workshop.  \emph{Appathon Contest}.  Columbia, SC.  Nov. 17, 2012.
+\item Open Source and Education. \emph{SC Municipal Technology Association (SCMTA) Conference}. Charleston, SC.  Sep. 6, 2012.
+%% \item Open Source and Higher Education.  \emph{SC Technical College System (SCTCS) Conference}.  Columbia, SC.  Sep. 25, 2012.
+\item Introduction to Android Development.  \emph{Digital Humanities High Performance Computing (DHHPC) Workshop}.  Columbia, SC.  Aug. 8, 2012.
+\item Combining Global Labeling and Local Relabeling for Metallic Image Segmentation.  \emph{SPIE (Computational Imaging X)}. Jan. 23, 2012.
+\item Open Source and Government.  \emph{SC Government Management Information Systems (SCGMIS) Workshop.}  Columbia, SC.  Jan. 19, 2012.
 \end{enumerate} }
 
 \section{Honors/Awards at USC}
