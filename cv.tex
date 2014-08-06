@@ -60,8 +60,8 @@
   \section{Biographical}
 
 \begin{tabularx}{\linewidth}{@{}l X@{}}
-  \textsc{Address}	& \footnotesize{Department of Computer Science and Engineering,} \\
-  & \footnotesize{University of South Carolina, Columbia, SC 29208} \\
+  \textsc{Address}     & \footnotesize{600 W Chicago Ave. Suite 400} \\
+                       & \footnotesize{C/O Groupon, Chicago, IL, 60654-2067} \\
   \textsc{Phone}       & \href{http://www.malloc47.com/call-me/}{847-261-4747} \\
   \textsc{email}       & \href{mailto:jarrell.waggoner@gmail.com}{jarrell.waggoner@gmail.com} \\
 \end{tabularx}
@@ -87,26 +87,12 @@ processing, artificial intelligence, pattern recognition \& machine
 learning, data science, functional programming
 
 \section{Education}
-\begin{tabularx}{\linewidth}{@{}r l X}
-  \textsc{Expected Aug. 2013} & Ph.D. Candidate in \textsc{Computer Science} & \textbf{University of South Carolina}\\
-  &% Dissertation: ``Combining Global Labeling and Local Relabeling for Metallic Image Segmentation'' |
-  \small Advisor: Dr. Song \textsc{Wang} | \normalsize \textsc{Gpa}: 3.91/4.0 &
-%\hyperlink{grds}{\hfill | \footnotesize Detailed List of Exams}
-  \\ [1ex]% &\\
+\begin{tabularx}{\linewidth}{@{}r X l}
+  \textsc{Aug. 2013} & Ph.D. Candidate in \textsc{Computer Science} & \textbf{University of South Carolina}\\
+  & \small Advisor: Dr. Song \textsc{Wang} | \normalsize \textsc{Gpa}: 3.91/4.0 & \\%
+  & \footnotesize Dissertation: ``Multi-Label Segmentation Propagation for Materials Science Images Incorporating Topology and Interactivity'' & \\[4ex]%
   \textsc{May} 2009 & Master of Engineering in \textsc{Computer Science} & \textbf{University of South Carolina}\\
-  &\normalsize \textsc{GPA}: 3.8/4.0 | \small\emph{magna cum laude}
-%\hyperlink{grds}{\hfill | \footnotesize Detailed List of Exams}
-\\[1ex]% &\\
-% \textsc{May} 2006& Bachelor of Science in \textsc{Computer Science} & \textbf{Bryan College} \\
-% %& Thesis: ``Aspect-Oriented Programming in an Extreme Programming Environment''\\
-% &\normalsize 
-% %\textsc{GPA}: ?.?/4.0 | 
-% \small\emph{summa cum laude}
-% %\hyperlink{grds_cleli}{\hfill| \footnotesize Detailed List of Exams}
-% \\[1ex]% &\\
-% \textsc{May} 2004& Associate of Science in \textsc{Computer Science} & \small{\textbf{University of South Carolina at Lancaster}} \\
-% &\normalsize \textsc{GPA}: 4.0/4.0 | \small\emph{summa cum laude} &\\
-% %\hyperlink{grds_cleli}{\hfill| \footnotesize Detailed List of Exams}
+  &\normalsize \textsc{GPA}: 3.8/4.0 | \small\emph{magna cum laude} \\[1ex]%
 \end{tabularx}
 
 \newcommand{\experience}[4]{
@@ -115,6 +101,67 @@ learning, data science, functional programming
 \nopagebreak &\footnotesize{#4} \\
 \nopagebreak \multicolumn{2}{c}{} \\ [-1ex]
 }
+
+\section{Industry Experience}
+\vspace{-1em}
+\newcommand{\industry}[4]{
+\textsc{#1} & #2 &\emph{#3}\\
+&\multicolumn{2}{p{14cm}}{\footnotesize{#4}}\\
+\multicolumn{3}{c}{} \\ [-1ex]
+}
+
+\begin{longtable}{@{}r|p{10cm} r}
+
+\industry{2013\textemdash{}Present}%
+{Software Development Engineer III}%
+{\href{http://www.groupon.com}{Groupon, Inc.}}%%
+{Member of the Quantum Lead team developing internal tools for
+    Groupon's sales workforce. Working in an agile environment using
+    \clojure to develop service-oriented and big data systems. Built a
+    specialized caching system, rearchitected existing \hadoop
+    pipeline in \cascalog, and scaled a session management system used
+    by a large machine-learning data pipeline.}
+
+\industry{2012\textemdash{}Present}%
+{Technical Lead}%
+{TerraStride, Inc.}%
+{Software developer in an agile startup environment creating the
+  \href{http://www.huntstand.com}{huntstand.com} web
+  application. Written using \python, \django, and \backbone; deployed
+  to \skill{AWS}.  Responsible for curating full technology stack and
+  coordinating with $5$ developers.}
+
+\industry{2011\textemdash{}2013}%
+{Project Manager}%
+{Palmetto Computer Labs}%
+{Assisted in planning the POSSCON conference. Managed the Open IT Lab
+  and associated projects (Android Development). Provided software
+  support for websites and managed projects.}
+
+\industry{2011}%
+{Contractor}%
+{Elastic Vision Consulting}%
+{Created a parser and generator for XML medical records formats (CCR
+  and CCD) in Java using JDOM, JAXB, SAX, Xerces, and Hibernate
+  (HSQLDB), on an Axis2+Jetty6 driven server.}
+
+\industry{2005}%
+{Intern --- Technical Writer}%
+{JAARS, Inc.}%
+{Created documentation and integrated context-sensitive online help
+  system for speech and linguistic software written in C++ and Visual
+  Basic.}
+
+\industry{2001\textemdash{}2002}%
+{Volunteer Software Developer}%
+{JAARS, Inc.}%
+{Spearheaded the conversion from VB4 to VB6 for the linguistic
+  reference tool
+  \href{http://www.sil.org/computing/ipahelp/ipaprvw2.htm}{IPA Help}.}
+
+\end{longtable}
+
+\pagebreak
 
 \section{Research Experience}
 \begin{longtable}{@{}r|p{14cm}}
@@ -129,7 +176,6 @@ learning, data science, functional programming
   interface using wxWidgets for assisted segmentation, and conducted
   large-scale evaluations on multiple datasets for metallic and
   biological materials.}
-%% {Developed segmentation methods for materials image volumes.  Created GUI interface for assisted segmentation, and conducted large-scale evaluations on multiple datasets for metallic and biological materials.}
 
 \experience{2010---2011}%
 {Research Assistant funded by \textsc{DARPA}}%
@@ -140,8 +186,6 @@ learning, data science, functional programming
   a corpus of thousands of videos extracted into over 3 million
   frames using a high-performance computing cluster.}
 
-%% {Explored segmentation methods for video event recognition while working at the \textsc{Computer Vision Lab} at \textsc{USC}. Managed lab computer network and organize weekly lab meetings.  Attended P.I. meetings in San Diego (2010) and Colorado (2011). Visited \textsc{Purdue University} working with Dr.~Jeffrey Mark Siskind (Dec~2010---Jan~2011).}
-
 \experience{2009---2010}%
 {NEH Fellow at the \textsc{Center for Digital Humanities}}%
 {Digital Collation}%
@@ -150,11 +194,8 @@ learning, data science, functional programming
   multiple copies of \emph{The Faerie Queene} by \textsc{Edmund
     Spenser} in \emph{MATLAB} to process tens of thousands of book
   page images.}
-%% {Created a \textsc{digital collation} application to handle automatic differencing of sub-textual inconsistencies among multiple copies of \emph{The Faerie Queene} by \textsc{Edmund Spenser}.}
 
 \end{longtable}
-
-\pagebreak
 
 \section{Teaching Experience}
 \vspace{-1em}
@@ -190,47 +231,6 @@ learning, data science, functional programming
 \pagestyle{myheadings}
 \markright{Jarrell Waggoner}
 
-\section{Industry Experience}
-\vspace{-1em}
-\newcommand{\industry}[4]{
-\textsc{#1} & #2 &\emph{#3}\\
-&\multicolumn{2}{p{14cm}}{\footnotesize{#4}}\\
-\multicolumn{3}{c}{} \\ [-1ex]
-}
-
-\begin{longtable}{@{}r|p{10cm} r}
-
-\industry{2012\textemdash{}Present}%
-{Technical Lead}%
-{Huntstand, Inc.}%
-{Software developer in an agile startup environment creating the
-    \href{http://www.huntstand.com}{huntstand.com} web application.
-    Written using \python, \django, and \backbone; deployed to
-    \skill{AWS}.  Responsible for curating full technology stack and
-    coordinating with $5$ developers.}
-% {Developed the \href{http://www.huntstand.com}{www.huntstand.com} web application using Python+Django with a PJAX frontend which was deployed to AWS;  responsible for curating full technology stack and coordinating with multiple developers.}
-
-\industry{2011\textemdash{}Present}%
-{Project Manager}%
-{Palmetto Computer Labs}%
-{Assisted in planning the POSSCON conference. Managed the Open IT Lab and associated projects (Android Development). Provided software support for websites and managed projects.}
-
-\industry{2011}%
-{Contractor}%
-{Elastic Vision Consulting}%
-{Created a parser and generator for XML medical records formats (CCR and CCD) in Java using JDOM, JAXB, SAX, Xerces, and Hibernate (HSQLDB), on an Axis2+Jetty6 driven server.}
-
-\industry{2005}%
-{Intern --- Technical Writer}%
-{JAARS, Inc.}%
-{Created documentation and integrated context-sensitive online help system for speech and linguistic software written in C++ and Visual Basic.}
-
-\industry{2001\textemdash{}2002}%
-{Volunteer Software Developer}%
-{JAARS, Inc.}%
-{Spearheaded the conversion from VB4 to VB6 for the linguistic reference tool \href{http://www.sil.org/computing/ipahelp/ipaprvw2.htm}{IPA Help}.}
-
-\end{longtable}
 
 \let\originalbibitem\bibitem
 \def\bibitem#1#2\par{%
@@ -292,29 +292,30 @@ learning, data science, functional programming
     Meeting}.  Denver, CO.  January 20, 2011.
 \end{enumerate}
 
-\section{Guest Lectures}
-\begin{enumerate}
-\renewcommand{\labelenumi}{[G\arabic{enumi}] }
-%% \item \emph{Combining Global Labeling and Local Relabeling for Metallic Image Segmentation}. Graduate Student Day Competition, Second Place. April 8, 2011.
-%% \item \emph{Image Registration for Digital Collation}. Graduate Student Day Competition, Honorable Mention. April 2, 2010.
-\item \emph{Building Chrome Extensions}.  In CSCE 242.  Guest lecture for Dr. José M. Vidal.  November~30, 2012.
-\item \emph{Modeling in Blender}.  In CSCE 552.  Guest lecture for Dr. Jijun Tang.  February~28, 2011.
-\item \emph{Aspect-Oriented Programming}. In CSCE 531. Guest lecture for Dr. Marco Valtorta. March 19, 2008.
-\item \emph{Math 241}. Vector Calculus. Guest lecture for Dr. Dwayne Brown. April~23---26, 2007. 
-\item \emph{Math 242}. Differential Equations. Guest lecture for Dr. Dwayne Brown. April~23---26, 2007. 
-\end{enumerate}
+%% \section{Guest Lectures}
+%% \begin{enumerate}
+%% \renewcommand{\labelenumi}{[G\arabic{enumi}] }
+%% %% \item \emph{Combining Global Labeling and Local Relabeling for Metallic Image Segmentation}. Graduate Student Day Competition, Second Place. April 8, 2011.
+%% %% \item \emph{Image Registration for Digital Collation}. Graduate Student Day Competition, Honorable Mention. April 2, 2010.
+%% \item \emph{Building Chrome Extensions}.  In CSCE 242.  Guest lecture for Dr. José M. Vidal.  November~30, 2012.
+%% \item \emph{Modeling in Blender}.  In CSCE 552.  Guest lecture for Dr. Jijun Tang.  February~28, 2011.
+%% \item \emph{Aspect-Oriented Programming}. In CSCE 531. Guest lecture for Dr. Marco Valtorta. March 19, 2008.
+%% \item \emph{Math 241}. Vector Calculus. Guest lecture for Dr. Dwayne Brown. April~23---26, 2007.
+%% \item \emph{Math 242}. Differential Equations. Guest lecture for Dr. Dwayne Brown. April~23---26, 2007.
+%% \end{enumerate}
 
 %\section{Travel}
 %\begin{enumerate}
 %\renewcommand{\labelenumi}{[T\arabic{enumi}] }
-%\item \emph{Mind's Eye PI Meeting}. DARPA Project P.I.~meeting. Denver, CO. January 20---21, 2011. 
+%\item \emph{Mind's Eye PI Meeting}. DARPA Project P.I.~meeting. Denver, CO. January 20---21, 2011.
 %\item \emph{Tomography and its Applications to Materials Science and Non-Destructive Evaluation}. Organizd by M. De Graef, L. Drummy, J. Simmons, M. Comer, C. Bouman, and J. Knopp. Tech\^{}Edge, Dayton, Ohio. December 13---15, 2010.
 %\item Visiting scholar. In collaboration with J. M. Siskind. Purdue University, West Lafayette, IN. December 6---22, 2010 \& January 5---16, 2011.
-%\item \emph{Mind's Eye Kickoff Meeting}. DARPA Project P.I.~meeting. San Diego, CA. September 23---24, 2010. 
+%\item \emph{Mind's Eye Kickoff Meeting}. DARPA Project P.I.~meeting. San Diego, CA. September 23---24, 2010.
 %\end{enumerate}
 
 \section{Honors/Awards}
-\begin{tabular}{rll}
+\begin{center}
+\begin{tabular*}{0.75\textwidth}{rll}
 2012 & Gamecock Computing Research Symposium Poster Session,  First Place & \multirow{5}{*}{{\lighttext \textcolor{lightg}{\begin{turn}{-90}USC\end{turn}}}}\\
      & Graduate Student Day Presentation,  First Place \\
 2011 & Graduate Student Day Presentation,  Second Place \\
@@ -326,19 +327,20 @@ learning, data science, functional programming
 2004 & Clara P. Hammond Award & \multirow{3}{*}{{\lighttext \textcolor{lightg}{\begin{turn}{-90}USCL\end{turn}}}} \\
 & Science and Mathematics Award \\
 & Highest Academic Average Award \\
-\end{tabular}
+\end{tabular*}
+\end{center}
 
 %\section{Professional Societies}
 
-\section{Teaching}
+\section{Classes Taught}
 \vspace{-1em}
 \begin{center}
 %\begin{tabular*}{0.75\textwidth}{r @{\hspace{0.5em}\textcolor{lightg}{\symbol{"00BB}}\hspace{0.5em}} l @{\extracolsep{\fill}} l }
 \begin{tabular*}{0.75\textwidth}{r @{\hspace{0.5em}\textcolor{lightg}{\symbol{"00BB}}\hspace{0.5em}} l l c }
 %\multicolumn{3}{r}{University of South Carolina}\\
-Ongoing & Open Source 101 & Open Source Software & \multirow{3}{*}{{\lighttext \textcolor{lightg}{\begin{turn}{-90}IT-oLogy\end{turn}}}}  \\
-Ongoing & Version Control 101 & git, github \\
-Ongoing & Command Line 101 & Linux, BASH \\
+2012--2013 & Open Source 101 & Open Source Software & \multirow{3}{*}{{\lighttext \textcolor{lightg}{\begin{turn}{-90}IT-oLogy\end{turn}}}}  \\
+2012--2013 & Version Control 101 & git, github \\
+2012--2013 & Command Line 101 & Linux, BASH \\
 \multicolumn{3}{r}{}\\
 Fall 2011 & CSCE 211 & Digital Logic Design & \multirow{4}{*}{{\lighttext \textcolor{lightg}{\begin{turn}{-90}USC\end{turn}}}} \\
 Summer II 2008 & CSCE 102 & HTML/CSS/JavaScript \\
@@ -423,35 +425,37 @@ Spring 2007 & Math 241 \& Math 242 & Maple \\
 
 %% \skills{Assembly}{\twonotes}
 \skills{\bash}{\threeskill}
-\skills{Blender}{\twoskill}
-\skills{\ccpp}{\threeskill }
-\skills{Emacs Lisp}{\oneskill}
-\skills{English}{\threeskill}
+% \skills{Blender}{\twoskill}
+\skills{\ccpp}{\threeskill}
+\skills{\cascalog}{\oneskill}
+\skills{\clojure}{\threeskill}
+\skills{Emacs Lisp}{\twoskill}
+%% \skills{English}{\threeskill}
 \skills{\git}{\twoskill}
 \skills{GNU/\linux}{\threeskill}
+\skills{\hadoop}{\twoskill}
 \skills{\haskell}{\oneskill}
-\skills{\html}{\threeskill}
+%% \skills{\html}{\threeskill}
 %\skills{Processing}{\fivenotes Image}
 \skills{\java}{\threeskill}
 \skills{\js}{\twoskill}
-\skills{\jquery}{\twoskill}
+%% \skills{\jquery}{\twoskill}
 %\skills{LAMP Stack}{\fournotes}
 \skills{\LaTeX}{\twoskill}
 %% \skills{LISP}{\onenote}
 %\skills{Learning}{\fournotes Machine}
-\skills{Maple}{\twoskill}
+% \skills{Maple}{\twoskill}
 \skills{\matlab}{\threeskill}
 %\skills{MS Office}{\fivenotes}
 %\skills{Networking}{\threenotes}
-\skills{\numpy}{\threeskill}
+\skills{\numpy/\scipy}{\threeskill}
 \skills{\opencv}{\threeskill}
-\skills{\php}{\oneskill}
+%% \skills{\php}{\oneskill}
 \skills{\python}{\threeskill}
 \skills{\django}{\twoskill}
-\skills{\scipy}{\threeskill}
 \skills{\scheme}{\threeskill}
 \skills{\sql}{\twoskill}
-\skills{Sys. Admin.}{\threeskill}
+%% \skills{Sys. Admin.}{\threenotes}
 %% \skills{Visual Basic}{\fivenotes}
 %\skills{Windows}{\fivenotes}
 %% \skills{Wordpress}{\fournotes}
@@ -459,21 +463,21 @@ Spring 2007 & Math 241 \& Math 242 & Maple \\
 \end{itemize}
 \end{multicols}
 \begin{footnotesize}
-  \oneskill Small-scale projects and/or assignments \hfill 
+  \oneskill Small-scale projects and/or assignments \hfill
   \twoskill Multiple projects and/or experience teaching \hfill
   \threeskill Large-scale and/or multi-group projects
 \end{footnotesize}
 \end{minipage}
 
-% \section{Activities}
-% teaching, programming, open source software, system administration,
-% data visualization, Linux,
-% \href{https://soundcloud.com/malloc47}{music composition}
+\section{Activities}
+teaching, programming, open source software, system administration,
+data visualization, Linux,
+\href{https://soundcloud.com/malloc47}{music composition}
 
 \null\vfill
 \footnotesize{
   Online:  \href{http://cv.malloc47.com}{cv.malloc47.com} \hfill
-  Résumé: \href{http://resume.malloc47.com}{resume.malloc47.com} \hfill 
+  Résumé: \href{http://resume.malloc47.com}{resume.malloc47.com} \hfill
   Source:  \href{https://github.com/malloc47/cv/tree/master}{github.com/malloc47/cv/}
 }
 
