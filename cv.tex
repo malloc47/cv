@@ -110,17 +110,38 @@ learning, data science, functional programming, Clojure
 \multicolumn{3}{c}{} \\ [-1ex]
 }
 
-\begin{longtable}{@{}r|p{10cm} r}
+\begin{longtable}{@{}p{2.2cm}|p{8cm} r}
 
 \industry{2013\textemdash{}Present}%
-{Technical Lead}%
+{Software Development Engineer}%
 {\href{http://www.groupon.com}{Groupon, Inc.}}%%
-{Member of the Quantum Lead team building internal tools for
-    Groupon's sales workforce using \clojure to develop
-    service-oriented and big data systems. Built a specialized caching
-    system, rearchitected existing \hadoop pipeline in \cascalog, and
-    scaled a session management system used by a large
-    machine-learning data pipeline.}
+{Tech Lead of the Supply Intelligence team building internal tools
+    and analytics pipelines to optimize Groupon's supply funnel using
+    \clojure to develop service-oriented and big data systems.
+
+    \hangindent=1.0em ---~Built a high-performance caching and write
+    management system around \salesforce that hits 10K req/min
+
+    \hangindent=1.0em ---~Managed a critical business automation of
+    the sales lead assignment process that previously required an
+    estimated 80 managers to conduct manually; led the effort to
+    rearchitect this legacy system from an ad-hoc job scheduling
+    platform written in \ruby and \bash to a multi-staged \hadoop
+    pipeline written in \clojure
+
+    %% \hangindent=1.0em ---~Operationalized \python within the
+    %% organization by spinning up an internal PyPI server; introducing a
+    %% pex-driven single-artifact deployment process; creating an
+    %% interest group, mailing list, and internal wiki; and standardized
+    %% configuration, logging, and resource management
+
+    \hangindent=1.0em ---~Developed logic and coordinated with product
+    and business teams to inject 250K leads into \salesforce from
+    scraped web data
+
+    ---~Built out an ETL and machine learning platform using \python
+    and \spark
+  }
 
 \industry{2012\textemdash{}2014}%
 {Technical Lead}%
@@ -145,26 +166,27 @@ learning, data science, functional programming, Clojure
   and CCD) in Java using JDOM, JAXB, SAX, Xerces, and Hibernate
   (HSQLDB), on an Axis2+Jetty6 driven server.}
 
-\industry{2005}%
-{Intern --- Technical Writer}%
-{JAARS, Inc.}%
-{Created documentation and integrated context-sensitive online help
-  system for speech and linguistic software written in C++ and Visual
-  Basic.}
+%% \industry{2005}%
+%% {Intern --- Technical Writer}%
+%% {JAARS, Inc.}%
+%% {Created documentation and integrated context-sensitive online help
+%%   system for speech and linguistic software written in C++ and Visual
+%%   Basic.}
 
-\industry{2001\textemdash{}2002}%
-{Volunteer Software Developer}%
-{JAARS, Inc.}%
-{Spearheaded the conversion from VB4 to VB6 for the linguistic
-  reference tool
-  \href{http://www.sil.org/computing/ipahelp/ipaprvw2.htm}{IPA Help}.}
+%% \industry{2001\textemdash{}2002}%
+%% {Volunteer Software Developer}%
+%% {JAARS, Inc.}%
+%% {Spearheaded the conversion from VB4 to VB6 for the linguistic
+%%   reference tool
+%%   \href{http://www.sil.org/computing/ipahelp/ipaprvw2.htm}{IPA Help}.}
 
 \end{longtable}
 
 \pagebreak
 
 \section{Research Experience}
-\begin{longtable}{@{}r|p{14cm}}
+
+\begin{longtable}{@{}p{2.4cm}|p{13.6cm}}
 
 \experience{2011---2013}%
 {Research Assistant funded by \textsc{AFOSR}}%
@@ -199,7 +221,8 @@ learning, data science, functional programming, Clojure
 
 \section{Teaching Experience}
 \vspace{-1em}
-\begin{longtable}{@{}r|p{14cm}}
+
+\begin{longtable}{@{}p{2.4cm}|p{13.6cm}}
 
 \experience{2008--2009}%
 {GK-12 Fellow at \textsc{Crayton Middle School}}%
@@ -265,6 +288,7 @@ learning, data science, functional programming, Clojure
 \section{Posters/Presentations}
 \begin{enumerate}
 \renewcommand{\labelenumi}{[P\arabic{enumi}] }
+\item Rules Engines: Logic As Data Structure. \emph{Palmetto Open Source Software Conference}. Columbia, SC. April 14, 2015.
 \item Python for Computer Vision. \emph{All Things Open}. Raleigh, SC. October 24, 2013.
 \item Interactive Grain Image Segmentation Using Graph Cut Algorithms. \emph{USC Graduate Student Day}. Columbia, SC. April 12, 2013.
 \item Extending Django.  \emph{Palmetto Open Source Software
@@ -359,8 +383,6 @@ Spring 2007 & Math 241 \& Math 242 & Maple \\
 \end{tabular*}
 \end{center}
 
-\vspace{2em}
-
 \section{Service}
 \vspace{-1em}
 \newcommand{\service}[2]{
@@ -415,7 +437,9 @@ Spring 2007 & Math 241 \& Math 242 & Maple \\
 
   % \proj{git-hq}{A remote management system for git, created in Python.}{github.com/malloc47/git-hq}
 
-  \projlh{Sina Weibo Mobile Client}{Created a \skill{J2ME}-based prototype mobile client for the popular Chinese \institution{Sina} microblogging service, similar to \institution{Twitter}.  Targeted at limited-functionality CLDC phones and uses a custom \skill{Java} wrapper for the \institution{Sina} API.  Employs symmetric-key encryption for personal data.}{http://bd.weibo.10086.cn/2012/downloads_kjava}{bd.weibo.10086.cn/2012/downloads\_kjav}
+  %% \proj{Sina Weibo Mobile Client}{Created a \skill{J2ME}-based prototype mobile client for the popular Chinese \institution{Sina} microblogging service, similar to \institution{Twitter}.  Targeted at limited-functionality CLDC phones and uses a custom \skill{Java} wrapper for the \institution{Sina} API.  Employs symmetric-key encryption for personal data.}{bd.weibo.10086.cn/2012/downloads\_kjav}
+
+  \proj{befunge.py}{Complete \href{https://en.wikipedia.org/wiki/Befunge}{Befunge} interpreter written in \python.  Implements the Befunge 93 specification, and is one of the closest Python equivalents to the \c reference implementation.}{github.com/malloc47/befunge.py}
 
 \end{longtable}
 
@@ -437,13 +461,12 @@ Spring 2007 & Math 241 \& Math 242 & Maple \\
 \skills{\bash}{\threeskill}
 % \skills{Blender}{\twoskill}
 \skills{\ccpp}{\threeskill}
-\skills{\cascalog}{\oneskill}
 \skills{\clojure}{\threeskill}
 \skills{Emacs Lisp}{\twoskill}
 %% \skills{English}{\threeskill}
-\skills{\git}{\twoskill}
+\skills{\git}{\threeskill}
 \skills{GNU/\linux}{\threeskill}
-\skills{\hadoop}{\twoskill}
+\skills{\hadoop}{\threeskill}
 \skills{\haskell}{\oneskill}
 %% \skills{\html}{\threeskill}
 %\skills{Processing}{\fivenotes Image}
@@ -455,7 +478,7 @@ Spring 2007 & Math 241 \& Math 242 & Maple \\
 %% \skills{LISP}{\onenote}
 %\skills{Learning}{\fournotes Machine}
 % \skills{Maple}{\twoskill}
-\skills{\matlab}{\threeskill}
+\skills{\matlab}{\twoskill}
 %\skills{MS Office}{\fivenotes}
 %\skills{Networking}{\threenotes}
 \skills{\numpy/\scipy}{\threeskill}
@@ -464,6 +487,7 @@ Spring 2007 & Math 241 \& Math 242 & Maple \\
 \skills{\python}{\threeskill}
 \skills{\django}{\twoskill}
 \skills{\scheme}{\threeskill}
+\skills{\spark}{\threeskill}
 \skills{\sql}{\twoskill}
 %% \skills{Sys. Admin.}{\threenotes}
 %% \skills{Visual Basic}{\fivenotes}
