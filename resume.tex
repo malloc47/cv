@@ -115,15 +115,36 @@
 \begin{longtable}{@{\extracolsep{\fill}} l | l r}
 
   \experience{2013---Present}%
-  {Technical Lead}%
+  {Software Development Engineer}%
   {at}%
   {\href{http://www.groupon.com}{Groupon, Inc.}}%
-  {Member of the Quantum Lead team building internal tools for
-    Groupon's sales workforce using \clojure to develop
-    service-oriented and big data systems. Built a specialized caching
-    system, rearchitected existing \hadoop pipeline in \cascalog, and
-    scaled a session management system used by a large
-    machine-learning data pipeline.}
+ {Tech Lead of the Supply Intelligence team building internal tools
+    and analytics pipelines to optimize Groupon's supply funnel using
+    \clojure to develop service-oriented and big data systems.
+
+    \hangindent=1.0em ---~Built a high-performance caching and write
+    management system around \salesforce that hits 10K req/min
+
+    \hangindent=1.0em ---~Managed a critical business automation of
+    the sales lead assignment process that previously required an
+    estimated 80 managers to conduct manually; led the effort to
+    rearchitect this legacy system from an ad-hoc job scheduling
+    platform written in \ruby and \bash to a multi-staged \hadoop
+    pipeline written in \clojure
+
+    %% \hangindent=1.0em ---~Operationalized \python within the
+    %% organization by spinning up an internal PyPI server; introducing a
+    %% pex-driven single-artifact deployment process; creating an
+    %% interest group, mailing list, and internal wiki; and standardized
+    %% configuration, logging, and resource management
+
+    \hangindent=1.0em ---~Developed logic and coordinated with product
+    and business teams to inject 250K leads into \salesforce from
+    scraped web data
+
+    ---~Built out an ETL and machine learning platform using \python
+    and \spark
+  }
 
   \experience{2012---2014}%
   {Technical Lead}%
@@ -195,16 +216,16 @@
     thousands of book page images.
     \href{https://www.github.com/malloc47/digital-collation}{github.com/malloc47/digital-collation}}
 
-  \experiencel{2007---2011}%
-  {Teaching Assistant}%
-  {for}%
-  {\href{https://www.cse.sc.edu/}{USC Department of Computer Science
-      and Engineering}}%
-  {Taught classes in software development, web development, and
-    computer engineering, covering \java, \js, \html, and
-    \skill{Visual Basic}.  Created syllabi and course objectives,
-    developed and graded projects and assignments, supervised labs,
-    and tutored students.}
+  %% \experiencel{2007---2011}%
+  %% {Teaching Assistant}%
+  %% {for}%
+  %% {\href{https://www.cse.sc.edu/}{USC Department of Computer Science
+  %%     and Engineering}}%
+  %% {Taught classes in software development, web development, and
+  %%   computer engineering, covering \java, \js, \html, and
+  %%   \skill{Visual Basic}.  Created syllabi and course objectives,
+  %%   developed and graded projects and assignments, supervised labs,
+  %%   and tutored students.}
 
   % \experience{2005}%
   % {Intern---Technical Writer}%
@@ -229,7 +250,7 @@
   \item #2 #1
 }
 
-%% \vspace{-0.5em}
+\vspace{-1em}
 
 \section{Skills \& Languages}
 \vspace{-1em}
@@ -319,9 +340,11 @@
 {Google Chrome extension that filters social media websites for political keywords.  Available in the \href{https://chrome.google.com/webstore/detail/nonpartisanme/ninebcppidndhampaggnjbijpacoadgg}{Chrome Web Store}.  Featured in the \href{http://www.charlestoncitypaper.com/charleston/sick-of-politics-on-facebook-try-this-browser-tool/Content?oid=4153447}{Charleston City Paper}.}%
 {github.com/malloc47/nonpartisan.me}
 
-\proj{term-do}{An interactive terminal prompt that displays potential command completions as you type.  A hybrid of gnome-do and Emacs's ido-mode.  Works on many tested VT100 terminal types; built in~\cpp.  Includes client/server architecture implemented with boost.interprocess and full-featured plugin system. Available in the \href{https://aur.archlinux.org/packages/term-do-git/}{Arch Linux AUR}.}{github.com/malloc47/term-do}
+  \proj{befunge.py}{Complete \href{https://en.wikipedia.org/wiki/Befunge}{Befunge} interpreter written in \python.  Implements the Befunge 93 specification, and is one of the closest Python equivalents to the \c reference implementation.}{github.com/malloc47/befunge.py}
 
-  % \proj{Ratio Contour}{Maintainer and contributor for the Ratio Contour project, a salient object detection and segmentation method used for computer vision applications.  Developed in \c and \matlab.}{github.com/malloc47/ratio-contour}
+  %% \proj{term-do}{An interactive terminal prompt that displays potential command completions as you type.  A hybrid of gnome-do and Emacs's ido-mode.  Works on many tested VT100 terminal types; built in~\cpp.  Includes client/server architecture implemented with boost.interprocess and full-featured plugin system. Available in the \href{https://aur.archlinux.org/packages/term-do-git/}{Arch Linux AUR}.}{github.com/malloc47/term-do}
+
+  %% \proj{Ratio Contour}{Maintainer and contributor for the Ratio Contour project, a salient object detection and segmentation method used for computer vision applications.  Developed in \c and \matlab.}{github.com/malloc47/ratio-contour}
 
   % \projl{PMLDAP}{\linux user management tool for Linux clusters.  Created as a simplified replacement for LDAP.  Capable of bootstrapping new systems, synchronizing users and configuration files, and running distributed commands.  Written in \bash.}{github.com/malloc47/pmldap}
 
@@ -368,6 +391,7 @@
 {\footnotesize
 \begin{enumerate}[align=left,labelsep=0em]
 \renewcommand{\labelenumi}{[\arabic{enumi}]}
+\item \href{http://www.malloc47.com/posscon2015/}{Rules Engines: Logic As Data Structure}. \emph{\href{http://posscon.org/}{Palmetto Open Source Software Conference}}. Columbia, SC. April 14, 2015.
 \item \href{http://www.malloc47.com/ato2013/}{Python for Computer Vision}. \emph{\href{http://allthingsopen.org/}{All Things Open}}. Raleigh, SC. October 24, 2013.
 %% \item \href{http://www.malloc47.com/gsd2013/}{Interactive Grain Image Segmentation Using Graph Cut Algorithms}. \emph{USC Graduate Student Day}. Columbia, SC. April 12, 2013.
 \item \href{http://www.malloc47.com/posscon2013/}{Extending Django}. \emph{\href{http://posscon.org/}{Palmetto Open Source Software Conference}}.  Columbia, SC.  March 28, 2013.
