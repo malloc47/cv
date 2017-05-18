@@ -60,8 +60,8 @@
   \section{Biographical}
 
 \begin{tabularx}{\linewidth}{@{}l X@{}}
-  \textsc{Address}     & \small{600 W Chicago Ave. Suite 400} \\
-                       & \small{C/O Groupon, Chicago, IL, 60654-2067} \\
+  \textsc{Address}     & \small{540 West Madison Street Suite 2500} \\
+                       & \small{c/o DRW, Chicago, IL, 60661} \\
   \textsc{Phone}       & \href{http://www.malloc47.com/call-me/}{847-261-4747} \\
   \textsc{email}       & \href{mailto:jarrell.waggoner@gmail.com}{jarrell.waggoner@gmail.com} \\
 \end{tabularx}
@@ -112,7 +112,15 @@ learning, data science, functional programming, Clojure
 
 \begin{longtable}{@{}p{2.2cm}|p{8cm} r}
 
-\industry{2013\textemdash{}Present}%
+\industry{2016\textemdash{}Present}%
+{Software Engineer}%
+{\href{http://www.drw.com}{DRW Holdings, LLC}}%
+{Member of the Trading Infrastructure team, developing the internal
+  platform used across trading desks at DRW. Building greenfield
+  high-performance service-oriented systems using \clojure and \java
+  and maintaining legacy applications in \ruby and \csh.}
+
+\industry{2013\textemdash{}2016}%
 {Senior Software Engineer}%
 {\href{http://www.groupon.com}{Groupon, Inc.}}%%
 {Tech Lead of the Supply Intelligence team building internal tools
@@ -187,8 +195,6 @@ learning, data science, functional programming, Clojure
 %%   \href{http://www.sil.org/computing/ipahelp/ipaprvw2.htm}{IPA Help}.}
 
 \end{longtable}
-
-\pagebreak
 
 \section{Research Experience}
 
@@ -268,6 +274,7 @@ learning, data science, functional programming, Clojure
   \StrSubstitute{#2}{Jarrell Waggoner}{\textbf{Jarrell Waggoner}}\par}
 
 %\section{Publications}
+\nocite{derrick:16}
 \nocite{waggoner:15}
 \nocite{zhou:14}
 \nocite{waggoner:phd}
@@ -395,19 +402,22 @@ Spring 2007 & Math 241 \& Math 242 & Maple \\
   \textsc{#1} & #2\\
   %% \multicolumn{2}{c}{} \\
 }
+
+\renewcommand*{\arraystretch}{1.33}
 \begin{longtable}{r|p{10cm}}
-  \service{Itern mentoring}{Groupon internship program, 2014}
+  \service{Book Reviewer}{\href{https://www.packtpub.com/big-data-and-business-intelligence/practical-data-analysis}{Practical Data Analysis}, Packt Publishing, 2013}
+  \service{Mentoring}{Groupon internship program, 2014}
   \service{Webmaster}{\href{http://cvl.cse.sc.edu/wvm2013/}{Winter Vision Meetings, 2013}}
   \service{Webmaster}{\href{http://cvl.cse.sc.edu/wacv2013/}{Workshop on the Applications of Computer Vision, 2013}}
   \service{Judge}{Discovery Day --- Undergraduate Research Presentations}
   \service{Reviewer}{Pattern Recognition Letters}
   \service{Reviewer}{IEEE Transactions on Pattern Analysis and Machine Intelligence}
   %% \service{Fellow}{NSF GK-12 Program}
-  \service{Member}{Institute of Electrical and Electronics Engineers (IEEE)}
+  %% \service{Member}{Institute of Electrical and Electronics Engineers (IEEE)}
   \service{SysAdmin}{Computer Vision Lab}
 \end{longtable}
 
-%% \vspace{1em}
+\vspace{2em}
 
 \section{Personal and Open Source Projects}
 \newcommand{\proj}[3]{
@@ -431,7 +441,9 @@ Spring 2007 & Math 241 \& Math 242 & Maple \\
 {Google Chrome extension that filters social media websites for political keywords.  Available in the \href{https://chrome.google.com/webstore/detail/nonpartisanme/ninebcppidndhampaggnjbijpacoadgg}{Chrome Web Store}.  Featured in the \href{http://www.charlestoncitypaper.com/charleston/sick-of-politics-on-facebook-try-this-browser-tool/Content?oid=4153447}{Charleston City Paper}.}%
 {github.com/malloc47/nonpartisan.me}
 
-\proj{term-do}{An interactive terminal prompt that displays potential command completions as you type.  A hybrid of gnome-do and Emacs's ido-mode.  Works on many tested VT100 terminal types; built in~\skill{C++}.  Includes client/server architecture implemented with boost.interprocess and full-featured plugin system. Available in the \href{https://aur.archlinux.org/packages/term-do-git/}{Arch Linux AUR}.}{github.com/malloc47/term-do}
+\proj{term-do}{An interactive terminal prompt that displays potential command completions as you type.  A hybrid of gnome-do and Emacs's ido-mode.  Works on many tested VT100 terminal types; built in~\skill{C++}.  Includes client/server architecture implemented with boost.interprocess and full-featured plugin system.
+  %Available in the \href{https://aur.archlinux.org/packages/term-do-git/}{Arch Linux AUR}.
+}{github.com/malloc47/term-do}
 
   \proj{Ratio Contour}{Maintainer and contributor for the Ratio Contour project, a salient object detection and segmentation method used for computer vision applications.  Developed in \skill{C} and \skill{MATLAB}.}{github.com/malloc47/ratio-contour}
 

@@ -31,6 +31,8 @@
 \usepackage{enumitem}
 \usepackage{tabularx}
 
+\setlength{\columnsep}{0pt}
+
 % \makeatletter
 % \renewcommand*{\@biblabel}[1]{\hfill[#1]}
 % \makeatother
@@ -47,9 +49,10 @@
 \begin{multicols}{2}
 \setlength{\parskip}{0pt}
 \section{Biographical}
+
 \begin{tabularx}{\linewidth}{@{}l X@{}}
-  \textsc{Address} & \small{600 W Chicago Ave. Suite 400} \\
-                   & \small{C/O Groupon, Chicago, IL, 60654-2067} \\
+  \textsc{Address} & \small{540 West Madison Street Suite 2500} \\
+                   & \small{c/o DRW, Chicago, IL, 60661} \\
   \textsc{Phone}   & \href{http://www.malloc47.com/call-me/}{847-261-4747}\\
   \textsc{email}   & \href{mailto:jarrell.waggoner@gmail.com}{jarrell.waggoner@gmail.com} \\
 \end{tabularx}
@@ -75,7 +78,7 @@
 
 \newcommand{\degree}[4]{\textsc{#1} & \textbf{#2} & \textsc{#3} & \textbf{#4}\\}
 
-\vspace{1em}
+%% \vspace{0em}
 
 \section{Education}
 \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}l l p{5.5cm} r}
@@ -92,7 +95,7 @@
 
 \end{tabular*}
 
-\vspace{1em}
+%% \vspace{1em}
 
 \newcommand{\experience}[5]{
 \textsc{#1} & \textbf{#2} #3 \textsc{#4}\\
@@ -107,14 +110,23 @@
 
 \section{Experience}
 
-%% \vspace{-0.5em}
+\vspace{-0.5em}
 
 \setlength\LTleft{0pt}
 \setlength\LTright{0pt}
 
 \begin{longtable}{@{\extracolsep{\fill}} l | l r}
 
-  \experience{2013---Present}%
+\experience{2016---Present}%
+  {Software Engineer}%
+  {at}%
+  {\href{http://www.drw.com}{DRW Holdings, LLC}}%
+  {Member of the Trading Infrastructure team, developing the internal
+    platform used across trading desks at DRW. Building greenfield
+    high-performance service-oriented systems using \clojure and \java
+    and maintaining legacy applications in \ruby and \csh.}
+
+  \experience{2013---2016}%
   {Senior Software Engineer}%
   {at}%
   {\href{http://www.groupon.com}{Groupon, Inc.}}%
@@ -197,7 +209,7 @@
   {Research Assistant}%
   {for the}%
   {DARPA
-    \href{http://www.darpa.mil/Our_Work/I2O/Programs/Minds_Eye.aspx}{Mind's
+    \href{https://en.wikipedia.org/wiki/Mind\%27s_Eye_(US_military)}{Mind's
       Eye Program} }%
   {Researched video event recognition for the DARPA Mind's Eye
     program.  Collaborated with $10$ students and faculty members
@@ -213,7 +225,7 @@
   {NEH Fellow}%
   {at the}%
   {\href{http://cdh.sc.edu/}{USC Center for Digital Humanities}
-    (\href{http://sapheos.org/}{Sapheos}/\href{http://cdh.sc.edu/paragon}{Paragon}
+    (Sapheos/\href{http://sc.edu/about/centers/digital_humanities/projects/paragon.php}{Paragon}
     Project)}%
   {Developed the prototype for a \emph{digital collation} application
     to identify sub-textual inconsistencies among multiple copies of
@@ -256,12 +268,16 @@
   \item #2 #1
 }
 
-\vspace{-1em}
+\vspace{-2em}
 
 \section{Skills \& Languages}
+
 \vspace{-1em}
-\begin{multicols}{4}
+
+\setlength{\columnsep}{-2cm}
+\begin{multicols}{5}
 \raggedcolumns
+\begin{small}
 \begin{itemize}
 \renewcommand{\labelitemi}{}
 \renewcommand{\skill}{\textnormal}
@@ -270,15 +286,15 @@
 \setlength{\parsep}{0pt}
 
 \skills{\bash}{\threeskill}
-\skills{\ccpp}{\threeskill}
+%% \skills{\ccpp}{\threeskill}
 \skills{\clojure}{\threeskill}
-\skills{Emacs Lisp}{\twoskill}
-\skills{\haskell}{\oneskill}
+%% \skills{Emacs Lisp}{\twoskill}
+%% \skills{\haskell}{\oneskill}
 \skills{\java}{\threeskill}
 \skills{\js}{\twoskill}
 \skills{\LaTeX}{\twoskill}
 \skills{\python}{\threeskill}
-\skills{\scheme}{\threeskill}
+%% \skills{\scheme}{\threeskill}
 \skills{\matlab}{\twoskill}
 
 \skills{\django}{\twoskill}
@@ -287,8 +303,8 @@
 \skills{\opencv}{\threeskill}
 
 \skills{GNU/\linux}{\threeskill}
-\skills{\hadoop}{\threeskill}
-\skills{\hive}{\oneskill}
+\skills{\hadoop ecosystem}{\threeskill}
+%% \skills{\hive}{\oneskill}
 \skills{\postgres}{\threeskill}
 \skills{\spark}{\threeskill}
 
@@ -310,11 +326,12 @@
 %% \skills{MS Office}{\fivenotes}
 %% \skills{Networking}{\threenotes}
 %% \skills{\php}{\oneskill}
-
 \end{itemize}
+\end{small}
 \end{multicols}
+\setlength{\columnsep}{0pt}
 
-%% \vspace{-1em}
+\vspace{-1.5em}
 
 \begin{footnotesize}
   \oneskill Small-scale projects and/or assignments \hfill
@@ -353,7 +370,9 @@
 
   \proj{befunge.py}{Complete \href{https://en.wikipedia.org/wiki/Befunge}{Befunge} interpreter written in \python.  Implements the Befunge 93 specification, and is one of the closest Python equivalents to the \c reference implementation.}{github.com/malloc47/befunge.py}
 
-  %% \proj{term-do}{An interactive terminal prompt that displays potential command completions as you type.  A hybrid of gnome-do and Emacs's ido-mode.  Works on many tested VT100 terminal types; built in~\cpp.  Includes client/server architecture implemented with boost.interprocess and full-featured plugin system. Available in the \href{https://aur.archlinux.org/packages/term-do-git/}{Arch Linux AUR}.}{github.com/malloc47/term-do}
+  \proj{term-do}{An interactive terminal prompt that displays potential command completions as you type.  A hybrid of gnome-do and Emacs's ido-mode.  Works on many tested VT100 terminal types; built in~\cpp.  Includes client/server architecture implemented with boost.interprocess and full-featured plugin system.
+    %Available in the \href{https://aur.archlinux.org/packages/term-do-git/}{Arch Linux AUR}.
+  }{github.com/malloc47/term-do}
 
   %% \proj{Ratio Contour}{Maintainer and contributor for the Ratio Contour project, a salient object detection and segmentation method used for computer vision applications.  Developed in \c and \matlab.}{github.com/malloc47/ratio-contour}
 
@@ -376,8 +395,9 @@
   \originalbibitem{#1}
   \StrSubstitute{#2}{Jarrell Waggoner}{\textbf{Jarrell Waggoner}}\par}
 
-\nocite{waggoner:phd}
+\nocite{derrick:16}
 \nocite{waggoner:15}
+\nocite{waggoner:phd}
 \nocite{waggoner:14}
 %% \nocite{zhou:14}
 \nocite{waggoner:13a}
@@ -408,25 +428,25 @@
 \item \href{http://www.malloc47.com/posscon2013/}{Extending Django}. \emph{\href{http://posscon.org/}{Palmetto Open Source Software Conference}}.  Columbia, SC.  March 28, 2013.
 \item \href{http://www.malloc47.com/cs-careers/}{Computer Science: Research, Industry, and Entrepreneurship}.  \emph{Careers in Science Lecture Series}.  Lancaster, SC.  March 6, 2013.
 \item \href{http://www.malloc47.com/spie2013/}{Interactive Grain Image Segmentation Using Graph Cut Algorithms}.  \emph{SPIE (Computational Imaging XI)}.  Burlingame, CA.  February 6, 2013.
-\item Android Application Development Workshop.  \emph{Appathon Contest}.  Columbia, SC.  Nov. 17, 2012.
-\item Open Source and Education. \emph{SC Municipal Technology Association (SCMTA) Conference}. Charleston, SC.  Sep. 6, 2012.
+%% \item Android Application Development Workshop.  \emph{Appathon Contest}.  Columbia, SC.  Nov. 17, 2012.
+%% \item Open Source and Education. \emph{SC Municipal Technology Association (SCMTA) Conference}. Charleston, SC.  Sep. 6, 2012.
 %% \item Open Source and Higher Education.  \emph{SC Technical College System (SCTCS) Conference}.  Columbia, SC.  Sep. 25, 2012.
-\item Introduction to Android Development.  \emph{Digital Humanities High Performance Computing (DHHPC) Workshop}.  Columbia, SC.  Aug. 8, 2012.
-\item Combining Global Labeling and Local Relabeling for Metallic Image Segmentation.  \emph{SPIE (Computational Imaging X)}. Jan. 23, 2012.
-\item Open Source and Government.  \emph{SC Government Management Information Systems (SCGMIS) Workshop.}  Columbia, SC.  Jan. 19, 2012.
+%% \item Introduction to Android Development.  \emph{Digital Humanities High Performance Computing (DHHPC) Workshop}.  Columbia, SC.  Aug. 8, 2012.
+%% \item Combining Global Labeling and Local Relabeling for Metallic Image Segmentation.  \emph{SPIE (Computational Imaging X)}. Jan. 23, 2012.
+%% \item Open Source and Government.  \emph{SC Government Management Information Systems (SCGMIS) Workshop.}  Columbia, SC.  Jan. 19, 2012.
 \end{enumerate} }
 
-\section{Honors/Awards at USC}
-\begin{tabularx}{\textwidth}{@{}r|X l|p{4.9cm}@{}}
-2012 & \small{Gamecock Computing Research Symposium Poster Session,  First Place} &
-2004 & Clara P. Hammond Award  \\
+%% \section{Honors/Awards at USC}
+%% \begin{tabularx}{\textwidth}{@{}r|X l|p{4.9cm}@{}}
+%% 2012 & \small{Gamecock Computing Research Symposium Poster Session,  First Place} &
+%% 2004 & Clara P. Hammond Award  \\
 
-2012 & Graduate Student Day Presentation,  First Place &
-2004 & Science and Mathematics Award \\
+%% 2012 & Graduate Student Day Presentation,  First Place &
+%% 2004 & Science and Mathematics Award \\
 
-2009 & Upsilon Pi Epsilon &
-2004 & Highest Academic Average Award \\
-\end{tabularx}
+%% 2009 & Upsilon Pi Epsilon &
+%% 2004 & Highest Academic Average Award \\
+%% \end{tabularx}
 
 \section{Activities}
 teaching, programming, open source software, system administration,
