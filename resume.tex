@@ -22,7 +22,7 @@
               Title={malloc47/resume},
               Author={Jarrell Waggoner},
               Subject={Jarrell Waggoner Résumé},
-              Keywords={computer vision, image processing, artificial intelligence, pattern recognition, machine learning, data science, functional programming, web development, clojure},
+              Keywords={computer vision, image processing, artificial intelligence, pattern recognition, machine learning, data science, data engineering, functional programming, web development, clojure},
               Producer={xelatex},
               Creator{xelatex}
             },
@@ -51,8 +51,8 @@
 \section{Biographical}
 
 \begin{tabularx}{\linewidth}{@{}l X@{}}
-  \textsc{Address} & \small{540 West Madison Street Suite 2500} \\
-                   & \small{c/o DRW, Chicago, IL, 60661} \\
+  \textsc{Address} & \small{212 3rd Ave. North STE 318} \\
+                   & \small{c/o Rally, Minneapolis, MN 55401} \\
   \textsc{Phone}   & \href{http://www.malloc47.com/call-me/}{847-261-4747}\\
   \textsc{email}   & \href{mailto:jarrell.waggoner@gmail.com}{jarrell.waggoner@gmail.com} \\
 \end{tabularx}
@@ -73,7 +73,7 @@
 \begin{tabularx}{\textwidth}{@{}l X}
   \textsc{Interests} & computer vision, image processing, artificial
   intelligence, pattern recognition \& machine learning, data science,
-  functional programming, web development, Clojure
+  data engineering, functional programming, web development, Clojure
 \end{tabularx}
 
 \newcommand{\degree}[4]{\textsc{#1} & \textbf{#2} & \textsc{#3} & \textbf{#4}\\}
@@ -117,7 +117,33 @@
 
 \begin{longtable}{@{\extracolsep{\fill}} l | l r}
 
-\experience{2016---Present}%
+  \experience{2017---Present}%
+  {Principal Software Engineer}%
+  {at}%
+  {\href{https://www.rallyhealth.com}{Rally Health, Inc.}}%
+  {Individual contributor on the Data Infrastructure team, building
+    tools and architecting data pipelines for Rally's analytics and
+    reporting needs.
+
+    \hangindent=1.0em ---~Architected complete rewrite of the data
+    pipeline for the entire organization, moving from a fixed
+    \skill{Cloudera} cluster with a \hive EDW to dynamic clusters with
+    \skill{Databricks} and \skill{Snowflake}
+
+    \hangindent=1.0em ---~Coordinated with the Reporting team, Data
+    Science team, and external partners in the United Health Group
+    umbrella to define success criteria, build and evaluate POCs, and
+    work with vendors to finalize frameworks used for the rewrite
+
+    \hangindent=1.0em ---~Responsible for defining and building the CI
+    deployment process, development and testing workflow, structure of
+    the ETL data ingestion process, EDW layout, monitoring/alerting,
+    and data quality controls for the rearchitected pipeline
+
+    \hangindent=1.0em ---~Owned the transactional data ingest pipeline,
+    pulling data from \skill{MongoDB} and \postgres}
+
+  \experience{2016---2017}%
   {Software Engineer}%
   {at}%
   {\href{http://www.drw.com}{DRW Holdings, LLC}}%
@@ -364,9 +390,9 @@
     that consumes the API created in \js, and \jquery.}%
   {github.com/malloc47/matsciseg}
 
-  \proj{\href{http://nonpartisan.me}{nonpartisan.me}}%
-{Google Chrome extension that filters social media websites for political keywords.  Available in the \href{https://chrome.google.com/webstore/detail/nonpartisanme/ninebcppidndhampaggnjbijpacoadgg}{Chrome Web Store}.  Featured in the \href{http://www.charlestoncitypaper.com/charleston/sick-of-politics-on-facebook-try-this-browser-tool/Content?oid=4153447}{Charleston City Paper}.}%
-{github.com/malloc47/nonpartisan.me}
+%%   \proj{\href{http://nonpartisan.me}{nonpartisan.me}}%
+%% {Google Chrome extension that filters social media websites for political keywords.  Available in the \href{https://chrome.google.com/webstore/detail/nonpartisanme/ninebcppidndhampaggnjbijpacoadgg}{Chrome Web Store}.  Featured in the \href{http://www.charlestoncitypaper.com/charleston/sick-of-politics-on-facebook-try-this-browser-tool/Content?oid=4153447}{Charleston City Paper}.}%
+%% {github.com/malloc47/nonpartisan.me}
 
   \proj{befunge.py}{Complete \href{https://en.wikipedia.org/wiki/Befunge}{Befunge} interpreter written in \python.  Implements the Befunge 93 specification, and is one of the closest Python equivalents to the \c reference implementation.}{github.com/malloc47/befunge.py}
 
@@ -402,7 +428,7 @@
 %% \nocite{zhou:14}
 \nocite{waggoner:13a}
 % \nocite{waggoner:13b}
-\nocite{waggoner:13c}
+%% \nocite{waggoner:13c}
 %% \nocite{waggoner:12}
 \nocite{barbu:12}
 \nocite{zhang:12}
@@ -427,7 +453,7 @@
 %% \item \href{http://www.malloc47.com/gsd2013/}{Interactive Grain Image Segmentation Using Graph Cut Algorithms}. \emph{USC Graduate Student Day}. Columbia, SC. April 12, 2013.
 \item \href{http://www.malloc47.com/posscon2013/}{Extending Django}. \emph{\href{http://posscon.org/}{Palmetto Open Source Software Conference}}.  Columbia, SC.  March 28, 2013.
 \item \href{http://www.malloc47.com/cs-careers/}{Computer Science: Research, Industry, and Entrepreneurship}.  \emph{Careers in Science Lecture Series}.  Lancaster, SC.  March 6, 2013.
-\item \href{http://www.malloc47.com/spie2013/}{Interactive Grain Image Segmentation Using Graph Cut Algorithms}.  \emph{SPIE (Computational Imaging XI)}.  Burlingame, CA.  February 6, 2013.
+%% \item \href{http://www.malloc47.com/spie2013/}{Interactive Grain Image Segmentation Using Graph Cut Algorithms}.  \emph{SPIE (Computational Imaging XI)}.  Burlingame, CA.  February 6, 2013.
 %% \item Android Application Development Workshop.  \emph{Appathon Contest}.  Columbia, SC.  Nov. 17, 2012.
 %% \item Open Source and Education. \emph{SC Municipal Technology Association (SCMTA) Conference}. Charleston, SC.  Sep. 6, 2012.
 %% \item Open Source and Higher Education.  \emph{SC Technical College System (SCTCS) Conference}.  Columbia, SC.  Sep. 25, 2012.
