@@ -22,7 +22,7 @@
               Title={malloc47/resume},
               Author={Jarrell Waggoner},
               Subject={Jarrell Waggoner Résumé},
-              Keywords={computer vision, image processing, artificial intelligence, pattern recognition, machine learning, data science, data engineering, functional programming, web development, clojure},
+              Keywords={computer vision, image processing, artificial intelligence, pattern recognition, machine learning, data science, data engineering, functional programming, web development, GIS, clojure},
               Producer={xelatex},
               Creator{xelatex}
             },
@@ -73,7 +73,8 @@
 \begin{tabularx}{\textwidth}{@{}l X}
   \textsc{Interests} & computer vision, image processing, artificial
   intelligence, pattern recognition \& machine learning, data science,
-  data engineering, functional programming, web development, Clojure
+  data engineering, functional programming, web development, GIS,
+  Clojure
 \end{tabularx}
 
 \newcommand{\degree}[4]{\textsc{#1} & \textbf{#2} & \textsc{#3} & \textbf{#4}\\}
@@ -123,25 +124,34 @@
   {\href{https://www.rallyhealth.com}{Rally Health, Inc.}}%
   {Individual contributor on the Data Infrastructure team, building
     tools and architecting data pipelines for Rally's analytics and
-    reporting needs.
+    reporting.
+    \begin{itemize}[leftmargin=1.5em]
+      \renewcommand\labelitemi{---}
 
-    \hangindent=1.0em ---~Architected complete rewrite of the data
-    pipeline for the entire organization, moving from a fixed
-    \skill{Cloudera} cluster with a \hive EDW to dynamic clusters with
-    \skill{Databricks} and \skill{Snowflake}
+    \item Architected complete rewrite of the data pipeline for the
+      entire organization, moving from a fixed \skill{Cloudera}
+      cluster with a \hive EDW to dynamic clusters with
+      \skill{Databricks} with a \skill{Redshift} EDW fed by \spark
+      ETLs written in \scala and scheduled with \skill{Airflow}.
 
-    \hangindent=1.0em ---~Coordinated with the Reporting team, Data
-    Science team, and external partners in the United Health Group
-    umbrella to define success criteria, build and evaluate POCs, and
-    work with vendors to finalize frameworks used for the rewrite
+    \item Coordinated with internal and external teams ranging from
+      Ops to Data Science to define and build new data pipeline,
+      spearheading the CI process, development and testing workflows,
+      data ingestion process, EDW layout, monitoring/alerting, and
+      data validation.
 
-    \hangindent=1.0em ---~Responsible for defining and building the CI
-    deployment process, development and testing workflow, structure of
-    the ETL data ingestion process, EDW layout, monitoring/alerting,
-    and data quality controls for the rearchitected pipeline
+    \item Member of the Engineering Technical Staff, responsible for
+      making cross-cutting engineering decisions, evaluating potential
+      acquisitions, signing off on major architectural changes, and
+      organizing technical interest groups.
 
-    \hangindent=1.0em ---~Owned the transactional data ingest pipeline,
-    pulling data from \skill{MongoDB} and \postgres}
+    \item Technical lead of eight person engineering team; responsible
+      for working with Product and Project managers to define and
+      schedule work, standardize code review practices on the team,
+      build consensus for new architectural approaches, reporting
+      directly to VP-level management.\vspace*{-\baselineskip}
+    \end{itemize}
+  }
 
   \experience{2016---2017}%
   {Software Engineer}%
@@ -150,48 +160,74 @@
   {Member of the Trading Infrastructure team, developing the internal
     platform used across trading desks at DRW. Building greenfield
     high-performance service-oriented systems using \clojure and \java
-    and maintaining legacy applications in \ruby and \csh.}
+    and maintaining legacy applications in \ruby and \csh among a
+    catalog of over 50 microservices.
+
+    \begin{itemize}[leftmargin=1.5em]
+      \renewcommand\labelitemi{---}
+
+      %% \item Contributed to an extensive reconciliation tool used to
+      %%   balancing cashflows for high-volume trading, written in \ruby.
+
+      \item Extended a research workflow tool used for computing the
+        value and settle price of options, futures, equities, and
+        other financial instruments, written in \clojure.
+
+      \item Developed and extended multiple UI frontends for internal
+        tools using \skill{React} and
+        \skill{Reagent}.\vspace*{-\baselineskip}
+    \end{itemize}
+  }
 
   \experience{2013---2016}%
   {Senior Software Engineer}%
   {at}%
   {\href{http://www.groupon.com}{Groupon, Inc.}}%
-  {Tech Lead of the Supply Intelligence team building internal tools
-    and analytics pipelines to optimize Groupon's supply funnel using
-    \clojure to develop service-oriented and big data systems.
+  {Engineer on the Flux team building Data Science pipelines,
+    contributed to Project Genesis which filled \salesforce with 250K
+    new leads from crawled data sources, and Tech Lead of the Supply
+    Intelligence team creating internal sales tools to optimize
+    Groupon's supply funnel. Wrote production \clojure to develop
+    service-oriented and big data
+    \begin{itemize}[leftmargin=1.5em]
+      \renewcommand\labelitemi{---}
 
-    \hangindent=1.0em ---~Built a \postgres-backed high-performance
-    caching and write management system around \salesforce that hits
-    10K req/min
+    \item Built a \postgres-backed high-performance caching and write
+      management system around the \salesforce API that hits 10K
+      req/min.
 
-    \hangindent=1.0em ---~Managed a critical business automation of
-    the sales lead assignment process that previously required an
-    estimated 80 managers to conduct manually; led the effort to
-    rearchitect this legacy system from an ad-hoc job scheduling
-    platform written in \ruby and \bash to a multi-staged \hadoop
-    pipeline written in \clojure
+    \item Managed critical business automation of the sales lead
+      assignment process that previously required an estimated 80
+      sales managers to conduct manually; led the effort to
+      rearchitect this legacy system from an ad-hoc job scheduling
+      platform written in \ruby and \bash to a multi-staged \hadoop
+      pipeline written in \clojure to handle over 6M accounts.
 
-    %% \hangindent=1.0em ---~Operationalized \python within the
-    %% organization by spinning up an internal PyPI server; introducing a
-    %% pex-driven single-artifact deployment process; creating an
-    %% interest group, mailing list, and internal wiki; and standardized
-    %% configuration, logging, and resource management
+    %% \item Operationalized \python within the organization by spinning
+    %%   up an internal PyPI server; introducing a pex-driven
+    %%   single-artifact deployment process; creating an interest group,
+    %%   mailing list, and internal wiki; and standardized configuration,
+    %%   logging, and resource management.
 
-    %% \hangindent=1.0em ---~Developed an end-to-end system and
-    %% coordinated with product and business teams to operationalize 250K
-    %% leads in \salesforce from scraped web data
+    %% \item Developed an end-to-end system and coordinated with product
+    %%   and business teams to operationalize 250K leads in \salesforce
+    %%   from scraped web data.
 
-    \hangindent=1.0em ---~Oversaw technical decisions, engaged in
-    mentorship, established best practices, coordinated with
-    stakeholders, and led multiple major technical initiatives on a
-    team of 5 developers
+    \item Built out an ETL management and machine learning platform
+      using \python, \clojure, \hive, and \spark to run
+      mission-critical Decision Tree Learning models to predict
+      customer attrition, lifetime customer value, and merchant
+      value.
 
-    ---~Built out an ETL management and machine learning platform
-    using \python, \clojure, \hive, and \spark
+    \item Oversaw technical decisions, engaged in mentorship,
+      established best practices, coordinated with stake holders, and
+      led multiple major technical initiatives on a team of 5
+      developers. \vspace*{-\baselineskip}
+    \end{itemize}
   }
 
   \experience{2012---2014}%
-  {Technical Lead}%
+  {Technical Engineer}%
   {at}%
   {\href{http://www.terrastride.com/}{Terrastride, Inc.}}%
   {Software developer in an agile startup environment creating the
@@ -250,7 +286,7 @@
   \experience{2009---2010}%
   {NEH Fellow}%
   {at the}%
-  {\href{http://cdh.sc.edu/}{USC Center for Digital Humanities}
+  {\href{https://sc.edu/about/centers/digital_humanities/index.php}{USC Center for Digital Humanities}
     (Sapheos/\href{http://sc.edu/about/centers/digital_humanities/projects/paragon.php}{Paragon}
     Project)}%
   {Developed the prototype for a \emph{digital collation} application
@@ -312,46 +348,47 @@
 \setlength{\parsep}{0pt}
 
 \skills{\bash}{\threeskill}
-%% \skills{\ccpp}{\threeskill}
 \skills{\clojure}{\threeskill}
-%% \skills{Emacs Lisp}{\twoskill}
-%% \skills{\haskell}{\oneskill}
+\skills{\git}{\threeskill}
+\skills{GNU/\linux}{\threeskill}
+\skills{\footnotesize{\hadoop ecosystem}}{\threeskill}
+\skills{\haskell}{\oneskill}
 \skills{\java}{\threeskill}
 \skills{\js}{\twoskill}
 \skills{\LaTeX}{\twoskill}
-\skills{\python}{\threeskill}
-%% \skills{\scheme}{\threeskill}
-\skills{\matlab}{\twoskill}
-
-\skills{\django}{\twoskill}
-\skills{\git}{\threeskill}
-\skills{\numpy/\scipy}{\threeskill}
-\skills{\opencv}{\threeskill}
-
-\skills{GNU/\linux}{\threeskill}
-\skills{\hadoop ecosystem}{\threeskill}
-%% \skills{\hive}{\oneskill}
+\skills{\skill{Nix/NixOS}}{\oneskill}
 \skills{\postgres}{\threeskill}
+\skills{\python}{\threeskill}
+\skills{\scala}{\twoskill}
+\skills{\scheme}{\threeskill}
 \skills{\spark}{\threeskill}
 
 % graveyard
 
-%% \skills{English}{\threeskill}
+%% \skills{\numpy/\scipy}{\threeskill}
+%% \skills{\opencv}{\threeskill}
+%% \skills{\django}{\twoskill}
+%% \skills{\matlab}{\twoskill}
 %% \skills{Blender}{\twoskill}
+%% \skills{Emacs Lisp}{\twoskill}
+%% \skills{English}{\threeskill}
+%% \skills{LAMP Stack}{\fournotes}
+%% \skills{LISP}{\onenote}
+%% \skills{Learning}{\fournotes Machine}
+%% \skills{MS Office}{\fivenotes}
+%% \skills{Maple}{\twoskill}
+%% \skills{Networking}{\threenotes}
+%% \skills{Processing}{\fivenotes Image}
 %% \skills{Sys. Admin.}{\threenotes}
 %% \skills{Visual Basic}{\fivenotes}
 %% \skills{Windows}{\fivenotes}
 %% \skills{Wordpress}{\fournotes}
+%% \skills{\ccpp}{\twoskill}
+%% \skills{\hive}{\oneskill}
 %% \skills{\html}{\threeskill}
-%% \skills{Processing}{\fivenotes Image}
 %% \skills{\jquery}{\twoskill}
-%% \skills{LAMP Stack}{\fournotes}
-%% \skills{LISP}{\onenote}
-%% \skills{Learning}{\fournotes Machine}
-%% \skills{Maple}{\twoskill}
-%% \skills{MS Office}{\fivenotes}
-%% \skills{Networking}{\threenotes}
 %% \skills{\php}{\oneskill}
+%% \skills{\scheme}{\threeskill}
 \end{itemize}
 \end{small}
 \end{multicols}
@@ -360,9 +397,9 @@
 \vspace{-1.5em}
 
 \begin{footnotesize}
-  \oneskill Small-scale projects and/or assignments \hfill
-  \twoskill Multiple projects and/or experience teaching \hfill
-  \threeskill Large-scale and/or production systems
+  \oneskill Small-scale or personal projects \hfill
+  \twoskill Used in production  \hfill
+  \threeskill Used in large-scale production systems
 \end{footnotesize}
 
 \newcommand{\proj}[3]{
@@ -380,39 +417,39 @@
   \textsc{#1} & #2\\
    &\href{#3}{#4}\\
 }
-\section{Personal and Open Source Projects}
-\begin{tabularx}{\textwidth}{@{}p{3cm}|X@{}}
+%% \section{Personal and Open Source Projects}
+%% \begin{tabularx}{\textwidth}{@{}p{3cm}|X@{}}
 
-  \proj{matsciseg}%
-  {Framework for propagated 3D volume segmentation, used in my
-    dissertation work.  Algorithms created in \python and \cpp and
-    exposed as a web API using \django. Includes a web application
-    that consumes the API created in \js, and \jquery.}%
-  {github.com/malloc47/matsciseg}
+%%   \proj{matsciseg}%
+%%   {Framework for propagated 3D volume segmentation, used in my
+%%     dissertation work.  Algorithms created in \python and \cpp and
+%%     exposed as a web API using \django. Includes a web application
+%%     that consumes the API created in \js, and \jquery.}%
+%%   {github.com/malloc47/matsciseg}
 
-%%   \proj{\href{http://nonpartisan.me}{nonpartisan.me}}%
-%% {Google Chrome extension that filters social media websites for political keywords.  Available in the \href{https://chrome.google.com/webstore/detail/nonpartisanme/ninebcppidndhampaggnjbijpacoadgg}{Chrome Web Store}.  Featured in the \href{http://www.charlestoncitypaper.com/charleston/sick-of-politics-on-facebook-try-this-browser-tool/Content?oid=4153447}{Charleston City Paper}.}%
-%% {github.com/malloc47/nonpartisan.me}
+%% %%   \proj{\href{http://nonpartisan.me}{nonpartisan.me}}%
+%% %% {Google Chrome extension that filters social media websites for political keywords.  Available in the \href{https://chrome.google.com/webstore/detail/nonpartisanme/ninebcppidndhampaggnjbijpacoadgg}{Chrome Web Store}.  Featured in the \href{http://www.charlestoncitypaper.com/charleston/sick-of-politics-on-facebook-try-this-browser-tool/Content?oid=4153447}{Charleston City Paper}.}%
+%% %% {github.com/malloc47/nonpartisan.me}
 
-  \proj{befunge.py}{Complete \href{https://en.wikipedia.org/wiki/Befunge}{Befunge} interpreter written in \python.  Implements the Befunge 93 specification, and is one of the closest Python equivalents to the \c reference implementation.}{github.com/malloc47/befunge.py}
+%%   \proj{befunge.py}{Complete \href{https://en.wikipedia.org/wiki/Befunge}{Befunge} interpreter written in \python.  Implements the Befunge 93 specification, and is one of the closest Python equivalents to the \c reference implementation.}{github.com/malloc47/befunge.py}
 
-  \proj{term-do}{An interactive terminal prompt that displays potential command completions as you type.  A hybrid of gnome-do and Emacs's ido-mode.  Works on many tested VT100 terminal types; built in~\cpp.  Includes client/server architecture implemented with boost.interprocess and full-featured plugin system.
-    %Available in the \href{https://aur.archlinux.org/packages/term-do-git/}{Arch Linux AUR}.
-  }{github.com/malloc47/term-do}
+%%   \proj{term-do}{An interactive terminal prompt that displays potential command completions as you type.  A hybrid of gnome-do and Emacs's ido-mode.  Works on many tested VT100 terminal types; built in~\cpp.  Includes client/server architecture implemented with boost.interprocess and full-featured plugin system.
+%%     %Available in the \href{https://aur.archlinux.org/packages/term-do-git/}{Arch Linux AUR}.
+%%   }{github.com/malloc47/term-do}
 
-  %% \proj{Ratio Contour}{Maintainer and contributor for the Ratio Contour project, a salient object detection and segmentation method used for computer vision applications.  Developed in \c and \matlab.}{github.com/malloc47/ratio-contour}
+%%   %% \proj{Ratio Contour}{Maintainer and contributor for the Ratio Contour project, a salient object detection and segmentation method used for computer vision applications.  Developed in \c and \matlab.}{github.com/malloc47/ratio-contour}
 
-  % \projl{PMLDAP}{\linux user management tool for Linux clusters.  Created as a simplified replacement for LDAP.  Capable of bootstrapping new systems, synchronizing users and configuration files, and running distributed commands.  Written in \bash.}{github.com/malloc47/pmldap}
+%%   % \projl{PMLDAP}{\linux user management tool for Linux clusters.  Created as a simplified replacement for LDAP.  Capable of bootstrapping new systems, synchronizing users and configuration files, and running distributed commands.  Written in \bash.}{github.com/malloc47/pmldap}
 
-  %% \projlh{Sina Weibo Mobile Client}{Created a \skill{J2ME}-based prototype mobile client for the popular Chinese \institution{Sina} microblogging service, similar to \institution{Twitter}.  Targeted at limited-functionality CLDC phones and uses a custom \java wrapper for the \institution{Sina} API.}{http://bd.weibo.10086.cn/2012/downloads_kjava}{bd.weibo.10086.cn/2012/downloads\_kjava}
+%%   %% \projlh{Sina Weibo Mobile Client}{Created a \skill{J2ME}-based prototype mobile client for the popular Chinese \institution{Sina} microblogging service, similar to \institution{Twitter}.  Targeted at limited-functionality CLDC phones and uses a custom \java wrapper for the \institution{Sina} API.}{http://bd.weibo.10086.cn/2012/downloads_kjava}{bd.weibo.10086.cn/2012/downloads\_kjava}
 
-  % \proj{Digital Collation}{Research prototype to ``collate'' high-resolution document scans using image registration.  Written in \matlab utilizing various computer vision libraries.}{www.github.com/malloc47/digital-collation}
+%%   % \proj{Digital Collation}{Research prototype to ``collate'' high-resolution document scans using image registration.  Written in \matlab utilizing various computer vision libraries.}{www.github.com/malloc47/digital-collation}
 
-  % \proj{matscicut}{An energy minimization framework for segmenting 3D materials volumes. Prototype of dissertation work, created in C++ using OpenCV libraries, with assorted MATLAB helper utilities.}{www.github.com/malloc47/matscicut}
+%%   % \proj{matscicut}{An energy minimization framework for segmenting 3D materials volumes. Prototype of dissertation work, created in C++ using OpenCV libraries, with assorted MATLAB helper utilities.}{www.github.com/malloc47/matscicut}
 
-  % \proj{git-hq}{A remote management system for git, coded in \python.}{www.github.com/malloc47/git-hq}
+%%   % \proj{git-hq}{A remote management system for git, coded in \python.}{www.github.com/malloc47/git-hq}
 
-\end{tabularx}
+%% \end{tabularx}
 
 %\section{Publications}
 \let\originalbibitem\bibitem
@@ -475,8 +512,7 @@
 %% \end{tabularx}
 
 \section{Activities}
-teaching, programming, open source software, system administration,
-data visualization, Linux,
+teaching, open source software, GIS visualization, Linux,
 \href{https://soundcloud.com/malloc47}{music composition}
 
 \null\vfill
