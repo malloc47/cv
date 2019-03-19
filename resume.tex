@@ -106,13 +106,12 @@
 \newcommand{\experience}[5]{
   \begin{adjustwidth}{1in}{}
     \begin{sideblock}
-      \textbf{#2} #3 \textsc{#4}
-
-      %% TODO: figure out how to set a fixed height for this
-      \begin{textblock*}{1in}(-1in,-0.9em)
+      \begin{textblock*}{1in}(-1in,0.65em)
         \textsc{#1}
       \end{textblock*}
+      \textbf{#2} #3 \textsc{#4}
       \vspace{-1ex}
+
       \small{#5}
     \end{sideblock}
   \end{adjustwidth}
