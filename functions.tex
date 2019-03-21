@@ -9,6 +9,47 @@
 \definecolor{medg}{HTML}{666666}
 \definecolor{darkg}{HTML}{333333}
 
+%Experience section
+\newenvironment{exlist}
+  {\begin{itemize}[
+      leftmargin=1.5em,
+      topsep=-0.5em,
+      itemsep=0pt,
+      parsep=0.5ex,
+      partopsep=0pt,
+    ]
+      \renewcommand\labelitemi{---}}
+  {\end{itemize}}
+
+\newmdenv[
+  topline=false,
+  bottomline=false,
+  rightline=false,
+  leftmargin=-1ex,
+  rightmargin=0,
+  skipabove=0,
+  skipbelow=0,
+  innerrightmargin=0,
+  innerleftmargin=1ex,
+  innertopmargin=0,
+  innerbottommargin=0
+]{sideblock}
+
+\newcommand{\experience}[5]{
+  \begin{adjustwidth}{1in}{}
+    \begin{sideblock}
+      \begin{textblock*}{1in}(-1in,0.65em)
+        \textsc{#1}
+      \end{textblock*}
+      \textbf{#2} #3 \textsc{#4}
+      \vspace{-1ex}
+
+      \small{#5}
+    \end{sideblock}
+  \end{adjustwidth}
+  \vspace{\baselineskip}
+}
+
 % Bullets
 \definecolor{noteone}{HTML}{999999}
 \definecolor{notetwo}{HTML}{848484}
@@ -94,6 +135,10 @@
 \setlength{\parindent}{0pt}
 
 \newcommand{\skill}{\textbf}
+\newcommand{\skills}[2]{
+  \item #2 #1
+}
+
 \newcommand{\institution}{\textsc}
 
 % \def\bullet{\textcolor{medg}{\symbol{"00BB}}}

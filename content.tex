@@ -1,0 +1,482 @@
+\newcommand{\biographical}{
+  \begin{multicols}{2}
+    \setlength{\parskip}{0pt}
+    \section{Biographical}
+
+    \begin{tabularx}{\linewidth}{@{}l X@{}}
+      \textsc{Address}     & \small{533 South 3rd Street, Suite 400} \\
+      & \small{c/o Rally, Minneapolis, MN 55415} \\
+      \textsc{Phone}       & \href{tel:847-261-4747}{847-261-4747} \\
+      \textsc{email}       & \href{mailto:jarrell.waggoner@gmail.com}{jarrell.waggoner@gmail.com} \\
+    \end{tabularx}
+
+    \vfill
+    \columnbreak
+
+    \section{Online}
+    \begin{tabularx}{\linewidth}{@{}l X@{}}
+      \textsc{Website}     & \href{http://www.malloc47.com}{www.malloc47.com} \\
+      \textsc{Twitter}     & \href{https://twitter.com/malloc47}{@malloc47} \\
+      \textsc{github}      & \href{http://www.github.com/malloc47}{github.com/malloc47}\\
+      \textsc{LinkedIn}    & \href{http://www.linkedin.com/in/malloc47}{linkedin.com/in/malloc47} \\
+    \end{tabularx}
+  \end{multicols}
+}
+
+\newcommand{\interests}{computer vision, image processing, artificial
+  intelligence, pattern recognition \& machine learning, data science,
+  data engineering, functional programming, web development, GIS,
+  Clojure}
+
+\newcommand{\interestsLong}{computer vision, segmentation, contour
+  completion, perceptual grouping, document image analysis, event
+  recognition, image processing, artificial intelligence, pattern
+  recognition \& machine learning, data science, functional
+  programming, GIS, Clojure}
+
+\newcommand{\skillsList}{
+  \skills{\bash}{\threeskill}
+  \skills{\clojure}{\threeskill}
+  \skills{\git}{\threeskill}
+  \skills{GNU/\linux}{\threeskill}
+  \skills{\footnotesize{\hadoop ecosystem}}{\threeskill}
+  \skills{\haskell}{\oneskill}
+  \skills{\java}{\threeskill}
+  \skills{\js}{\twoskill}
+  \skills{\LaTeX}{\twoskill}
+  \skills{\skill{Nix/NixOS}}{\oneskill}
+  \skills{\postgres}{\threeskill}
+  \skills{\python}{\threeskill}
+  \skills{\scala}{\twoskill}
+  \skills{\scheme}{\threeskill}
+  \skills{\spark}{\threeskill}
+}
+
+\newcommand{\skillsListLong}{
+  \skills{\bash}{\threeskill}
+  \skills{\ccpp}{\twoskill}
+  \skills{\clojure}{\threeskill}
+  \skills{\django}{\twoskill}
+  \skills{Emacs Lisp}{\twoskill}
+  \skills{\git}{\threeskill}
+  \skills{GNU/\linux}{\threeskill}
+  \skills{\hadoop}{\threeskill}
+  \skills{\haskell}{\oneskill}
+  \skills{\java}{\threeskill}
+  \skills{\js}{\twoskill}
+  \skills{\LaTeX}{\twoskill}
+  \skills{\matlab}{\twoskill}
+  \skills{\numpy/\scipy}{\threeskill}
+  \skills{\opencv}{\threeskill}
+  \skills{\postgres}{\threeskill}
+  \skills{\python}{\threeskill}
+  \skills{\scala}{\threeskill}
+  \skills{\scheme}{\threeskill}
+  \skills{\spark}{\threeskill}
+}
+
+\newcommand{\skillsLegend}{
+  \begin{footnotesize}
+    \oneskill Small-scale or personal projects \hfill
+    \twoskill Used in production  \hfill
+    \threeskill Used in large-scale production systems
+  \end{footnotesize}}
+
+% graveyard
+
+%% \skills{Blender}{\twoskill}
+%% \skills{English}{\threeskill}
+%% \skills{LAMP Stack}{\fournotes}
+%% \skills{LISP}{\onenote}
+%% \skills{Learning}{\fournotes Machine}
+%% \skills{MS Office}{\fivenotes}
+%% \skills{Maple}{\twoskill}
+%% \skills{Networking}{\threenotes}
+%% \skills{Processing}{\fivenotes Image}
+%% \skills{Sys. Admin.}{\threenotes}
+%% \skills{Visual Basic}{\fivenotes}
+%% \skills{Windows}{\fivenotes}
+%% \skills{Wordpress}{\fournotes}
+%% \skills{\hive}{\oneskill}
+%% \skills{\html}{\threeskill}
+%% \skills{\jquery}{\twoskill}
+%% \skills{\php}{\oneskill}
+
+
+\newcommand{\rally}{
+  \experience{2017---Present}%
+  {Principal Software Engineer}%
+  {at}%
+  {\href{https://www.rallyhealth.com}{Rally Health, Inc.}}%
+  {Individual contributor on the Data Infrastructure team, building
+    tools and architecting data pipelines for Rally's reporting and
+    Data Science needs.
+
+    \begin{exlist}
+    \item Architected complete rewrite of the data pipeline for the
+      entire organization, moving from a fixed \skill{Cloudera}
+      cluster with a \hive EDW to dynamic clusters with
+      \skill{Databricks} with a \skill{Redshift} EDW fed by \spark
+      ETLs written in \scala and scheduled with \skill{Airflow}.
+
+    \item Coordinated with external vendors and internal teams ranging
+      from Ops to Data Science to define and build new data pipeline,
+      spearheading the CI approach, development and testing workflows,
+      data ingestion process, EDW layout, monitoring/alerting, job
+      scheduling, and data validation components.
+
+    \item Member of the Engineering Technical Staff, responsible for
+      making cross-cutting engineering decisions, evaluating potential
+      acquisitions, signing off on major company-wide architectural
+      changes, and organizing technical interest groups.
+
+    \item Technical lead of eight person engineering team; responsible
+      for working with Product and Project Managers to define and
+      schedule work, standardize code review practices on the team,
+      build consensus for new architectural approaches, reporting
+      directly to VP-level management.
+    \end{exlist}}}
+
+
+\newcommand{\drw}{
+  \experience{2016---2017}%
+  {Software Engineer}%
+  {at}%
+  {\href{http://www.drw.com}{DRW Holdings, LLC}}%
+  {Member of the Trading Infrastructure team, developing the internal
+    platform used by every trading desk at DRW. Built greenfield
+    high-performance service-oriented systems using \clojure and \java
+    while maintaining legacy applications in \ruby and \csh among a
+    catalog of over 50 microservices.
+
+    \begin{exlist}
+    \item Contributed to an extensive reconciliation tool used to
+      balancing cashflows for high-volume trading, written in \ruby.
+
+    \item Extended a research workflow tool used for computing the
+      value and settle price of options, futures, equities, and other
+      financial instruments, written in \clojure.
+
+    \item Developed and extended multiple UI frontends for internal
+      tools using \skill{React} and \skill{Reagent}.
+  \end{exlist}}}
+
+\newcommand{\groupon}{
+  \experience{2013---2016}%
+  {Senior Software Engineer}%
+  {at}%
+  {\href{http://www.groupon.com}{Groupon, Inc.}}%
+  {Contributed to three engineering teams: The Flux team building Data
+    Science pipelines, the Project Genesis strike team integrating
+    scraped web data into \salesforce, and served as Tech Lead of the
+    Supply Intelligence team creating internal sales tools to optimize
+    Groupon's supply funnel.
+
+    \begin{exlist}
+    \item Built a \postgres-backed high-performance caching and write
+      management system in \clojure around the \salesforce API that
+      hits 10K req/min.
+
+    \item Managed critical business automation of the sales lead
+      assignment process that previously required an estimated 80
+      sales managers to conduct manually; led the effort to
+      rearchitect this legacy system from an ad-hoc job scheduling
+      platform written in \ruby and \bash to a multi-staged \hadoop
+      pipeline written in \clojure to handle over 6M accounts.
+
+  %% \item Operationalized \python within the organization by spinning
+  %%   up an internal PyPI server; introducing a pex-driven
+  %%   single-artifact deployment process; creating an interest group,
+  %%   mailing list, and internal wiki; and standardized configuration,
+  %%   logging, and resource management.
+
+    \item Coordinated with product and business teams to ETL 250K
+      leads in \salesforce from scraped web data.
+
+    \item Built out an ETL management and machine learning platform
+      using \python, \clojure, \hive, and \spark to run
+      mission-critical Decision Tree Learning models to predict
+      customer attrition, lifetime customer value, and merchant value.
+
+    \item Mentored interns and junior developers, established best
+      practices, and led multiple major technical initiatives on a
+      team of 5 developers.
+    \end{exlist}}}
+
+\newcommand{\terrastride}{
+  \experience{2012---2014}%
+  {Technical Engineer}%
+  {at}%
+  {\href{http://www.terrastride.com/}{TerraStride, Inc.}}%
+  {Software developer in an agile startup environment creating the
+    \href{http://www.huntstand.com}{huntstand.com} web application.
+    Written using \python, \django, and \backbone; deployed to
+    \skill{AWS}.  Responsible for curating full technology stack and
+    coordinating with $5$ developers.}}
+
+\newcommand{\cvl}{
+  \experience{2011---2013}%
+  {Research Assistant}%
+  {at}%
+  {USC \href{http://cvl.cse.sc.edu/}{Computer Vision Lab}}%
+  {Dissertation research on computer vision models and algorithms for
+    materials science image segmentation in \python, \numpy, \scipy,
+    \opencv, and \matlab.  Created a web interface using \django, \js,
+    and \jquery. Conducted large-scale analysis using a 98-core
+    high-performance computing system.}}
+
+\newcommand{\palmettocomputerlabs}{
+  \experience{2011---2013}%
+  {Project Manager}%
+  {at}%
+  {\href{http://palmettocomputerlabs.com/}{Palmetto Computer Labs}}%
+  {Created and taught workshops on \git, the \linux command line,
+    \android development, and open source software for hundreds of
+    students, developers, and government officials at
+    \institution{\href{http://it-ology.org/}{IT-oLogy}}.  Managed the
+    \institution{\href{http://open-it-lab.com/}{Open IT Lab}} and
+    associated projects. Assisted in planning
+    \institution{\href{http://posscon.org/}{POSSCON}}.}}
+
+\newcommand{\elasticvision}{
+  \experience{2011}%
+  {Contractor}%
+  {for}%
+  {Elastic Vision Consulting}%
+  {Built a parser and generator for \skill{XML} medical records
+    formats (CCR and CCD) in a \java web application.  Written using
+    \skill{JDOM}, \skill{Xerces}, and \skill{Hibernate}, and run on an
+    \skill{Axis2+Jetty6} driven server.}}
+
+\newcommand{\darpa}{
+  \experience{2010---2011}%
+  {Research Assistant}%
+  {for the}%
+  {DARPA
+    \href{https://en.wikipedia.org/wiki/Mind\%27s_Eye_(US_military)}{Mind's
+      Eye Program} }%
+  {Researched video event recognition for the DARPA Mind's Eye
+    program.  Collaborated with $10$ students and faculty members
+    across three institutions.  Developed algorithms in \scheme,
+    \bash, \matlab, and \c to process a corpus of 3480 videos
+    extracted into over 1.5 million frames. Distributed processing
+    over $7$ HPC machines.
+    \href{http://0xab.com/research/video-in-sentences-out.html}{0xab.com/research/video-in-sentences-out.html}
+    ,
+    \href{https://www.github.com/malloc47/video-in-sentences-out}{github.com/malloc47/video-in-sentences-out}}}
+
+\newcommand{\neh}{
+  \experience{2009---2010}%
+  {NEH Fellow}%
+  {at the}%
+  {\href{https://sc.edu/about/centers/digital_humanities/index.php}{USC Center for Digital Humanities}
+  (Sapheos/\href{http://sc.edu/about/centers/digital_humanities/projects/paragon.php}{Paragon}
+  Project)}%
+  {Developed the prototype for a \emph{digital collation} application
+    to identify sub-textual inconsistencies among multiple copies of
+    \emph{The Faerie Queene} by \textsc{Edmund Spenser}.  Created in
+    \matlab using \skill{VLFeat} and \opencv to process tens of
+    thousands of book page images.
+    \href{https://www.github.com/malloc47/digital-collation}{github.com/malloc47/digital-collation}}}
+
+\newcommand{\cse}{
+  \experience{2007---2011}%
+  {Teaching Assistant}%
+  {for}%
+  {\href{https://www.cse.sc.edu/}{USC Department of Computer Science
+      and Engineering}}%
+  {Taught classes in software development, web development, and
+    computer engineering, covering \java, \js, \html, and
+    \skill{Visual Basic}.  Created syllabi and course objectives,
+    developed and graded projects and assignments, supervised labs,
+    and tutored students.}}
+
+\newcommand{\internship}{
+  \experience{2005}%
+  {Intern---Technical Writer}%
+  {at}%
+  {JAARS, Inc.}%
+  {Created documentation and integrated context-sensitive online help
+    system for speech and linguistic software written in C++ and
+    Visual Basic.}}
+
+\newcommand{\volunteering}{
+  \experience{2001---2002}%
+  {Volunteer Software Developer}%
+  {at}%
+  {JAARS, Inc.}%
+  {Spearheaded the conversion from \skill{Visual Basic 4} to
+    \skill{Visual Basic 6} for the linguistic reference tool
+    \href{http://www.sil.org/computing/ipahelp/ipaprvw2.htm}{IPA
+      Help}.}}
+
+\newcommand{\afosr}{
+  \academic{2011---2013}%
+  {Research Assistant funded by \textsc{AFOSR}}%
+  {Materials Volume Segmentation}%
+  {Developed segmentation methods for materials image volumes in
+  \emph{Python+NumPy/SciPy} and \emph{MATLAB} at the \textsc{Computer
+    Vision Lab} at \textsc{USC}. Managed the lab computer network and
+  organized weekly lab meetings.  Created GUI interface using
+  wxWidgets for assisted segmentation, and conducted large-scale
+  evaluations on multiple datasets for metallic and biological
+  materials.}}
+
+\newcommand{\darpaRA}{
+  \academic{2010---2011}%
+  {Research Assistant funded by \textsc{DARPA}}%
+  {Video Event Recognition}%
+  {Explored segmentation methods for video event recognition. Attended
+    P.I. meetings in San Diego (2010) and Colorado (2011). Developed
+    algorithms in \emph{Scheme} to process a corpus of thousands of
+    videos extracted into over 3 million frames using a
+    high-performance computing cluster.}}
+
+\newcommand{\nehfellow}{
+  \academic{2009---2010}%
+  {NEH Fellow at the \textsc{Center for Digital Humanities}}%
+  {Digital Collation}%
+  {Created a \textsc{digital collation} application to handle
+    automatic differencing of sub-textual inconsistencies among
+    multiple copies of \emph{The Faerie Queene} by \textsc{Edmund
+      Spenser} in \emph{MATLAB} to process tens of thousands of book
+    page images.}}
+
+
+\newcommand{\crayton}{
+  \academic{2008--2009}%
+  {GK-12 Fellow at \textsc{Crayton Middle School}}%
+  {8\textsuperscript{th} Grade Science}%
+  {Served in Crayton Middle School, coordinating with the classroom
+    instructor to enhance the science curriculum and activities in an
+    8\textsuperscript{th} grade science classroom. Subsequently
+    coordinated and taught at the \textsc{GK-12 Institute for
+      Teachers}, presenting the activities developed and delivered in
+    the classroom.}}
+
+\newcommand{\cseTA}{
+  \academic{2007--2008, 2011}%
+  {Graduate Teaching Assistant at \textsc{USC}}%
+  {Web Development}%
+  {Supervised CSCE~145 labs, covering software development with
+    \textsc{Java}, and taught CSCE~102, covering \textsc{Javascript},
+    \textsc{HTML}, and \textsc{CSS}. Taught~CSCE~211 covering digital
+    logic design.}}
+
+\newcommand{\usclTA}{
+  \academic{Spring 2007}%
+  {Instructor for \textsc{CSCE 204} at \textsc{USCL}}%
+  {Introductory  Programming}%
+  {Hired as special faculty. Taught introductory Visual Basic for
+    majors and non-majors. Selected textbooks, developed all course
+    material, graded all assignments. Worked with Dr. Noni
+    M. Bohonak}}
+
+\newcommand{\campInstructor}{
+  \academic{Fall 2006}%
+  {Camp Instructor for \textsc{USCL Arts and Sciences Adventure Camp}}%
+  {5\textsuperscript{th}-8\textsuperscript{th} Grade Students}%
+  {Worked in collaboration with Dr. Dwayne Brown. One of two
+    instructors teaching Math and Computer Science to grade school
+    students.}}
+
+\newcommand{\tutor}{
+  \academic{2003--2007}%
+  {Professional Tutor at \textsc{USCL Academic Success Center}}%
+  {High School and College Students}%
+  {Student and graduate tutor for college-level Mathematics, Computer
+    Science, Physics, and English classes.}}
+
+\newcommand{\matsciseg}{
+  \proj{matsciseg}%
+  {Framework for propagated 3D volume segmentation, used in my
+  dissertation work.  Algorithms created in \python and \cpp and
+  exposed as a web API using \django. Includes a web application that
+  consumes the API created in \js, and \jquery.}%
+  {github.com/malloc47/matsciseg}}
+
+\newcommand{\nonpartisanme}{
+  \proj{\href{http://nonpartisan.me}{nonpartisan.me}}%
+  {Google Chrome extension that filters social media websites for
+  political keywords.  Available in the
+  \href{https://chrome.google.com/webstore/detail/nonpartisanme/ninebcppidndhampaggnjbijpacoadgg}{Chrome
+    Web Store}.  Featured in the
+  \href{http://www.charlestoncitypaper.com/charleston/sick-of-politics-on-facebook-try-this-browser-tool/Content?oid=4153447}{Charleston
+    City Paper}.}%
+  {github.com/malloc47/nonpartisan.me}}
+
+\newcommand{\termdo}{
+  \proj{term-do}%
+  {An interactive terminal prompt that displays potential command
+    completions as you type.  A hybrid of gnome-do and Emacs's
+    ido-mode.  Works on many tested VT100 terminal types; built
+    in~\skill{C++}.  Includes client/server architecture implemented
+    with boost.interprocess and full-featured plugin system.
+    Available in the
+    \href{https://aur.archlinux.org/packages/term-do-git/}{Arch Linux
+      AUR}.}%
+  {github.com/malloc47/term-do}}
+
+\newcommand{\ratiocontour}{
+  \proj{Ratio Contour}%
+  {Maintainer and contributor for the Ratio Contour project, a salient
+  object detection and segmentation method used for computer vision
+  applications.  Developed in \skill{C} and \skill{MATLAB}.}%
+  {github.com/malloc47/ratio-contour}}
+
+\newcommand{\digitalcollation}{
+  \proj{Digital Collation}%
+  {Research project to ``collate'' high-resolution documents by using
+    image registration, accomplished using the SIFT feature detector
+    and a thin plate spline warping technique, written in MATLAB.}%
+  {github.com/malloc47/digital-collation}}
+
+\newcommand{\pmldap}{
+  \proj{PMLDAP}%
+  {\skill{Linux} user management tool for Linux clusters.  Created as
+    a simplified replacement for LDAP.  Capable of bootstrapping new
+    systems, synchronizing users and configuration files, and running
+    distributed commands.  Written in \skill{Bash}.}%
+  {github.com/malloc47/pmldap}}
+
+\newcommand{\matscicut}{
+  \proj{matscicut}%
+  {An energy minimization framework for segmenting 3D materials
+    volumes. Prototype of dissertation work, created in C++ using
+    OpenCV libraries, with assorted MATLAB helper utilities.}%
+  {github.com/malloc47/matscicut}}
+
+\newcommand{\githq}{
+  \proj{git-hq}%
+  {A remote management system for git, created in Python.}%
+  {github.com/malloc47/git-hq}}
+
+
+\newcommand{\sinaweibo}{
+  \proj{Sina Weibo Mobile Client}%
+  {Created a \skill{J2ME}-based prototype mobile client for the
+    popular Chinese \institution{Sina} microblogging service, similar
+    to \institution{Twitter}.  Targeted at limited-functionality CLDC
+    phones and uses a custom \skill{Java} wrapper for the
+    \institution{Sina} API.  Employs symmetric-key encryption for
+    personal data.}%
+  {bd.weibo.10086.cn/2012/downloads\_kjav}}
+
+\newcommand{\befungepy}{
+  \proj{befunge.py}
+  {Complete \href{https://en.wikipedia.org/wiki/Befunge}{Befunge}
+    interpreter written in \python.  Implements the Befunge 93
+    specification, and is one of the closest Python equivalents to the
+    \c reference implementation.}
+  {github.com/malloc47/befunge.py}}
+
+\newcommand{\activities}{teaching, open source software, GIS
+  visualization, Linux, \href{https://soundcloud.com/malloc47}{music
+    composition}}
+
+\newcommand{\footer}{
+  \null\vfill
+  \footnotesize{
+    Online:  \href{http://cv.malloc47.com}{cv.malloc47.com} \hfill
+    Résumé: \href{http://resume.malloc47.com}{resume.malloc47.com} \hfill
+    Source:  \href{https://github.com/malloc47/cv/tree/master}{github.com/malloc47/cv/}}}
