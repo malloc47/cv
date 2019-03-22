@@ -1,14 +1,16 @@
 \documentclass[10pt]{article}
 
-\usepackage{xunicode,xltxtra,url,parskip}
-\usepackage[usenames,dvipsnames]{xcolor}
-\usepackage[left=1in, right=1in, top=0.5in, bottom=0.5in]{geometry}
-\usepackage{titlesec}
-\usepackage{multicol}
-\usepackage{xstring}
-\usepackage{enumitem}
 \usepackage{changepage}
+\usepackage{enumitem}
+\usepackage[left=1in, right=1in, top=0.5in, bottom=0.5in]{geometry}
 \usepackage{mdframed}
+\usepackage{multicol}
+\usepackage{tabularx}
+\usepackage{textpos}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{xstring}
+\usepackage{xunicode,xltxtra,url,parskip}
 \usepackage[xetex,
             unicode,
             pdfencoding=auto,
@@ -21,13 +23,11 @@
               Creator{xelatex}
             },
             ]{hyperref}
-\usepackage{textpos}
-\usepackage{tabularx}
-
-\setlength{\columnsep}{0pt}
 
 \include{functions}
 \include{content}
+
+\setlength{\columnsep}{0pt}
 
 \titlespacing{\section}{0pt}{-2pt}{0pt}
 
@@ -42,20 +42,15 @@
   \textsc{Interests} & \interests
 \end{tabularx}
 
-\newcommand{\degree}[4]{\textsc{#1} & \textbf{#2} & \textsc{#3} & \textbf{#4}\\}
+%% \newcommand{\degree}[4]{\textsc{#1} & \textbf{#2} & \textsc{#3} & \textbf{#4}\\}
+
+\newcommand{\degree}[9]{\textsc{#1} & \textbf{#2} & \textsc{#5} & \textbf{#6}\\}
 
 \section{Education}
 \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}l l p{5.5cm} r}
 
-  \degree{Aug. 2013}%
-  {Ph.D.}%
-  {Computer Science \& Engineering}%
-  {University of South Carolina}
-
-  \degree{May 2009}%
-  {M.E.}%
-  {Computer Science \& Engineering}%
-  {University of South Carolina}
+  \phdDegree
+  \meDegree
 
 \end{tabular*}
 
@@ -107,16 +102,7 @@
   \originalbibitem{#1}
   \StrSubstitute{#2}{Jarrell Waggoner}{\textbf{Jarrell Waggoner}}\par}
 
-\nocite{derrick:16}
-\nocite{waggoner:15}
-\nocite{waggoner:phd}
-\nocite{waggoner:14}
-\nocite{waggoner:13a}
-\nocite{barbu:12}
-\nocite{zhang:12}
-\nocite{waggoner:11}
-\nocite{temlyakov:10}
-\nocite{zhang:10}
+\referencesShort
 
 \renewcommand\refname{Selected Publications}
 {\footnotesize \bibliography{cv}}

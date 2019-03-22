@@ -1,3 +1,5 @@
+%% Intro
+
 \newcommand{\biographical}{
   \begin{multicols}{2}
     \setlength{\parskip}{0pt}
@@ -34,74 +36,32 @@
   recognition \& machine learning, data science, functional
   programming, GIS, Clojure}
 
-\newcommand{\skillsList}{
-  \skills{\bash}{\threeskill}
-  \skills{\clojure}{\threeskill}
-  \skills{\git}{\threeskill}
-  \skills{GNU/\linux}{\threeskill}
-  \skills{\footnotesize{\hadoop ecosystem}}{\threeskill}
-  \skills{\haskell}{\oneskill}
-  \skills{\java}{\threeskill}
-  \skills{\js}{\twoskill}
-  \skills{\LaTeX}{\twoskill}
-  \skills{\skill{Nix/NixOS}}{\oneskill}
-  \skills{\postgres}{\threeskill}
-  \skills{\python}{\threeskill}
-  \skills{\scala}{\twoskill}
-  \skills{\scheme}{\threeskill}
-  \skills{\spark}{\threeskill}
-}
+%% Education
 
-\newcommand{\skillsListLong}{
-  \skills{\bash}{\threeskill}
-  \skills{\ccpp}{\twoskill}
-  \skills{\clojure}{\threeskill}
-  \skills{\django}{\twoskill}
-  \skills{Emacs Lisp}{\twoskill}
-  \skills{\git}{\threeskill}
-  \skills{GNU/\linux}{\threeskill}
-  \skills{\hadoop}{\threeskill}
-  \skills{\haskell}{\oneskill}
-  \skills{\java}{\threeskill}
-  \skills{\js}{\twoskill}
-  \skills{\LaTeX}{\twoskill}
-  \skills{\matlab}{\twoskill}
-  \skills{\numpy/\scipy}{\threeskill}
-  \skills{\opencv}{\threeskill}
-  \skills{\postgres}{\threeskill}
-  \skills{\python}{\threeskill}
-  \skills{\scala}{\threeskill}
-  \skills{\scheme}{\threeskill}
-  \skills{\spark}{\threeskill}
-}
+\newcommand{\phdDegree}{
+  \degree{Aug. 2013}%
+  {Ph.D.}%
+  {Doctor}%
+  {of}%
+  {Computer Science \& Engineering}%
+  {University of South Carolina}%
+  {Dr. Song \textsc{Wang}}%
+  {Multi-Label Segmentation Propagation for Materials Science Images
+    Incorporating Topology and Interactivity}%
+  {}}
 
-\newcommand{\skillsLegend}{
-  \begin{footnotesize}
-    \oneskill Small-scale or personal projects \hfill
-    \twoskill Used in production  \hfill
-    \threeskill Used in large-scale production systems
-  \end{footnotesize}}
+\newcommand{\meDegree}{
+  \degree{May 2009}%
+  {M.E.}%
+  {Master of Engineering}%
+  {in}%
+  {Computer Science}%
+  {University of South Carolina}%
+  {}%
+  {}%
+  {\textsc{GPA}: 3.8/4.0 | \small\emph{magna cum laude}}}
 
-% graveyard
-
-%% \skills{Blender}{\twoskill}
-%% \skills{English}{\threeskill}
-%% \skills{LAMP Stack}{\fournotes}
-%% \skills{LISP}{\onenote}
-%% \skills{Learning}{\fournotes Machine}
-%% \skills{MS Office}{\fivenotes}
-%% \skills{Maple}{\twoskill}
-%% \skills{Networking}{\threenotes}
-%% \skills{Processing}{\fivenotes Image}
-%% \skills{Sys. Admin.}{\threenotes}
-%% \skills{Visual Basic}{\fivenotes}
-%% \skills{Windows}{\fivenotes}
-%% \skills{Wordpress}{\fournotes}
-%% \skills{\hive}{\oneskill}
-%% \skills{\html}{\threeskill}
-%% \skills{\jquery}{\twoskill}
-%% \skills{\php}{\oneskill}
-
+%% Experience
 
 \newcommand{\rally}{
   \experience{2017---Present}%
@@ -342,7 +302,6 @@
       Spenser} in \emph{MATLAB} to process tens of thousands of book
     page images.}}
 
-
 \newcommand{\crayton}{
   \academic{2008--2009}%
   {GK-12 Fellow at \textsc{Crayton Middle School}}%
@@ -386,6 +345,79 @@
   {High School and College Students}%
   {Student and graduate tutor for college-level Mathematics, Computer
     Science, Physics, and English classes.}}
+
+%% Skills
+
+\newcommand{\skillsList}{
+  \skills{\bash}{\threeskill}
+  \skills{\clojure}{\threeskill}
+  \skills{\git}{\threeskill}
+  \skills{GNU/\linux}{\threeskill}
+  \skills{\footnotesize{\hadoop ecosystem}}{\threeskill}
+  \skills{\haskell}{\oneskill}
+  \skills{\java}{\threeskill}
+  \skills{\js}{\twoskill}
+  \skills{\LaTeX}{\twoskill}
+  \skills{\skill{Nix/NixOS}}{\oneskill}
+  \skills{\postgres}{\threeskill}
+  \skills{\python}{\threeskill}
+  \skills{\scala}{\twoskill}
+  \skills{\scheme}{\threeskill}
+  \skills{\spark}{\threeskill}
+}
+
+\newcommand{\skillsListLong}{
+  \skills{\bash}{\threeskill}
+  \skills{\ccpp}{\twoskill}
+  \skills{\clojure}{\threeskill}
+  \skills{\django}{\twoskill}
+  \skills{Emacs Lisp}{\twoskill}
+  \skills{\git}{\threeskill}
+  \skills{GNU/\linux}{\threeskill}
+  \skills{\hadoop}{\threeskill}
+  \skills{\haskell}{\oneskill}
+  \skills{\java}{\threeskill}
+  \skills{\js}{\twoskill}
+  \skills{\LaTeX}{\twoskill}
+  \skills{\matlab}{\twoskill}
+  \skills{\numpy/\scipy}{\threeskill}
+  \skills{\opencv}{\threeskill}
+  \skills{\postgres}{\threeskill}
+  \skills{\python}{\threeskill}
+  \skills{\scala}{\threeskill}
+  \skills{\scheme}{\threeskill}
+  \skills{\spark}{\threeskill}
+}
+
+\newcommand{\skillsLegend}{
+  \begin{footnotesize}
+    \oneskill Small-scale or personal projects \hfill
+    \twoskill Used in production  \hfill
+    \threeskill Used in large-scale production systems
+  \end{footnotesize}}
+
+% graveyard
+
+%% \skills{Blender}{\twoskill}
+%% \skills{English}{\threeskill}
+%% \skills{LAMP Stack}{\fournotes}
+%% \skills{LISP}{\onenote}
+%% \skills{Learning}{\fournotes Machine}
+%% \skills{MS Office}{\fivenotes}
+%% \skills{Maple}{\twoskill}
+%% \skills{Networking}{\threenotes}
+%% \skills{Processing}{\fivenotes Image}
+%% \skills{Sys. Admin.}{\threenotes}
+%% \skills{Visual Basic}{\fivenotes}
+%% \skills{Windows}{\fivenotes}
+%% \skills{Wordpress}{\fournotes}
+%% \skills{\hive}{\oneskill}
+%% \skills{\html}{\threeskill}
+%% \skills{\jquery}{\twoskill}
+%% \skills{\php}{\oneskill}
+
+
+%% Projects
 
 \newcommand{\matsciseg}{
   \proj{matsciseg}%
@@ -469,6 +501,44 @@
     specification, and is one of the closest Python equivalents to the
     \c reference implementation.}
   {github.com/malloc47/befunge.py}}
+
+%% References
+
+\newcommand{\references}{
+  \nocite{derrick:16}
+  \nocite{waggoner:15}
+  \nocite{zhou:14}
+  \nocite{waggoner:phd}
+  \nocite{waggoner:14}
+  \nocite{waggoner:13a}
+  \nocite{waggoner:13c}
+  \nocite{waggoner:11}
+  \nocite{wang:11}
+  \nocite{temlyakov:10}
+  \nocite{zhang:10}
+  \nocite{waggoner:12}
+  \nocite{barbu:12}
+  \nocite{barbu:12b}
+  \nocite{zhang:12}
+  \nocite{temlyakov:13}
+  \nocite{salvi:13a}
+  \nocite{salvi:13b}
+}
+
+\newcommand{\referencesShort}{
+  \nocite{derrick:16}
+  \nocite{waggoner:15}
+  \nocite{waggoner:phd}
+  \nocite{waggoner:14}
+  \nocite{waggoner:13a}
+  \nocite{barbu:12}
+  \nocite{zhang:12}
+  \nocite{waggoner:11}
+  \nocite{temlyakov:10}
+  \nocite{zhang:10}}
+
+
+%% Footer
 
 \newcommand{\activities}{teaching, open source software, GIS
   visualization, Linux, \href{https://soundcloud.com/malloc47}{music
