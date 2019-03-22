@@ -831,6 +831,21 @@ FUNCTION {phdthesis}
   fin.entry
 }
 
+%% Custom type for CV
+FUNCTION {presentation}
+{ output.bibitem
+  format.title "title" output.check
+  new.block
+  organization emphasize output
+  new.block
+  address output
+  new.block
+  format.date "year" output.check
+  new.block
+  note output
+  fin.entry
+}
+
 FUNCTION {proceedings}
 { output.bibitem
   editor empty$
