@@ -1,5 +1,6 @@
 \documentclass[10pt]{article}
 
+\usepackage{bibunits}
 \usepackage{changepage}
 \usepackage{enumitem}
 \usepackage[left=1in, right=1in, top=0.5in, bottom=0.5in]{geometry}
@@ -41,8 +42,6 @@
 \begin{tabularx}{\textwidth}{@{}l X}
   \textsc{Interests} & \interests
 \end{tabularx}
-
-%% \newcommand{\degree}[4]{\textsc{#1} & \textbf{#2} & \textsc{#3} & \textbf{#4}\\}
 
 \newcommand{\degree}[9]{\textsc{#1} & \textbf{#2} & \textsc{#5} & \textbf{#6}\\}
 
@@ -94,30 +93,26 @@
 
 \skillsLegend
 
-% BibTeX add a section here
+\makeatletter
+\renewcommand{\@bibunitname}{\jobname.\the\@bibunitauxcnt}
+\makeatother
 
-\let\originalbibitem\bibitem
-\def\bibitem#1#2\par{%
-  \noexpandarg
-  \originalbibitem{#1}
-  \StrSubstitute{#2}{Jarrell Waggoner}{\textbf{Jarrell Waggoner}}\par}
+\begin{bibunit}[plainyr-rev]
+  \renewcommand\refname{Selected Publications}
+  \let\originalbibitem\bibitem
+  \def\bibitem#1#2\par{%
+    \noexpandarg
+    \originalbibitem{#1}
+    \StrSubstitute{#2}{Jarrell Waggoner}{\textbf{Jarrell Waggoner}}\par}
+  \referencesShort
+  {\footnotesize \putbib[cv]}
+\end{bibunit}
 
-\referencesShort
-
-\renewcommand\refname{Selected Publications}
-{\footnotesize \bibliography{cv}}
-\bibliographystyle{plainyr-rev}
-
-\section{Recent Talks}
-{\footnotesize
-\begin{enumerate}[align=left,labelsep=0em]
-\renewcommand{\labelenumi}{[\arabic{enumi}]}
-\item \href{http://www.malloc47.com/posscon2015/}{Rules Engines: Logic As Data Structure}. \emph{\href{http://posscon.org/}{Palmetto Open Source Software Conference}}. Columbia, SC. April 14, 2015.
-\item \href{http://www.malloc47.com/ato2013/}{Python for Computer Vision}. \emph{\href{http://allthingsopen.org/}{All Things Open}}. Raleigh, SC. October 24, 2013.
-%% \item \href{http://www.malloc47.com/gsd2013/}{Interactive Grain Image Segmentation Using Graph Cut Algorithms}. \emph{USC Graduate Student Day}. Columbia, SC. April 12, 2013.
-\item \href{http://www.malloc47.com/posscon2013/}{Extending Django}. \emph{\href{http://posscon.org/}{Palmetto Open Source Software Conference}}.  Columbia, SC.  March 28, 2013.
-\item \href{http://www.malloc47.com/cs-careers/}{Computer Science: Research, Industry, and Entrepreneurship}.  \emph{Careers in Science Lecture Series}.  Lancaster, SC.  March 6, 2013.
-\end{enumerate}}
+\begin{bibunit}[plainyr-rev]
+  \renewcommand\refname{Recent Talks}
+  \presentationsShort
+  {\footnotesize \putbib[cv]}
+\end{bibunit}
 
 \section{Activities}
 \activities

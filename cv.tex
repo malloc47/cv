@@ -1,5 +1,6 @@
 \documentclass[10pt]{article}
 
+\usepackage{bibunits}
 \usepackage{changepage}
 \usepackage{enumitem}
 \usepackage[left=1in, right=1in, top=1in, bottom=1in]{geometry}
@@ -30,11 +31,6 @@
 
 \include{functions}
 \include{content}
-
-\makeatletter
-\renewcommand*{\@biblabel}[1]{\hfill[C#1]}
-\makeatother
-
 
 \begin{document}
 \pagestyle{empty}
@@ -110,60 +106,39 @@
 
 \end{longtable}
 
+%% Sad that this can't be at the beginning of the doc :(
+
 \pagestyle{myheadings}
 \markright{Jarrell Waggoner}
 
+\makeatletter
+\renewcommand{\@bibunitname}{\jobname.\the\@bibunitauxcnt}
+\makeatother
 
-\let\originalbibitem\bibitem
-\def\bibitem#1#2\par{%
-  \noexpandarg
-  \originalbibitem{#1}
-  \StrSubstitute{#2}{Jarrell Waggoner}{\textbf{Jarrell Waggoner}}\par}
+\begin{bibunit}[plainyr-rev]
 
-% BibTeX add a section here
+  \let\originalbibitem\bibitem
+  \def\bibitem#1#2\par{%
+    \noexpandarg
+    \originalbibitem{#1}
+    \StrSubstitute{#2}{Jarrell Waggoner}{\textbf{Jarrell Waggoner}}\par}
 
-\references
+  \renewcommand\refname{Publications}
+  \references
+  \putbib[cv]
 
-\renewcommand\refname{Publications}
-\bibliography{cv}
-\bibliographystyle{plainyr-rev}
+\end{bibunit}
 
-\section{Posters/Presentations}
-\begin{enumerate}
-\renewcommand{\labelenumi}{[P\arabic{enumi}] }
-\item Rules Engines: Logic As Data Structure. \emph{Palmetto Open Source Software Conference}. Columbia, SC. April 14, 2015.
-\item Python for Computer Vision. \emph{All Things Open}. Raleigh, SC. October 24, 2013.
-\item Interactive Grain Image Segmentation Using Graph Cut Algorithms. \emph{USC Graduate Student Day}. Columbia, SC. April 12, 2013.
-\item Extending Django.  \emph{Palmetto Open Source Software
-    Conference}.  Columbia, SC.  March 28, 2013.
-\item Computer Science: Research, Industry, and Entrepreneurship.
-  \emph{Careers in Science Lecture Series}.  Lancaster, SC.  March 6,
-  2013.
-\item Interactive Grain Image Segmentation Using Graph Cut Algorithms.
-  \emph{SPIE (Computational Imaging XI)}.  Burlingame, CA.  February
-  6, 2013.
-\item Homeomorphic Multi-Structure Propagation for Metallic Image
-  Segmentation.  \emph{Gamecock Computing Research Symposium}.
-  Columbia, SC.  October 5, 2012.
-\item Android Application Development Workshop.  \emph{Appathon
-    Contest}.  Columbia, SC.  November 17, 2012.
-\item Open Source and Education. \emph{SC Municipal Technology
-    Association (SCMTA) Conference}. Charleston, SC.  September 6,
-  2012.
-\item Open Source and Higher Education.  \emph{SC Technical College
-    System (SCTCS) Conference}.  Columbia, SC.  September 25, 2012.
-\item Introduction to Android Development.  \emph{Digital Humanities
-    High Performance Computing (DHHPC) Workshop}.  Columbia, SC.
-  August 8, 2012.
-\item Combining Global Labeling and Local Relabeling for Metallic
-  Image Segmentation.  \emph{SPIE (Computational Imaging X)}.
-  Burlingame, CA.  January 23, 2012.
-\item Open Source and Government.  \emph{SC Government Management
-    Information Systems (SCGMIS) Software Developers Workshop}.
-  Columbia, SC.  January 19, 2012.
-\item Superpixel Contour Completion.  \emph{DARPA Mind's Eye PI
-    Meeting}.  Denver, CO.  January 20, 2011.
-\end{enumerate}
+\begin{bibunit}[plainyr-rev]
+  \makeatletter
+  \renewcommand*{\@biblabel}[1]{\hfill[P#1]}
+  \makeatother
+
+  \renewcommand\refname{Posters/Presentations}
+  \presentations
+  \putbib[cv]
+
+\end{bibunit}
 
 %% \section{Guest Lectures}
 %% \begin{enumerate}
@@ -194,8 +169,6 @@
 2011 & Graduate Student Day Presentation,  Second Place \\
 2010 & Graduate Student Day Presentation,  Honorable Mention \\
 2009 & Upsilon Pi Epsilon \\
-% \multicolumn{3}{r}{}\\
-% 2006 & Senior Computer Science Award & {\lighttext \textcolor{lightg}{Bryan College}}\\
 \multicolumn{3}{r}{}\\
 2004 & Clara P. Hammond Award & \multirow{3}{*}{{\lighttext \textcolor{lightg}{\begin{turn}{-90}USCL\end{turn}}}} \\
 & Science and Mathematics Award \\
