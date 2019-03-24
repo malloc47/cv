@@ -4,4 +4,7 @@
 *.log
 *.out
 *.pdf
+*.xdv
+*.fls
+*.fdb_latexmk
 .*

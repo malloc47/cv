@@ -6,7 +6,8 @@ all: $(OUT)
 
 %.pdf: %.tex cv.bib functions.tex
 	xelatex $<
-	bibtex $*
+	bibtex $*.1
+	bibtex $*.2
 	xelatex $<
 	xelatex $<
 
@@ -17,4 +18,7 @@ clean:
 	-rm *.out
 	-rm *.blg
 	-rm *.bbl
+	-rm *.fls
+	-rm *.xdv
+	-rm *.fdb_latexmk
 	-rm *~
