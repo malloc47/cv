@@ -1,5 +1,6 @@
 %% plainyr-rev BibTeX style
 %% Author: Christian Plessl <christian@plesslweb.ch>
+%% Modified by: Jarrell Waggoner <malloc47@gmail.com>
 %%
 %% This BibTeX style formats bibliographic entries like the plain style
 %% but sorts them in reverse chronological order, i.e., the newest 
