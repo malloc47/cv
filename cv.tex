@@ -124,7 +124,7 @@
     \StrSubstitute{#2}{Jarrell Waggoner}{\textbf{Jarrell Waggoner}}\par}
 
   \renewcommand\refname{Publications}
-  \references
+  \referenceslist
   \putbib[cv]
 
 \end{bibunit}
@@ -162,88 +162,57 @@
 %\end{enumerate}
 
 \section{Honors/Awards}
-\begin{center}
-\begin{tabular*}{0.75\textwidth}{rll}
-2012 & Gamecock Computing Research Symposium Poster Session,  First Place & \multirow{5}{*}{{\lighttext \textcolor{lightg}{\begin{turn}{-90}USC\end{turn}}}}\\
-     & Graduate Student Day Presentation,  First Place \\
-2011 & Graduate Student Day Presentation,  Second Place \\
-2010 & Graduate Student Day Presentation,  Honorable Mention \\
-2009 & Upsilon Pi Epsilon \\
-\multicolumn{3}{r}{}\\
-2004 & Clara P. Hammond Award & \multirow{3}{*}{{\lighttext \textcolor{lightg}{\begin{turn}{-90}USCL\end{turn}}}} \\
-& Science and Mathematics Award \\
-& Highest Academic Average Award \\
-\end{tabular*}
-\end{center}
-
-%\section{Professional Societies}
+\newcommand{\award}[3]{
+  #1 & #2 \textcolor{lightg}{\dotfill} & \emph{#3} \\
+}
+\begin{longtable}{l @{\hspace{0.5em}\textcolor{lightg}{\symbol{"00BB}}\hspace{0.5em}} p{10cm} l}
+  \awardlist
+\end{longtable}
 
 \section{Classes Taught}
-\vspace{-1em}
-\begin{center}
-%\begin{tabular*}{0.75\textwidth}{r @{\hspace{0.5em}\textcolor{lightg}{\symbol{"00BB}}\hspace{0.5em}} l @{\extracolsep{\fill}} l }
-\begin{tabular*}{0.75\textwidth}{r @{\hspace{0.5em}\textcolor{lightg}{\symbol{"00BB}}\hspace{0.5em}} l l c }
-%\multicolumn{3}{r}{University of South Carolina}\\
-2012--2013 & Open Source 101 & Open Source Software & \multirow{3}{*}{{\lighttext \textcolor{lightg}{\begin{turn}{-90}IT-oLogy\end{turn}}}}  \\
-2012--2013 & Version Control 101 & git, github \\
-2012--2013 & Command Line 101 & Linux, BASH \\
-\multicolumn{3}{r}{}\\
-Fall 2011 & CSCE 211 & Digital Logic Design & \multirow{4}{*}{{\lighttext \textcolor{lightg}{\begin{turn}{-90}USC\end{turn}}}} \\
-Summer II 2008 & CSCE 102 & HTML/CSS/JavaScript \\
-Spring 2008 & CSCE 145 Lab & Java \\
-Fall 2007 & CSCE 145 Lab & Java \\
-\multicolumn{3}{r}{}\\
-%\multicolumn{3}{r}{University of South Carolina at Lancaster}\\ \hline
-Spring 2007 & CSCE 204 & Visual Basic & \multirow{2}{*}{{\lighttext \textcolor{lightg}{\begin{turn}{-90}USCL\end{turn}}}} \\
-Spring 2007 & Math 241 \& Math 242 & Maple \\
-\end{tabular*}
-\end{center}
+\newcommand{\class}[3]{& #1 & #2 & #3 \\}
+\begin{longtable}{p{1cm} l @{\hspace{0.5em}\textcolor{lightg}{\symbol{"00BB}}\hspace{0.5em}} l l}
+  \multicolumn{4}{l}{\href{https://www.it-ology.org/}{IT-oLogy}} \\
+  \itologyOS
+  \itologyVC
+  \itologyCL
+  \multicolumn{3}{l}{\href{https://www.sc.edu/}{USC}} \\
+  \uscCCI
+  \uscCII
+  \uscCXLVSpring
+  \uscCXLVFall
+  \multicolumn{3}{l}{\href{http://usclancaster.sc.edu}{USCL}} \\
+  \usclCCIV
+  \usclMath
+\end{longtable}
 
 \section{Service}
 \vspace{-1em}
-\newcommand{\service}[2]{
-  \textsc{#1} & #2\\
-  %% \multicolumn{2}{c}{} \\
+\newcommand{\service}[3]{
+  \textsc{#1} & #2 \textcolor{lightg}{\dotfill} & \emph{#3}\\
 }
-
 \renewcommand*{\arraystretch}{1.33}
-\begin{longtable}{r|p{10cm}}
-  \service{Book Reviewer}{\href{https://www.packtpub.com/big-data-and-business-intelligence/practical-data-analysis}{Practical Data Analysis}, Packt Publishing, 2013}
-  \service{Mentoring}{Groupon internship program, 2014}
-  \service{Webmaster}{\href{http://cvl.cse.sc.edu/wvm2013/}{Winter Vision Meetings, 2013}}
-  \service{Webmaster}{\href{http://cvl.cse.sc.edu/wacv2013/}{Workshop on the Applications of Computer Vision, 2013}}
-  \service{Judge}{Discovery Day --- Undergraduate Research Presentations}
-  \service{Reviewer}{Pattern Recognition Letters}
-  \service{Reviewer}{IEEE Transactions on Pattern Analysis and Machine Intelligence}
-  %% \service{Fellow}{NSF GK-12 Program}
-  %% \service{Member}{Institute of Electrical and Electronics Engineers (IEEE)}
-  \service{SysAdmin}{Computer Vision Lab}
+\begin{longtable}{r @{\hspace{0.5em}\textcolor{lightg}{\symbol{"00BB}}\hspace{0.5em}} p{10cm} l}
+  \servicelist
 \end{longtable}
 
 \section{Personal and Open Source Projects}
-
 \newcommand{\proj}[3]{
   \textsc{#1} & #2\\
    &\href{http://www.#3}{#3}\\
    \multicolumn{2}{c}{} \\ [-1.5ex]
 }
-
 \begin{longtable}{@{}p{3cm}|p{13cm}}
-
   \matsciseg
   \ratiocontour
   \digitalcollation
   \matscicut
   \befungepy
-
 \end{longtable}
 
 \begin{minipage}{\linewidth}
-
   \vspace{-1em}
-
   \section{Skills \& Languages}
-
   \begin{multicols}{4}
     \raggedcolumns
     \begin{itemize}
@@ -252,16 +221,11 @@ Spring 2007 & Math 241 \& Math 242 & Maple \\
       \setlength{\itemsep}{1pt}
       \setlength{\parskip}{0pt}
       \setlength{\parsep}{0pt}
-
       \skillsListLong
-
     \end{itemize}
   \end{multicols}
-
   \skillsLegend
-
 \end{minipage}
-
 \vspace{-1em}
 
 \section{Activities}
