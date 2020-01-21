@@ -30,11 +30,10 @@
   data engineering, functional programming, web development, GIS,
   Clojure}
 
-\newcommand{\interestsLong}{computer vision, segmentation, contour
-  completion, perceptual grouping, document image analysis, event
-  recognition, image processing, artificial intelligence, pattern
-  recognition \& machine learning, data science, functional
-  programming, GIS, Clojure}
+\newcommand{\interestsLong}{computer vision, segmentation, document
+  image analysis, event recognition, image processing, artificial
+  intelligence, pattern recognition \& machine learning, data science,
+  functional programming, GIS, Clojure}
 
 %% Education
 
@@ -59,42 +58,53 @@
   {University of South Carolina}%
   {}%
   {}%
-  {\textsc{GPA}: 3.8/4.0 | \small\emph{magna cum laude}}}
+  {\small\emph{magna cum laude}}}
 
 %% Experience
 
 \newcommand{\rally}{
-  \experience{2017---Present}%
-  {Principal Software Engineer}%
+  \experience{2017--- \\ Present}%
+  {Architect}%
   {at}%
   {\href{https://www.rallyhealth.com}{Rally Health, Inc.}}%
-  {Individual contributor on the Data Infrastructure team, building
-    tools and architecting data pipelines for Rally's reporting and
-    Data Science needs.
+  {Seasoned engineering leader responsible for overseeing technical
+    design and engineering decisions across Rally's entire data
+    organization of 50+ engineers, analysts, and data scientists.
 
     \begin{exlist}
-    \item Architected complete rewrite of the data pipeline for the
-      entire organization, moving from a fixed \skill{Cloudera}
-      cluster with a \hive EDW to dynamic clusters with
-      \skill{Databricks} with a \skill{Redshift} EDW fed by \spark
-      ETLs written in \scala and scheduled with \skill{Airflow}.
+    \item Architected complete rewrite of the data platform for the
+      whole company, moving from a fixed \skill{Cloudera} cluster to a
+      self-service platform using \skill{Databricks} and
+      \skill{Redshift} fed by \spark ETLs written in \scala and
+      scheduled with \skill{Airflow} atop \skill{Kubernetes}. Built
+      concensus on new architecture and delivered working system
+      within a year while growing the team from only myself to an
+      independent platform team of 10 engineers.
 
-    \item Coordinated with external vendors and internal teams ranging
-      from Ops to Data Science to define and build new data pipeline,
-      spearheading the CI approach, development and testing workflows,
-      data ingestion process, EDW layout, monitoring/alerting, job
-      scheduling, and data validation components.
+    \item Member of the Rally Engineering Technical Staff, responsible
+      for making cross-cutting engineering decisions, evaluating
+      potential acquisitions, signing off on major company-wide
+      architectural changes, and organizing technical interest groups.
 
-    \item Member of the Engineering Technical Staff, responsible for
-      making cross-cutting engineering decisions, evaluating potential
-      acquisitions, signing off on major company-wide architectural
-      changes, and organizing technical interest groups.
+    \item Heavily involved in defining team structure and hiring,
+      conducting over 100 interviews for IC and management roles to
+      scale the data organization from 4 engineers to over 50
+      engineers.
 
-    \item Technical lead of eight person engineering team; responsible
-      for working with Product and Project Managers to define and
-      schedule work, standardize code review practices on the team,
-      build consensus for new architectural approaches, reporting
-      directly to VP-level management.
+    \item Fostered good design practices across the data organization
+      by auditing design documents, leading architecture meetings for
+      multiple teams to grow design aptitude, and spearheading the
+      standardization of best-practices on the team including code
+      review, documented on-call workflow, CI/CD , monitoring/alerting,
+      idempotent ETL workflows, and reproducible EDW layout.
+
+    \item Coordinated with over 16 internal and external teams across
+      an extensive range of projects including produtionalized ML
+      workflows, frontend/mobile event tracking, real time data
+      processing, data anonymization, security/compliance/privacy
+      requirements, data ingestion APIs, data quality validation, and
+      self-service internal product analytics.
+
     \end{exlist}}}
 
 \newcommand{\drw}{
@@ -109,8 +119,8 @@
     catalog of over 50 microservices.
 
     \begin{exlist}
-    \item Contributed to an extensive reconciliation tool used to
-      balancing cash flows for high-volume trading, written in \ruby.
+    \item Contributed to a \ruby-based reconciliation tool used to
+      balance cash flows for high-volume trading
 
     \item Extended a research workflow tool used for computing the
       value and settle price of options, futures, equities, and other
@@ -530,10 +540,8 @@
   \nocite{waggoner:14}
   \nocite{waggoner:13a}
   \nocite{barbu:12}
-  \nocite{zhang:12}
   \nocite{waggoner:11}
-  \nocite{temlyakov:10}
-  \nocite{zhang:10}}
+}
 
 \newcommand{\presentations}{
   \nocite{posscon:15}
@@ -556,7 +564,6 @@
   \nocite{posscon:15}
   \nocite{ato:13}
   \nocite{posscon:13}
-  \nocite{uscl:13}
 }
 
 %% Guest Lectures
@@ -648,9 +655,8 @@
 
 %% Footer
 
-\newcommand{\activities}{teaching, open source software, GIS
-  visualization, Linux, \href{https://soundcloud.com/malloc47}{music
-    composition}}
+\newcommand{\activities}{open source software, GIS visualization,
+  Linux, \href{https://soundcloud.com/malloc47}{music composition}}
 
 \newcommand{\footer}{
   \null\vfill
