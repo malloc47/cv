@@ -2,7 +2,7 @@ Jarrell Waggoner
 
 Biographical
 
-Address: Department of Computer Science and Engineering, University of South Carolina, Columbia, SC 29208
+Work Address: 3000 K St NW #350, Washington, DC 20007
 Phone: 847-261-4747
 email: jarrell.waggoner@gmail.com
 
@@ -15,25 +15,55 @@ LinkedIn: http://www.linkedin.com/in/malloc47
 
 Interests
 
-computer vision, image processing, artificial intelligence, pattern recognition & machine learning, data science, functional programming, web development
+computer vision, image processing, artificial intelligence, pattern recognition & machine learning, data science, data engineering, functional programming, web development, GIS, Clojure
 
 Education
 
-Expected Aug. 2013: Ph.D. Computer Science & Engineering from the University of South Carolina
+Aug. 2013: Ph.D. Computer Science & Engineering from the University of South Carolina
 May 2009: M.E. Computer Science & Engineering from the University of South Carolina
 
 Experience
 
-2012---Present
-Technical Lead at Huntstand, Inc.
-Software developer in an agile startup environment creating the huntstand.com web application.  Written using Python, Django, and Backbone.js; deployed to AWS.  Responsible for curating full technology stack and coordinating with 5 developers.
+2017---Present
+Architect at Rally Health, Inc.
 
-2011---Present
+Seasoned engineering leader responsible for overseeing technical design and engineering decisions across Rally's entire data organization of 50+ engineers, analysts, and data scientists.
+- Architected complete rewrite of the data platform for the whole company, moving from a fixed Cloudera cluster to a self-service platform using Databricks and Redshift fed by Spark ETLs written in Scala and scheduled with Airflow atop Kubernetes. Built consensus on new architecture and delivered working system within a year while growing the team from only myself to an independent platform team of 10 engineers.
+- Member of the Rally Engineering Technical Staff, responsible for making cross-cutting engineering decisions, evaluating potential acquisitions, signing off on major company-wide architectural changes, and organizing technical interest groups.
+- Heavily involved in defining team structure and hiring, conducting over 100 interviews for IC and management roles to scale the data organization from 4 engineers to over 50 engineers.
+- Fostered good design practices across the data organization by auditing design documents, leading architecture meetings for multiple teams to grow design aptitude, and spearheading the standardization of best-practices on the team including code review, documented on-call workflow, CI/CD , monitoring/alerting, idempotent ETL workflows, and reproducible EDW layout.
+- Coordinated with over 16 internal and external teams across an extensive range of projects including productionalized ML workflows, frontend/mobile event tracking, real time data processing, data anonymization, security/compliance/privacy requirements, data ingestion APIs, data quality validation, and self-service internal product analytics.
+
+2016---2017
+Software Engineer at DRW Holdings, LLC
+
+Member of the Trading Infrastructure team, developing the internal platform used by every trading desk at DRW. Built greenfield high-performance service-oriented systems using Clojure and Java while maintaining legacy applications in Ruby and C# among a catalog of over 50 microservices.
+- Contributed to a Ruby-based reconciliation tool used to balance cash flows for high-volume trading
+- Extended a research workflow tool used for computing the value and settle price of options, futures, equities, and other financial instruments, written in Clojure.
+- Developed and extended multiple UI frontends for internal tools using React and Reagent.
+
+
+2013---2016
+Senior Software Engineer at Groupon, Inc.
+
+Contributed to three engineering teams: The Flux team building Data Science pipelines, the Project Genesis strike team integrating scraped web data into Salesforce, and served as Tech Lead of the Supply Intelligence team creating internal sales tools to optimize Groupon's supply funnel.
+- Built a Postgres-backed high-performance caching and write management system in Clojure around the Salesforce API that hits 10K req/min.
+- Managed critical business automation of the sales lead assignment process that previously required an estimated 80 sales managers to conduct manually; led the effort to rearchitect this legacy system from an ad-hoc job scheduling platform written in Ruby and Bash to a multi-staged Hadoop pipeline written in Clojure to handle over 6M accounts.
+- Coordinated with product and business teams to ETL 250K leads in Salesforce from scraped web data.
+- Built out an ETL management and machine learning platform using Python, Clojure, Hive, and Spark to run mission-critical Decision Tree Learning models to predict customer attrition, lifetime customer value, and merchant value.
+- Mentored interns and junior developers, established best practices, and led multiple major technical initiatives on a team of 5 developers.
+
+2012---2014
+Technical Engineer at Huntstand, Inc.
+
+Software developer in an agile startup environment creating the huntstand.com web application.  Written using Python, Django, and Backbone; deployed to AWS.  Responsible for curating full technology stack and coordinating with 5 developers.
+
+2011---2013
 Research Assistant funded by AFOSR
 
 Dissertation research on computer vision models and algorithms for materials science image segmentation in Python, NumPy, SciPy, OpenCV, and MATLAB at the Computer Vision Lab at USC.  Created a desktop GUI using wxWidgets and a web interface using Django, JavaScript, and jQuery. Conducted large-scale analysis using a 98-core high-performance computing system.
 
-2011---Present
+2011---2013
 Project Manager at Palmetto Computer Labs
 Created and taught workshops on git, the linux command line, Android development, and open source software for hundreds of students, developers, and government officials at IT-oLogy.  Managed the Open IT Lab and associated projects. Assisted in planning the Palmetto Open Source Software Conference (POSSCON).
 
@@ -44,7 +74,7 @@ Built a parser and generator for XML medical records formats (CCR and CCD) in a 
 2010---2011
 Research Assistant for the DARPA Mind's Eye Program
 Researched video event recognition for the DARPA Mind's Eye program. Collaborated with 10 students and faculty members across three institutions.  Developed algorithms in Scheme, Bash, MATLAB, and C to process a corpus of 3480 videos extracted into over 1.5 million frames. Distributed processing over 7 HPC machines.
-http://0xab.com/research/video-in-sentences-out.html
+http://0xab.com/research/video-events.html
 https://www.github.com/malloc47/video-in-sentences-out
 
 2009---2010
@@ -52,104 +82,57 @@ NEH Fellow at the USC Center for Digital Humanities (Sapheos/Paragon Project)
 Developed the prototype for a digital collation application to identify sub-textual inconsistencies among multiple copies of The Faerie Queene by Edmund Spenser.  Created in MATLAB using VLFeat and OpenCV to process tens of thousands of book page images.
 https://www.github.com/malloc47/digital-collation
 
-2007---2011
-Teaching Assistant for USC Department of Computer Science and Engineering
-Taught classes in software development, web development, and computer engineering, covering Java, JavaScript, HTML/CSS, and Visual Basic. Created syllabi and course objectives, developed and graded projects and assignments, supervised labs, and tutored students.
-
 Skills & Languages
 
 *** Bash
-*** C/C++
-  * Emacs Lisp
-*** English
- ** git
+*** Clojure
+*** git
 *** GNU/Linux
+*** Hadoop Ecosystem
   * Haskell
-*** HTML/CSS
 *** Java
  ** JavaScript
- ** jQuery
  ** LaTeX
-*** MATLAB
-*** NumPy/SciPy
-*** OpenCV
-  * PHP
+  * Nix/NixOS
+*** Postgres
 *** Python
- ** Django
+ ** Scala
 *** Scheme
- ** SQL
+*** Spark
 Key:
-  * Small-scale projects and/or assignments
- ** Multiple projects and/or experience teaching
-*** Large-scale and/or multi-group projects
+  * Small-scale or personal projects
+ ** Used in production
+*** Used in large-scale production systems
 
-Personal and Open Source Projects
-
-matsciseg
-Framework for propagated 3D volume segmentation, used in my dissertation work.  Algorithms created in Python and C/C++ and exposed as a web API using Django. Includes a web application that consumes the API created in JavaScript, and jQuery.
-https://www.github.com/malloc47/matsciseg
-
-http://nonpartisan.me
-Google Chrome extension that filters social media websites for political keywords.  Available in the Chrome Web Store.  Featured in the Charleston City Paper: http://www.charlestoncitypaper.com/charleston/sick-of-politics-on-facebook-try-this-browser-tool/Content?oid=4153447 .
-https://www.github.com/malloc47/nonpartisan.me
-
-term-do
-An interactive terminal prompt that displays potential command completions as you type.  A hybrid of gnome-do and Emacs's ido-mode.  Works on many tested VT100 terminal types; built in~C++.  Includes client/server architecture implemented with boost.interprocess and full-featured plugin system. Available in the Arch Linux AUR
-https://www.github.com/malloc47/term-do.
-
-Sina Weibo Mobile Client
-Created a J2ME-based prototype mobile client for the popular Chinese Sina microblogging service, similar to Twitter.  Targeted at limited-functionality CLDC phones and uses a custom Java wrapper for the Sina API.  Employs symmetric-key encryption for personal data.
-http://bd.weibo.10086.cn/2012/downloads_kjava
 
 Selected Publications
 
-[1] Jarrell Waggoner, Youjie Zhou, Jeff Simmons, Ayman Salem, Marc De Graef, Song Wang. Interactive Grain Image Segmentation using Graph Cut Algorithms, Proceedings of SPIE Volume 8657 (Computational Imaging XI), Burlingame, CA, 2013
+[1] Derrick. C. Spell, Ling-Yong Wang, Richard T. Shomer, Bahador Nooraei, Jarrell Waggoner, Xaio-Han T. Zeng, Jae Y. Chung, Kai-Chen Cheng, and Daniel Kirsche. QED: Groupon’s ETL management and curated feature catalog system for machine learning. In IEEE International Conference on Big Data, pages 1639–1646, Dec 2016.
 
-[2] A. Barbu, A. Bridge, Z. Burchill, D. Coroian, S. Dickinson, S. Fidler, A. Michaux, S. Mussman, S. Narayanaswamy, D. Salvi, L. Schmidt, J. Shangguan, J. M. Siskind, J. Waggoner, S. Wang, Y. Yin, Z. Zhang. Video In Sentences Out, Conference on Uncertainty in Artificial Intelligence (UAI), 102-112, Catalina Island, CA, 2012
+[2] Jarrell Waggoner, Youjie Zhou, Jeff Simmons, Marc De Graef, and Song Wang. Topology-preserving multi-label image segmentation. In IEEE Workshop on Applications of Computer Vision (WACV), pages 1084–1091, Waikoloa Beach, HI, 2015.
 
-[3] Jarrell Waggoner, Jeff Simmons, Marc De Graef, and Song Wang. Graph Cut Approaches for Materials Segmentation Preserving Shape, Appearance, and Topology. International Conference on 3D Materials Science (3DMS), 147-152, Seven Springs, PA, 2012.
+[3] Jarrell Waggoner, Youjie Zhou, Jeff Simmons, Marc De Graef, and Song Wang. Graph-cut based interactive segmentation of 3D materials-science images. Machine Vision and Applications, 25:1615–1629, 2014.
 
-[4] Jarrell Waggoner, Jeff Simmons, and Song Wang. Combining global labeling and local relabeling for metallic image segmentation. In Proceedings of SPIE (Computational Imaging X), volume 8296, Burlingame, CA, 2012.
+[4] Jarrell Waggoner. Multi-Label Segmentation Propagation for Materials Science Images Incorporating Topology and Interactivity. Dissertation, University of South Carolina, 2013.
 
-[5] Zhiqi Zhang, Sanja Fidler, Jarrell Waggoner, Yu Cao, Sven Dickinson, Jeffrey M. Siskind, Song Wang. Superedge Grouping for Object Localization by Combining Appearance and Shape Information, IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 3266-3273, Providence, RI, 2012
+[5] Jarrell Waggoner, Jeff Simmons, Marc De Graef, and Song Wang. 3D materials image segmentation by 2D propagation: A graph-cut approach considering homomorphism. IEEE Transactions on Image Processing, 22, 2013.
 
-[6] Song Wang, Jarrell Waggoner, and Jeff Simmons. Graph-cut methods for grain boundary segmentation.  JOM Journal of the Minerals, Metals and Materials Society, 63(7):49–51, 2011.
+[6] Andrei Barbu, Alexander Bridge, Zachary Burchill, Dan Coroian, Sven Dickinson, Sanja Fidler, Aaron Michaux, Sam Mussman, Siddharth Narayanaswamy, Dhaval Salvi, Lara Schmidt, Jiangnan Shangguan, Jeffrey Mark Siskind, Jarrell Waggoner, Song Wang, Jinlian Wei, Yifan Yin, and Zhiqi Zhang. Video in sentences out. In Conference on Uncertainty in Arti cial Intelligence, pages 102–112, 2012.
 
-[7] Andrew Temlyakov, Brent C. Munsell, Jarrell W. Waggoner, and Song Wang. Two perceptually motivated strategies for shape classification. In IEEE Conference on Computer Vision and Pattern Recognition (CVPR), pages 2289–2296, 2010.
-
-[8] Zhiqi Zhang, Yu Cao, Dhaval Salvi, Kenton Oliver, Jarrell Waggoner, and Song Wang. Free-shape subwindow search for object localization. In IEEE Conference on Computer Vision and Pattern Recognition (CVPR), pages 1086–1093, 2010.
+[7] Jarrell Waggoner, Jeff Simmons, and Song Wang. Combining global labeling and local relabeling for metallic image segmentation. In Proceedings of SPIE (Computational Imaging X), volume 8296, Burlingame, CA, 2012.
 
 Talks
 
-[1] Extending Django. Palmetto Open Source Software Conference. Columbia, SC.  March 28, 2013.
+[1] Project athena: Rally’s next-generation data platform. Optum/UHG/UHC Analytics Conference. Eden Prairie, MN. September 2019.
 
-[2] Computer Science: Research, Industry, and Entrepreneurship. Careers in Science Lecture Series. Lancaster, SC.  March 6, 2013.
+[2] Rules engines: Logic as data structure. Palme o Open Source So ware Conference. Columbia, SC. April 2015.
 
-[3] Interactive Grain Image Segmentation Using Graph Cut Algorithms. SPIE (Computational Imaging XI). Burlingame, CA.  February 6, 2013.
+[3] Python for computer vision. All Things Open. Raleigh, NC. October 2013.
 
-[4] Android Application Development Workshop. Appathon Contest. Columbia, SC.  Nov. 17, 2012.
-
-[5] Open Source and Education. SC Municipal Technology Association (SCMTA) Conference. Charleston, SC.  Sep. 6, 2012.
-
-[6] Open Source and Higher Education.  SC Technical College System (SCTCS) Conference.  Columbia, SC.  Sep. 25, 2012.
-
-[7] Introduction to Android Development.  Digital Humanities High Performance Computing (DHHPC) Workshop.  Columbia, SC.  Aug. 8, 2012.
-
-[8] Combining Global Labeling and Local Relabeling for Metallic Image Segmentation.  SPIE (Computational Imaging X). Jan. 23, 2012.
-
-[9] Open Source and Government.  SC Government Management Information Systems (SCGMIS) Workshop.  Columbia, SC.  Jan. 19, 2012.
-
-Honors/Awards at USC
-
-2012 -- Gamecock Computing Research Symposium Poster Session,  First Place
-2012 -- Graduate Student Day Presentation,  First Place
-2009 -- Upsilon Pi Epsilon
-2004 -- Clara P. Hammond Award
-2004 -- Science and Mathematics Award
-2004 -- Highest Academic Average Award
+[4] Extending Django. Palmetto Open Source Software Conference. Columbia, SC.  March 28, 2013.
 
 Activities
 
-teaching, programming, open source software, system administration, data visualization, Linux, music composition (https://soundcloud.com/malloc47)
+open source software, GIS visualization, Linux, music composition
 
 Available online: http://resume.malloc47.com
