@@ -9,6 +9,8 @@
 \usepackage[usenames,dvipsnames]{xcolor}
 \usepackage{xstring}
 \usepackage{xunicode,xltxtra,url,parskip}
+\usepackage{xparse}
+
 
 %Setup hyperref package, and colours for links
 \definecolor{linkcolour}{rgb}{0,0.2,0.6}
@@ -17,7 +19,7 @@
 %Color
 \definecolor{lightg}{HTML}{999999}
 \definecolor{medg}{HTML}{666666}
-\definecolor{darkg}{HTML}{333333}
+\definecolor{darkg}{HTML}{444444}
 
 %Experience section
 \newenvironment{exlist}
@@ -45,20 +47,16 @@
   innerbottommargin=0
 ]{sideblock}
 
-\newcommand{\experience}[5]{
-  \begin{adjustwidth}{0.75in}{}
-    \begin{sideblock}
-      \begin{textblock*}{1in}(-0.75in,0.65em)
-        \textsc{#1}
-      \end{textblock*}
-      \textbf{#2} #3 \textsc{#4}
-      \vspace{-1ex}
+\DeclareDocumentCommand \experience {m m m m o o o +m}{%
+\begin{normalsize}
+  \begin{tabularx}{\textwidth}{@{}r|Xll@{}}
+    \begin{large}\textsc{#1}\end{large} & #2 & \textcolor{darkg}{#3} & \textcolor{darkg}{#4} \\
+    \IfNoValueF{#5}{& #5 & \textcolor{darkg}{#6} & \textcolor{darkg}{#7}}
+  \end{tabularx}
+\end{normalsize}
+\begin{small}#8\end{small}
 
-      \small{#5}
-    \end{sideblock}
-  \end{adjustwidth}
-  \vspace{\baselineskip}
-}
+\vspace{\baselineskip}}
 
 % Bullets
 \definecolor{noteone}{HTML}{999999}

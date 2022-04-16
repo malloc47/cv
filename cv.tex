@@ -52,32 +52,35 @@
 
 \vspace{-1em}
 
-\section{Research Experience}
-\newcommand{\academic}[4]{
-\textsc{#1} & #2 \\
-\nopagebreak &\emph{#3}\\
-\nopagebreak &\footnotesize{#4} \\
-\nopagebreak \multicolumn{2}{c}{} \\ [-1ex]
-}
-\begin{longtable}{@{}p{2.4cm}|p{13.6cm}}
-  \afosr
-  \darpaRA
-  \nehfellow
-\end{longtable}
-
-\section{Teaching Experience}
-\begin{longtable}{@{}p{2.4cm}|p{13.6cm}}
-  \crayton
-  \cseTA
-  \usclTA
-  \campInstructor
-  \tutor
-\end{longtable}
-
-%% Sad that this can't be at the beginning of the doc :(
-
+%% Restart page numbering (sadly have to place by trial and error)
 \pagestyle{myheadings}
 \markright{Jarrell Waggoner}
+
+\DeclareDocumentCommand \academic {m m m m m m +m o}{%
+\begin{normalsize}
+  \nopagebreak \begin{large}#2 #3\end{large} | #4 \hfill \textcolor{darkg}{#6}
+\end{normalsize}
+\\
+\begin{small}#7 \IfNoValueF{#8}{ \\ #8}\end{small}
+
+\vspace{\baselineskip}
+}
+
+\section{Research Experience}
+\afosr
+\darpa
+\nehfellow
+
+\vspace{-1em}
+
+\section{Teaching Experience}
+\crayton
+\cseTA
+\usclTA
+\campInstructor
+\tutor
+
+\vspace{-1em}
 
 \makeatletter
 \renewcommand{\@bibunitname}{\jobname.\the\@bibunitauxcnt}
@@ -104,16 +107,16 @@
 \end{bibunit}
 
 \section{Honors/Awards}
-\newcommand{\award}[3]{
-  #1 & #2 \textcolor{lightg}{\dotfill} & \emph{#3} \\
+\newcommand{\award}[4]{
+  #1 & #3 & #2 \textcolor{lightg}{\dotfill} & \emph{#4} \\
 }
-\begin{longtable}{l @{\hspace{0.5em}\textcolor{lightg}{\symbol{"00BB}}\hspace{0.5em}} p{10cm} l}
+\begin{longtable}{l l @{\hspace{0.5em}\hspace{0.5em}} p{10cm} l}
   \awardlist
 \end{longtable}
 
 \section{Classes Taught}
 \newcommand{\class}[3]{& #1 & #2 & #3 \\}
-\begin{longtable}{p{1cm} l @{\hspace{0.5em}\textcolor{lightg}{\symbol{"00BB}}\hspace{0.5em}} l l}
+\begin{longtable}{p{1cm} l @{\hspace{0.5em}\hspace{0.5em}} l l}
   \multicolumn{4}{l}{\href{https://www.it-ology.org/}{IT-oLogy}} \\
   \itologyOS
   \itologyVC

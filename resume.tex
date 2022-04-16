@@ -39,15 +39,27 @@
   \meDegree
 \end{tabular*}
 
+
+%% Make the academic entries match the non-academic entries
+\DeclareDocumentCommand \academic {m m m m m m +m o}{%
+\begin{normalsize}
+  \nopagebreak \begin{large}\textsc{#1}\end{large} | #2 \hfill \textcolor{darkg}{#5 \quad #6}
+\end{normalsize}
+\\
+\begin{small}#7 \IfNoValueF{#8}{#8}\end{small}
+
+\vspace{\baselineskip}
+}
+
 \section{Experience}
 \vspace{0.75em}
 \rally
 \drw
 \groupon
 \terrastride
-\cvl
+\afosr
 \darpa
-\neh
+\nehfellow
 \vspace{-1em}
 
 \section{Skills \& Languages}
