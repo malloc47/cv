@@ -3,6 +3,7 @@
 \usepackage{enumitem}
 \usepackage{mdframed}
 \usepackage{multicol}
+\usepackage{multirow}
 \usepackage{tabularx}
 \usepackage{textpos}
 \usepackage{titlesec}
@@ -49,8 +50,8 @@
 
 \DeclareDocumentCommand \experience {m m m m o o o +m}{%
 \begin{normalsize}
-  \begin{tabularx}{\textwidth}{@{}r|Xll@{}}
-    \begin{large}\textsc{#1}\end{large} & #2 & \textcolor{darkg}{#3} & \textcolor{darkg}{#4} \\
+  \begin{tabularx}{\textwidth}{@{}l|Xll@{}}
+    \multirow{\IfNoValueTF{#5}{1}{2}}{*}{\begin{large}\textsc{#1}\end{large}} & #2 & \textcolor{darkg}{#3} & \textcolor{darkg}{#4} \\
     \IfNoValueF{#5}{& #5 & \textcolor{darkg}{#6} & \textcolor{darkg}{#7}}
   \end{tabularx}
 \end{normalsize}
