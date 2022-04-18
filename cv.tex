@@ -29,17 +29,19 @@
 \interestsLong
 
 \section{Education}
-\newcommand{\degree}[9]{\textsc{#1} & #3 #4 \textsc{#5} & \textbf{#6} \\
-  \ifthenelse{\isempty{#7}}{}%
-    {& \small Advisor: #7 & \\}%
-  \ifthenelse{\isempty{#9}}{}%
-    {& \normalsize #9}
-  \ifthenelse{\isempty{#8}}{}%
-    {& \footnotesize Dissertation: ``#8'' & \\}}
-\begin{tabularx}{\linewidth}{@{}r X l}
-  \phdDegree
+% TODO: un-inline this back into content.tex once I figure out a
+% better way to do embedded \multicolumn inside of a \newcommand
+% and/or some other workaround
+\begin{tabularx}{\linewidth}{@{}l X l@{}}
+  \textbf{Doctor of Philosophy} in \textsc{Computer Science \& Engineering} & University of South Carolina & \textcolor{darkg}{08/2013} \\
+  \multicolumn{3}{@{}l}{\begin{small}Advisor: Dr. Song \textsc{Wang}\end{small}} \\
+  \multicolumn{3}{@{}l}{\begin{footnotesize}Dissertation:
+      ``Multi-Label Segmentation Propagation for Materials Science
+      Images Incorporating Topology and
+      Interactivity''\end{footnotesize}} \\
   & &\\[-1ex]
-  \meDegree
+  \textbf{Master of Engineering} in \textsc{Computer Science} & University of South Carolina & \textcolor{darkg}{05/2009} \\
+  \multicolumn{3}{@{}l}{\begin{small}\emph{magna cum laude}\end{small}}
 \end{tabularx}
 
 \section{Industry Experience}
@@ -141,21 +143,24 @@
 \end{longtable}
 
 \section{Personal and Open Source Projects}
+
 \newcommand{\proj}[3]{
-  \textsc{#1} & #2\\
-   &\href{http://www.#3}{#3}\\
-   \multicolumn{2}{c}{} \\ [-1.5ex]
-}
-\begin{longtable}{@{}p{3cm}|p{13cm}}
-  \matsciseg
-  \ratiocontour
-  \digitalcollation
-  \matscicut
-  \befungepy
-\end{longtable}
+\begin{normalsize}
+  \begin{large}\textsc{#1}\end{large} | \href{http://www.#3}{#3}
+  \\
+  \begin{small}\textcolor{darkg}{#2}\end{small}
+\end{normalsize}
+
+\vspace{0.5\baselineskip}}
+
+\matsciseg
+\ratiocontour
+\digitalcollation
+\matscicut
+\befungepy
 
 \begin{minipage}{\linewidth}
-  \vspace{-1em}
+  %% \vspace{-1em}
   \section{Skills \& Languages}
   \begin{multicols}{4}
     \raggedcolumns
