@@ -1,28 +1,19 @@
 %% Intro
 
 \newcommand{\biographical}{
-  \begin{multicols}{2}
-    \setlength{\parskip}{0pt}
-    \section{Biographical}
-
-    \begin{tabularx}{\linewidth}{@{}l X@{}}
-      \textsc{Work Address}& \small{3000 K St NW \#350} \\
-      & \small{Washington, DC 20007} \\
-      \textsc{Phone}       & \href{tel:847-261-4747}{847-261-4747} \\
-      \textsc{email}       & \href{mailto:jarrell.waggoner@gmail.com}{jarrell.waggoner@gmail.com} \\
-    \end{tabularx}
-
-    \vfill
-    \columnbreak
-
-    \section{Online}
-    \begin{tabularx}{\linewidth}{@{}l X@{}}
-      \textsc{Website}     & \href{http://www.malloc47.com}{www.malloc47.com} \\
-      \textsc{Twitter}     & \href{https://twitter.com/malloc47}{@malloc47} \\
-      \textsc{github}      & \href{http://www.github.com/malloc47}{github.com/malloc47}\\
-      \textsc{LinkedIn}    & \href{http://www.linkedin.com/in/malloc47}{linkedin.com/in/malloc47} \\
-    \end{tabularx}
-  \end{multicols}
+  \begin{center}
+    %% \raisebox{-.7ex}{\protect\includegraphics[height=2.5ex]{img/chicago-flag.png}} |
+    \raisebox{-.4ex}{\protect\includegraphics[height=2.5ex]{img/statue-of-liberty-emoji.png}} |
+    \href{https://www.malloc47.com}{malloc47.com} |
+    {\sans \raisebox{-.2ex}{✉}} \href{mailto:jarrell.waggoner@gmail.com}{\color{black}{jarrell.waggoner@gmail.com}} |
+    {\sans ☏} \href{tel:847-261-4747}{\color{black}{847-261-4747}} |
+    \{ \begin{small}
+      \href{https://www.github.com/malloc47}{github.com/},
+      \href{https://www.linkedin.com/in/malloc47}{linkedin.com/in/},
+      \href{https://twitter.com/malloc47}{@}\end{small}
+    \}
+    \textbf{malloc47}
+  \end{center}
 }
 
 \newcommand{\interests}{computer vision, image processing, artificial
