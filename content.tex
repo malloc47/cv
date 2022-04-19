@@ -89,26 +89,28 @@
     \end{exlist}}}
 
 \newcommand{\rally}{
-  \experience{\href{https://www.rallyhealth.com}{Rally Health, Inc.}}%
+  \experience%
+  {\href{https://www.rallyhealth.com}{Rally Health, Inc.}}%
   {Software Architect}%
   {Remote (NYC)}%
   {2019---2021}%
   [Principal Software Engineer]%
   [Minneapolis, MN]%
   [2017---2019]%
-  {Seasoned engineering leader responsible for overseeing technical
+  [\textcolor{medg}{\begin{small}(Acquired by Optum)\end{small}}]%
+  {Staff-level engineering leader responsible for overseeing technical
     design and engineering decisions across Rally's entire data
-    organization of 90+ engineers, analysts, and data scientists.
+    organization that reached a peak of 90+ engineers, analysts,
+    managers, and data scientists.
 
     \begin{exlist}
-    \item Architected complete rewrite of the data platform for the
-      whole company, moving from a fixed \skill{Cloudera} cluster to a
-      self-service platform using \skill{Databricks} and
-      \skill{Redshift} fed by \spark ETLs written in \scala and
-      scheduled with \skill{Airflow} atop \skill{Kubernetes}. Built
-      consensus on new architecture and delivered working system
-      within a year while growing the team from only myself to an
-      independent platform team of 10 engineers.
+    \item Brought onboard while Rally was a small startup to architect
+      a complete rewrite of the data platform for the whole company,
+      moving from a fixed \skill{Cloudera} cluster to a self-service
+      platform using \skill{Databricks} and \skill{Redshift} fed by
+      \spark ETLs written in \scala and scheduled with \airflow atop
+      \skill{Kubernetes}. Built consensus on new architecture and
+      delivered working system within a year.
 
     \item Member of the Rally Engineering Technical Staff, responsible
       for making cross-cutting engineering decisions, evaluating
@@ -116,23 +118,25 @@
       architectural changes, and organizing technical interest groups.
 
     \item Heavily involved in defining team structure and hiring,
-      conducting over 100 interviews for IC and management roles to
-      scale the data organization from 4 engineers to over 50
-      engineers.
+      conducting over 140 interviews for IC and management roles to
+      scale the data organization from 4 data engineers to over 50
+      data engineers.
 
-    \item Fostered good design practices across the data organization
-      by auditing design documents, leading architecture meetings for
-      multiple teams to grow design aptitude, and spearheading the
-      standardization of best-practices on the team including code
-      review, documented on-call workflow, CI/CD , monitoring/alerting,
-      idempotent ETL workflows, and reproducible EDW layout.
+    %% \item Fostered good design practices across the data organization
+    %%   by auditing design documents, leading architecture meetings for
+    %%   multiple teams to grow design aptitude, and spearheading the
+    %%   standardization of best-practices on the team including code
+    %%   review, documented on-call workflow, CI/CD ,
+    %%   monitoring/alerting, idempotent ETL workflows, and reproducible
+    %%   EDW layout.
 
-    \item Coordinated with over 16 internal and external teams across
-      an extensive range of projects including productionalized ML
-      workflows, frontend/mobile event tracking, real time data
-      processing, data anonymization, security/compliance/privacy
-      requirements, data ingestion APIs, data quality validation, and
-      self-service internal product analytics.
+    \item Coordinated with over 16 internal and external teams and
+      vendors across an extensive range of projects including
+      productionalized ML workflows, frontend/mobile event tracking,
+      real time data processing, data anonymization,
+      security/compliance/privacy requirements, data ingestion APIs,
+      data quality validation, and self-service internal product
+      analytics.
 
     \end{exlist}}}
 
@@ -149,11 +153,11 @@
 
     \begin{exlist}
     \item Contributed to a \ruby-based reconciliation tool used to
-      balance cash flows for high-volume trading
+      balance cash flows for high-volume trading.
 
-    \item Extended a research workflow tool used for computing the
-      value and settle price of options, futures, equities, and other
-      financial instruments, written in \clojure.
+    \item Extended a graph-based research workflow tool used for
+      computing the value and settle price of options, futures,
+      equities, and other financial instruments, written in \clojure.
 
     \item Developed and extended multiple UI frontends for internal
       tools using \react and \reagent.
@@ -161,47 +165,53 @@
 
 \newcommand{\groupon}{
   \experience{\href{http://www.groupon.com}{Groupon, Inc.}}%
-  {Senior Software Engineer}%
+  {Senior Software Engineer \textcolor{lightg}{(SDE IV)}}%
   {Chicago, IL}%
   {\textcolor{lightg}{02/}2016---\textcolor{lightg}{09/}2016}%
-  [Software Engineer]%
+  [Software Engineer \textcolor{lightg}{(SDE III)}]%
   []%
   [\textcolor{lightg}{08/}2013---\textcolor{lightg}{02/}2016]%
-  {Contributed to three engineering teams: The Flux team building Data
-    Science pipelines, the Project Genesis strike team integrating
-    scraped web data into \salesforce, and served as Tech Lead of the
-    Supply Intelligence team creating internal sales tools to optimize
-    Groupon's supply funnel.
-
+  {Contributed to multiple teams solving cross-cutting data
+    engineering and \skill{MLOps} problems.
     \begin{exlist}
-    \item Built a \postgres-backed high-performance caching and write
-      management system in \clojure around the \salesforce API that
-      hits 10K req/min.
+      \item \textbf{Flux team}: Responsible for a data pipeline
+        management and machine learning platform used to run
+        productionalized decision tree learning models to predict
+        customer attrition, lifetime customer value, and merchant
+        value. Spearheaded implementation of distributed systems for
+        the feature store, job scheduling, and data catalog components
+        used by all models on the platform. Fed from \teradata,
+        written in \clojure, and backed by \hive.
 
-    \item Managed critical business automation of the sales lead
-      assignment process that previously required an estimated 80
-      sales managers to conduct manually; led the effort to
-      rearchitect this legacy system from an ad-hoc job scheduling
-      platform written in \ruby and \bash to a multi-staged \hadoop
-      pipeline written in \clojure to handle over 6M accounts.
+      \item \textbf{Project Genesis strike team}: Coordinated with
+        product and business teams to build an ETL to inject 250K
+        leads in \salesforce from scraped web data that increased the
+        unassigned leads pool by 10X.
 
-  %% \item Operationalized \python within the organization by spinning
-  %%   up an internal PyPI server; introducing a pex-driven
-  %%   single-artifact deployment process; creating an interest group,
-  %%   mailing list, and internal wiki; and standardized configuration,
-  %%   logging, and resource management.
+      \item \textbf{Supply Intelligence team}: Tech lead overseeing
+        the critical business automation of lead-to-salesperson
+        assignment that previously required \~{}80 sales managers to
+        conduct manually; led the effort to rearchitect this legacy
+        system from an ad-hoc job scheduling platform written in \ruby
+        and \bash to a multi-staged \hadoop pipeline written in
+        \clojure allowing it to scale to 6M daily candidate
+        assignments.
 
-    \item Coordinated with product and business teams to ETL 250K
-      leads in \salesforce from scraped web data.
+      %% \item Built a \postgres-backed high-performance caching and
+      %%   write management system in \clojure around the \salesforce API
+      %%   that hits 10K req/min.
 
-    \item Built out an ETL management and machine learning platform
-      using \python, \clojure, \hive, and \spark to run
-      mission-critical Decision Tree Learning models to predict
-      customer attrition, lifetime customer value, and merchant value.
+      %% \item Mentored interns and junior developers, established best
+      %%   practices, served as reviewer for company-wide RFCs, and led
+      %%   multiple major technical initiatives on a team of 5
+      %%   developers.
 
-    \item Mentored interns and junior developers, established best
-      practices, and led multiple major technical initiatives on a
-      team of 5 developers.
+      %% \item Operationalized \python within the organization by
+      %%   spinning up an internal PyPI server; introducing a pex-driven
+      %%   single-artifact deployment process; creating an interest
+      %%   group, mailing list, and internal wiki; and standardized
+      %%   configuration, logging, and resource management.
+
     \end{exlist}}}
 
 \newcommand{\terrastride}{
@@ -209,10 +219,10 @@
   {Technical Engineer}%
   {Columbia, SC}%
   {2012---2014}%
-  {Software developer in an agile startup environment creating the
+  {Founding developer in an agile startup environment creating the
     \href{http://www.huntstand.com}{huntstand.com} web application.
     Written using \python, \django, and \backbone; deployed to
-    \skill{AWS}.  Responsible for curating full technology stack and
+    \skill{AWS}. Responsible for curating full technology stack and
     coordinating with $5$ developers.}}
 
 \newcommand{\palmettocomputerlabs}{

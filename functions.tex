@@ -48,14 +48,14 @@
   innerbottommargin=0
 ]{sideblock}
 
-\DeclareDocumentCommand \experience {m m m m o o o +m}{%
+\DeclareDocumentCommand \experience {m m m m o o o o +m}{%
 \begin{normalsize}
   \begin{tabularx}{\textwidth}{@{}l|Xll@{}}
-    \multirow{\IfNoValueTF{#5}{1}{2}}{*}{\begin{large}\textsc{#1}\end{large}} & #2 & \textcolor{darkg}{#3} & \textcolor{darkg}{#4} \\
-    \IfNoValueF{#5}{& #5 & \textcolor{darkg}{#6} & \textcolor{darkg}{#7}}
+    \begin{large}\textsc{#1}\end{large} & #2 & \textcolor{darkg}{#3} & \textcolor{darkg}{#4} \\
+    \IfNoValueF{#5}{\IfNoValueF{#8}{#8} & #5 & \textcolor{darkg}{#6} & \textcolor{darkg}{#7}}
   \end{tabularx}
 \end{normalsize}
-\begin{small}#8\end{small}
+\begin{small}#9\end{small}
 
 \vspace{\baselineskip}}
 
@@ -161,6 +161,7 @@
 
 \newcommand{\lang}[2]{\expandafter\def\csname #1\endcsname{\skill{#2}\xspace}}
 
+\lang{airflow}{Airflow}
 \lang{android}{Android}
 \lang{backbone}{Backbone.js}
 \lang{bash}{Bash}
@@ -197,4 +198,5 @@
 \lang{scipy}{SciPy}
 \lang{spark}{Spark}
 \lang{sql}{SQL}
+\lang{teradata}{Teradata}
 \lang{visb}{Visual Basic}
