@@ -86,19 +86,13 @@
 \makeatother
 
 \begin{bibunit}[plainyr-rev]
-  \renewcommand\refname{Selected Publications}
+  \renewcommand\refname{Selected Publications and Presentations}
   \let\originalbibitem\bibitem
   \def\bibitem#1#2\par{%
     \noexpandarg
     \originalbibitem{#1}
     \StrSubstitute{#2}{Jarrell Waggoner}{\textbf{Jarrell Waggoner}}\par}
-  \referencesShort
-  {\footnotesize \putbib[cv]}
-\end{bibunit}
-
-\begin{bibunit}[plainyr-rev]
-  \renewcommand\refname{Recent Talks}
-  \presentationsShort
+  \referencesPlusPresentations
   {\footnotesize \putbib[cv]}
 \end{bibunit}
 
