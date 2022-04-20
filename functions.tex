@@ -17,6 +17,18 @@
 \definecolor{linkcolour}{rgb}{0,0.2,0.6}
 \hypersetup{colorlinks,breaklinks,urlcolor=linkcolour, linkcolor=linkcolour}
 
+% Renders bracketed links, where the full \linkf form will show the
+% shortened URL (so it appears in printouts).
+\newcommand{\link}[2]{{[}\href{#2}{#1}{]}}
+\newcommand{\linkf}[2]{%
+  {[}#1: \href{#2}{%
+    %% \StrDel[1]{\StrDel[1]{\StrDel[1]{#2}{https://}}{http://}}{www.}%
+    \StrDel[1]{#2}{https://}[\result]%
+    \StrDel[1]{\result}{http://}[\result]%
+    \StrDel[1]{\result}{www.}%
+  }{]}%
+}%
+
 %Color
 \definecolor{lightg}{HTML}{999999}
 \definecolor{medg}{HTML}{666666}
