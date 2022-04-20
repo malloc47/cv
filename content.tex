@@ -6,10 +6,20 @@
 \newcommand{\chicagoFlag}{
   \raisebox{-.7ex}{\protect\includegraphics[height=2.5ex]{img/chicago-flag.png}}}
 
-\newcommand{\itology}{\href{https://www.it-ology.org/}{IT-oLogy}}
-\newcommand{\usc}{\href{https://sc.edu/}{UofSC}}
-\newcommand{\uscl}{\href{https://sc.edu/about/system_and_campuses/lancaster/index.php}{USCL}}
+\NewDocumentCommand\itology{s}{%
+  \IfBooleanTF{#1}{%
+    {\href{https://www.it-ology.org/}{IT-oLogy}\xspace}}%
+    {IT-oLogy\xspace}}
 
+\NewDocumentCommand\usc{s}{%
+  \IfBooleanTF{#1}{%
+    {\href{https://sc.edu/}{UofSC}\xspace}}%
+    {UofSC\xspace}}
+
+\NewDocumentCommand\uscl{s}{%
+  \IfBooleanTF{#1}{%
+    {\href{https://sc.edu/about/system_and_campuses/lancaster/index.php}{USCL}\xspace}}%
+    {USCL\xspace}}
 
 %% Intro
 
@@ -249,7 +259,7 @@
   {2011---2013}%
   {Created and taught workshops on \git, the \linux command line,
     \android development, and open source software for hundreds of
-    students, developers, and government officials at \itology.
+    students, developers, and government officials at \itology*.
     Managed the
     \href{https://web.archive.org/web/20131104022533/http://open-it-lab.com/}{Open
       IT Lab} and associated projects. Assisted in planning
@@ -266,7 +276,7 @@
     \skill{Axis2+Jetty6} driven server.}}
 
 \newcommand{\cse}{
-  \experience{\href{https://www.cse.sc.edu/}{\usc{} Department of Computer Science
+  \experience{\href{https://www.cse.sc.edu/}{\usc Department of Computer Science
       and Engineering}}%
   {Teaching Assistant}%
   {Columbia, SC}%
@@ -298,7 +308,7 @@
   {\link{Code}{https://github.com/malloc47/ipa-help}}}}
 
 \newcommand{\afosr}{
-  \academic{\usc{} \href{https://cvl.cse.sc.edu/}{Computer Vision Lab}}%
+  \academic{\usc \href{https://cvl.cse.sc.edu/}{Computer Vision Lab}}%
   {Research Assistant}%
   {funded by \href{https://www.afrl.af.mil/AFOSR/}{AFOSR}}%
   {Materials Volume Segmentation}%
@@ -341,7 +351,7 @@
    \linkf{Code}{https://www.github.com/malloc47/video-in-sentences-out}]}
 
 \newcommand{\nehfellow}{
-  \academic{\usc{} \href{https://web.qa.sc.edu/about/centers/digital_humanities/index.php}{Center for Digital Humanities}}%
+  \academic{\usc \href{https://web.qa.sc.edu/about/centers/digital_humanities/index.php}{Center for Digital Humanities}}%
   {NEH Fellow}%
   {at the \href{https://web.qa.sc.edu/about/centers/digital_humanities/index.php}{Center for Digital Humanities}}%
   {Digital Collation}%
@@ -376,7 +386,7 @@
 
 \newcommand{\cseTA}{
   \academic{}%
-  {Graduate Teaching Assistant at \usc}%
+  {Graduate Teaching Assistant at \usc*}%
   {}%
   {Web Development}%
   {Columbia, SC}%
@@ -388,7 +398,7 @@
 
 \newcommand{\usclTA}{
   \academic{}%
-  {Instructor for \textsc{CSCE 204} at \uscl}%
+  {Instructor for \textsc{CSCE 204} at \uscl*}%
   {}%
   {Introductory  Programming}%
   {Lancaster, SC}%
@@ -400,7 +410,7 @@
 
 \newcommand{\campInstructor}{
   \academic{}%
-  {Camp Instructor for \textsc{\uscl{} Arts and Sciences Adventure Camp}}%
+  {Camp Instructor for \textsc{\uscl* Arts and Sciences Adventure Camp}}%
   {}%
   {5\textsuperscript{th}-8\textsuperscript{th} Grade Students}%
   {Lancaster, SC}%
@@ -411,7 +421,7 @@
 
 \newcommand{\tutor}{
   \academic{}%
-  {Professional Tutor at \textsc{\uscl{} Academic Success Center}}%
+  {Professional Tutor at \textsc{\uscl* Academic Success Center}}%
   {}%
   {High School and College Students}%
   {Lancaster, SC}%
@@ -680,12 +690,12 @@
 %% Honors/Awards
 
 \newcommand{\awardlist}{
-  \award{First Place}{Gamecock Computing Research Symposium Poster Session}{\usc}{2012}
+  \award{First Place}{Gamecock Computing Research Symposium Poster Session}{\usc*}{2012}
   \award{First Place}{Graduate Student Day Presentation}{\usc}{2012}
   \award{Second Place}{Graduate Student Day Presentation}{\usc}{2011}
   \award{Honorable Mention}{Graduate Student Day Presentation}{\usc}{2010}
   \award{Inductee}{Upsilon Pi Epsilon}{\usc}{2009}
-  \award{Recipient}{Clara P. Hammond Award}{\uscl}{2004}
+  \award{Recipient}{Clara P. Hammond Award}{\uscl*}{2004}
   \award{Recipient}{Science and Mathematics Award}{\uscl}{2004}
   \award{Recipient}{Highest Academic Average Award}{\uscl}{2004}
 }
@@ -693,14 +703,14 @@
 %% Classes
 
 \newcommand{\classes}{
-  \class{\itology}{2012---2013}{Open Source 101}{Open Source Software}
+  \class{\itology*}{2012---2013}{Open Source 101}{Open Source Software}
   \class{\itology}{2012---2013}{Version Control 101}{git, github}
   \class{\itology}{2012---2013}{Command Line 101}{Linux, Bash}
-  \class{\usc}{Fall 2011}{CSCE 211}{Digital Logic Design}
+  \class{\usc*}{Fall 2011}{CSCE 211}{Digital Logic Design}
   \class{\usc}{Summer II 2008}{CSCE 102}{HTML/CSS/JavaScript}
   \class{\usc}{Spring 2008}{CSCE 145 Lab}{Algorithmic Design}
   \class{\usc}{Fall 2007}{CSCE 145 Lab}{Algorithmic Design}
-  \class{\uscl}{Spring 2007}{CSCE 204}{Program Design and Development}
+  \class{\uscl*}{Spring 2007}{CSCE 204}{Program Design and Development}
   \class{\uscl}{Spring 2007}{Math 241 \& Math 242}{Maple}}
 
 %% Service
