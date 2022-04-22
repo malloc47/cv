@@ -7,7 +7,7 @@ all: $(OUT)
 %.pdf: %.tex cv.bib functions.tex
 	xelatex --shell-escape $<
 	bibtex $*.1
-	bibtex $*.2
+	-bibtex $*.2
 	xelatex --shell-escape $<
 	xelatex --shell-escape $<
 
