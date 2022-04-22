@@ -60,23 +60,28 @@
 \nehfellow
 \vspace{-1em}
 
-\section{Skills \& Languages}
-\vspace{-1em}
-\begin{multicols}{5}
-  \raggedcolumns
-  \begin{small}
-    \begin{itemize}[leftmargin=*]
-      \renewcommand{\labelitemi}{}
-      \renewcommand{\skill}{\textnormal}
-      \setlength{\itemsep}{1pt}
-      \setlength{\parskip}{0pt}
-      \setlength{\parsep}{0pt}
-      \skillsList
-    \end{itemize}
-  \end{small}
-\end{multicols}
-\vspace{-1.5em}
-\skillsLegend
+%% \section{Skills \& Languages}
+%% \vspace{-1em}
+%% \begin{multicols}{5}
+%%   \raggedcolumns
+%%   \begin{small}
+%%     \begin{itemize}[leftmargin=*]
+%%       \renewcommand{\labelitemi}{}
+%%       \renewcommand{\skill}{\textnormal}
+%%       \setlength{\itemsep}{1pt}
+%%       \setlength{\parskip}{0pt}
+%%       \setlength{\parsep}{0pt}
+%%       \skillsList
+%%     \end{itemize}
+%%   \end{small}
+%% \end{multicols}
+%% \vspace{-1.5em}
+%% \skillsLegend
+
+\section{Languages}
+
+\svgpath{{./img/}}
+\includesvg[inkscapeformat=png,inkscapedpi=200,inkscapearea=page,width=\textwidth]{language-history-small.svg}
 
 \makeatletter
 \renewcommand{\@bibunitname}{\jobname.\the\@bibunitauxcnt}
@@ -93,8 +98,12 @@
   {\footnotesize \putbib[cv]}
 \end{bibunit}
 
+\vspace{-0.5em}
+
 \section{Interests}
 \interests{}, functional programming
+
+\vspace{-0.5em}
 
 \footerResume
 
