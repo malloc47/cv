@@ -279,11 +279,20 @@
           marginBottom: 20,
           marginLeft: 0,
       });
+      chart.setAttribute("id", "chart");
 
       document.body.appendChild(chart);
       addShadow(chart, '.area-label');
 
-      chart2 = Streamgraph(languageData, {
+      document.body.appendChild(
+          d3.create("a")
+              .attr("id", "downloadChart")
+              .attr("href", "data:application/octet-stream;base64," + btoa(d3.select("#chart").node().outerHTML))
+              .attr("download", "language-history.svg")
+              .text("Download")
+              .node());
+
+      chartSmall = Streamgraph(languageData, {
           x: d => d.date,
           y: d => d.value,
           z: d => d.language,
@@ -299,10 +308,18 @@
           marginLeft: 0,
           xDomain: [new Date('2005-04-01'), new Date('2022-01-01')],
       });
+      chartSmall.setAttribute("id", "chartSmall");
 
-      document.body.appendChild(chart2);
-      addShadow(chart2, '.area-label');
+      document.body.appendChild(chartSmall);
+      addShadow(chartSmall, '.area-label');
 
+      document.body.appendChild(
+          d3.create("a")
+              .attr("id", "downloadChartSmall")
+              .attr("href", "data:application/octet-stream;base64," + btoa(d3.select("#chartSmall").node().outerHTML))
+              .attr("download", "language-history-small.svg")
+              .text("Download")
+              .node());
 
     </script>
   </body>
