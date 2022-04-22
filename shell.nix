@@ -11,5 +11,6 @@ stdenv.mkDerivation {
 
   buildInputs = with pkgs; [
     texlive.combined.scheme-full
+    inkscape
   ];
 }

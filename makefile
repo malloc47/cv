@@ -5,11 +5,11 @@ OUT = $(SRC:.tex=.pdf)
 all: $(OUT)
 
 %.pdf: %.tex cv.bib functions.tex
-	xelatex $<
+	xelatex --shell-escape $<
 	bibtex $*.1
 	bibtex $*.2
-	xelatex $<
-	xelatex $<
+	xelatex --shell-escape $<
+	xelatex --shell-escape $<
 
 clean:
 	-rm *.pdf
@@ -22,3 +22,4 @@ clean:
 	-rm *.xdv
 	-rm *.fdb_latexmk
 	-rm *~
+	-rm -rf svg-inkscape

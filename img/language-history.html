@@ -6,256 +6,303 @@
     <script src="https://unpkg.com/d3-area-label@1.5.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
     <title>Language History</title>
-    <style>
-      .area-label {
-        font-family: sans-serif;
-        fill: white;
-      }
-      path {
-        fill-opacity: 1.0;
-      }
-    </style>
   </head>
   <body>
     <script>
       const rawLanguageData = [
-	  {date: new Date("1995-01-01")},
-	  {date: new Date("1996-01-01"), "QBasic": 10},
-	  {date: new Date("1997-01-01"), "QBasic": 20},
-	  {date: new Date("1998-01-01"), "QBasic": 10, "Visual Basic": 10},
-	  {date: new Date("1999-01-01"), "Visual Basic": 30},
-	  {date: new Date("2000-01-01"), "Visual Basic": 20, "C/C++": 10},
-	  {date: new Date("2001-01-01"), "C/C++": 20},
-	  {date: new Date("2002-01-01"), "C/C++": 30, "Java": 20},
-	  {date: new Date("2003-01-01"), "C/C++": 20, "Java": 30},
-	  {date: new Date("2004-01-01"), "C/C++": 10, "Java": 30, "PHP": 10, "JavaScript": 1},
-	  {date: new Date("2005-01-01"), "C/C++": 5, "Java": 20, "PHP": 20, "JavaScript": 2},
-	  {date: new Date("2006-01-01"), "C/C++": 10, "Java": 30, "PHP": 30, "JavaScript": 4},
-	  {date: new Date("2007-01-01"), "C/C++": 10, "Java": 30, "PHP": 10, "Visual Basic": 10, "JavaScript": 5},
-	  {date: new Date("2008-01-01"), "C/C++": 10, "Java": 40, "Visual Basic": 5, "JavaScript": 10, "MATLAB": 5},
-	  {date: new Date("2009-01-01"), "C/C++": 20, "Java": 25, "JavaScript": 5, "MATLAB": 10, "Scheme": 5},
-	  {date: new Date("2010-01-01"), "C/C++": 30, "Java": 5, "JavaScript": 1, "MATLAB": 20, "Scheme": 20, "Python": 10},
-	  {date: new Date("2011-01-01"), "C/C++": 40, "Java": 3, "JavaScript": 1, "MATLAB": 30, "Scheme": 40, "Python": 20},
-	  {date: new Date("2012-01-01"), "C/C++": 50, "Java": 1, "JavaScript": 5, "MATLAB": 40, "Scheme": 20, "Python": 50},
-	  {date: new Date("2013-01-01"), "C/C++": 20, "Java": 10, "JavaScript": 10, "MATLAB": 10, "Scheme": 5, "Python": 40, "Clojure":20, "Ruby": 10},
-	  {date: new Date("2014-01-01"), "C/C++": 5, "Java": 10, "JavaScript": 5, "Python": 20, "Clojure":30, "Ruby": 20},
-	  {date: new Date("2015-01-01"), "Java": 10, "JavaScript": 2, "Python": 30, "Clojure":70, "Ruby": 30},
-	  {date: new Date("2016-01-01"), "Java": 20, "JavaScript": 5, "Python": 10, "Clojure":100, "Ruby": 20, "C#": 5},
-	  {date: new Date("2017-01-01"), "Java": 20, "JavaScript": 10, "Python": 5, "Clojure":100, "ClojureScript":20, "Ruby": 20, "C#": 10},
-	  {date: new Date("2018-01-01"), "Java": 10, "JavaScript": 10, "Python": 15, "Clojure":50, "ClojureScript":20, "Scala": 10},
-	  {date: new Date("2019-01-01"), "Java": 5, "JavaScript": 10, "Python": 30, "Clojure":30, "ClojureScript":30, "Scala": 20},
-	  {date: new Date("2020-01-01"), "Java": 4, "JavaScript": 20, "Python": 50, "Clojure":30, "ClojureScript":30, "Scala": 30},
-	  {date: new Date("2021-01-01"), "Java": 3, "JavaScript": 30, "Python": 60, "Clojure":20, "ClojureScript":20, "Scala": 30},
-	  {date: new Date("2022-01-01"), "Java": 2, "JavaScript": 30, "Python": 70, "Clojure":30, "ClojureScript":20, "Scala": 30},
+          {date: new Date("1995-01-01")},
+          {date: new Date("1996-01-01"), "QBasic": 10},
+          {date: new Date("1997-01-01"), "QBasic": 20},
+          {date: new Date("1998-01-01"), "QBasic": 10, "Visual Basic": 10},
+          {date: new Date("1999-01-01"), "Visual Basic": 30},
+          {date: new Date("2000-01-01"), "Visual Basic": 20, "C/C++": 10},
+          {date: new Date("2001-01-01"), "C/C++": 20},
+          {date: new Date("2002-01-01"), "C/C++": 30, "Java": 20},
+          {date: new Date("2003-01-01"), "C/C++": 20, "Java": 30},
+          {date: new Date("2004-01-01"), "C/C++": 10, "Java": 30, "PHP": 10, "JavaScript": 1},
+          {date: new Date("2005-01-01"), "C/C++": 5, "Java": 20, "PHP": 20, "JavaScript": 2},
+          {date: new Date("2006-01-01"), "C/C++": 10, "Java": 30, "PHP": 30, "JavaScript": 4},
+          {date: new Date("2007-01-01"), "C/C++": 10, "Java": 30, "PHP": 10, "Visual Basic": 10, "JavaScript": 5},
+          {date: new Date("2008-01-01"), "C/C++": 10, "Java": 40, "Visual Basic": 5, "JavaScript": 10, "MATLAB": 5},
+          {date: new Date("2009-01-01"), "C/C++": 20, "Java": 25, "JavaScript": 5, "MATLAB": 10, "Scheme": 5},
+          {date: new Date("2010-01-01"), "C/C++": 30, "Java": 5, "JavaScript": 1, "MATLAB": 20, "Scheme": 20, "Python": 10},
+          {date: new Date("2011-01-01"), "C/C++": 40, "Java": 3, "JavaScript": 1, "MATLAB": 30, "Scheme": 40, "Python": 20},
+          {date: new Date("2012-01-01"), "C/C++": 50, "Java": 1, "JavaScript": 5, "MATLAB": 40, "Scheme": 20, "Python": 50},
+          {date: new Date("2013-01-01"), "C/C++": 20, "Java": 10, "JavaScript": 10, "MATLAB": 10, "Scheme": 5, "Python": 40, "Clojure":20, "Ruby": 10},
+          {date: new Date("2014-01-01"), "C/C++": 5, "Java": 10, "JavaScript": 5, "Python": 20, "Clojure":30, "Ruby": 20},
+          {date: new Date("2015-01-01"), "Java": 10, "JavaScript": 2, "Python": 30, "Clojure":70, "Ruby": 30},
+          {date: new Date("2016-01-01"), "Java": 20, "JavaScript": 5, "Python": 10, "Clojure":100, "Ruby": 20, "C#": 5},
+          {date: new Date("2017-01-01"), "Java": 20, "JavaScript": 10, "Python": 5, "Clojure":100, "ClojureScript":20, "Ruby": 20, "C#": 10},
+          {date: new Date("2018-01-01"), "Java": 10, "JavaScript": 10, "Python": 15, "Clojure":50, "ClojureScript":20, "Scala": 10},
+          {date: new Date("2019-01-01"), "Java": 5, "JavaScript": 10, "Python": 30, "Clojure":30, "ClojureScript":30, "Scala": 20},
+          {date: new Date("2020-01-01"), "Java": 4, "JavaScript": 20, "Python": 50, "Clojure":30, "ClojureScript":30, "Scala": 30},
+          {date: new Date("2021-01-01"), "Java": 3, "JavaScript": 30, "Python": 60, "Clojure":20, "ClojureScript":20, "Scala": 30},
+          {date: new Date("2022-01-01"), "Java": 2, "JavaScript": 30, "Python": 70, "Clojure":30, "ClojureScript":20, "Scala": 30},
       ]
 
       const languageLabels = Array.from(
-	  rawLanguageData.reduce(
-	      (s, row)=>Object.keys(row).reduce((s, v)=>v!="date" ? s.add(v) : s, s),
-	      new Set()));
+          rawLanguageData.reduce(
+              (s, row)=>Object.keys(row).reduce((s, v)=>v!="date" ? s.add(v) : s, s),
+              new Set()));
 
       const languageColors = {
-      	  "QBasic":        {background: "#7f7f7f", foreground: "white"},
-      	  "Visual Basic":  {background: "#c49c94", foreground: "black"},
-      	  "C/C++":         {background: "#ff7f0e", foreground: "black"},
-      	  "Java":          {background: "#1f77b4", foreground: "white"},
-      	  "PHP":           {background: "#2ca02c", foreground: "white"},
-       	  "JavaScript":    {background: "#9467bd", foreground: "white"},
-      	  "MATLAB":        {background: "#e377c2", foreground: "black"},
-      	  "Scheme":        {background: "#7f7f7f", foreground: "white"},
-      	  "Python":        {background: "#ffd43b", foreground: "black"},
-      	  "Clojure":       {background: "#aec7e8", foreground: "black"},
-       	  "ClojureScript": {background: "#c7c7c7", foreground: "black"},
-      	  "Ruby":          {background: "#ff9896", foreground: "black"},
-      	  "C#":            {background: "#ffbb78", foreground: "black"},
-      	  "Scala":         {background: "#d62728", foreground: "white"},
+          "QBasic":        "#7f7f7f",
+          "Visual Basic":  "#c49c94",
+          "C/C++":         "#ff7f0e",
+          "Java":          "#1f77b4",
+          "PHP":           "#2ca02c",
+          "JavaScript":    "#9467bd",
+          "MATLAB":        "#e377c2",
+          "Scheme":        "#7f7f7f",
+          "Python":        "#ffd43b",
+          "Clojure":       "#aec7e8",
+          "ClojureScript": "#c7c7c7",
+          "Ruby":          "#ff9896",
+          "C#":            "#ffbb78",
+          "Scala":         "#d62728",
       }
 
       const languageData = rawLanguageData.map(d => {
-	  obj = Object.assign({}, d)
-	  languageLabels.forEach(label => {
-	      if (!(label in obj)) {
-		  obj[label] = 0;
-	      }
-	  });
-	  return obj
+          obj = Object.assign({}, d)
+          languageLabels.forEach(label => {
+              if (!(label in obj)) {
+                  obj[label] = 0;
+              }
+          });
+          return obj
       }).flatMap(row => {
-	  return languageLabels.map(label => {
-	      return {date: row.date, language: label, value: row[label]}
-	  })
+          return languageLabels.map(label => {
+              return {date: row.date, language: label, value: row[label]}
+          })
       });
 
       // Copyright 2021 Observable, Inc.
       // Released under the ISC license.
       // https://observablehq.com/@d3/streamgraph
       function Streamgraph(data, {
-	  x = ([x]) => x, // given d in data, returns the (ordinal) x-value
-	  y = ([, y]) => y, // given d in data, returns the (quantitative) y-value
-	  z = () => 1, // given d in data, returns the (categorical) z-value
-	  marginTop = 20, // top margin, in pixels
-	  marginRight = 30, // right margin, in pixels
-	  marginBottom = 30, // bottom margin, in pixels
-	  marginLeft = 20, // left margin, in pixels
-	  width = 640, // outer width, in pixels
-	  height = 400, // outer height, in pixels
-	  xType = d3.scaleUtc, // type of x-scale
-	  xDomain, // [xmin, xmax]
-	  xRange = [marginLeft, width - marginRight], // [left, right]
-	  yType = d3.scaleLinear, // type of y-scale
-	  yDomain, // [ymin, ymax]
-	  yRange = [height - marginBottom, marginTop], // [bottom, top]
-	  zDomain, // array of z-values
-	  offset = d3.stackOffsetWiggle, // stack offset method
-	  order = d3.stackOrderInsideOut, // stack order method
-	  xFormat, // a format specifier string for the x-axis
-	  yFormat, // a format specifier string for the y-axis
-	  yLabel, // a label for the y-axis
-	  colors = d3.schemeTableau10,
-	  colorLookup,
-	  parentForLabels,
+          x = ([x]) => x, // given d in data, returns the (ordinal) x-value
+          y = ([, y]) => y, // given d in data, returns the (quantitative) y-value
+          z = () => 1, // given d in data, returns the (categorical) z-value
+          marginTop = 20, // top margin, in pixels
+          marginRight = 30, // right margin, in pixels
+          marginBottom = 30, // bottom margin, in pixels
+          marginLeft = 20, // left margin, in pixels
+          width = 640, // outer width, in pixels
+          height = 400, // outer height, in pixels
+          xType = d3.scaleUtc, // type of x-scale
+          xDomain, // [xmin, xmax]
+          xRange = [marginLeft, width - marginRight], // [left, right]
+          yType = d3.scaleLinear, // type of y-scale
+          yDomain, // [ymin, ymax]
+          yRange = [height - marginBottom, marginTop], // [bottom, top]
+          zDomain, // array of z-values
+          offset = d3.stackOffsetWiggle, // stack offset method
+          order = d3.stackOrderInsideOut, // stack order method
+          xFormat, // a format specifier string for the x-axis
+          yFormat, // a format specifier string for the y-axis
+          yLabel, // a label for the y-axis
+          colors = d3.schemeTableau10,
+          colorLookup,
+          parentForLabels,
       } = {}) {
-	  // Compute values.
-	  const X = d3.map(data, x);
-	  const Y = d3.map(data, y);
-	  const Z = d3.map(data, z);
+          // Compute values.
+          const X = d3.map(data, x);
+          const Y = d3.map(data, y);
+          const Z = d3.map(data, z);
 
-	  // Compute default x- and z-domains, and unique the z-domain.
-	  if (xDomain === undefined) xDomain = d3.extent(X);
-	  if (zDomain === undefined) zDomain = Z;
-	  zDomain = new d3.InternSet(zDomain);
+          // Compute default x- and z-domains, and unique the z-domain.
+          if (xDomain === undefined) xDomain = d3.extent(X);
+          if (zDomain === undefined) zDomain = Z;
+          zDomain = new d3.InternSet(zDomain);
 
-	  // Omit any data not present in the z-domain.
-	  const I = d3.range(X.length).filter(i => zDomain.has(Z[i]));
+          // Omit any data not present in the z-domain.
+          const I = d3.range(X.length).filter(i => zDomain.has(Z[i]));
 
-	  // Compute a nested array of series where each series is [[y1, y2], [y1, y2],
-	  // [y1, y2], …] representing the y-extent of each stacked rect. In addition,
-	  // each tuple has an i (index) property so that we can refer back to the
-	  // original data point (data[i]). This code assumes that there is only one
-	  // data point for a given unique x- and z-value.
-	  const series = d3.stack()
-		.keys(zDomain)
-		.value(([x, I], z) => Y[I.get(z)])
-		.order(order)
-		.offset(offset)
-	  (d3.rollup(I, ([i]) => i, i => X[i], i => Z[i]))
-	      .map(s => s.map(d => Object.assign(d, {i: d.data[1].get(s.key)})));
+          // Compute a nested array of series where each series is [[y1, y2], [y1, y2],
+          // [y1, y2], …] representing the y-extent of each stacked rect. In addition,
+          // each tuple has an i (index) property so that we can refer back to the
+          // original data point (data[i]). This code assumes that there is only one
+          // data point for a given unique x- and z-value.
+          const series = d3.stack()
+                .keys(zDomain)
+                .value(([x, I], z) => Y[I.get(z)])
+                .order(order)
+                .offset(offset)
+          (d3.rollup(I, ([i]) => i, i => X[i], i => Z[i]))
+              .map(s => s.map(d => Object.assign(d, {i: d.data[1].get(s.key)})));
 
-	  // Compute the default y-domain. Note: diverging stacks can be negative.
-	  if (yDomain === undefined) yDomain = d3.extent(series.flat(2));
+          // Compute the default y-domain. Note: diverging stacks can be negative.
+          if (yDomain === undefined) yDomain = d3.extent(series.flat(2));
 
-	  // Construct scales and axes.
-	  const xScale = xType(xDomain, xRange);
-	  const yScale = yType(yDomain, yRange);
-	  const color = d3.scaleOrdinal(zDomain, colors);
-	  const xAxis = d3.axisBottom(xScale).ticks(width / 80, xFormat).tickSizeOuter(0);
+          // Construct scales and axes.
+          const xScale = xType(xDomain, xRange);
+          const yScale = yType(yDomain, yRange);
+          const color = d3.scaleOrdinal(zDomain, colors);
+          const xAxis = d3.axisBottom(xScale).ticks(width / 80, xFormat).tickSizeOuter(0);
 
-	  const area = d3.area()
-		.x(({i}) => xScale(X[i]))
-		.y0(([y1]) => yScale(y1))
-		.y1(([, y2]) => yScale(y2))
-		.curve(d3.curveBasis);
+          const area = d3.area()
+                .x(({i}) => xScale(X[i]))
+                .y0(([y1]) => yScale(y1))
+                .y1(([, y2]) => yScale(y2))
+                .curve(d3.curveBasis);
 
-	  const svg = d3.create("svg")
-		.attr("width", width)
-		.attr("height", height)
-		.attr("viewBox", [0, 0, width, height])
-		.attr("style", "max-width: 100%; height: auto; height: intrinsic;"
+          const svg = d3.create("svg")
+                .attr("xmlns", "http://www.w3.org/2000/svg")
+                .attr("width", width)
+                .attr("height", height)
+                .attr("viewBox", [0, 0, width, height])
+                .attr("style", "max-width: 100%; height: auto; height: intrinsic;"
 );
 
-	  svg.append("g")
-	      .selectAll("path")
-	      .data(series)
-	      .join("path")
-	      .attr("fill", ([{i}]) => {
-		  if (!(colorLookup === undefined)) {
-		      return (colorLookup[data[i].language] || {background: color(Z[i])}).background
-		  }
-		  else {
-		      color(Z[i])
-		  }
-	      })
-	      // .attr("fill", ([{i}]) => color(Z[i]))
-              // .attr('stroke', ([{i}]) => color(Z[i]))
-	      .attr("d", area)
-	      .append("title")
-	      .text(([{i}]) => Z[i]);
+          svg.append("g")
+              .selectAll("path")
+              .data(series)
+              .join("path")
+              .attr("fill", ([{i}]) => {
+                  if (!(colorLookup === undefined)) {
+                      return (colorLookup[data[i].language] || color(Z[i]))
+                  }
+                  else {
+                      color(Z[i])
+                  }
+              })
+              .attr("d", area)
+              .append("title")
+              .text(([{i}]) => Z[i]);
 
-	  svg.append("g")
-	      .attr("transform", `translate(0,${height - marginBottom})`)
-	      .call(xAxis)
-	      .call(g => g.select(".domain").remove());
+          svg.append("g")
+              .attr("transform", `translate(0,${height - marginBottom})`)
+              .call(xAxis)
+              .call(g => g.select(".domain").remove());
 
-	  svg.append("g")
-	      .attr("transform", `translate(${marginLeft},0)`)
-	      .call(g => g.append("text")
-		    .attr("x", -marginLeft)
-		    .attr("y", 10)
-		    .attr("font-family", "sans-serif")
-		    .attr("font-size", 10)
-		    .text(yLabel));
+          svg.append("g")
+              .attr("transform", `translate(${marginLeft},0) rotate(270)`)
+              .call(g => g.append("text")
+                    .attr("x", -marginLeft)
+                    .attr("text-anchor", "end")
+                    .attr("y", 10)
+                    .attr("font-family", "sans-serif")
+                    .attr("font-size", 10)
+                    .text(yLabel));
 
-	  const node = Object.assign(svg.node(), {scales: {color}});
+          const node = Object.assign(svg.node(), {scales: {color}});
 
-	  // d3.areaLabel requires that the text elements be
-	  // initialized in the DOM to obtain their inital text
-	  // boundaries with getBBox(). There's probably a better way
-	  // to do this...
-	  if (!(parentForLabels === undefined)) {
-	      parentForLabels.appendChild(node);
-	      const stackLabels = svg.selectAll('.area-label').data(series)
-	      stackLabels
-		  .enter()
-		  .append('text')
-		  .attr('class', 'area-label')
-	          //.attr('fill', d => languageColors[data[d[0].i].language].foreground)
-		  .attr("filter", "drop-shadow(1px 1px 1px rgb(0 0 0 / 0.4))")
-		  .merge(stackLabels)
-		  .text(d =>data[d[0].i].language)
-		  .attr('transform', d3.areaLabel(area))
-	      // Immediately remove from DOM so the caller can make
-	      // the decision on what to do with the output
-	      node.remove()
-	  }
+          // d3.areaLabel requires that the text elements be
+          // initialized in the DOM to obtain their inital text
+          // boundaries with getBBox(). There's probably a better way
+          // to do this...
+          if (!(parentForLabels === undefined)) {
+              parentForLabels.appendChild(node);
+              const stackLabels = svg.selectAll('.area-label').data(series)
+              stackLabels
+                  .enter()
+                  .append('text')
+                  .attr('class', 'area-label')
+                  .attr("font-family", "sans-serif")
+                  .attr("fill", "white")
+                  .merge(stackLabels)
+                  .text(d =>data[d[0].i].language)
+                  .attr('transform', d3.areaLabel(area))
+              // Immediately remove from DOM so the caller can make
+              // the decision on what to do with the output
+              node.remove()
+          }
 
-	  return node
+          return node
+      }
+
+      function addShadow(svg, selector) {
+          var defs = d3.select(svg).append("defs");
+
+          var filter = defs.append("filter")
+              .attr("id", "drop-shadow")
+
+          filter.append("feGaussianBlur")
+              .attr("in", "SourceAlpha")
+              .attr("stdDeviation", 1)
+              .attr("result", "blur");
+          filter.append("feOffset")
+              .attr("in", "blur")
+              .attr("dx", 1)
+              .attr("dy", 1)
+          filter.append("feComponentTransfer")
+              .attr("result", "offsetBlur")
+              .append("feFuncA")
+              .attr("type", "linear")
+              .attr("slope", "0.4");
+
+          var feMerge = filter.append("feMerge");
+
+          feMerge.append("feMergeNode")
+              .attr("in", "offsetBlur")
+          feMerge.append("feMergeNode")
+              .attr("in", "SourceGraphic");
+
+          d3.selectAll('.area-label').style("filter", "url(#drop-shadow)");
       }
 
       const schemeCategory20 = [
-	  "#1f77b4",
-	  "#aec7e8",
-	  "#ff7f0e",
-	  "#ffbb78",
-	  "#2ca02c",
-	  "#98df8a",
-	  "#d62728",
-	  "#ff9896",
-	  "#9467bd",
-	  "#c5b0d5",
-	  "#8c564b",
-	  "#c49c94",
-	  "#e377c2",
-	  "#f7b6d2",
-	  "#7f7f7f",
-	  "#c7c7c7",
-	  "#bcbd22",
-	  "#dbdb8d",
-	  "#17becf",
-	  "#9edae5",
+          "#1f77b4",
+          "#aec7e8",
+          "#ff7f0e",
+          "#ffbb78",
+          "#2ca02c",
+          "#98df8a",
+          "#d62728",
+          "#ff9896",
+          "#9467bd",
+          "#c5b0d5",
+          "#8c564b",
+          "#c49c94",
+          "#e377c2",
+          "#f7b6d2",
+          "#7f7f7f",
+          "#c7c7c7",
+          "#bcbd22",
+          "#dbdb8d",
+          "#17becf",
+          "#9edae5",
       ];
 
       chart = Streamgraph(languageData, {
-	  x: d => d.date,
-	  y: d => d.value,
-	  z: d => d.language,
-	  yLabel: "% of time spent with language",
-	  width: 1000,
-	  height: 400,
-	  colors: schemeCategory20,
-	  colorLookup: languageColors,
-	  parentForLabels: document.body,
+          x: d => d.date,
+          y: d => d.value,
+          z: d => d.language,
+          yLabel: "proportion of time spent with language",
+          width: 1000,
+          height: 400,
+          colors: schemeCategory20,
+          colorLookup: languageColors,
+          parentForLabels: document.body,
+          marginTop: 0,
+          marginRight: 15,
+          marginBottom: 20,
+          marginLeft: 0,
       });
 
       document.body.appendChild(chart);
+      addShadow(chart, '.area-label');
+
+      chart2 = Streamgraph(languageData, {
+          x: d => d.date,
+          y: d => d.value,
+          z: d => d.language,
+          yLabel: "% time spent with language",
+          width: 1000,
+          height: 150,
+          colors: schemeCategory20,
+          colorLookup: languageColors,
+          parentForLabels: document.body,
+          marginTop: 0,
+          marginRight: 15,
+          marginBottom: 20,
+          marginLeft: 0,
+          xDomain: [new Date('2005-04-01'), new Date('2022-01-01')],
+      });
+
+      document.body.appendChild(chart2);
+      addShadow(chart2, '.area-label');
+
 
     </script>
   </body>
