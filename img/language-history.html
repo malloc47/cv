@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width">
     <script src="https://unpkg.com/d3-area-label@1.5.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="https://unpkg.com/pdfkit@0.13.0/js/pdfkit.standalone.js"></script>
+    <script src="https://unpkg.com/svg-to-pdfkit@0.1.8/source.js"></script>
+    <script src="https://unpkg.com/blob-stream@0.1.3/.js"></script>
+    <script src="https://unpkg.com/filesaver.js@1.3.4/FileSaver.js"></script>
     <title>Language History</title>
   </head>
   <body>
@@ -303,7 +307,24 @@
       document.body.appendChild(chart2);
       addShadow(chart2, '.area-label');
 
+      PDFDocument.prototype.addSVG = function(svg, x, y, options) {
+          return SVGtoPDF(this, svg, x, y, options), this;
+      };
 
+      const pdf = new PDFDocument();
+      var stream = pdf.pipe(blobStream());
+      pdf.addSVG(chart);
+      pdf.end();
+      stream.on('finish', function() {
+          blob = stream.toBlob('application/pdf');
+          // saveAs(blob, 'language-history.pdf');
+          const url = stream.toBlobURL('application/pdf');
+          var iframe = document.createElement('iframe');
+          iframe.src = url;
+          iframe.width = "100%"
+          iframe.height = "500px"
+          document.body.appendChild(iframe);
+    });
     </script>
   </body>
 </html>
