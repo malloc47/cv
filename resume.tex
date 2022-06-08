@@ -1,5 +1,5 @@
 \documentclass[10pt]{article}
-\usepackage[left=1in, right=1in, top=0.5in, bottom=0.5in]{geometry}
+\usepackage[left=0.75in, right=0.75in, top=0.5in, bottom=0.5in]{geometry}
 
 \usepackage[xetex,
             unicode,
@@ -43,7 +43,7 @@
   \nopagebreak \begin{large}\textsc{#1}\end{large} | #2 \hfill \textcolor{darkg}{#5 \quad #6}
 \end{normalsize}
 \\
-\begin{small}#7 \IfNoValueF{#8}{#8}\end{small}
+#7 \IfNoValueF{#8}{#8}
 
 \vspace{\baselineskip}
 }
