@@ -12,7 +12,7 @@
       const rawLanguageData = [
           {date: new Date("1995-01-01")},
           {date: new Date("1996-01-01"), "QBasic": 10},
-          {date: new Date("1997-01-01"), "QBasic": 20},
+          {date: new Date("1997-01-01"), "QBasic": 10},
           {date: new Date("1998-01-01"), "QBasic": 10, "Visual Basic": 10},
           {date: new Date("1999-01-01"), "Visual Basic": 30},
           {date: new Date("2000-01-01"), "Visual Basic": 20, "C/C++": 10},
@@ -298,7 +298,7 @@
           z: d => d.language,
           yLabel: "% time spent with language",
           width: 1000,
-          height: 150,
+          height: 250,
           colors: schemeCategory20,
           colorLookup: languageColors,
           parentForLabels: document.body,
@@ -306,7 +306,7 @@
           marginRight: 15,
           marginBottom: 20,
           marginLeft: 0,
-          xDomain: [new Date('2005-04-01'), new Date('2022-01-01')],
+          xDomain: [new Date('2005-02-01'), new Date('2022-01-01')],
       });
       chartSmall.setAttribute("id", "chartSmall");
 
