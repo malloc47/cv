@@ -1,109 +1,122 @@
-Jarrell Waggoner
+Jarrell Waggoner, PhD
+
 
 Biographical
 
-Work Address: 3000 K St NW #350, Washington, DC 20007
-Phone: 847-261-4747
 email: jarrell.waggoner@gmail.com
+Phone: 847-261-4747
+
 
 Online
 
 Website: http://www.malloc47.com
-Twitter: https://twitter.com/malloc47
 github: http://www.github.com/malloc47
 LinkedIn: http://www.linkedin.com/in/malloc47
+
 
 Interests
 
 computer vision, image processing, artificial intelligence, pattern recognition & machine learning, data science, data engineering, functional programming, web development, GIS, Clojure
+
+
+Summary
+
+Engineering leader with decades-long career spanning research science, early-stage startups, and Fortune 5 companies. Specializing in the intersection of data science and data engineering with extensive experience architecting MLOps tools and data platforms. Provides technical leadership across an org-level portfolio of teams/projects while staying hands-on developing backend systems, with particular emphasis on functional languages.
+
 
 Education
 
 Aug. 2013: Ph.D. Computer Science & Engineering from the University of South Carolina
 May 2009: M.E. Computer Science & Engineering from the University of South Carolina
 
+
 Experience
 
-2017---Present
+
+2021---2022
+Optum, Inc.
+
+Brought in through acquisition of Rally Health, continuing as architect of the former Rally data organization now housed within the rebranded Optum Digital entity.
+
+- Serve as Domain Workgroup Representative responsible for curating the technologies used by the data and ML practices in Optum's centralized technology governance model with influence across all of the Optum Tech organization.
+
+-  Lead an Architecture Advocates workgroup embedding architecture-focused engineers on individual teams, fostering a cross-cutting, big-picture view of our architecture across our data organization.
+
+-  Built a crawler to extract table-level data lineage from our Airflow DAGs, generating a 2000 node graph navigable through a custom-built JavaScript graph interface.
+
+
+2017---2021
 Architect at Rally Health, Inc.
 
-Seasoned engineering leader responsible for overseeing technical design and engineering decisions across Rally's entire data organization of 50+ engineers, analysts, and data scientists.
-- Architected complete rewrite of the data platform for the whole company, moving from a fixed Cloudera cluster to a self-service platform using Databricks and Redshift fed by Spark ETLs written in Scala and scheduled with Airflow atop Kubernetes. Built consensus on new architecture and delivered working system within a year while growing the team from only myself to an independent platform team of 10 engineers.
-- Member of the Rally Engineering Technical Staff, responsible for making cross-cutting engineering decisions, evaluating potential acquisitions, signing off on major company-wide architectural changes, and organizing technical interest groups.
-- Heavily involved in defining team structure and hiring, conducting over 100 interviews for IC and management roles to scale the data organization from 4 engineers to over 50 engineers.
-- Fostered good design practices across the data organization by auditing design documents, leading architecture meetings for multiple teams to grow design aptitude, and spearheading the standardization of best-practices on the team including code review, documented on-call workflow, CI/CD , monitoring/alerting, idempotent ETL workflows, and reproducible EDW layout.
-- Coordinated with over 16 internal and external teams across an extensive range of projects including productionalized ML workflows, frontend/mobile event tracking, real time data processing, data anonymization, security/compliance/privacy requirements, data ingestion APIs, data quality validation, and self-service internal product analytics.
+Staff-level engineering leader responsible for overseeing technical design and engineering decisions across Rally's entire data organization that reached a peak of 90+ engineers, analysts, managers, and data scientists.
+
+- Brought on board while Rally was a small startup to architect a complete rewrite of the data platform for the whole company, moving from a fixed Cloudera cluster to a self-service platform using Databricks and Redshift fed by Spark ETLs written in Scala and scheduled with Airflow atop Kubernetes. Built consensus on new architecture and delivered working system within a year.
+
+-  Member of the Rally Engineering Technical Staff, responsible for making cross-cutting engineering decisions, evaluating potential acquisitions, managing the RFC process, and organizing technical interest groups.
+
+-  Heavily involved in defining team structure and hiring, conducting over 140 interviews for IC and management roles to scale the data organization from 4 data engineers to over 50 data engineers across 7 teams.
+
+- Coordinated platform integration with 20 internal and external teams and vendors across an extensive range of projects including productionalized ML workflows, frontend/mobile event tracking, real time data processing, security/compliance/privacy, data ingestion APIs, data quality validation, and self-service internal product analytics.
+
 
 2016---2017
 Software Engineer at DRW Holdings, LLC
 
-Member of the Trading Infrastructure team, developing the internal platform used by every trading desk at DRW. Built greenfield high-performance service-oriented systems using Clojure and Java while maintaining legacy applications in Ruby and C# among a catalog of over 50 microservices.
-- Contributed to a Ruby-based reconciliation tool used to balance cash flows for high-volume trading
-- Extended a research workflow tool used for computing the value and settle price of options, futures, equities, and other financial instruments, written in Clojure.
-- Developed and extended multiple UI frontends for internal tools using React and Reagent.
+Part of the Trading Infrastructure team, developing the internal platform used by every trading desk at DRW. Built greenfield high-performance service-oriented systems using Clojure and Java while maintaining legacy applications in Ruby and C# among a catalog of over 50 microservices.
+
+-  Contributed to a Ruby-based reconciliation tool used to balance cash flows for high-volume trading.
+
+-  Extended a graph-based research workflow tool used for computing the value and settle price of options, futures, equities, and other financial instruments, written in Clojure.
+
+-  Developed and extended multiple UI frontends for internal tools using React and Reagent.
 
 
 2013---2016
 Senior Software Engineer at Groupon, Inc.
 
-Contributed to three engineering teams: The Flux team building Data Science pipelines, the Project Genesis strike team integrating scraped web data into Salesforce, and served as Tech Lead of the Supply Intelligence team creating internal sales tools to optimize Groupon's supply funnel.
-- Built a Postgres-backed high-performance caching and write management system in Clojure around the Salesforce API that hits 10K req/min.
-- Managed critical business automation of the sales lead assignment process that previously required an estimated 80 sales managers to conduct manually; led the effort to rearchitect this legacy system from an ad-hoc job scheduling platform written in Ruby and Bash to a multi-staged Hadoop pipeline written in Clojure to handle over 6M accounts.
-- Coordinated with product and business teams to ETL 250K leads in Salesforce from scraped web data.
-- Built out an ETL management and machine learning platform using Python, Clojure, Hive, and Spark to run mission-critical Decision Tree Learning models to predict customer attrition, lifetime customer value, and merchant value.
-- Mentored interns and junior developers, established best practices, and led multiple major technical initiatives on a team of 5 developers.
+Contributed to multiple teams solving cross-cutting data engineering and MLOps problems.
+
+- Flux team: Responsible for a data pipeline management and machine learning platform used to run productionalized decision tree learning models to predict customer attrition, lifetime customer value, and merchant value. Spearheaded implementation of distributed systems for the feature store, job scheduling, and data catalog components used by all models on the platform. Fed from Teradata, written in Clojure, and backed by Hive.
+
+- Supply Intelligence team: Tech lead overseeing the critical business automation of lead-to-salesperson assignment that previously required ~80 sales managers to conduct manually; led the effort to rearchitect this legacy system from an ad-hoc job scheduling platform written in Ruby and Bash to a multi-staged Hadoop pipeline written in Clojure allowing it to scale to 6M daily candidate assignments.
+
+- Project Genesis strike team: Coordinated with product and business teams to build an ETL to inject 250K leads in Salesforce from scraped web data that increased the unassigned leads pool by 10X.
+
 
 2012---2014
 Technical Engineer at Huntstand, Inc.
 
-Software developer in an agile startup environment creating the huntstand.com web application.  Written using Python, Django, and Backbone; deployed to AWS.  Responsible for curating full technology stack and coordinating with 5 developers.
+Founding engineer at startup creating the https://www.huntstand.com web application. Written using Python, Django, and backbone.js; deployed to AWS. Responsible for curating full technology stack and coordinating with 5 developers.
+
 
 2011---2013
 Research Assistant funded by AFOSR
 
-Dissertation research on computer vision models and algorithms for materials science image segmentation in Python, NumPy, SciPy, OpenCV, and MATLAB at the Computer Vision Lab at USC.  Created a desktop GUI using wxWidgets and a web interface using Django, JavaScript, and jQuery. Conducted large-scale analysis using a 98-core high-performance computing system.
+Conducted dissertation research on segmentation methods to extract important physical characteristics from image volumes of metallic and biologic materials, developed using Python, NumPy, SciPy, OpenCV, and MATLAB. Managed the lab computer network and organized weekly lab meetings. Created a Django-based web application for manual segmentation, an ML-trained classifier for assisted segmentation, and a fully automated energy-minimization segmentation approach, with large-scale evaluations on real and synthetic datasets.
+
 
 2011---2013
 Project Manager at Palmetto Computer Labs
-Created and taught workshops on git, the linux command line, Android development, and open source software for hundreds of students, developers, and government officials at IT-oLogy.  Managed the Open IT Lab and associated projects. Assisted in planning the Palmetto Open Source Software Conference (POSSCON).
+
+Created and taught workshops on git, the Linux command line, Android development, and open source software for hundreds of students, developers, and government officials at IT-oLogy. Managed the Open IT Lab and associated projects. Assisted in planning POSSCON.
+
 
 2011
 Contractor for Elastic Vision Consulting
+
 Built a parser and generator for XML medical records formats (CCR and CCD) in a Java web application.  Written using JDOM, Xerces, and Hibernate, and run on an Axis2+Jetty6 driven server.
+
 
 2010---2011
 Research Assistant for the DARPA Mind's Eye Program
-Researched video event recognition for the DARPA Mind's Eye program. Collaborated with 10 students and faculty members across three institutions.  Developed algorithms in Scheme, Bash, MATLAB, and C to process a corpus of 3480 videos extracted into over 1.5 million frames. Distributed processing over 7 HPC machines.
-http://0xab.com/research/video-events.html
-https://www.github.com/malloc47/video-in-sentences-out
+
+Built video event recognition systems for the DARPA Mind's Eye Program, collaborating with 10 students and faculty members across three institutions to create an AI system that describes events in a video clip as natural language sentences. Developed algorithms in Scheme, Bash, MATLAB, and C to process a corpus of 3480 videos extracted into over 1.5 million frames. Conducted distributed processing on the Steele cluster which was, at the time, among the top 500 most powerful supercomputing clusters.
+
 
 2009---2010
 NEH Fellow at the USC Center for Digital Humanities (Sapheos/Paragon Project)
-Developed the prototype for a digital collation application to identify sub-textual inconsistencies among multiple copies of The Faerie Queene by Edmund Spenser.  Created in MATLAB using VLFeat and OpenCV to process tens of thousands of book page images.
-https://www.github.com/malloc47/digital-collation
 
-Skills & Languages
-
-*** Bash
-*** Clojure
-*** git
-*** GNU/Linux
-*** Hadoop Ecosystem
-  * Haskell
-*** Java
- ** JavaScript
- ** LaTeX
-  * Nix/NixOS
-*** Postgres
-*** Python
- ** Scala
-*** Scheme
-*** Spark
-Key:
-  * Small-scale or personal projects
- ** Used in production
-*** Used in large-scale production systems
-
+Developed the prototype for a digital collation application as part of the Sapheos\Paragon project to identify sub-textual inconsistencies among multiple scanned copies of The Faerie Queene by Edmund Spenser.  Created in MATLAB using OpenCV to process tens of thousands of book page images.
 
 Selected Publications
 
@@ -133,6 +146,6 @@ Talks
 
 Activities
 
-open source software, GIS visualization, Linux, music composition
+data visualization, geographic information systems, Linux, music composition
 
 Available online: http://resume.malloc47.com
