@@ -12,6 +12,15 @@
 \usepackage{xunicode,xltxtra,url,parskip}
 \usepackage{xparse}
 \usepackage{svg}
+\usepackage{catchfile}
+
+%% https://gist.github.com/kbjarkefur/88820e5a5365b3f707b6b20aee57cf8a
+\CatchFileDef{\headfull}{.git/HEAD}{}
+\StrGobbleRight{\headfull}{1}[\head]
+\StrBehind[2]{\head}{/}[\branch]
+\CatchFileDef{\commit}{.git/refs/heads/\branch}{}
+\StrGobbleRight{\commit}{1}[\gitHash]
+\StrLeft{\gitHash}{7}[\gitAbbrevHash]
 
 
 %Setup hyperref package, and colours for links
