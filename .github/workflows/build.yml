@@ -1,0 +1,38 @@
+name: Build Documents
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Build
+        uses: dante-ev/latex-action@latest
+        with:
+          entrypoint: ./docker.sh
+
+      - name: Upload
+        uses: actions/upload-artifact@v3
+        with:
+          name: pdfs
+          path: '*.pdf'
+
+      - name: Release
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: "cv.pdf,resume.pdf"
+          artifactContentType: 'application/pdf'
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit: 'master'
+          tag: 'v${{ github.run_number }}'
