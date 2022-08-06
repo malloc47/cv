@@ -1,3 +1,5 @@
+current_dir = $(shell pwd)
+
 all:
 	latexmk
 
@@ -8,4 +10,5 @@ distclean:
 	latexmk -C
 
 docker:
-	./docker.sh
+	docker pull danteev/texlive
+	docker run -it -v $(current_dir):/workdir danteev/texlive /bin/bash -c './docker.sh'

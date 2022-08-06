@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-docker pull danteev/texlive
-docker run -it -v $(pwd):/workdir danteev/texlive /bin/bash -c '
+set -e
+
 apt-get update
-apt-get install fonts-linuxlibertine
+apt-get install -y fonts-linuxlibertine
 wget -O geosanslight.zip https://dl.dafont.com/dl/?f=geo_sans_light
 unzip -d geosanslight/ geosanslight.zip
 cp geosanslight/*.ttf /usr/local/share/fonts
@@ -16,4 +16,3 @@ rm librebaskerville.zip
 fc-cache
 latexmk
 latexmk -c
-'
