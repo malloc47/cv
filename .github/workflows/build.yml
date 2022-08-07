@@ -2,8 +2,6 @@ name: Build Documents
 
 on:
   push:
-    branches:
-      - master
   pull_request:
 
 jobs:
@@ -30,6 +28,7 @@ jobs:
 
       - name: Release
         uses: ncipollo/release-action@v1
+        if: ${{ github.ref == 'refs/heads/master' }}
         with:
           artifacts: "cv.pdf,resume.pdf"
           artifactContentType: 'application/pdf'
@@ -37,3 +36,18 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit: 'master'
           tag: 'v${{ github.run_number }}'
+
+      - name: Move files
+        if: ${{ github.ref == 'refs/heads/master' }}
+        run: |
+          mkdir ./public
+          mv ./*.pdf ./public/
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        if: ${{ github.ref == 'refs/heads/master' }}
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          publish_branch: gh-pages
+          enable_jekyll: false
